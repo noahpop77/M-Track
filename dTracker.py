@@ -12,14 +12,10 @@ def dtrack(ans, mykey):
     matchCount = 4
 
     #Gets PUUID from Summoner Name
-    #print(f"\nQuerying User {ans}...\n")
-    #print("Making API call...")
     sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
-    #print(f"Querying summoner name for PUUID: {sumByName}")
     myID = sumByName.json()
 
     matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{myID['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
-    #print(f"Querying PUUID for Match IDs: {matches}")
 
     # Gets return as a json/list, Splits it into list of dictionaries
     sepList = str(matches.json()).split(",")
@@ -27,19 +23,14 @@ def dtrack(ans, mykey):
     matchList = []      # Appends to a new list with proper formatting
     for i in sepList:   # Cuts random useless characters in match list
         matchList.append(i.replace(" ","").replace("'", "").replace("[", "").replace("]", ""))
-    #print(matchList)
     matchData = []
 
-    #print("\nMatch IDs:")
     for i in matchList:
         print(i)
         matchData.append(requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json())
 
     times = []
     diffs = []
-
-    #print("\n##########################")
-    #print("Parsing match list data...\n")
 
     for i in matchData:
         gameDate = i['info']['gameCreation']
@@ -71,9 +62,6 @@ def dtrack(ans, mykey):
         if banked < 0: banked = 0
         if banked > 672: banked = 672
 
-        #print(f"HOUR DIF        : {hoursdiff[i]}")
-        #print(f"BANKED(hours)   : {banked}\n")
-
         newTime =  168 - hoursdiff[i]
         banked = banked + newTime
         if i == range(len(hoursdiff)):
@@ -90,5 +78,3 @@ def dtrack(ans, mykey):
         return "PLAY GAME NOW BITCH (stream that shit)"
     else:
         return f"{banked:.2f} days until decay..."
-    #print(f"Game last played: {hoursdiff[0] / 24} days ago")
-    #print(f"Banked days: {banked/24}")
