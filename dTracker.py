@@ -24,7 +24,7 @@ def dtrack(ans, mykey):
     # Gets return as a json/list, Splits it into list of dictionaries
     sepList = str(matches.json()).split(",")
 
-    matchList = []      # Appends to a new list with proper formatting       
+    matchList = []      # Appends to a new list with proper formatting
     for i in sepList:   # Cuts random useless characters in match list
         matchList.append(i.replace(" ","").replace("'", "").replace("[", "").replace("]", ""))
     #print(matchList)
@@ -70,7 +70,7 @@ def dtrack(ans, mykey):
     for i in range(len(hoursdiff)):
         if banked < 0: banked = 0
         if banked > 672: banked = 672
-        
+
         #print(f"HOUR DIF        : {hoursdiff[i]}")
         #print(f"BANKED(hours)   : {banked}\n")
 
@@ -82,8 +82,13 @@ def dtrack(ans, mykey):
             break
         if banked < 0: banked = 0
         if banked > 672: banked = 672
-        banked = banked / 24 # divide by 24 hours in day
 
-    return banked
+    banked = round(banked, 2)
+    banked = banked/24
+
+    if banked == 0.0:
+        return "PLAY GAME NOW BITCH (stream that shit)"
+    else:
+        return f"{banked:.2f} days until decay..."
     #print(f"Game last played: {hoursdiff[0] / 24} days ago")
     #print(f"Banked days: {banked/24}")
