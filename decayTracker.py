@@ -9,7 +9,7 @@ os.system("clear")
 
 
 ans = "chaddam hussein"
-APIKEY = "RGAPI-6c0b8be3-5eb8-425f-bf7f-09378886a6ed"
+APIKEY = "<APIKEY>"
 matchCount = 4
 
 #Gets PUUID from Summoner Name
