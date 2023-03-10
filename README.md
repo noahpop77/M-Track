@@ -1,3 +1,7 @@
-# riotMatchHistory
+# DTracker
 
-Gets the match history of a player by their summoner name and displays key data on the games.
+This is an ongoing project that involves multiple components involving 
+- Web technologies
+- Custom made API
+- Persistent data storage
+- and Back-End management
