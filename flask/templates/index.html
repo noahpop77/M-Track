@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics Webpage</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            background-color: #eee;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        nav li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        nav li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        nav li a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>D-Tracker</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="http://10.0.0.150:5000/getsummoners">Casts GET request for names http://10.0.0.150:5000/getsummoners</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Welcome to the DTRACKER Status page</h2>
+        <br>
+        <h4>Currently Tracking Names:</h4>
+        <ol>
+            <!-- For loop logic of flask template -->
+            {%for i in value%}
+            <li>{{i}}</li>
+            {%endfor%}
+        </ol>
+
+    </div>
+</body>
+</html>
