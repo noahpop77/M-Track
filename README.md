@@ -7,3 +7,5 @@ This is an ongoing project that involves multiple components involving
 - and Back-End management
 
 UPDATED README WITH INSTRUCTIONS COMING SOON...
+
+LETS GO
