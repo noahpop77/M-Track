@@ -8,6 +8,7 @@ import datetime
 import time
 import json
 from configparser import ConfigParser
+from pyfiglet import figlet_format
 
 # Sets up the config file for the tokens
 # This way I can add the config.ini file to the git ignore listing and not show my tokens when working on this repository
@@ -159,8 +160,9 @@ def run():
 
     # When someone types !hello in discord it will respond with the following
     @bot.command()
-    async def hello(ctx: commands.Context):
-        await ctx.send("Helloooooooooo!")
+    async def word(ctx: commands.Context, message):
+        mainout = figlet_format(message, font='starwars')
+        await ctx.send("```" + mainout + "```")
 
     # The MAIN trigger for everything else. Calls the dtrack function with the riot api key specified in the config file and searches
     # all of the names that are obtained from the API call of http://10.0.0.150:5000/getsummoners which is a CSV file. The file is then
