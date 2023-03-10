@@ -30,6 +30,40 @@ def summoners():
         return "THERE ARE NO SUMMONERS BEING TRACKED"
 
 
+@app.route('/removeSummoner', methods=['POST', 'GET'])
+def removeSummoner():
+    # Data sent to api decoded and ready to use as a string
+    ingres = request.data.decode('utf8')
+
+    try:
+        infile = open("summoners.csv", "r")
+    except FileNotFoundError:
+        print("summoners.csv does not exist")
+        return "There are currently no summoner names being tracked"
+
+    # Reads CSV data, comma delitits it, Flatens the data (for some reason the list being pulled from the CSV is a nested list
+    indata = csv.reader(infile, delimiter=",")
+    inlist = sum(indata, [])
+    inlist.remove(ingres)
+    print(inlist)
+    print(inlist)
+    print(inlist)
+    print(type(inlist))
+    # File handler for appending to summoner list
+    outfile = open("summoners.csv", "w")
+    outstring = ""
+    for i in inlist: 
+        outstring = outstring + i + ","
+    outstring = outstring[:-1]
+    outfile.write(f"{outstring}")
+
+    # Closing file handlers for in and out
+    outfile.close()
+    infile.close()
+
+    # RETURN DATA FOR REQUEST (sent to user)
+    return inlist
+
 
 @app.route('/addSummoner', methods=['POST', 'GET'])
 def addSummoner():
@@ -41,7 +75,6 @@ def addSummoner():
     except FileNotFoundError:
         infile = open("summoners.csv", "w")
         infile.write(ingres)
-
         return ingres
 
     indata = csv.reader(infile, delimiter=",")
@@ -50,12 +83,10 @@ def addSummoner():
     
     # File handler for appending to summoner list
     outfile = open("summoners.csv", "a")
-    
     # If the ingres name is not already being tracked it will append the name to the summoners.csv
     if ingres not in inlist:
         inlist.append(ingres) # Append after check to see if ingres name is unique in list
-        print(ingres)
-        #for i in inlist:
+        print(inlist)
         outfile.write(f",{ingres}")
 
     # Closing file handlers for in and out

@@ -12,8 +12,6 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-
-
 # Example test route that when it gets a GET request for the root of the web page it will return a jsonified response in the format of a python dictionary
 @app.route('/getsummoners', methods=['GET'])
 def summoners():
@@ -24,16 +22,48 @@ def summoners():
         indata = csv.reader(infile, delimiter=",")
         # Flatens the data (for soem reason the list being pulled from the CSV is a nested list)
         inlist = sum(indata, [])
-        return inlist
+        outstring = ""
+        for i in inlist: outstring = outstring + i + ","
+        outstring = outstring[:-1]
+        return outstring
     except FileNotFoundError:
         return "THERE ARE NO SUMMONERS BEING TRACKED"
 
 
-'''
-@app.route('/summoners', methods=['GET'])
-def summoners():
-    return data
-'''
+@app.route('/removeSummoner', methods=['POST', 'GET'])
+def removeSummoner():
+    # Data sent to api decoded and ready to use as a string
+    ingres = request.data.decode('utf8')
+
+    try:
+        infile = open("summoners.csv", "r")
+    except FileNotFoundError:
+        print("summoners.csv does not exist")
+        return "There are currently no summoner names being tracked"
+
+    # Reads CSV data, comma delitits it, Flatens the data (for some reason the list being pulled from the CSV is a nested list
+    indata = csv.reader(infile, delimiter=",")
+    inlist = sum(indata, [])
+    inlist.remove(ingres)
+    print(inlist)
+    print(inlist)
+    print(inlist)
+    print(type(inlist))
+    # File handler for appending to summoner list
+    outfile = open("summoners.csv", "w")
+    outstring = ""
+    for i in inlist: 
+        outstring = outstring + i + ","
+    outstring = outstring[:-1]
+    outfile.write(f"{outstring}")
+
+    # Closing file handlers for in and out
+    outfile.close()
+    infile.close()
+
+    # RETURN DATA FOR REQUEST (sent to user)
+    return inlist
+
 
 @app.route('/addSummoner', methods=['POST', 'GET'])
 def addSummoner():
@@ -45,20 +75,18 @@ def addSummoner():
     except FileNotFoundError:
         infile = open("summoners.csv", "w")
         infile.write(ingres)
-
         return ingres
+
     indata = csv.reader(infile, delimiter=",")
     # Flatens the data (for soem reason the list being pulled from the CSV is a nested list)
     inlist = sum(indata, [])
     
     # File handler for appending to summoner list
     outfile = open("summoners.csv", "a")
-    
     # If the ingres name is not already being tracked it will append the name to the summoners.csv
     if ingres not in inlist:
         inlist.append(ingres) # Append after check to see if ingres name is unique in list
-        print(ingres)
-        #for i in inlist:
+        print(inlist)
         outfile.write(f",{ingres}")
 
     # Closing file handlers for in and out
@@ -72,7 +100,15 @@ def addSummoner():
 @app.route('/', methods=['GET'])
 def home():
     # the default for render_template looks inside of the templates directory on the same level as this file which starts the server
-    return render_template('index.html') 
+    try:
+        infile = open("summoners.csv", "r")
+        indata = csv.reader(infile, delimiter=",")
+        # Flatens the data (for soem reason the list being pulled from the CSV is a nested list)
+        inlist = sum(indata, [])
+        return render_template('index.html', value=inlist)
+    except FileNotFoundError:
+        return "THERE ARE NO SUMMONERS BEING TRACKED"
+     
 
 # Run Server
 if __name__ == '__main__':
