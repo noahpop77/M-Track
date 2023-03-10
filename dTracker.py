@@ -167,7 +167,7 @@ def run():
     # split because it is read as a string and split into a list. The return data and the prints do the rest of the work for you.
     @bot.command()
     async def decay(ctx: commands.Context):
-        await ctx.send("Checking decayers!")
+        await ctx.send("Checking decayers...")
 
         summoners = requests.get(f"http://10.0.0.150:5000/getsummoners")
 
@@ -179,7 +179,7 @@ def run():
             try:
                 print("\n---------------------------------------------------------------------------------------------------------------")
                 print(bcolors.OKBLUE + f"Searching data for summoner: \t{i}" + bcolors.ENDC)
-                await ctx.send(dtrack(i, RIOTAPIKEY))
+                await ctx.send(f"```{dtrack(i, RIOTAPIKEY)}```")
             except KeyError:
                 print(bcolors.FAIL + "\n###################################################" + bcolors.ENDC)
                 print(f"SUMMONER DOESNT EXIST: \t\t{i}")
