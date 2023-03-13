@@ -2,11 +2,8 @@ import logging
 import discord
 from discord.ext import commands
 import requests
-import sys
-import os
 import datetime
 import time
-import json
 from configparser import ConfigParser
 from pyfiglet import figlet_format
 
@@ -16,6 +13,10 @@ from pyfiglet import figlet_format
 file = "config.ini"
 config = ConfigParser()
 config.read(file)
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S", filename="dTracker.log")
+logging.info("STARTED - DTracker")
+
 RIOTAPIKEY = config['KEYS']['riotapi']
 DISCORDTOKEN = config['KEYS']['discordtoken']
 
@@ -35,22 +36,30 @@ class bcolors:
 
 # THE CHONKY BOIIIIIIIIIIIIIIIIIIII
 def dtrack(ans, mykey):
+
+    logging.info(f"dtrack function started, scanning for decay on account {ans}")
+
     # Sets API key variable
     APIKEY = mykey
     # Searches theough 4 matches to determine decay since the MAX you can have banked is 4 matches played immediately after one another to a cap of 28 days so no point searching past 4 matches
     matchCount = 4
 
+    logging.info(f"Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key=<APIKEY>")
     # Gets PUUID from Summoner Name
     sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}").json()
+
+    logging.info(f"Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{sumByName['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key=<APIKEY>")
     # Converts response to JSON
     matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{sumByName['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
 
+
     print(f"Player User ID: \t\t{sumByName['puuid']}")
     print(f"Player Summoner ID {sumByName['id']}")
-    
+
+    logging.info(f"Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{sumByName['id']}?api_key=<APIKEY>")
     # Request to get full payload containing player rank
     summonerRankData = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{sumByName['id']}?api_key={APIKEY}").json()
-    
+
     # Catches unexpected output from the riot api for players who dont have sufficient ranked data causing the return to be []
     try:
         # Sifting through the output from the ranked data dump
@@ -63,16 +72,17 @@ def dtrack(ans, mykey):
         if summonerRank not in ["DIAMOND", "MASTER", "GRANDMASTER", "CHALLENGER"]:
             #print(f"\n{ans} can not decay(too shit to decay)")
             print(bcolors.FAIL + "Rank too low to decay" + bcolors.ENDC)
+            logging.info(f"Returning ... {ans} can not decay(too shit to decay)")
             return f"{ans} can not decay(too shit to decay)"
         print("Fetching Ranked data...")
     except:
         print(bcolors.FAIL + f"{ans} has insufficient ranked information at the moment" + bcolors.ENDC)
+        logging.info(f"Returning ... {ans} has insufficient ranked information at the moment")
         return f"{ans} has insufficient ranked information at the moment"
     
     
     # Gets return as a json/list, Splits it into list of dictionaries
     sepList = str(matches.json()).split(",")
-
     matchList = []      # Appends to a new list with proper formatting
     for i in sepList:   # Cuts random useless characters in match list
         matchList.append(i.replace(" ","").replace("'", "").replace("[", "").replace("]", ""))
@@ -137,9 +147,11 @@ def dtrack(ans, mykey):
 
     if banked == 0.0:
         print("PLAY MORE GAMES")
+        logging.info(f"Return ... Execution ended for {ans}, play more games")
         return "PLAY GAME NOW BITCH (stream that shit)"
     else:
         print(bcolors.OKCYAN + f"{banked:.2f} days until decay..." + bcolors.ENDC)
+        logging.info(f"Return ... {ans} has {banked:.2f} days until decay...")
         return f"{ans} has {banked:.2f} days until decay..."
 
 
@@ -149,18 +161,21 @@ def dtrack(ans, mykey):
 # Previous code was function definition
 def run():
     # Context and declaring bot as well as its prefix for the commands in discord
+    logging.info(f"Starting discord bot...")
     intents = discord.Intents.default()
     intents.message_content = True
-    bot = commands.Bot(command_prefix="!", intents=intents)
+    bot = commands.Bot(command_prefix="`", intents=intents)
 
     # When the bot boots up it prints the data below
     @bot.event
     async def on_ready():
+        logging.info("Bot started...")
         print(f"User: {bot.user} (ID: {bot.user.id})")
 
     # When someone types !hello in discord it will respond with the following
     @bot.command()
     async def word(ctx: commands.Context, message):
+        logging.info("Word command sent/")
         mainout = figlet_format(message, font='starwars')
         await ctx.send("```" + mainout + "```")
 
@@ -169,8 +184,8 @@ def run():
     # split because it is read as a string and split into a list. The return data and the prints do the rest of the work for you.
     @bot.command()
     async def decay(ctx: commands.Context):
+        logging.info("Starting decay command...")
         await ctx.send("Checking decayers...")
-
         summoners = requests.get(f"http://10.0.0.150:5000/getsummoners")
 
         # Spits out a list of summoners that are comma delimeted
