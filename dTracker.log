@@ -1,10 +1,74 @@
-2023-03-13 04:09:15 INFO STARTED - DTracker
-2023-03-13 04:09:15 INFO Starting discord bot...
-2023-03-13 04:09:15 INFO logging in using static token
-2023-03-13 04:09:29 INFO STARTED - DTracker
-2023-03-13 04:09:29 INFO Starting discord bot...
-2023-03-13 04:09:29 INFO logging in using static token
-2023-03-13 04:09:30 INFO Shard ID None has connected to Gateway (Session ID: ba4fd3fc53370861efa9a09104dc61c4).
-2023-03-13 04:09:32 INFO Bot started...
-2023-03-13 06:25:24 INFO Shard ID None has successfully RESUMED session ba4fd3fc53370861efa9a09104dc61c4.
-2023-03-13 07:16:09 INFO Shard ID None has successfully RESUMED session ba4fd3fc53370861efa9a09104dc61c4.
+2023-03-13 18:33:09 INFO STARTED - DTracker
+2023-03-13 18:33:09 INFO Starting discord bot...
+2023-03-13 18:33:09 INFO logging in using static token
+2023-03-13 18:33:10 INFO Shard ID None has connected to Gateway (Session ID: 76ca4ecf5927c075e79ade8b822f2c25).
+2023-03-13 18:33:12 INFO Bot started...
+2023-03-13 18:33:22 INFO Starting decay command...
+2023-03-13 18:33:22 INFO dtrack function started, scanning for decay on account Reirai13
+2023-03-13 18:33:22 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Reirai13?api_key=<APIKEY>
+2023-03-13 18:33:23 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/F3ziDH9laOFz3V7TGbpuHUdknDg6hI14UZnU5tuor6uKrvc-5RmQ4DL2KzB0HoC0QrYTBYw6MUa9oQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 18:33:23 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/VMuUwCJjicRneYIRpO4Fd7BeTY2W0woTYAXsyaCYQ_fjRVQ?api_key=<APIKEY>
+2023-03-13 18:33:24 INFO Returning ... Reirai13 can not decay(too shit to decay)
+2023-03-13 18:33:24 INFO dtrack function started, scanning for decay on account Simply Towerdive
+2023-03-13 18:33:24 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Simply%20Towerdive?api_key=<APIKEY>
+2023-03-13 18:33:25 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/WIfCgRK9navhTH29SLSwkqzeWs9iMw1tA0TNXW2symhSDKudx0K7vA7-vcMnIrEZbkWARVx6JwJnew/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 18:33:25 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/GD2XqXDZVCag_uWO5U9tFyGk7ghVw8O_gpEf6q71lNV5kV-e?api_key=<APIKEY>
+2023-03-13 18:33:29 INFO Return ... Simply Towerdive has 12.18 days until decay...
+2023-03-13 18:33:29 INFO dtrack function started, scanning for decay on account Haidder
+2023-03-13 18:33:29 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Haidder?api_key=<APIKEY>
+2023-03-13 18:33:29 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/YVPvHQCHGzlMNNNoI-0qX140K9aK35v95oggY-0AD0hcABJ-ZRGKRYptICsQTshKZsY8bDqmlSLpjw/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 18:33:30 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/ks4DkYeL3bvGKP8Ta54UcJIi6f2IcQwixbhzU_Lx-f_bKSU?api_key=<APIKEY>
+2023-03-13 18:33:33 INFO Return ... Haidder has 15.19 days until decay...
+2023-03-13 18:33:34 INFO dtrack function started, scanning for decay on account Toyota Hilux
+2023-03-13 18:33:34 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Toyota%20Hilux?api_key=<APIKEY>
+2023-03-13 18:33:34 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/9N4achj8Y5MYMsoMt_JrUIF26Kx2rLyc2F6jIvhlLnQ-MO-ZCBH03l-9bB4vyXma3Rc71Iz2aD8Jqg/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 18:33:35 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/E-nTbP-UEZKNEvGyFdWk0UvHJc4DH8dwRo1X7vRlgeuXOochqwoFcJyWaQ?api_key=<APIKEY>
+2023-03-13 18:33:39 INFO Return ... Toyota Hilux has 24.30 days until decay...
+2023-03-13 18:33:39 INFO dtrack function started, scanning for decay on account Tehnibbles
+2023-03-13 18:33:39 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Tehnibbles?api_key=<APIKEY>
+2023-03-13 18:33:40 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/5UyxKlJgSVTscUIoG7SSK3113Idik9TjRLEczegM3dH-v6WI48w4lTY_gwh2rLh_VoTpYDvbQYAyTA/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 18:33:40 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/z0RN6pBSKEr4YV1S7Iz_ioeD_WXzCajBSY8tXLnmI9mlOAo?api_key=<APIKEY>
+2023-03-13 18:33:41 INFO Returning ... Tehnibbles has insufficient ranked information at the moment
+2023-03-13 18:33:41 INFO dtrack function started, scanning for decay on account iraqiteemo
+2023-03-13 18:33:41 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/iraqiteemo?api_key=<APIKEY>
+2023-03-13 18:33:42 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/KM--X-76znlKjJ97QztN3RClEQEenVcNFfNYBs_CvfT2F8MuPQaXwtpMl3RgWsO4fnmcckplNqFTsQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 18:33:42 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/3aOv_H6lHWGK8rqhuBiAiE_9RN_VbfaAX4C4CodbzLWjxDAy?api_key=<APIKEY>
+2023-03-13 18:33:43 INFO Returning ... iraqiteemo has insufficient ranked information at the moment
+2023-03-13 20:17:35 INFO STARTED - DTracker
+2023-03-13 20:17:35 INFO Starting discord bot...
+2023-03-13 20:17:35 INFO logging in using static token
+2023-03-13 20:17:36 INFO Shard ID None has connected to Gateway (Session ID: c036223eb5098b1539b8e47529e4a9b1).
+2023-03-13 20:17:38 INFO Bot started...
+2023-03-13 20:17:41 INFO Starting decay command...
+2023-03-13 20:17:42 INFO dtrack function started, scanning for decay on account Reirai13
+2023-03-13 20:17:42 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Reirai13?api_key=<APIKEY>
+2023-03-13 20:17:42 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/F3ziDH9laOFz3V7TGbpuHUdknDg6hI14UZnU5tuor6uKrvc-5RmQ4DL2KzB0HoC0QrYTBYw6MUa9oQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 20:17:43 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/VMuUwCJjicRneYIRpO4Fd7BeTY2W0woTYAXsyaCYQ_fjRVQ?api_key=<APIKEY>
+2023-03-13 20:17:44 INFO Returning ... Reirai13 can not decay(too shit to decay)
+2023-03-13 20:17:44 INFO dtrack function started, scanning for decay on account Simply Towerdive
+2023-03-13 20:17:44 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Simply%20Towerdive?api_key=<APIKEY>
+2023-03-13 20:17:44 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/WIfCgRK9navhTH29SLSwkqzeWs9iMw1tA0TNXW2symhSDKudx0K7vA7-vcMnIrEZbkWARVx6JwJnew/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 20:17:45 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/GD2XqXDZVCag_uWO5U9tFyGk7ghVw8O_gpEf6q71lNV5kV-e?api_key=<APIKEY>
+2023-03-13 20:17:49 INFO Return ... Simply Towerdive has 12.18 days until decay...
+2023-03-13 20:17:49 INFO dtrack function started, scanning for decay on account Haidder
+2023-03-13 20:17:49 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Haidder?api_key=<APIKEY>
+2023-03-13 20:17:49 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/YVPvHQCHGzlMNNNoI-0qX140K9aK35v95oggY-0AD0hcABJ-ZRGKRYptICsQTshKZsY8bDqmlSLpjw/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 20:17:50 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/ks4DkYeL3bvGKP8Ta54UcJIi6f2IcQwixbhzU_Lx-f_bKSU?api_key=<APIKEY>
+2023-03-13 20:17:53 INFO Return ... Haidder has 15.19 days until decay...
+2023-03-13 20:17:53 INFO dtrack function started, scanning for decay on account Toyota Hilux
+2023-03-13 20:17:53 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Toyota%20Hilux?api_key=<APIKEY>
+2023-03-13 20:17:54 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/9N4achj8Y5MYMsoMt_JrUIF26Kx2rLyc2F6jIvhlLnQ-MO-ZCBH03l-9bB4vyXma3Rc71Iz2aD8Jqg/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 20:17:55 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/E-nTbP-UEZKNEvGyFdWk0UvHJc4DH8dwRo1X7vRlgeuXOochqwoFcJyWaQ?api_key=<APIKEY>
+2023-03-13 20:17:58 INFO Return ... Toyota Hilux has 24.23 days until decay...
+2023-03-13 20:17:58 INFO dtrack function started, scanning for decay on account Tehnibbles
+2023-03-13 20:17:58 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Tehnibbles?api_key=<APIKEY>
+2023-03-13 20:17:59 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/5UyxKlJgSVTscUIoG7SSK3113Idik9TjRLEczegM3dH-v6WI48w4lTY_gwh2rLh_VoTpYDvbQYAyTA/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 20:17:59 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/z0RN6pBSKEr4YV1S7Iz_ioeD_WXzCajBSY8tXLnmI9mlOAo?api_key=<APIKEY>
+2023-03-13 20:18:00 INFO Returning ... Tehnibbles has insufficient ranked information at the moment
+2023-03-13 20:18:00 INFO dtrack function started, scanning for decay on account iraqiteemo
+2023-03-13 20:18:00 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/iraqiteemo?api_key=<APIKEY>
+2023-03-13 20:18:01 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/KM--X-76znlKjJ97QztN3RClEQEenVcNFfNYBs_CvfT2F8MuPQaXwtpMl3RgWsO4fnmcckplNqFTsQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-13 20:18:01 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/3aOv_H6lHWGK8rqhuBiAiE_9RN_VbfaAX4C4CodbzLWjxDAy?api_key=<APIKEY>
+2023-03-13 20:18:02 INFO Returning ... iraqiteemo has insufficient ranked information at the moment
+2023-03-13 23:19:12 INFO Shard ID None has successfully RESUMED session c036223eb5098b1539b8e47529e4a9b1.
+2023-03-14 01:00:35 INFO Shard ID None has successfully RESUMED session c036223eb5098b1539b8e47529e4a9b1.
