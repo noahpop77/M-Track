@@ -72,3 +72,474 @@
 2023-03-13 20:18:02 INFO Returning ... iraqiteemo has insufficient ranked information at the moment
 2023-03-13 23:19:12 INFO Shard ID None has successfully RESUMED session c036223eb5098b1539b8e47529e4a9b1.
 2023-03-14 01:00:35 INFO Shard ID None has successfully RESUMED session c036223eb5098b1539b8e47529e4a9b1.
+2023-03-14 06:55:48 INFO STARTED - DTracker
+2023-03-14 06:55:48 INFO Starting discord bot...
+2023-03-14 06:55:48 INFO logging in using static token
+2023-03-14 06:55:55 INFO STARTED - DTracker
+2023-03-14 06:55:55 INFO Starting discord bot...
+2023-03-14 06:55:55 INFO logging in using static token
+2023-03-14 06:56:17 INFO STARTED - DTracker
+2023-03-14 06:56:17 INFO Starting discord bot...
+2023-03-14 06:56:17 INFO logging in using static token
+2023-03-14 06:56:18 INFO Shard ID None has connected to Gateway (Session ID: 365172def51fb695de10d7730aa7ad72).
+2023-03-14 06:56:20 INFO Bot started...
+2023-03-14 06:56:24 INFO Starting decay command...
+2023-03-14 06:56:24 INFO dtrack function started, scanning for decay on account Reirai13
+2023-03-14 06:56:24 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Reirai13?api_key=<APIKEY>
+2023-03-14 06:56:25 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/F3ziDH9laOFz3V7TGbpuHUdknDg6hI14UZnU5tuor6uKrvc-5RmQ4DL2KzB0HoC0QrYTBYw6MUa9oQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-14 06:56:25 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/VMuUwCJjicRneYIRpO4Fd7BeTY2W0woTYAXsyaCYQ_fjRVQ?api_key=<APIKEY>
+2023-03-14 06:56:26 INFO Returning ... Reirai13 can not decay(too shit to decay)
+2023-03-14 06:56:26 INFO dtrack function started, scanning for decay on account Simply Towerdive
+2023-03-14 06:56:26 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Simply%20Towerdive?api_key=<APIKEY>
+2023-03-14 06:56:27 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/WIfCgRK9navhTH29SLSwkqzeWs9iMw1tA0TNXW2symhSDKudx0K7vA7-vcMnIrEZbkWARVx6JwJnew/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-14 06:56:27 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/GD2XqXDZVCag_uWO5U9tFyGk7ghVw8O_gpEf6q71lNV5kV-e?api_key=<APIKEY>
+2023-03-14 06:56:31 INFO Return ... Simply Towerdive has 13.38 days until decay...
+2023-03-14 06:56:31 INFO dtrack function started, scanning for decay on account Haidder
+2023-03-14 06:56:31 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Haidder?api_key=<APIKEY>
+2023-03-14 06:56:31 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/YVPvHQCHGzlMNNNoI-0qX140K9aK35v95oggY-0AD0hcABJ-ZRGKRYptICsQTshKZsY8bDqmlSLpjw/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-14 06:56:32 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/ks4DkYeL3bvGKP8Ta54UcJIi6f2IcQwixbhzU_Lx-f_bKSU?api_key=<APIKEY>
+2023-03-14 06:56:35 INFO Return ... Haidder has 15.19 days until decay...
+2023-03-14 06:56:35 INFO dtrack function started, scanning for decay on account iraqiteemo
+2023-03-14 06:56:35 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/iraqiteemo?api_key=<APIKEY>
+2023-03-14 06:56:36 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/KM--X-76znlKjJ97QztN3RClEQEenVcNFfNYBs_CvfT2F8MuPQaXwtpMl3RgWsO4fnmcckplNqFTsQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-03-14 06:56:37 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/3aOv_H6lHWGK8rqhuBiAiE_9RN_VbfaAX4C4CodbzLWjxDAy?api_key=<APIKEY>
+2023-03-14 06:56:37 INFO Returning ... iraqiteemo has insufficient ranked information at the moment
+2023-03-14 08:00:22 INFO Shard ID None has successfully RESUMED session 365172def51fb695de10d7730aa7ad72.
+2023-03-14 09:52:22 INFO Shard ID None has successfully RESUMED session 365172def51fb695de10d7730aa7ad72.
+2023-03-14 12:00:55 INFO Shard ID None has successfully RESUMED session 365172def51fb695de10d7730aa7ad72.
+2023-03-14 15:01:10 INFO Shard ID None has successfully RESUMED session 365172def51fb695de10d7730aa7ad72.
+2023-03-14 16:21:38 INFO Shard ID None has successfully RESUMED session 365172def51fb695de10d7730aa7ad72.
+2023-03-14 19:26:10 INFO Shard ID None has successfully RESUMED session 365172def51fb695de10d7730aa7ad72.
+2023-03-14 19:52:26 INFO Shard ID None has successfully RESUMED session 365172def51fb695de10d7730aa7ad72.
+2023-04-05 08:44:01 INFO STARTED - DTracker
+2023-04-05 08:44:01 INFO Starting discord bot...
+2023-04-05 08:44:01 INFO logging in using static token
+2023-04-05 08:44:02 INFO Shard ID None has connected to Gateway (Session ID: 346f69a6dca2f1588c7d0c622db698d9).
+2023-04-05 08:44:04 INFO Bot started...
+2023-04-05 08:44:33 INFO Starting decay command...
+2023-04-05 08:44:33 ERROR Ignoring exception in command decay
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ff920081210>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff920081210>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/bot.py", line 56, in decay
+    summoners = requests.get(f"{APIADDRESS}:{APIPORT}/getsummoners")
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff920081210>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ConnectionError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff920081210>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2023-04-05 08:46:02 INFO Starting decay command...
+2023-04-05 08:46:02 ERROR Ignoring exception in command decay
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ff920081e10>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff920081e10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/bot.py", line 56, in decay
+    summoners = requests.get(f"{APIADDRESS}:{APIPORT}/getsummoners")
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff920081e10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ConnectionError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff920081e10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2023-04-05 08:46:04 INFO STARTED - DTracker
+2023-04-05 08:46:04 INFO Starting discord bot...
+2023-04-05 08:46:04 INFO logging in using static token
+2023-04-05 08:46:06 INFO Shard ID None has connected to Gateway (Session ID: 6034c74f961cf63713b3224a7da35a28).
+2023-04-05 08:46:08 INFO Bot started...
+2023-04-05 08:46:10 INFO Word command sent/
+2023-04-05 08:46:16 INFO Starting decay command...
+2023-04-05 08:46:17 ERROR Ignoring exception in command decay
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fa783051540>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa783051540>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/bot.py", line 56, in decay
+    summoners = requests.get(f"{APIADDRESS}:{APIPORT}/getsummoners")
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/sawa/.local/lib/python3.10/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa783051540>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ConnectionError: HTTPConnectionPool(host='10.0.0.150', port=5000): Max retries exceeded with url: /getsummoners (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa783051540>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2023-04-05 08:50:54 INFO Starting decay command...
+2023-04-05 08:50:54 INFO dtrack function started, scanning for decay on account Reirai13
+2023-04-05 08:50:54 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Reirai13?api_key=<APIKEY>
+2023-04-05 08:50:55 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/F3ziDH9laOFz3V7TGbpuHUdknDg6hI14UZnU5tuor6uKrvc-5RmQ4DL2KzB0HoC0QrYTBYw6MUa9oQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-04-05 08:50:56 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/VMuUwCJjicRneYIRpO4Fd7BeTY2W0woTYAXsyaCYQ_fjRVQ?api_key=<APIKEY>
+2023-04-05 08:50:56 INFO Returning ... Reirai13 can not decay(too shit to decay)
+2023-04-05 08:50:56 INFO dtrack function started, scanning for decay on account Simply Towerdive
+2023-04-05 08:50:56 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Simply%20Towerdive?api_key=<APIKEY>
+2023-04-05 08:50:57 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/WIfCgRK9navhTH29SLSwkqzeWs9iMw1tA0TNXW2symhSDKudx0K7vA7-vcMnIrEZbkWARVx6JwJnew/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-04-05 08:50:58 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/GD2XqXDZVCag_uWO5U9tFyGk7ghVw8O_gpEf6q71lNV5kV-e?api_key=<APIKEY>
+2023-04-05 08:51:02 INFO Return ... Simply Towerdive has 6.98 days until decay...
+2023-04-05 08:51:02 INFO dtrack function started, scanning for decay on account Haidder
+2023-04-05 08:51:02 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Haidder?api_key=<APIKEY>
+2023-04-05 08:51:03 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/YVPvHQCHGzlMNNNoI-0qX140K9aK35v95oggY-0AD0hcABJ-ZRGKRYptICsQTshKZsY8bDqmlSLpjw/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-04-05 08:51:03 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/ks4DkYeL3bvGKP8Ta54UcJIi6f2IcQwixbhzU_Lx-f_bKSU?api_key=<APIKEY>
+2023-04-05 08:51:07 INFO Return ... Haidder has 24.75 days until decay...
+2023-04-05 08:51:07 INFO dtrack function started, scanning for decay on account iraqiteemo
+2023-04-05 08:51:07 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/iraqiteemo?api_key=<APIKEY>
+2023-04-05 08:51:08 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/KM--X-76znlKjJ97QztN3RClEQEenVcNFfNYBs_CvfT2F8MuPQaXwtpMl3RgWsO4fnmcckplNqFTsQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-04-05 08:51:08 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/3aOv_H6lHWGK8rqhuBiAiE_9RN_VbfaAX4C4CodbzLWjxDAy?api_key=<APIKEY>
+2023-04-05 08:51:09 INFO Returning ... iraqiteemo has insufficient ranked information at the moment
+2023-04-05 10:21:08 INFO Shard ID None has successfully RESUMED session 6034c74f961cf63713b3224a7da35a28.
+2023-04-05 12:14:50 INFO Shard ID None has successfully RESUMED session 6034c74f961cf63713b3224a7da35a28.
+2023-04-05 12:15:45 ERROR Attempting a reconnect in 1.51s
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/client.py", line 659, in connect
+    await self.ws.poll_event()
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/gateway.py", line 646, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+2023-04-05 12:16:06 ERROR Attempting a reconnect in 3.53s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/client.py", line 656, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-04-05 12:16:30 ERROR Attempting a reconnect in 3.89s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/client.py", line 656, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-04-05 12:16:54 ERROR Attempting a reconnect in 5.40s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/client.py", line 656, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-04-05 12:17:19 ERROR Attempting a reconnect in 27.17s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/client.py", line 656, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/sawa/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/dist-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-04-24 21:29:11 INFO STARTED - DTracker
+2023-04-24 21:29:11 INFO Starting discord bot...
+2023-04-24 21:29:11 INFO logging in using static token
+2023-04-24 21:29:12 INFO Shard ID None has connected to Gateway (Session ID: 24464b2050f9921eab4ee8fadf1b1a61).
+2023-04-24 21:29:14 INFO Bot started...
+2023-04-24 21:29:56 INFO Word command sent/
+2023-04-24 21:30:02 INFO Word command sent/
+2023-04-24 21:30:15 INFO Word command sent/
+2023-04-24 21:30:21 INFO Word command sent/
+2023-04-24 21:30:41 INFO Word command sent/
+2023-04-25 00:49:33 INFO Shard ID None has successfully RESUMED session 24464b2050f9921eab4ee8fadf1b1a61.
