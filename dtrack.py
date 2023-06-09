@@ -47,16 +47,19 @@ def dtrack(ans, mykey):
     try:
         # Sifting through the output from the ranked data dump
         # FOR SOME REASON RIOT RETURNS THIS AS A LIST WITH 1 ENTITY IN IT WHICH IS THE DICTIONARY RATHER THAN JUST A DICTIONARY
-        summonerRank = summonerRankData[0]
-        summonerRank = summonerRank['tier']
+        summonerRank = ""
+        
+        for i in summonerRankData:
+            if i['queueType'] == "RANKED_SOLO_5x5":
+                summonerRank = i['tier']
+        
         print(f"\nCurrent Rank: \t\t\t{summonerRank}")
 
         # Checks the rank of the player and if they are below DIAMOND then the player can not decay so it returns a relevant response and stops the function early to not waste time
         if summonerRank not in ["DIAMOND", "MASTER", "GRANDMASTER", "CHALLENGER"]:
-            #print(f"\n{ans} can not decay(too shit to decay)")
             print(bcolors.FAIL + "Rank too low to decay" + bcolors.ENDC)
-            logging.info(f"Returning ... {ans} can not decay(too shit to decay)")
-            return f"{ans} can not decay(too shit to decay)"
+            logging.info(f"Returning ... {ans} can not decay(too shit)")
+            return f"Not high enough elo to decay(too shit)"
         print("Fetching Ranked data...")
     except:
         print(bcolors.FAIL + f"{ans} has insufficient ranked information at the moment" + bcolors.ENDC)
@@ -135,4 +138,5 @@ def dtrack(ans, mykey):
     else:
         print(bcolors.OKCYAN + f"{banked:.2f} days until decay..." + bcolors.ENDC)
         logging.info(f"Return ... {ans} has {banked:.2f} days until decay...")
-        return f"{ans} has {banked:.2f} days until decay..."
+        #return f"{ans} \t {banked:.2f} days until decay..."
+        return f"{banked:.2f}"

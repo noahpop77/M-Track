@@ -53,22 +53,30 @@ def run():
     async def decay(ctx: commands.Context):
         logging.info("Starting decay command...")
         await ctx.send("Checking decayers...")
-        summoners = requests.get(f"{APIADDRESS}:{APIPORT}/getsummoners")
+        summoners = requests.get(f"{APIADDRESS}:{APIPORT}/getSummoners")
 
         # Spits out a list of summoners that are comma delimeted
         # Format: brian,sawa,bob,james,time,iraqiteemo
         list_of_summoners = summoners.text.split(',')
 
+        dtrackResponse = ""
+        embed=discord.Embed()
         for i in list_of_summoners: 
             try:
                 print("\n---------------------------------------------------------------------------------------------------------------")
                 print(bcolors.OKBLUE + f"Searching data for summoner: \t{i}" + bcolors.ENDC)
-                await ctx.send(f"```{dtrack(i, RIOTAPIKEY)}```")
+                print(f"-------------- {dtrackResponse} --------------")
+                embed.add_field(name=i, value=dtrack(i, RIOTAPIKEY), inline=False)
             except KeyError:
                 print(bcolors.FAIL + "\n###################################################" + bcolors.ENDC)
                 print(f"SUMMONER DOESNT EXIST: \t\t{i}")
                 print(bcolors.FAIL + "###################################################" + bcolors.ENDC)
-
+        
+        
+        
+        embed.set_footer(text="All hail Brian Sawa the one true leader")
+        await ctx.send(embed=embed)
+        #await ctx.send(f"```{dtrackResponse}```")
     # Init Bot
     bot.run(DISCORDTOKEN)
 
