@@ -652,3 +652,802 @@
 2023-06-09 01:53:35 INFO STARTED - ROUTES.PY
 2023-06-09 01:53:35 WARNING  * Debugger is active!
 2023-06-09 01:53:35 INFO  * Debugger PIN: 357-231-061
+2023-06-09 19:29:47 INFO REQUEST - /getSummoners request received...
+2023-06-09 19:29:47 INFO REQUEST - /getSummoners request returned!
+2023-06-09 19:29:47 INFO 10.0.0.244 - - [09/Jun/2023 19:29:47] "GET /getSummoners HTTP/1.1" 200 -
+2023-06-09 19:29:50 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-09 19:29:50 INFO REQUEST - /addSummoner request returned...
+2023-06-09 19:29:50 INFO 10.0.0.244 - - [09/Jun/2023 19:29:50] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-09 19:29:51 INFO REQUEST - /getSummoners request received...
+2023-06-09 19:29:51 INFO REQUEST - /getSummoners request returned!
+2023-06-09 19:29:51 INFO 10.0.0.244 - - [09/Jun/2023 19:29:51] "GET /getSummoners HTTP/1.1" 200 -
+2023-06-09 19:29:54 INFO REQUEST - /removeSummoners request received...
+2023-06-09 19:29:54 INFO REQUEST - /removeSummoner request returned!
+2023-06-09 19:29:54 INFO 10.0.0.244 - - [09/Jun/2023 19:29:54] "POST /removeSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-09 19:29:57 INFO REQUEST - /getSummoners request received...
+2023-06-09 19:29:57 INFO REQUEST - /getSummoners request returned!
+2023-06-09 19:29:57 INFO 10.0.0.244 - - [09/Jun/2023 19:29:57] "GET /getSummoners HTTP/1.1" 200 -
+2023-06-10 01:49:54 INFO 10.0.0.244 - - [10/Jun/2023 01:49:54] "GET / HTTP/1.1" 200 -
+2023-06-10 01:49:55 INFO 10.0.0.244 - - [10/Jun/2023 01:49:55] "GET / HTTP/1.1" 200 -
+2023-06-10 01:49:56 INFO 10.0.0.244 - - [10/Jun/2023 01:49:56] "GET / HTTP/1.1" 200 -
+2023-06-10 01:49:56 INFO 10.0.0.244 - - [10/Jun/2023 01:49:56] "GET / HTTP/1.1" 200 -
+2023-06-10 01:50:04 INFO 10.0.0.244 - - [10/Jun/2023 01:50:04] "GET / HTTP/1.1" 200 -
+2023-06-10 01:50:19 INFO 10.0.0.244 - - [10/Jun/2023 01:50:19] "GET / HTTP/1.1" 200 -
+2023-06-10 01:50:19 INFO 10.0.0.244 - - [10/Jun/2023 01:50:19] "GET / HTTP/1.1" 200 -
+2023-06-10 01:50:19 INFO 10.0.0.244 - - [10/Jun/2023 01:50:19] "GET / HTTP/1.1" 200 -
+2023-06-10 01:50:24 INFO 10.0.0.244 - - [10/Jun/2023 01:50:24] "GET / HTTP/1.1" 200 -
+2023-06-10 01:51:14 INFO 10.0.0.244 - - [10/Jun/2023 01:51:14] "GET / HTTP/1.1" 200 -
+2023-06-10 01:51:15 INFO 10.0.0.244 - - [10/Jun/2023 01:51:15] "GET / HTTP/1.1" 200 -
+2023-06-10 01:52:14 INFO 10.0.0.244 - - [10/Jun/2023 01:52:14] "[33mPOST /submit HTTP/1.1[0m" 404 -
+2023-06-10 01:52:17 INFO 10.0.0.244 - - [10/Jun/2023 01:52:17] "GET / HTTP/1.1" 200 -
+2023-06-10 01:52:20 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 01:52:20 INFO REQUEST - /addSummoner request returned...
+2023-06-10 01:52:20 INFO 10.0.0.244 - - [10/Jun/2023 01:52:20] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 01:52:32 INFO 10.0.0.244 - - [10/Jun/2023 01:52:32] "GET / HTTP/1.1" 200 -
+2023-06-10 01:53:34 INFO 10.0.0.244 - - [10/Jun/2023 01:53:34] "GET / HTTP/1.1" 200 -
+2023-06-10 01:53:36 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 01:53:36 INFO REQUEST - /addSummoner request returned...
+2023-06-10 01:53:36 INFO 10.0.0.244 - - [10/Jun/2023 01:53:36] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 01:56:40 INFO 10.0.0.244 - - [10/Jun/2023 01:56:40] "GET / HTTP/1.1" 200 -
+2023-06-10 01:56:41 INFO 10.0.0.244 - - [10/Jun/2023 01:56:41] "GET / HTTP/1.1" 200 -
+2023-06-10 01:56:42 INFO 10.0.0.244 - - [10/Jun/2023 01:56:42] "GET / HTTP/1.1" 200 -
+2023-06-10 01:56:44 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 01:56:44 INFO REQUEST - /addSummoner request returned...
+2023-06-10 01:56:44 INFO 10.0.0.244 - - [10/Jun/2023 01:56:44] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 01:56:47 INFO 10.0.0.244 - - [10/Jun/2023 01:56:47] "GET / HTTP/1.1" 200 -
+2023-06-10 01:59:17 INFO 10.0.0.244 - - [10/Jun/2023 01:59:17] "GET / HTTP/1.1" 200 -
+2023-06-10 01:59:19 INFO 10.0.0.244 - - [10/Jun/2023 01:59:19] "GET / HTTP/1.1" 200 -
+2023-06-10 01:59:21 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 01:59:21 INFO REQUEST - /addSummoner request returned...
+2023-06-10 01:59:21 INFO 10.0.0.244 - - [10/Jun/2023 01:59:21] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 01:59:24 INFO 10.0.0.244 - - [10/Jun/2023 01:59:24] "GET / HTTP/1.1" 200 -
+2023-06-10 01:59:45 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 01:59:45 INFO REQUEST - /addSummoner request returned...
+2023-06-10 01:59:45 INFO 10.0.0.244 - - [10/Jun/2023 01:59:45] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 01:59:47 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 01:59:47 INFO REQUEST - /addSummoner request returned...
+2023-06-10 01:59:47 INFO 10.0.0.244 - - [10/Jun/2023 01:59:47] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 01:59:47 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 01:59:47 INFO REQUEST - /addSummoner request returned...
+2023-06-10 01:59:47 INFO 10.0.0.244 - - [10/Jun/2023 01:59:47] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:00:20 INFO 10.0.0.244 - - [10/Jun/2023 02:00:20] "GET / HTTP/1.1" 200 -
+2023-06-10 02:00:21 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:00:21 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:00:21 INFO 10.0.0.244 - - [10/Jun/2023 02:00:21] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:00:23 INFO 10.0.0.244 - - [10/Jun/2023 02:00:23] "GET / HTTP/1.1" 200 -
+2023-06-10 02:00:58 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:00:58 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:00:58 INFO 10.0.0.244 - - [10/Jun/2023 02:00:58] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:00:59 INFO 10.0.0.244 - - [10/Jun/2023 02:00:59] "GET / HTTP/1.1" 200 -
+2023-06-10 02:01:24 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:01:24 INFO  * Restarting with stat
+2023-06-10 02:01:25 INFO STARTED - ROUTES.PY
+2023-06-10 02:01:25 WARNING  * Debugger is active!
+2023-06-10 02:01:25 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:01:29 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:01:29 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:01:29 INFO 10.0.0.244 - - [10/Jun/2023 02:01:29] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:01:38 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:01:38 INFO  * Restarting with stat
+2023-06-10 02:01:38 INFO STARTED - ROUTES.PY
+2023-06-10 02:01:38 WARNING  * Debugger is active!
+2023-06-10 02:01:38 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:01:39 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:01:39 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:01:39 INFO 10.0.0.244 - - [10/Jun/2023 02:01:39] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:01:52 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:01:52 INFO  * Restarting with stat
+2023-06-10 02:01:52 INFO STARTED - ROUTES.PY
+2023-06-10 02:01:52 WARNING  * Debugger is active!
+2023-06-10 02:01:52 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:01:54 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:01:54 INFO 10.0.0.244 - - [10/Jun/2023 02:01:54] "[35m[1mPOST /addSummoner HTTP/1.1[0m" 500 -
+2023-06-10 02:02:06 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:02:06 INFO  * Restarting with stat
+2023-06-10 02:02:06 INFO STARTED - ROUTES.PY
+2023-06-10 02:02:06 WARNING  * Debugger is active!
+2023-06-10 02:02:06 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:02:07 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:02:07 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:02:07 INFO 10.0.0.244 - - [10/Jun/2023 02:02:07] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:02:33 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:02:33 INFO  * Restarting with stat
+2023-06-10 02:02:33 INFO STARTED - ROUTES.PY
+2023-06-10 02:02:33 WARNING  * Debugger is active!
+2023-06-10 02:02:33 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:02:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:02:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:02:34 INFO 10.0.0.244 - - [10/Jun/2023 02:02:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:02:37 INFO 10.0.0.244 - - [10/Jun/2023 02:02:37] "GET / HTTP/1.1" 200 -
+2023-06-10 02:02:44 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:02:44 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:02:44 INFO 10.0.0.244 - - [10/Jun/2023 02:02:44] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:02:56 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:02:56 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:02:56 INFO 10.0.0.244 - - [10/Jun/2023 02:02:56] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:03:00 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:03:00 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:03:00 INFO 10.0.0.244 - - [10/Jun/2023 02:03:00] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:03:15 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:03:15 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:03:15 INFO 10.0.0.244 - - [10/Jun/2023 02:03:15] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:03:32 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:03:32 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:03:32 INFO 10.0.0.244 - - [10/Jun/2023 02:03:32] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:04:17 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:04:17 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:04:17 INFO 10.0.0.244 - - [10/Jun/2023 02:04:17] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:04:30 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:04:30 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:04:30 INFO 10.0.0.244 - - [10/Jun/2023 02:04:30] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:04:35 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:04:35 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:04:35 INFO 10.0.0.244 - - [10/Jun/2023 02:04:35] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:04:48 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:04:48 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:04:48 INFO 10.0.0.244 - - [10/Jun/2023 02:04:48] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:04:52 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:04:52 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:04:52 INFO 10.0.0.244 - - [10/Jun/2023 02:04:52] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:06 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:06 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:06 INFO 10.0.0.244 - - [10/Jun/2023 02:05:06] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:09 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:09 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:09 INFO 10.0.0.244 - - [10/Jun/2023 02:05:09] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:09 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:09 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:09 INFO 10.0.0.244 - - [10/Jun/2023 02:05:09] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:09 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:09 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:09 INFO 10.0.0.244 - - [10/Jun/2023 02:05:09] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:10 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:10 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:10 INFO 10.0.0.244 - - [10/Jun/2023 02:05:10] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:10 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:10 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:10 INFO 10.0.0.244 - - [10/Jun/2023 02:05:10] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:11 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:11 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:11 INFO 10.0.0.244 - - [10/Jun/2023 02:05:11] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:11 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:11 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:11 INFO 10.0.0.244 - - [10/Jun/2023 02:05:11] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:11 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:11 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:11 INFO 10.0.0.244 - - [10/Jun/2023 02:05:11] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:12 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:12 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:12 INFO 10.0.0.244 - - [10/Jun/2023 02:05:12] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:14 INFO 10.0.0.244 - - [10/Jun/2023 02:05:14] "GET / HTTP/1.1" 200 -
+2023-06-10 02:05:15 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:15 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:15 INFO 10.0.0.244 - - [10/Jun/2023 02:05:15] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:16 INFO 10.0.0.244 - - [10/Jun/2023 02:05:16] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:16 INFO 10.0.0.244 - - [10/Jun/2023 02:05:16] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:16 INFO 10.0.0.244 - - [10/Jun/2023 02:05:16] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:16 INFO 10.0.0.244 - - [10/Jun/2023 02:05:16] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:16 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:16 INFO 10.0.0.244 - - [10/Jun/2023 02:05:16] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:17 INFO 10.0.0.244 - - [10/Jun/2023 02:05:17] "GET / HTTP/1.1" 200 -
+2023-06-10 02:05:18 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:18 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:18 INFO 10.0.0.244 - - [10/Jun/2023 02:05:18] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:19 INFO 10.0.0.244 - - [10/Jun/2023 02:05:19] "GET / HTTP/1.1" 200 -
+2023-06-10 02:05:20 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:20 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:20 INFO 10.0.0.244 - - [10/Jun/2023 02:05:20] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:20 INFO 10.0.0.244 - - [10/Jun/2023 02:05:20] "GET / HTTP/1.1" 200 -
+2023-06-10 02:05:23 INFO STARTED - ROUTES.PY
+2023-06-10 02:05:23 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 02:05:23 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 02:05:23 INFO  * Restarting with stat
+2023-06-10 02:05:23 INFO STARTED - ROUTES.PY
+2023-06-10 02:05:23 WARNING  * Debugger is active!
+2023-06-10 02:05:23 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:05:25 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:25 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:25 INFO 10.0.0.244 - - [10/Jun/2023 02:05:25] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:25 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:25 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:25 INFO 10.0.0.244 - - [10/Jun/2023 02:05:25] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:30 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:30 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:30 INFO 10.0.0.244 - - [10/Jun/2023 02:05:30] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:30 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:30 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:30 INFO 10.0.0.244 - - [10/Jun/2023 02:05:30] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:31 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:31 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:31 INFO 10.0.0.244 - - [10/Jun/2023 02:05:31] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:31 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:31 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:31 INFO 10.0.0.244 - - [10/Jun/2023 02:05:31] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:32 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:32 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:32 INFO 10.0.0.244 - - [10/Jun/2023 02:05:32] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:33 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:33 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:33 INFO 10.0.0.244 - - [10/Jun/2023 02:05:33] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:34 INFO 10.0.0.244 - - [10/Jun/2023 02:05:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:34 INFO 10.0.0.244 - - [10/Jun/2023 02:05:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:34 INFO 10.0.0.244 - - [10/Jun/2023 02:05:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:34 INFO 10.0.0.244 - - [10/Jun/2023 02:05:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:34 INFO 10.0.0.244 - - [10/Jun/2023 02:05:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:35 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:05:35 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:35 INFO 10.0.0.244 - - [10/Jun/2023 02:05:35] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:05:35 INFO 10.0.0.244 - - [10/Jun/2023 02:05:35] "GET / HTTP/1.1" 200 -
+2023-06-10 02:05:47 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:05:47 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:05:47 INFO 10.0.0.244 - - [10/Jun/2023 02:05:47] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:06:08 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:06:08 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:06:08 INFO 10.0.0.244 - - [10/Jun/2023 02:06:08] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:06:14 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:06:14 INFO  * Restarting with stat
+2023-06-10 02:06:14 INFO STARTED - ROUTES.PY
+2023-06-10 02:06:14 WARNING  * Debugger is active!
+2023-06-10 02:06:14 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:06:15 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:06:15 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:06:15 INFO 10.0.0.244 - - [10/Jun/2023 02:06:15] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:06:19 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:06:19 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:06:19 INFO 10.0.0.244 - - [10/Jun/2023 02:06:19] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:06:25 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:06:25 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:06:25 INFO 10.0.0.244 - - [10/Jun/2023 02:06:25] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:06:37 INFO 10.0.0.244 - - [10/Jun/2023 02:06:37] "[31m[1mPUT /addSummoner?name=timmy HTTP/1.1[0m" 405 -
+2023-06-10 02:06:43 INFO REQUEST - /addSummoner request received for timmy...
+2023-06-10 02:06:43 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:06:43 INFO 10.0.0.244 - - [10/Jun/2023 02:06:43] "POST /addSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:08:04 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:08:04 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:08:04 INFO 10.0.0.244 - - [10/Jun/2023 02:08:04] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:08:17 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:08:17 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:08:17 INFO 10.0.0.244 - - [10/Jun/2023 02:08:17] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:08:25 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:08:25 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:08:25 INFO 10.0.0.244 - - [10/Jun/2023 02:08:25] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:08:26 INFO 10.0.0.244 - - [10/Jun/2023 02:08:26] "GET / HTTP/1.1" 200 -
+2023-06-10 02:08:28 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:08:28 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:08:28 INFO 10.0.0.244 - - [10/Jun/2023 02:08:28] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:08:29 INFO 10.0.0.244 - - [10/Jun/2023 02:08:29] "GET / HTTP/1.1" 200 -
+2023-06-10 02:09:45 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:09:45 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:09:45 INFO 10.0.0.244 - - [10/Jun/2023 02:09:45] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:09:47 INFO 10.0.0.244 - - [10/Jun/2023 02:09:47] "GET / HTTP/1.1" 200 -
+2023-06-10 02:09:48 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:09:48 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:09:48 INFO 10.0.0.244 - - [10/Jun/2023 02:09:48] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:09:48 INFO 10.0.0.244 - - [10/Jun/2023 02:09:48] "GET / HTTP/1.1" 200 -
+2023-06-10 02:09:50 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:09:50 INFO 10.0.0.244 - - [10/Jun/2023 02:09:50] "GET / HTTP/1.1" 200 -
+2023-06-10 02:09:50 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:09:50 INFO 10.0.0.244 - - [10/Jun/2023 02:09:50] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:09:52 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:09:52 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:09:52 INFO 10.0.0.244 - - [10/Jun/2023 02:09:52] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:09:52 INFO 10.0.0.244 - - [10/Jun/2023 02:09:52] "GET / HTTP/1.1" 200 -
+2023-06-10 02:09:54 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:09:54 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:09:54 INFO 10.0.0.244 - - [10/Jun/2023 02:09:54] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:09:54 INFO 10.0.0.244 - - [10/Jun/2023 02:09:54] "GET / HTTP/1.1" 200 -
+2023-06-10 02:09:56 INFO 10.0.0.244 - - [10/Jun/2023 02:09:56] "GET / HTTP/1.1" 200 -
+2023-06-10 02:13:56 INFO 10.0.0.244 - - [10/Jun/2023 02:13:56] "GET / HTTP/1.1" 200 -
+2023-06-10 02:14:06 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:14:06 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:14:06 INFO 10.0.0.244 - - [10/Jun/2023 02:14:06] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:14:06 INFO 10.0.0.244 - - [10/Jun/2023 02:14:06] "GET / HTTP/1.1" 200 -
+2023-06-10 02:16:42 INFO 10.0.0.244 - - [10/Jun/2023 02:16:42] "GET / HTTP/1.1" 200 -
+2023-06-10 02:16:47 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:16:47 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:16:47 INFO 10.0.0.244 - - [10/Jun/2023 02:16:47] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:16:47 INFO 10.0.0.244 - - [10/Jun/2023 02:16:47] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:03 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:17:03 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:17:03 INFO 10.0.0.244 - - [10/Jun/2023 02:17:03] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:17:03 INFO 10.0.0.244 - - [10/Jun/2023 02:17:03] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:05 INFO 10.0.0.244 - - [10/Jun/2023 02:17:05] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:05 INFO 10.0.0.244 - - [10/Jun/2023 02:17:05] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:12 INFO STARTED - ROUTES.PY
+2023-06-10 02:17:12 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 02:17:12 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 02:17:12 INFO  * Restarting with stat
+2023-06-10 02:17:12 INFO STARTED - ROUTES.PY
+2023-06-10 02:17:12 WARNING  * Debugger is active!
+2023-06-10 02:17:12 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:17:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:17:16 INFO 10.0.0.244 - - [10/Jun/2023 02:17:16] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:16 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:17:16 INFO 10.0.0.244 - - [10/Jun/2023 02:17:16] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:17:19 INFO 10.0.0.244 - - [10/Jun/2023 02:17:19] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:42 INFO 10.0.0.244 - - [10/Jun/2023 02:17:42] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:44 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:17:44 INFO 10.0.0.244 - - [10/Jun/2023 02:17:44] "GET / HTTP/1.1" 200 -
+2023-06-10 02:17:44 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:17:44 INFO 10.0.0.244 - - [10/Jun/2023 02:17:44] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:17:46 INFO 10.0.0.244 - - [10/Jun/2023 02:17:46] "GET / HTTP/1.1" 200 -
+2023-06-10 02:20:23 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:20:23 INFO  * Restarting with stat
+2023-06-10 02:20:23 INFO STARTED - ROUTES.PY
+2023-06-10 02:20:23 WARNING  * Debugger is active!
+2023-06-10 02:20:23 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:20:24 INFO 10.0.0.244 - - [10/Jun/2023 02:20:24] "GET / HTTP/1.1" 200 -
+2023-06-10 02:20:30 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:20:30 INFO  * Restarting with stat
+2023-06-10 02:20:30 INFO STARTED - ROUTES.PY
+2023-06-10 02:20:30 WARNING  * Debugger is active!
+2023-06-10 02:20:30 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:20:32 INFO 10.0.0.244 - - [10/Jun/2023 02:20:32] "GET / HTTP/1.1" 200 -
+2023-06-10 02:20:37 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:20:37 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:20:37 INFO 10.0.0.244 - - [10/Jun/2023 02:20:37] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:20:37 INFO 10.0.0.244 - - [10/Jun/2023 02:20:37] "GET / HTTP/1.1" 200 -
+2023-06-10 02:20:39 INFO 10.0.0.244 - - [10/Jun/2023 02:20:39] "GET / HTTP/1.1" 200 -
+2023-06-10 02:20:59 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:20:59 INFO 10.0.0.244 - - [10/Jun/2023 02:20:59] "GET / HTTP/1.1" 200 -
+2023-06-10 02:20:59 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:20:59 INFO 10.0.0.244 - - [10/Jun/2023 02:20:59] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:21:35 INFO REQUEST - /removeSummoners request received...
+2023-06-10 02:21:35 INFO 10.0.0.244 - - [10/Jun/2023 02:21:35] "POST /removeSummoner?name=timmy HTTP/1.1" 200 -
+2023-06-10 02:21:39 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:21:39 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:21:39 INFO 10.0.0.244 - - [10/Jun/2023 02:21:39] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:21:46 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:21:46 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:21:46 INFO 10.0.0.244 - - [10/Jun/2023 02:21:46] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:23:00 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:23:00 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:23:00 INFO 10.0.0.244 - - [10/Jun/2023 02:23:00] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:23:00 INFO 10.0.0.244 - - [10/Jun/2023 02:23:00] "GET / HTTP/1.1" 200 -
+2023-06-10 02:23:02 INFO 10.0.0.244 - - [10/Jun/2023 02:23:02] "GET / HTTP/1.1" 200 -
+2023-06-10 02:23:51 INFO STARTED - ROUTES.PY
+2023-06-10 02:23:51 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 02:23:51 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 02:23:51 INFO  * Restarting with stat
+2023-06-10 02:23:51 INFO STARTED - ROUTES.PY
+2023-06-10 02:23:51 WARNING  * Debugger is active!
+2023-06-10 02:23:51 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:24:27 INFO 10.0.0.244 - - [10/Jun/2023 02:24:27] "GET / HTTP/1.1" 200 -
+2023-06-10 02:24:30 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:24:30 INFO 10.0.0.244 - - [10/Jun/2023 02:24:30] "GET / HTTP/1.1" 200 -
+2023-06-10 02:24:30 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:24:30 INFO 10.0.0.244 - - [10/Jun/2023 02:24:30] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:25:43 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:25:43 INFO 10.0.0.244 - - [10/Jun/2023 02:25:43] "GET / HTTP/1.1" 200 -
+2023-06-10 02:25:43 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:25:43 INFO 10.0.0.244 - - [10/Jun/2023 02:25:43] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:25:50 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 02:25:50 INFO  * Restarting with stat
+2023-06-10 02:25:50 INFO STARTED - ROUTES.PY
+2023-06-10 02:25:50 WARNING  * Debugger is active!
+2023-06-10 02:25:50 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:25:52 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:25:52 INFO 10.0.0.244 - - [10/Jun/2023 02:25:52] "GET / HTTP/1.1" 200 -
+2023-06-10 02:25:52 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:25:52 INFO 10.0.0.244 - - [10/Jun/2023 02:25:52] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:25:59 INFO 10.0.0.244 - - [10/Jun/2023 02:25:59] "GET / HTTP/1.1" 200 -
+2023-06-10 02:26:16 INFO 10.0.0.244 - - [10/Jun/2023 02:26:16] "GET / HTTP/1.1" 200 -
+2023-06-10 02:26:19 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:26:19 INFO 10.0.0.244 - - [10/Jun/2023 02:26:19] "GET / HTTP/1.1" 200 -
+2023-06-10 02:26:19 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:26:19 INFO 10.0.0.244 - - [10/Jun/2023 02:26:19] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:26:49 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:26:49 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:26:49 INFO 10.0.0.244 - - [10/Jun/2023 02:26:49] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:26:49 INFO 10.0.0.244 - - [10/Jun/2023 02:26:49] "GET / HTTP/1.1" 200 -
+2023-06-10 02:28:15 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:28:15 INFO 10.0.0.244 - - [10/Jun/2023 02:28:15] "GET / HTTP/1.1" 200 -
+2023-06-10 02:28:15 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:28:15 INFO 10.0.0.244 - - [10/Jun/2023 02:28:15] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:28:18 INFO 10.0.0.244 - - [10/Jun/2023 02:28:18] "GET / HTTP/1.1" 200 -
+2023-06-10 02:30:00 INFO 10.0.0.244 - - [10/Jun/2023 02:30:00] "GET / HTTP/1.1" 200 -
+2023-06-10 02:30:06 INFO 10.0.0.244 - - [10/Jun/2023 02:30:06] "GET / HTTP/1.1" 200 -
+2023-06-10 02:30:11 INFO STARTED - ROUTES.PY
+2023-06-10 02:30:11 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 02:30:11 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 02:30:11 INFO  * Restarting with stat
+2023-06-10 02:30:11 INFO STARTED - ROUTES.PY
+2023-06-10 02:30:11 WARNING  * Debugger is active!
+2023-06-10 02:30:11 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:30:16 INFO 10.0.0.244 - - [10/Jun/2023 02:30:16] "GET / HTTP/1.1" 200 -
+2023-06-10 02:31:27 INFO 10.0.0.244 - - [10/Jun/2023 02:31:27] "GET / HTTP/1.1" 200 -
+2023-06-10 02:31:30 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:31:30 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:31:30 INFO 10.0.0.244 - - [10/Jun/2023 02:31:30] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:31:30 INFO 10.0.0.244 - - [10/Jun/2023 02:31:30] "GET / HTTP/1.1" 200 -
+2023-06-10 02:31:48 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:31:48 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:31:48 INFO 10.0.0.244 - - [10/Jun/2023 02:31:48] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:31:48 INFO 10.0.0.244 - - [10/Jun/2023 02:31:48] "GET / HTTP/1.1" 200 -
+2023-06-10 02:31:50 INFO 10.0.0.244 - - [10/Jun/2023 02:31:50] "GET / HTTP/1.1" 200 -
+2023-06-10 02:31:52 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:31:52 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:31:52 INFO 10.0.0.244 - - [10/Jun/2023 02:31:52] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:31:52 INFO 10.0.0.244 - - [10/Jun/2023 02:31:52] "GET / HTTP/1.1" 200 -
+2023-06-10 02:31:59 INFO 10.0.0.244 - - [10/Jun/2023 02:31:59] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:01 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:32:01 INFO 10.0.0.244 - - [10/Jun/2023 02:32:01] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:01 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:32:01 INFO 10.0.0.244 - - [10/Jun/2023 02:32:01] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:32:30 INFO 10.0.0.244 - - [10/Jun/2023 02:32:30] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:31 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:32:31 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:32:31 INFO 10.0.0.244 - - [10/Jun/2023 02:32:31] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:32:31 INFO 10.0.0.244 - - [10/Jun/2023 02:32:31] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:33 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:32:33 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:32:33 INFO 10.0.0.244 - - [10/Jun/2023 02:32:33] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:32:33 INFO 10.0.0.244 - - [10/Jun/2023 02:32:33] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:32:34 INFO 10.0.0.244 - - [10/Jun/2023 02:32:34] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:32:34 INFO 10.0.0.244 - - [10/Jun/2023 02:32:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:32:37 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:32:37 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:32:37 INFO 10.0.0.244 - - [10/Jun/2023 02:32:37] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:32:37 INFO 10.0.0.244 - - [10/Jun/2023 02:32:37] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:50 INFO 10.0.0.244 - - [10/Jun/2023 02:32:50] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:52 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:32:52 INFO 10.0.0.244 - - [10/Jun/2023 02:32:52] "GET / HTTP/1.1" 200 -
+2023-06-10 02:32:52 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:32:52 INFO 10.0.0.244 - - [10/Jun/2023 02:32:52] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:32:54 INFO 10.0.0.244 - - [10/Jun/2023 02:32:54] "GET / HTTP/1.1" 200 -
+2023-06-10 02:33:27 INFO 10.0.0.244 - - [10/Jun/2023 02:33:27] "GET / HTTP/1.1" 200 -
+2023-06-10 02:33:30 INFO 10.0.0.244 - - [10/Jun/2023 02:33:30] "GET / HTTP/1.1" 200 -
+2023-06-10 02:33:32 INFO 10.0.0.244 - - [10/Jun/2023 02:33:32] "GET / HTTP/1.1" 200 -
+2023-06-10 02:33:36 INFO STARTED - ROUTES.PY
+2023-06-10 02:33:36 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 02:33:36 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 02:33:36 INFO  * Restarting with stat
+2023-06-10 02:33:36 INFO STARTED - ROUTES.PY
+2023-06-10 02:33:36 WARNING  * Debugger is active!
+2023-06-10 02:33:36 INFO  * Debugger PIN: 357-231-061
+2023-06-10 02:33:37 INFO 10.0.0.244 - - [10/Jun/2023 02:33:37] "GET / HTTP/1.1" 200 -
+2023-06-10 02:33:40 INFO 10.0.0.244 - - [10/Jun/2023 02:33:40] "GET / HTTP/1.1" 200 -
+2023-06-10 02:33:44 INFO 10.0.0.244 - - [10/Jun/2023 02:33:44] "GET / HTTP/1.1" 200 -
+2023-06-10 02:34:22 INFO 10.0.0.244 - - [10/Jun/2023 02:34:22] "GET / HTTP/1.1" 200 -
+2023-06-10 02:34:24 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:34:24 INFO 10.0.0.244 - - [10/Jun/2023 02:34:24] "GET / HTTP/1.1" 200 -
+2023-06-10 02:34:24 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:34:24 INFO 10.0.0.244 - - [10/Jun/2023 02:34:24] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:34:26 INFO 10.0.0.244 - - [10/Jun/2023 02:34:26] "GET / HTTP/1.1" 200 -
+2023-06-10 02:35:15 INFO 10.0.0.244 - - [10/Jun/2023 02:35:15] "GET / HTTP/1.1" 200 -
+2023-06-10 02:35:18 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:35:18 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:35:18 INFO 10.0.0.244 - - [10/Jun/2023 02:35:18] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:35:18 INFO 10.0.0.244 - - [10/Jun/2023 02:35:18] "GET / HTTP/1.1" 200 -
+2023-06-10 02:35:19 INFO 10.0.0.244 - - [10/Jun/2023 02:35:19] "GET / HTTP/1.1" 200 -
+2023-06-10 02:35:32 INFO 10.0.0.244 - - [10/Jun/2023 02:35:32] "GET / HTTP/1.1" 200 -
+2023-06-10 02:35:37 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:35:37 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:35:37 INFO 10.0.0.244 - - [10/Jun/2023 02:35:37] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:35:37 INFO 10.0.0.244 - - [10/Jun/2023 02:35:37] "GET / HTTP/1.1" 200 -
+2023-06-10 02:35:47 INFO REQUEST - /getSummoners request received...
+2023-06-10 02:35:47 INFO REQUEST - /getSummoners request returned!
+2023-06-10 02:35:47 INFO 10.0.0.150 - - [10/Jun/2023 02:35:47] "GET /getSummoners HTTP/1.1" 200 -
+2023-06-10 02:41:08 INFO 10.0.0.244 - - [10/Jun/2023 02:41:08] "GET / HTTP/1.1" 200 -
+2023-06-10 02:41:08 INFO 10.0.0.244 - - [10/Jun/2023 02:41:08] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:42:05 INFO 10.0.0.244 - - [10/Jun/2023 02:42:05] "GET / HTTP/1.1" 200 -
+2023-06-10 02:42:05 INFO 10.0.0.244 - - [10/Jun/2023 02:42:05] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:42:06 INFO 10.0.0.244 - - [10/Jun/2023 02:42:06] "GET / HTTP/1.1" 200 -
+2023-06-10 02:42:06 INFO 10.0.0.244 - - [10/Jun/2023 02:42:06] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:42:38 INFO 10.0.0.244 - - [10/Jun/2023 02:42:38] "GET / HTTP/1.1" 200 -
+2023-06-10 02:42:38 INFO 10.0.0.244 - - [10/Jun/2023 02:42:38] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:42:41 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 02:42:41 INFO REQUEST - /addSummoner request returned...
+2023-06-10 02:42:41 INFO 10.0.0.244 - - [10/Jun/2023 02:42:41] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 02:42:41 INFO 10.0.0.244 - - [10/Jun/2023 02:42:41] "GET / HTTP/1.1" 200 -
+2023-06-10 02:42:41 INFO 10.0.0.244 - - [10/Jun/2023 02:42:41] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:48:06 INFO 10.0.0.244 - - [10/Jun/2023 02:48:06] "GET / HTTP/1.1" 200 -
+2023-06-10 02:48:06 INFO 10.0.0.244 - - [10/Jun/2023 02:48:06] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:48:45 INFO 10.0.0.244 - - [10/Jun/2023 02:48:45] "GET / HTTP/1.1" 200 -
+2023-06-10 02:48:45 INFO 10.0.0.244 - - [10/Jun/2023 02:48:45] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:48:45 INFO 10.0.0.244 - - [10/Jun/2023 02:48:45] "GET / HTTP/1.1" 200 -
+2023-06-10 02:48:45 INFO 10.0.0.244 - - [10/Jun/2023 02:48:45] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:48:55 INFO 10.0.0.244 - - [10/Jun/2023 02:48:55] "GET / HTTP/1.1" 200 -
+2023-06-10 02:48:55 INFO 10.0.0.244 - - [10/Jun/2023 02:48:55] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:48:55 INFO 10.0.0.244 - - [10/Jun/2023 02:48:55] "GET / HTTP/1.1" 200 -
+2023-06-10 02:48:55 INFO 10.0.0.244 - - [10/Jun/2023 02:48:55] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:48:59 INFO 10.0.0.244 - - [10/Jun/2023 02:48:59] "GET / HTTP/1.1" 200 -
+2023-06-10 02:48:59 INFO 10.0.0.244 - - [10/Jun/2023 02:48:59] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:49:01 INFO 10.0.0.244 - - [10/Jun/2023 02:49:01] "GET / HTTP/1.1" 200 -
+2023-06-10 02:49:01 INFO 10.0.0.244 - - [10/Jun/2023 02:49:01] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:49:19 INFO 10.0.0.244 - - [10/Jun/2023 02:49:19] "GET / HTTP/1.1" 200 -
+2023-06-10 02:49:19 INFO 10.0.0.244 - - [10/Jun/2023 02:49:19] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:51:27 INFO 10.0.0.244 - - [10/Jun/2023 02:51:27] "GET / HTTP/1.1" 200 -
+2023-06-10 02:51:27 INFO 10.0.0.244 - - [10/Jun/2023 02:51:27] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:52:11 INFO 10.0.0.244 - - [10/Jun/2023 02:52:11] "GET / HTTP/1.1" 200 -
+2023-06-10 02:52:11 INFO 10.0.0.244 - - [10/Jun/2023 02:52:11] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:52:25 INFO 10.0.0.244 - - [10/Jun/2023 02:52:25] "GET / HTTP/1.1" 200 -
+2023-06-10 02:52:25 INFO 10.0.0.244 - - [10/Jun/2023 02:52:25] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:52:26 INFO 10.0.0.244 - - [10/Jun/2023 02:52:26] "GET / HTTP/1.1" 200 -
+2023-06-10 02:52:26 INFO 10.0.0.244 - - [10/Jun/2023 02:52:26] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:52:29 INFO 10.0.0.244 - - [10/Jun/2023 02:52:29] "GET / HTTP/1.1" 200 -
+2023-06-10 02:52:29 INFO 10.0.0.244 - - [10/Jun/2023 02:52:29] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:57:31 INFO 10.0.0.244 - - [10/Jun/2023 02:57:31] "GET / HTTP/1.1" 200 -
+2023-06-10 02:57:31 INFO 10.0.0.244 - - [10/Jun/2023 02:57:31] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:57:40 INFO 10.0.0.244 - - [10/Jun/2023 02:57:40] "GET / HTTP/1.1" 200 -
+2023-06-10 02:57:40 INFO 10.0.0.244 - - [10/Jun/2023 02:57:40] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:59:34 INFO 10.0.0.244 - - [10/Jun/2023 02:59:34] "GET / HTTP/1.1" 200 -
+2023-06-10 02:59:34 INFO 10.0.0.244 - - [10/Jun/2023 02:59:34] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:59:42 INFO 10.0.0.244 - - [10/Jun/2023 02:59:42] "GET / HTTP/1.1" 200 -
+2023-06-10 02:59:42 INFO 10.0.0.244 - - [10/Jun/2023 02:59:42] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 02:59:42 INFO 10.0.0.244 - - [10/Jun/2023 02:59:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-06-10 03:00:11 INFO 10.0.0.244 - - [10/Jun/2023 03:00:11] "GET / HTTP/1.1" 200 -
+2023-06-10 03:00:11 INFO 10.0.0.244 - - [10/Jun/2023 03:00:11] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:00:11 INFO 10.0.0.244 - - [10/Jun/2023 03:00:11] "GET / HTTP/1.1" 200 -
+2023-06-10 03:00:11 INFO 10.0.0.244 - - [10/Jun/2023 03:00:11] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:00:13 INFO 10.0.0.244 - - [10/Jun/2023 03:00:13] "GET / HTTP/1.1" 200 -
+2023-06-10 03:00:13 INFO 10.0.0.244 - - [10/Jun/2023 03:00:13] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:00:19 INFO 10.0.0.244 - - [10/Jun/2023 03:00:19] "GET / HTTP/1.1" 200 -
+2023-06-10 03:00:19 INFO 10.0.0.244 - - [10/Jun/2023 03:00:19] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:02:08 INFO 10.0.0.244 - - [10/Jun/2023 03:02:08] "GET / HTTP/1.1" 200 -
+2023-06-10 03:02:09 INFO 10.0.0.244 - - [10/Jun/2023 03:02:09] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:02:20 INFO 10.0.0.244 - - [10/Jun/2023 03:02:20] "GET / HTTP/1.1" 200 -
+2023-06-10 03:02:20 INFO 10.0.0.244 - - [10/Jun/2023 03:02:20] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:02:20 INFO 10.0.0.244 - - [10/Jun/2023 03:02:20] "GET / HTTP/1.1" 200 -
+2023-06-10 03:02:20 INFO 10.0.0.244 - - [10/Jun/2023 03:02:20] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:03:57 INFO 10.0.0.244 - - [10/Jun/2023 03:03:57] "GET / HTTP/1.1" 200 -
+2023-06-10 03:03:57 INFO 10.0.0.244 - - [10/Jun/2023 03:03:57] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:04:07 INFO 10.0.0.244 - - [10/Jun/2023 03:04:07] "GET / HTTP/1.1" 200 -
+2023-06-10 03:04:07 INFO 10.0.0.244 - - [10/Jun/2023 03:04:07] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:06:11 INFO 10.0.0.244 - - [10/Jun/2023 03:06:11] "GET / HTTP/1.1" 200 -
+2023-06-10 03:06:11 INFO 10.0.0.244 - - [10/Jun/2023 03:06:11] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:06:14 INFO 10.0.0.244 - - [10/Jun/2023 03:06:14] "GET / HTTP/1.1" 200 -
+2023-06-10 03:06:14 INFO 10.0.0.244 - - [10/Jun/2023 03:06:14] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:06:24 INFO 10.0.0.244 - - [10/Jun/2023 03:06:24] "GET / HTTP/1.1" 200 -
+2023-06-10 03:06:24 INFO 10.0.0.244 - - [10/Jun/2023 03:06:24] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:08:05 INFO 10.0.0.244 - - [10/Jun/2023 03:08:05] "GET / HTTP/1.1" 200 -
+2023-06-10 03:08:05 INFO 10.0.0.244 - - [10/Jun/2023 03:08:05] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:08:05 INFO 10.0.0.244 - - [10/Jun/2023 03:08:05] "GET / HTTP/1.1" 200 -
+2023-06-10 03:08:05 INFO 10.0.0.244 - - [10/Jun/2023 03:08:05] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:08:10 INFO 10.0.0.244 - - [10/Jun/2023 03:08:10] "GET / HTTP/1.1" 200 -
+2023-06-10 03:08:10 INFO 10.0.0.244 - - [10/Jun/2023 03:08:10] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:10:32 INFO 10.0.0.244 - - [10/Jun/2023 03:10:32] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:10:40 INFO 10.0.0.244 - - [10/Jun/2023 03:10:40] "GET / HTTP/1.1" 200 -
+2023-06-10 03:10:40 INFO 10.0.0.244 - - [10/Jun/2023 03:10:40] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:10:49 INFO 10.0.0.244 - - [10/Jun/2023 03:10:49] "GET / HTTP/1.1" 200 -
+2023-06-10 03:10:50 INFO 10.0.0.244 - - [10/Jun/2023 03:10:50] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:10:57 INFO 10.0.0.244 - - [10/Jun/2023 03:10:57] "GET / HTTP/1.1" 200 -
+2023-06-10 03:10:57 INFO 10.0.0.244 - - [10/Jun/2023 03:10:57] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:13:09 INFO 10.0.0.244 - - [10/Jun/2023 03:13:09] "GET / HTTP/1.1" 200 -
+2023-06-10 03:13:09 INFO 10.0.0.244 - - [10/Jun/2023 03:13:09] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:16:36 INFO 10.0.0.244 - - [10/Jun/2023 03:16:36] "GET / HTTP/1.1" 200 -
+2023-06-10 03:16:36 INFO 10.0.0.244 - - [10/Jun/2023 03:16:36] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:33 INFO 10.0.0.244 - - [10/Jun/2023 03:17:33] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:33 INFO 10.0.0.244 - - [10/Jun/2023 03:17:33] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:34 INFO 10.0.0.244 - - [10/Jun/2023 03:17:34] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:35 INFO 10.0.0.244 - - [10/Jun/2023 03:17:35] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:36 INFO 10.0.0.244 - - [10/Jun/2023 03:17:36] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:36 INFO 10.0.0.244 - - [10/Jun/2023 03:17:36] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:36 INFO 10.0.0.244 - - [10/Jun/2023 03:17:36] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:36 INFO 10.0.0.244 - - [10/Jun/2023 03:17:36] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:17:36 INFO 10.0.0.244 - - [10/Jun/2023 03:17:36] "GET / HTTP/1.1" 200 -
+2023-06-10 03:17:36 INFO 10.0.0.244 - - [10/Jun/2023 03:17:36] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:18:25 INFO 10.0.0.244 - - [10/Jun/2023 03:18:25] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:20:43 INFO 10.0.0.244 - - [10/Jun/2023 03:20:43] "GET / HTTP/1.1" 200 -
+2023-06-10 03:21:05 INFO 10.0.0.244 - - [10/Jun/2023 03:21:05] "GET / HTTP/1.1" 200 -
+2023-06-10 03:21:05 INFO 10.0.0.244 - - [10/Jun/2023 03:21:05] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:21:05 INFO 10.0.0.244 - - [10/Jun/2023 03:21:05] "GET / HTTP/1.1" 200 -
+2023-06-10 03:21:05 INFO 10.0.0.244 - - [10/Jun/2023 03:21:05] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:21:05 INFO 10.0.0.244 - - [10/Jun/2023 03:21:05] "GET / HTTP/1.1" 200 -
+2023-06-10 03:21:05 INFO 10.0.0.244 - - [10/Jun/2023 03:21:05] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:21:36 INFO 10.0.0.244 - - [10/Jun/2023 03:21:36] "GET / HTTP/1.1" 200 -
+2023-06-10 03:21:36 INFO 10.0.0.244 - - [10/Jun/2023 03:21:36] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:21:41 INFO 10.0.0.244 - - [10/Jun/2023 03:21:41] "GET / HTTP/1.1" 200 -
+2023-06-10 03:21:41 INFO 10.0.0.244 - - [10/Jun/2023 03:21:41] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:21:49 INFO 10.0.0.244 - - [10/Jun/2023 03:21:49] "GET / HTTP/1.1" 200 -
+2023-06-10 03:21:49 INFO 10.0.0.244 - - [10/Jun/2023 03:21:49] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2023-06-10 03:24:08 INFO 10.0.0.244 - - [10/Jun/2023 03:24:08] "GET / HTTP/1.1" 200 -
+2023-06-10 03:24:08 INFO 10.0.0.244 - - [10/Jun/2023 03:24:08] "GET /static/styles.css HTTP/1.1" 200 -
+2023-06-10 03:24:11 INFO 10.0.0.244 - - [10/Jun/2023 03:24:11] "GET / HTTP/1.1" 200 -
+2023-06-10 03:24:11 INFO 10.0.0.244 - - [10/Jun/2023 03:24:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:24:47 INFO STARTED - ROUTES.PY
+2023-06-10 03:24:47 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 03:24:47 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 03:24:47 INFO  * Restarting with stat
+2023-06-10 03:24:47 INFO STARTED - ROUTES.PY
+2023-06-10 03:24:47 WARNING  * Debugger is active!
+2023-06-10 03:24:47 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:24:57 INFO 10.0.0.244 - - [10/Jun/2023 03:24:57] "GET / HTTP/1.1" 200 -
+2023-06-10 03:24:57 INFO 10.0.0.244 - - [10/Jun/2023 03:24:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:26:03 INFO 10.0.0.244 - - [10/Jun/2023 03:26:03] "GET / HTTP/1.1" 200 -
+2023-06-10 03:26:03 INFO 10.0.0.244 - - [10/Jun/2023 03:26:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:26:17 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:26:17 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:26:17 INFO 10.0.0.244 - - [10/Jun/2023 03:26:17] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:26:25 INFO 10.0.0.244 - - [10/Jun/2023 03:26:25] "GET / HTTP/1.1" 200 -
+2023-06-10 03:26:25 INFO 10.0.0.244 - - [10/Jun/2023 03:26:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:26:31 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:26:31 INFO 10.0.0.244 - - [10/Jun/2023 03:26:31] "GET / HTTP/1.1" 200 -
+2023-06-10 03:26:31 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:26:31 INFO 10.0.0.244 - - [10/Jun/2023 03:26:31] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:26:31 INFO 10.0.0.244 - - [10/Jun/2023 03:26:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:26:33 INFO 10.0.0.244 - - [10/Jun/2023 03:26:33] "GET / HTTP/1.1" 200 -
+2023-06-10 03:26:33 INFO 10.0.0.244 - - [10/Jun/2023 03:26:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:26:42 INFO REQUEST - /getSummoners request received...
+2023-06-10 03:26:42 INFO REQUEST - /getSummoners request returned!
+2023-06-10 03:26:42 INFO 10.0.0.150 - - [10/Jun/2023 03:26:42] "GET /getSummoners HTTP/1.1" 200 -
+2023-06-10 03:27:27 INFO 10.0.0.244 - - [10/Jun/2023 03:27:27] "GET / HTTP/1.1" 200 -
+2023-06-10 03:27:27 INFO 10.0.0.244 - - [10/Jun/2023 03:27:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:28:14 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:28:14 INFO  * Restarting with stat
+2023-06-10 03:28:14 INFO STARTED - ROUTES.PY
+2023-06-10 03:28:14 WARNING  * Debugger is active!
+2023-06-10 03:28:14 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:30:36 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:30:36 INFO  * Restarting with stat
+2023-06-10 03:32:00 INFO STARTED - ROUTES.PY
+2023-06-10 03:32:00 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 03:32:00 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 03:32:00 INFO  * Restarting with stat
+2023-06-10 03:32:00 INFO STARTED - ROUTES.PY
+2023-06-10 03:32:00 WARNING  * Debugger is active!
+2023-06-10 03:32:00 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:32:00 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:32:01 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:32:01 INFO 10.0.0.244 - - [10/Jun/2023 03:32:01] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:32:30 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:32:30 INFO  * Restarting with stat
+2023-06-10 03:32:30 INFO STARTED - ROUTES.PY
+2023-06-10 03:32:30 WARNING  * Debugger is active!
+2023-06-10 03:32:30 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:32:32 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:32:32 INFO  * Restarting with stat
+2023-06-10 03:32:33 INFO STARTED - ROUTES.PY
+2023-06-10 03:32:33 WARNING  * Debugger is active!
+2023-06-10 03:32:33 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:32:34 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:32:34 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:32:34 INFO 10.0.0.244 - - [10/Jun/2023 03:32:34] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:32:40 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:32:40 INFO  * Restarting with stat
+2023-06-10 03:32:40 INFO STARTED - ROUTES.PY
+2023-06-10 03:32:40 WARNING  * Debugger is active!
+2023-06-10 03:32:40 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:32:50 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:32:50 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:32:50 INFO 10.0.0.244 - - [10/Jun/2023 03:32:50] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:34:11 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:34:11 INFO  * Restarting with stat
+2023-06-10 03:34:11 INFO STARTED - ROUTES.PY
+2023-06-10 03:34:11 WARNING  * Debugger is active!
+2023-06-10 03:34:11 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:34:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:34:16 INFO 10.0.0.244 - - [10/Jun/2023 03:34:16] "[35m[1mPOST /addSummoner HTTP/1.1[0m" 500 -
+2023-06-10 03:34:38 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:34:38 INFO  * Restarting with stat
+2023-06-10 03:34:38 INFO STARTED - ROUTES.PY
+2023-06-10 03:34:38 WARNING  * Debugger is active!
+2023-06-10 03:34:38 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:34:41 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:34:41 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:34:41 INFO 10.0.0.244 - - [10/Jun/2023 03:34:41] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:35:04 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:35:04 INFO  * Restarting with stat
+2023-06-10 03:35:04 INFO STARTED - ROUTES.PY
+2023-06-10 03:35:04 WARNING  * Debugger is active!
+2023-06-10 03:35:04 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:35:09 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:35:09 INFO  * Restarting with stat
+2023-06-10 03:35:09 INFO STARTED - ROUTES.PY
+2023-06-10 03:35:09 WARNING  * Debugger is active!
+2023-06-10 03:35:09 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:35:11 INFO STARTED - ROUTES.PY
+2023-06-10 03:35:11 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-10 03:35:11 INFO [33mPress CTRL+C to quit[0m
+2023-06-10 03:35:11 INFO  * Restarting with stat
+2023-06-10 03:35:11 INFO STARTED - ROUTES.PY
+2023-06-10 03:35:11 WARNING  * Debugger is active!
+2023-06-10 03:35:11 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:35:12 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:35:12 INFO  * Restarting with stat
+2023-06-10 03:35:12 INFO STARTED - ROUTES.PY
+2023-06-10 03:35:12 WARNING  * Debugger is active!
+2023-06-10 03:35:12 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:35:15 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:35:15 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:35:15 INFO 10.0.0.244 - - [10/Jun/2023 03:35:15] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:35:42 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:35:42 INFO  * Restarting with stat
+2023-06-10 03:35:42 INFO STARTED - ROUTES.PY
+2023-06-10 03:35:42 WARNING  * Debugger is active!
+2023-06-10 03:35:42 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:35:44 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:35:46 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:35:46 INFO 10.0.0.244 - - [10/Jun/2023 03:35:46] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:36:55 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:36:55 INFO  * Restarting with stat
+2023-06-10 03:36:55 INFO STARTED - ROUTES.PY
+2023-06-10 03:36:55 WARNING  * Debugger is active!
+2023-06-10 03:36:55 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:36:56 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:36:57 INFO REQUEST - /addSummoner request returned...
+2023-06-10 03:36:57 INFO 10.0.0.244 - - [10/Jun/2023 03:36:57] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:37:03 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:37:03 INFO 10.0.0.244 - - [10/Jun/2023 03:37:03] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:37:10 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:37:10 INFO 10.0.0.244 - - [10/Jun/2023 03:37:10] "GET / HTTP/1.1" 200 -
+2023-06-10 03:37:10 INFO 10.0.0.244 - - [10/Jun/2023 03:37:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:37:11 INFO 10.0.0.244 - - [10/Jun/2023 03:37:11] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:37:15 INFO 10.0.0.244 - - [10/Jun/2023 03:37:15] "GET / HTTP/1.1" 200 -
+2023-06-10 03:37:15 INFO 10.0.0.244 - - [10/Jun/2023 03:37:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:37:15 INFO 10.0.0.244 - - [10/Jun/2023 03:37:15] "GET / HTTP/1.1" 200 -
+2023-06-10 03:37:15 INFO 10.0.0.244 - - [10/Jun/2023 03:37:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:37:33 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:37:33 INFO  * Restarting with stat
+2023-06-10 03:37:33 INFO STARTED - ROUTES.PY
+2023-06-10 03:37:33 WARNING  * Debugger is active!
+2023-06-10 03:37:33 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:39:11 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:39:11 INFO  * Restarting with stat
+2023-06-10 03:39:12 INFO STARTED - ROUTES.PY
+2023-06-10 03:39:12 WARNING  * Debugger is active!
+2023-06-10 03:39:12 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:39:13 INFO 10.0.0.244 - - [10/Jun/2023 03:39:13] "GET / HTTP/1.1" 200 -
+2023-06-10 03:39:13 INFO 10.0.0.244 - - [10/Jun/2023 03:39:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:39:16 INFO REQUEST - /addSummoner request received for None...
+2023-06-10 03:39:17 INFO ERROR - /addSummoner request received for None was not processed. USER DOES NOT EXIST...
+2023-06-10 03:39:17 INFO 10.0.0.244 - - [10/Jun/2023 03:39:17] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-10 03:39:41 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:39:41 INFO  * Restarting with stat
+2023-06-10 03:39:41 INFO STARTED - ROUTES.PY
+2023-06-10 03:39:41 WARNING  * Debugger is active!
+2023-06-10 03:39:41 INFO  * Debugger PIN: 357-231-061
+2023-06-10 03:39:47 INFO 10.0.0.244 - - [10/Jun/2023 03:39:47] "GET / HTTP/1.1" 200 -
+2023-06-10 03:39:47 INFO 10.0.0.244 - - [10/Jun/2023 03:39:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-10 03:40:51 INFO  * Detected change in '/home/sawa/mainShare/devenv/gitrepos/riotMatchHistory/flask/routes.py', reloading
+2023-06-10 03:40:51 INFO  * Restarting with stat
+2023-06-10 03:40:51 INFO STARTED - ROUTES.PY
+2023-06-10 03:40:51 WARNING  * Debugger is active!
+2023-06-10 03:40:51 INFO  * Debugger PIN: 357-231-061

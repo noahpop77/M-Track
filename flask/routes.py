@@ -3,6 +3,15 @@ import os
 import sys
 import csv
 import logging
+import requests
+from configparser import ConfigParser
+
+# Config file initiators for use in getting API key from config.ini
+# in the sanity check for the /addSummoner API endpoint
+file = "../config.ini"
+config = ConfigParser()
+config.read(file)
+RIOTAPIKEY = config['KEYS']['riotapi']
 
 # init app
 app = Flask(__name__)
@@ -49,6 +58,7 @@ def removeSummoner():
     inlist = sum(indata, [])
     
     try:
+        # Edits the list by removing the name in the request
         inlist.remove(ingres)
 
         # File handler for appending to summoner list
@@ -62,7 +72,7 @@ def removeSummoner():
         # Closing file handlers for in and out
         outfile.close()
         infile.close()
-        
+
         logging.info(f"REQUEST - /removeSummoner request returned!")
         return inlist
     except:
@@ -72,9 +82,19 @@ def removeSummoner():
 @app.route('/addSummoner', methods=['POST', 'GET'])
 def addSummoner():
     logging.info(f"REQUEST - /addSummoner request received for {request.args.get('name')}...")
-    # Data sent to api decoded and ready to use as a string
-    ingres = request.args.get('name')
 
+    # Data sent to api decoded and ready to use as a string
+    #ingres = request.args.get('name')
+    ingres = request.data.decode("utf8")
+    print(request.data.decode("utf8"))
+
+    # Does a sanity check to see if the user exists before it adds it to the summoners.csv file
+    sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ingres.replace(' ','%20')}?api_key={RIOTAPIKEY}").status_code
+    if sumByName != 200:
+        logging.info(f"ERROR - /addSummoner request received for {request.args.get('name')} was not processed. USER DOES NOT EXIST...")
+        return "This summoner does not exist. Nothing will be added."
+
+    # File handling for file containing summoners
     try:
         infile = open("summoners.csv", "r")
     except FileNotFoundError:

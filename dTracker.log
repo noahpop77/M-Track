@@ -2580,3 +2580,82 @@ discord.ext.commands.errors.CommandNotFound: Command "WORD" is not found
 2023-06-08 22:58:23 INFO Bot started...
 2023-06-08 22:58:33 INFO Word command sent/
 2023-06-09 01:25:29 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 04:26:53 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 04:54:19 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 06:48:27 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 07:48:58 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 08:57:24 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 10:02:38 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 10:41:00 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 13:14:03 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 13:36:11 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 15:43:28 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 15:59:11 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 18:34:46 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 20:08:57 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 21:04:02 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 21:16:04 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 21:27:00 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 22:36:35 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-09 23:19:29 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-10 01:51:30 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-10 02:33:57 INFO Shard ID None has successfully RESUMED session 291640f73d0d9516c261e747b0ad4448.
+2023-06-10 02:35:46 INFO Starting decay command...
+2023-06-10 02:35:47 INFO dtrack function started, scanning for decay on account Reirai13
+2023-06-10 02:35:47 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Reirai13?api_key=<APIKEY>
+2023-06-10 02:35:47 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/F3ziDH9laOFz3V7TGbpuHUdknDg6hI14UZnU5tuor6uKrvc-5RmQ4DL2KzB0HoC0QrYTBYw6MUa9oQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 02:35:48 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/VMuUwCJjicRneYIRpO4Fd7BeTY2W0woTYAXsyaCYQ_fjRVQ?api_key=<APIKEY>
+2023-06-10 02:35:49 INFO Returning ... Reirai13 can not decay(too shit)
+2023-06-10 02:35:49 INFO dtrack function started, scanning for decay on account Haidder
+2023-06-10 02:35:49 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Haidder?api_key=<APIKEY>
+2023-06-10 02:35:49 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/YVPvHQCHGzlMNNNoI-0qX140K9aK35v95oggY-0AD0hcABJ-ZRGKRYptICsQTshKZsY8bDqmlSLpjw/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 02:35:50 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/ks4DkYeL3bvGKP8Ta54UcJIi6f2IcQwixbhzU_Lx-f_bKSU?api_key=<APIKEY>
+2023-06-10 02:35:53 INFO Return ... Haidder has 14.97 days until decay...
+2023-06-10 02:35:53 INFO dtrack function started, scanning for decay on account Komsmfpzf
+2023-06-10 02:35:53 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Komsmfpzf?api_key=<APIKEY>
+2023-06-10 02:35:54 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/3Elt5Jg0WapHShFgoPf5PQJomxAJmieoTSHOxILeu0zRqqCFcXVmIax7dnDo3mnFtNVWedz9D1-9MA/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 02:35:54 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/LQlImlxR2k5bQh3f74HnqzpsOtywgD47kLSNUBWHBg5-0V9d?api_key=<APIKEY>
+2023-06-10 02:35:58 INFO Return ... Komsmfpzf has 20.71 days until decay...
+2023-06-10 02:35:58 INFO dtrack function started, scanning for decay on account Chaddam
+2023-06-10 02:35:58 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Chaddam?api_key=<APIKEY>
+2023-06-10 02:35:58 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/K98iyuDBR8uxwPa9oV82iOXP4DQFwtbL7Wu4fOlk_mpK3HpAxr7af_-aykzxP8OFN9B6gbdQDEW11g/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 02:35:59 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/Jf8npaNoGpoxVF69V-vxi2ASL1g_IOa85P2yEAjX7DJNCBs?api_key=<APIKEY>
+2023-06-10 02:36:03 INFO Return ... Chaddam has 20.83 days until decay...
+2023-06-10 02:36:03 INFO dtrack function started, scanning for decay on account Simply Towerdive
+2023-06-10 02:36:03 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Simply%20Towerdive?api_key=<APIKEY>
+2023-06-10 02:36:04 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/WIfCgRK9navhTH29SLSwkqzeWs9iMw1tA0TNXW2symhSDKudx0K7vA7-vcMnIrEZbkWARVx6JwJnew/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 02:36:04 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/GD2XqXDZVCag_uWO5U9tFyGk7ghVw8O_gpEf6q71lNV5kV-e?api_key=<APIKEY>
+2023-06-10 02:36:05 INFO Returning ... Simply Towerdive can not decay(too shit)
+2023-06-10 03:26:41 INFO Starting decay command...
+2023-06-10 03:26:42 INFO dtrack function started, scanning for decay on account Reirai13
+2023-06-10 03:26:42 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Reirai13?api_key=<APIKEY>
+2023-06-10 03:26:42 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/F3ziDH9laOFz3V7TGbpuHUdknDg6hI14UZnU5tuor6uKrvc-5RmQ4DL2KzB0HoC0QrYTBYw6MUa9oQ/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 03:26:43 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/VMuUwCJjicRneYIRpO4Fd7BeTY2W0woTYAXsyaCYQ_fjRVQ?api_key=<APIKEY>
+2023-06-10 03:26:44 INFO Returning ... Reirai13 can not decay(too shit)
+2023-06-10 03:26:44 INFO dtrack function started, scanning for decay on account Haidder
+2023-06-10 03:26:44 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Haidder?api_key=<APIKEY>
+2023-06-10 03:26:44 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/YVPvHQCHGzlMNNNoI-0qX140K9aK35v95oggY-0AD0hcABJ-ZRGKRYptICsQTshKZsY8bDqmlSLpjw/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 03:26:45 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/ks4DkYeL3bvGKP8Ta54UcJIi6f2IcQwixbhzU_Lx-f_bKSU?api_key=<APIKEY>
+2023-06-10 03:26:48 INFO Return ... Haidder has 14.97 days until decay...
+2023-06-10 03:26:48 INFO dtrack function started, scanning for decay on account Komsmfpzf
+2023-06-10 03:26:48 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Komsmfpzf?api_key=<APIKEY>
+2023-06-10 03:26:49 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/3Elt5Jg0WapHShFgoPf5PQJomxAJmieoTSHOxILeu0zRqqCFcXVmIax7dnDo3mnFtNVWedz9D1-9MA/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 03:26:50 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/LQlImlxR2k5bQh3f74HnqzpsOtywgD47kLSNUBWHBg5-0V9d?api_key=<APIKEY>
+2023-06-10 03:26:53 INFO Return ... Komsmfpzf has 20.67 days until decay...
+2023-06-10 03:26:53 INFO dtrack function started, scanning for decay on account Chaddam
+2023-06-10 03:26:53 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Chaddam?api_key=<APIKEY>
+2023-06-10 03:26:53 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/K98iyuDBR8uxwPa9oV82iOXP4DQFwtbL7Wu4fOlk_mpK3HpAxr7af_-aykzxP8OFN9B6gbdQDEW11g/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 03:26:54 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/Jf8npaNoGpoxVF69V-vxi2ASL1g_IOa85P2yEAjX7DJNCBs?api_key=<APIKEY>
+2023-06-10 03:26:59 INFO Return ... Chaddam has 20.83 days until decay...
+2023-06-10 03:26:59 INFO dtrack function started, scanning for decay on account Simply Towerdive
+2023-06-10 03:26:59 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Simply%20Towerdive?api_key=<APIKEY>
+2023-06-10 03:26:59 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/WIfCgRK9navhTH29SLSwkqzeWs9iMw1tA0TNXW2symhSDKudx0K7vA7-vcMnIrEZbkWARVx6JwJnew/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 03:27:00 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/GD2XqXDZVCag_uWO5U9tFyGk7ghVw8O_gpEf6q71lNV5kV-e?api_key=<APIKEY>
+2023-06-10 03:27:00 INFO Returning ... Simply Towerdive can not decay(too shit)
+2023-06-10 03:27:00 INFO dtrack function started, scanning for decay on account timmy and boby
+2023-06-10 03:27:00 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/timmy%20and%20boby?api_key=<APIKEY>
+2023-06-10 03:27:01 INFO dtrack function started, scanning for decay on account einstein
+2023-06-10 03:27:01 INFO Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/einstein?api_key=<APIKEY>
+2023-06-10 03:27:02 INFO Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/_Y3Ra0mJQvrExnsvz9ZVzSuDCIqd2AZLQKHUZDuM-aYTpSCxxBWxhOVWNad78_sBLSCyIl4mnOGh4w/ids?queue=420&start=0&count=4&api_key=<APIKEY>
+2023-06-10 03:27:02 INFO Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/RYotomIsegI-vA6Y0OjluJLKzeOkbpShvwsHtN_6BHD17fC5mE9xrtwr2A?api_key=<APIKEY>
+2023-06-10 03:27:03 INFO Returning ... einstein can not decay(too shit)
