@@ -17,7 +17,8 @@ RIOTAPIKEY = config['KEYS']['riotapi']
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S", filename="routes.log")
+# Initializes logger for fask routes
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S", filename="../Logs/routes.log")
 logging.info("STARTED - ROUTES.PY")
 
 # Example test route that when it gets a GET request for the root of the web page it will return a jsonified response in the format of a python dictionary

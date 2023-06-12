@@ -1,0 +1,18 @@
+2023-06-12 02:07:59 INFO STARTED - ROUTES.PY
+2023-06-12 02:07:59 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.0.0.150:5000
+2023-06-12 02:07:59 INFO [33mPress CTRL+C to quit[0m
+2023-06-12 02:07:59 INFO  * Restarting with stat
+2023-06-12 02:07:59 INFO STARTED - ROUTES.PY
+2023-06-12 02:07:59 WARNING  * Debugger is active!
+2023-06-12 02:07:59 INFO  * Debugger PIN: 357-231-061
+2023-06-12 02:08:20 INFO 10.0.0.244 - - [12/Jun/2023 02:08:20] "GET / HTTP/1.1" 200 -
+2023-06-12 02:08:20 INFO 10.0.0.244 - - [12/Jun/2023 02:08:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-12 02:10:20 INFO REQUEST - /addSummoner request received for None...
+2023-06-12 02:10:21 INFO REQUEST - /addSummoner request returned...
+2023-06-12 02:10:21 INFO 10.0.0.244 - - [12/Jun/2023 02:10:21] "POST /addSummoner HTTP/1.1" 200 -
+2023-06-12 02:10:33 INFO 10.0.0.244 - - [12/Jun/2023 02:10:33] "GET / HTTP/1.1" 200 -
+2023-06-12 02:10:33 INFO 10.0.0.244 - - [12/Jun/2023 02:10:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2023-06-12 02:10:44 INFO REQUEST - /getSummoners request received...
+2023-06-12 02:10:44 INFO REQUEST - /getSummoners request returned!
+2023-06-12 02:10:44 INFO 10.0.0.150 - - [12/Jun/2023 02:10:44] "GET /getSummoners HTTP/1.1" 200 -

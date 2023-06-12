@@ -79,6 +79,12 @@ def dtrack(ans, mykey):
         #print(f"Game ID: \t\t\t{i}")
         matchData.append(requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json())
     
+
+
+    ########################################
+    # Math for calculating the decay timer #
+    ########################################
+
     # Sets times and diffs variables
     times = []
     diffs = []

@@ -6,8 +6,8 @@ from configparser import ConfigParser
 from pyfiglet import figlet_format
 
 from dtrack import dtrack
-
 from dtrack import bcolors
+
 # Sets up the config file for the tokens
 # This way I can add the config.ini file to the git ignore listing and not show my tokens when working on this repository
 # YOU WILL NEED TO MAKE YOUR OWN CONFIG.INI FILE OR HARD CODE IN YOUR OWN KEY VALUES WHERE RIOTAPIKEY AND DISCORDTOKEN ARE DECLARED
@@ -15,7 +15,7 @@ file = "config.ini"
 config = ConfigParser()
 config.read(file)
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S", filename="dTracker.log")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S", filename="./Logs/dTracker.log")
 logging.info("STARTED - DTracker")
 
 RIOTAPIKEY = config['KEYS']['riotapi']
@@ -76,7 +76,7 @@ def run():
         
         embed.set_footer(text="All hail Brian Sawa the one true leader")
         await ctx.send(embed=embed)
-        #await ctx.send(f"```{dtrackResponse}```")
+    
     # Init Bot
     bot.run(DISCORDTOKEN)
 
