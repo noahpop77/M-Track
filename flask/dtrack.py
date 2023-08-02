@@ -19,29 +19,35 @@ class bcolors:
 
 # THE CHONKY BOIIIIIIIIIIIIIIIIIIII
 def dtrack(ans, mykey):
-
     logging.info(f"dtrack function started, scanning for decay on account {ans}")
-
+    if ans == "" or ans == None:
+        return "--No Summoner Name was provided--"
     # Sets API key variable
     APIKEY = mykey
     # Searches theough 4 matches to determine decay since the MAX you can have banked is 4 matches played immediately after one another to a cap of 28 days so no point searching past 4 matches
     matchCount = 4
 
-    logging.info(f"Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key=<APIKEY>")
+    #logging.info(f"Querying ... https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key=<APIKEY>")
     # Gets PUUID from Summoner Name
-    sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}").json()
+    sumByNameRequest = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
+    
+    sumByNameJson = sumByNameRequest.json()
+    
+    if sumByNameRequest.status_code != 200:
+        logging.info(f"ERROR - /addSummoner request received for {ans} was not processed. USER DOES NOT EXIST...")
+        return f"--This summoner does not exist--"
+    
+    puuid = sumByNameJson['puuid']
+    summonerid = sumByNameJson['id']
 
-    logging.info(f"Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{sumByName['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key=<APIKEY>")
+    #logging.info(f"Querying ... https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start=0&count={matchCount}&api_key=<APIKEY>")
     # Converts response to JSON
-    matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{sumByName['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
+    matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
 
 
-    print(f"Player User ID: \t\t{sumByName['puuid']}")
-    print(f"Player Summoner ID {sumByName['id']}")
-
-    logging.info(f"Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{sumByName['id']}?api_key=<APIKEY>")
+    #logging.info(f"Querying ... https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerid}?api_key=<APIKEY>")
     # Request to get full payload containing player rank
-    summonerRankData = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{sumByName['id']}?api_key={APIKEY}").json()
+    summonerRankData = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerid}?api_key={APIKEY}").json()
 
     # Catches unexpected output from the riot api for players who dont have sufficient ranked data causing the return to be []
     try:
@@ -52,18 +58,13 @@ def dtrack(ans, mykey):
         for i in summonerRankData:
             if i['queueType'] == "RANKED_SOLO_5x5":
                 summonerRank = i['tier']
-        
-        print(f"\nCurrent Rank: \t\t\t{summonerRank}")
 
         # Checks the rank of the player and if they are below DIAMOND then the player can not decay so it returns a relevant response and stops the function early to not waste time
         if summonerRank not in ["DIAMOND", "MASTER", "GRANDMASTER", "CHALLENGER"]:
-            print(bcolors.FAIL + "Rank too low to decay" + bcolors.ENDC)
-            logging.info(f"Returning ... {ans} can not decay(too shit)")
-            return f"Not high enough elo to decay(too shit)"
-        print("Fetching Ranked data...")
+            logging.info(f"Returning ... {ans} can not decay")
+            return f"{ans} is not high enough elo to decay"
     except:
-        print(bcolors.FAIL + f"{ans} has insufficient ranked information at the moment" + bcolors.ENDC)
-        logging.info(f"Returning ... {ans} has insufficient ranked information at the moment")
+        #logging.info(f"Returning ... {ans} has insufficient ranked information at the moment")
         return f"{ans} has insufficient ranked information at the moment"
     
     
@@ -76,7 +77,6 @@ def dtrack(ans, mykey):
     
     
     for i in matchList:
-        #print(f"Game ID: \t\t\t{i}")
         matchData.append(requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json())
     
 
@@ -94,11 +94,6 @@ def dtrack(ans, mykey):
         gameDate = i['info']['gameCreation']
         times.append(gameDate)
 
-    # Prints Game IDs that are getting scanned
-    print("")
-    for i in matchList:
-        print(f"Game ID: \t\t\t{i}")
-
     # Gets the current time in unix epoch time
     ms = datetime.datetime.now()
     times.append(int(time.mktime(ms.timetuple()) * 1000))
@@ -110,10 +105,6 @@ def dtrack(ans, mykey):
             diffs.append(times[index] - times[index + 1])
         except IndexError:
             continue
-
-    #print(f"Diffs: {diffs}")
-    print("")
-    for i in diffs: print(f"Game Time differentials: \t{i}")
 
     banked = 0
     hoursdiff = []
@@ -135,14 +126,9 @@ def dtrack(ans, mykey):
     banked = round(banked, 2)
     banked = banked
 
-    print(f"\nBanked: {banked}")
-
     if banked == 0.0:
-        print("PLAY MORE GAMES")
         logging.info(f"Return ... Execution ended for {ans}, play more games")
-        return "PLAY GAME NOW BITCH (stream that shit)"
+        return "PLAY GAMEs NOW you are DECAYING!"
     else:
-        print(bcolors.OKCYAN + f"{banked:.2f} days until decay..." + bcolors.ENDC)
         logging.info(f"Return ... {ans} has {banked:.2f} days until decay...")
-        #return f"{ans} \t {banked:.2f} days until decay..."
-        return f"{banked:.2f}"
+        return f"{ans} will decay in {banked:.2f} days"
