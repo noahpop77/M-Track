@@ -1,0 +1,146 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        
+GameCounter = 1
+Game Version: 13.24.547.9214
+Game: NA1_4861935017
+Game Duration: 0.0 mins
+Ahad (Lucian) got First blood
++--------+
+| Team 1 |
++------------------+---------+----+----+----+-----+----------+----------+
+|     Sum Name     |  Champ  | K  | D  | A  | LvL | $ Earned | TimeDead |
++------------------+---------+----+----+----+-----+----------+----------+
+|       Vınø       | Warwick | 13 | 8  | 10 |  17 |  14029   |   261    |
+|   Master Eyla    |  Lillia | 16 | 6  | 9  |  17 |  16903   |   189    |
+|     Chaddam      |   Ekko  | 13 | 4  | 13 |  17 |  16683   |   113    |
+|       Ahad       |  Lucian | 7  | 13 | 13 |  14 |  11527   |   345    |
+| White and Beasty |   Nami  | 2  | 6  | 30 |  15 |  10131   |   131    |
++------------------+---------+----+----+----+-----+----------+----------+
++--------+
+| Team 2 |
++------------------+----------+----+----+----+-----+----------+----------+
+|     Sum Name     |  Champ   | K  | D  | A  | LvL | $ Earned | TimeDead |
++------------------+----------+----+----+----+-----+----------+----------+
+|      Mazee       | Camille  | 16 | 8  | 4  |  16 |  14656   |   217    |
+|      aøtism      | Nocturne | 3  | 8  | 11 |  14 |  10260   |   222    |
+|     aerichu      |  Diana   | 5  | 10 | 7  |  14 |  10636   |   352    |
+| tempjppnyliavqxi | Caitlyn  | 11 | 12 | 11 |  14 |  14868   |   319    |
+|     SICKCXNT     | Nautilus | 2  | 13 | 17 |  13 |   8232   |   302    |
++------------------+----------+----+----+----+-----+----------+----------+
++----------------------------+-----------+
+|        Chaddam Stat        |   Value   |
++----------------------------+-----------+
+|     XP/min (level 17)      |  -8872.31 |
+|          Assist/m          |    -6.6   |
+|      Structure Damage      |   12603   |
+|    Structure Damage/min    |  -6397.62 |
+|      Objective Damage      |   38806   |
+|    Objective Damage/min    | -19698.98 |
+|   Neutral Monster Damage   |   26203   |
+| Neutral Monster Damage/min | -13301.35 |
+|          Gold/min          | 555174.71 |
+|    Total Time CC Dealt     |    388    |
+|    Time CCing others(s)    |     22    |
+|     Total Healing Done     |   12085   |
++----------------------------+-----------+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        
+GameCounter = 2
+Game Version: 13.24.547.9214
+Game: NA1_4861910615
+Game Duration: 0.0 mins
+Leroy IV (Khazix) got First blood
++--------+
+| Team 1 |
++-------------+------------+----+---+----+-----+----------+----------+
+|   Sum Name  |   Champ    | K  | D | A  | LvL | $ Earned | TimeDead |
++-------------+------------+----+---+----+-----+----------+----------+
+|   Kennies   |    Sona    | 2  | 5 | 11 |  11 |   6956   |    82    |
+|   Leroy IV  |   Khazix   | 11 | 3 | 7  |  15 |  12438   |   115    |
+|   Chaddam   |    Ekko    | 2  | 3 | 4  |  15 |   9377   |   104    |
+|  Tradition  |    Ashe    | 4  | 3 | 6  |  11 |   8308   |    54    |
+| Turkosaurus | Tryndamere | 17 | 1 | 6  |  17 |  16232   |    49    |
++-------------+------------+----+---+----+-----+----------+----------+
++--------+
+| Team 2 |
++----------------+-----------+---+----+---+-----+----------+----------+
+|    Sum Name    |   Champ   | K | D  | A | LvL | $ Earned | TimeDead |
++----------------+-----------+---+----+---+-----+----------+----------+
+|    lrobins     |   Urgot   | 1 | 12 | 1 |  13 |   7343   |   231    |
+|     IVIyth     |  XinZhao  | 1 | 7  | 8 |  12 |   7845   |   162    |
+|   ImaKitcat    | Lissandra | 3 | 6  | 0 |  13 |   7930   |   175    |
+|    0NLYBLUE    |   Twitch  | 5 | 7  | 7 |  12 |   9498   |   152    |
+| CLG DoubIelift |   Karma   | 5 | 4  | 6 |  11 |   7927   |    75    |
++----------------+-----------+---+----+---+-----+----------+----------+
++----------------------------+-----------+
+|        Chaddam Stat        |   Value   |
++----------------------------+-----------+
+|     XP/min (level 15)      |  -6604.04 |
+|          Assist/m          |   -2.02   |
+|      Structure Damage      |    6086   |
+|    Structure Damage/min    |  -3079.15 |
+|      Objective Damage      |   24592   |
+|    Objective Damage/min    | -12442.09 |
+|   Neutral Monster Damage   |   18506   |
+| Neutral Monster Damage/min |  -9362.94 |
+|          Gold/min          | 399304.47 |
+|    Total Time CC Dealt     |    265    |
+|    Time CCing others(s)    |     6     |
+|     Total Healing Done     |    2787   |
++----------------------------+-----------+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        
+GameCounter = 3
+Game Version: 13.23.544.5515
+Game: NA1_4846113883
+Game Duration: 0.0 mins
+mJiang (Draven) got First blood
++--------+
+| Team 1 |
++-------------+--------+----+----+----+-----+----------+----------+
+|   Sum Name  | Champ  | K  | D  | A  | LvL | $ Earned | TimeDead |
++-------------+--------+----+----+----+-----+----------+----------+
+|    jcsys    |  Yone  | 4  | 8  | 4  |  15 |  10853   |   261    |
+|  KR sexKing | Briar  | 11 | 15 | 10 |  13 |  12052   |   294    |
+|    Outkai   | Veigar | 7  | 7  | 7  |  13 |   9877   |   170    |
+|   dmf2810   | Ezreal | 11 | 7  | 5  |  12 |  12222   |   215    |
+| WonderPanda | Senna  | 1  | 8  | 17 |  11 |   8080   |   117    |
++-------------+--------+----+----+----+-----+----------+----------+
++--------+
+| Team 2 |
++-----------+--------+----+---+----+-----+----------+----------+
+|  Sum Name | Champ  | K  | D | A  | LvL | $ Earned | TimeDead |
++-----------+--------+----+---+----+-----+----------+----------+
+| Kampsycho | Illaoi | 4  | 6 | 5  |  16 |  11266   |   172    |
+|  Chaddam  |  Ekko  | 5  | 9 | 8  |  15 |  11474   |   172    |
+|   Toctex  |  Vex   | 9  | 5 | 10 |  16 |  14216   |    76    |
+|   mJiang  | Draven | 14 | 8 | 6  |  15 |  16898   |   173    |
+|  An Icon  | Sylas  | 13 | 6 | 13 |  13 |  12025   |    94    |
++-----------+--------+----+---+----+-----+----------+----------+
++----------------------------+-----------+
+|        Chaddam Stat        |   Value   |
++----------------------------+-----------+
+|     XP/min (level 15)      |  -7184.09 |
+|          Assist/m          |   -4.05   |
+|      Structure Damage      |    219    |
+|    Structure Damage/min    |  -110.96  |
+|      Objective Damage      |   28805   |
+|    Objective Damage/min    | -14594.66 |
+|   Neutral Monster Damage   |   28586   |
+| Neutral Monster Damage/min |  -14483.7 |
+|          Gold/min          | 435721.52 |
+|    Total Time CC Dealt     |    353    |
+|    Time CCing others(s)    |     19    |
+|     Total Healing Done     |   14917   |
++----------------------------+-----------+
+--------------------------
+Average seconds Chaddam has spent dead per game in the last 3 ranked games: 129.66666666666666
+--------------------------
+
+ Duo Game Tracker
+
++----------+-----------------+
+| Sum Name | Duo Game Number |
++----------+-----------------+
++----------+-----------------+
