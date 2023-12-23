@@ -7,9 +7,10 @@ import json
 
 from os.path import abspath, dirname
 
-from mTrack.fetch import fetchFromDB
-from mTrack.update import mtrack
-from mTrack.decayTracker import dtrack
+sys.path.append(dirname(dirname(abspath(__file__))))
+from mTrack.decayTracker import *
+from mTrack.update import *
+from mTrack.fetch import *
 
 
 # Config file initiators for use in getting API key from config.ini
@@ -29,9 +30,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 errorlog = logging.getLogger('werkzeug')
 errorlog.setLevel(logging.ERROR)
 
-
 logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
 
+
+# TODO: Determine if this is needed
 @app.route('/getSummoner', methods=['POST', 'GET'])
 def addSummoner():
     # Data sent to api decoded and ready to use as a string
@@ -42,13 +44,14 @@ def addSummoner():
     decayTimer = dtrack(ingres, RIOTAPIKEY)
     return decayTimer
 
+# TODO: Need to fix this shit
 @app.route('/', methods=['GET'])
 def homePage():
     logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
     return render_template('mtrack.html')
 
 
-'''
+# Actual webpage for the match history of a person
 @app.route('/matchHistory', methods=['GET'])
 def matchHistory():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
@@ -76,9 +79,9 @@ def matchHistory():
             break
 
     return render_template('matchHistory.html', gameData=gameData, playerStats=playerStats, zip=zip)
-'''
 
 
+# TODO: Look for cleanup
 @app.route('/summonerSearch', methods=['POST'])
 def summonerSearch():
     print("\nSummonerSearch endpoint hit\n")
@@ -117,6 +120,7 @@ def summonerSearch():
 
     #return render_template('matchHistory.html', ingres=ingres, gameData=gameData, playerStats=playerStats, zip=zip)
 
+# TODO: Look at cleanup
 @app.route('/getHistory', methods=['POST'])
 def getHistory():
     print("\ngetHistory endpoint hit\n")

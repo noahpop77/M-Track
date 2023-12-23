@@ -1,0 +1,1 @@
+DELETE FROM matchHistory WHERE gameID = 'NA1_4861935017';

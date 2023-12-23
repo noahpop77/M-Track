@@ -5,17 +5,24 @@ import operator
 
 os.system("clear")
 
+# Config file initiators for use in getting API key from config.ini
+# in the sanity check for the /addSummoner API endpoint
+file = "../config.ini"
+config = ConfigParser()
+config.read(file)
+
+RIOTAPIKEY = config['KEYS']['riotapi']
+
 #ans = input("What summoner name do you want to scan for matches: ")
 ans = "Chaddam"
-APIKEY = "RGAPI-ba9c8d04-0038-4507-8bcb-91a96b39c08a"
 matchCount = 3
 
 #Gets PUUID from Summoner Name
 print("Making API call...")
-sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
+sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={RIOTAPIKEY}")
 print(f"Querying summoner name for PUUID: {sumByName}")
 myID = sumByName.json()
-matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{myID['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
+matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{myID['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={RIOTAPIKEY}")
 print(f"Querying PUUID for Match IDs: {matches}")
 
 # Gets return as a json/list, Splits it into list of dictionaries
@@ -29,7 +36,7 @@ for i in sepList:   # Cuts random useless characters in match list
 # Appends it to a new dictionary
 matchData = []
 for i in matchList:
-    tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
+    tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={RIOTAPIKEY}").json()
     matchData.append(tempMatch)
 
 duoTracker = []
