@@ -35,20 +35,33 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone https://github.com/noahpop77/M-Track.git
    ```
-2. Clone the repository:
+2. Move into the directory:
 
    ```bash
    cd M-Track
    ```
-3. Clone the repository:
+3. Install the requirements:
 
    ```bash
    pip install -r requirements.txt
    ```
-4. Clone the repository:
+4. Run the flask server:
 
    ```bash
+   cd flask
    python3 routes.py
    ```
+
+## Personal Notes
+
+To start the app go into the correct directory and run the routes.py file.
+```bash
+sawa@sawa:~/mainShare/devenv/gitrepos/M-Track/flask$ sudo python3 routes.py
+```
+
+For now I will be working out of the `http://10.0.0.150/matchHistory` site.
+
+This spawns from the projects web server to refine the process of performign all of the API and SQL calls in the back end and making the front end more digestable. Also revise the data schema in the backend.
+
 
 hehehehehe
