@@ -1,9 +1,4 @@
-import requests
-import os
-import operator
-import csv
 import mysql.connector
-import json
 from configparser import ConfigParser
 
 # Config file initiators for use in getting API key from config.ini

@@ -1,7 +1,4 @@
 import requests
-import os
-import operator
-import csv
 import mysql.connector
 import json
 from datetime import datetime
