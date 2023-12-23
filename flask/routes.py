@@ -6,10 +6,14 @@ from configparser import ConfigParser
 import json
 
 from os.path import abspath, dirname
+
+from mTrack.fetch import fetchFromDB
+from mTrack.update import mtrack
+from mTrack.decayTracker import dtrack
 sys.path.append(dirname(dirname(abspath(__file__))))
-from mTrack.decayTracker import *
-from mTrack.update import *
-from mTrack.fetch import *
+#from mTrack.decayTracker import *
+#from mTrack.update import *
+#from mTrack.fetch import *
 
 # Config file initiators for use in getting API key from config.ini
 # in the sanity check for the /addSummoner API endpoint
