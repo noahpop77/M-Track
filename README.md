@@ -63,5 +63,12 @@ For now I will be working out of the `http://10.0.0.150/matchHistory` site.
 
 This spawns from the projects web server to refine the process of performign all of the API and SQL calls in the back end and making the front end more digestable. Also revise the data schema in the backend.
 
+- Working out of my ubuntu server for now.
+- This is a great tool for working with the data to format it
+   - `https://jsonformatter.curiousconcept.com/#`
+- Riot games developer portal: `https://developer.riotgames.com/`
+- Riot IDs that I can use for testing:
+   - `https://www.op.gg/summoners/na/Chaddam-NA1`
+   - `https://www.op.gg/summoners/na/Scyrnn-NA1`
 
 hehehehehe
