@@ -47,6 +47,8 @@ def homePage():
     logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
     return render_template('mtrack.html')
 
+
+'''
 @app.route('/matchHistory', methods=['GET'])
 def matchHistory():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
@@ -74,18 +76,17 @@ def matchHistory():
             break
 
     return render_template('matchHistory.html', gameData=gameData, playerStats=playerStats, zip=zip)
+'''
+
 
 @app.route('/summonerSearch', methods=['POST'])
 def summonerSearch():
+    print("\nSummonerSearch endpoint hit\n")
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
 
     ingres = request.data.decode("utf8")
-    print(f"ingres:{ingres}")
-    print(f"ingres:{type(ingres)}")
 
     gameData = fetchFromDB(ingres, 20)
-    
-    #print(f"gameData:{gameData}")
 
     if len(gameData) < 1:
         print("Fetching new user data")
@@ -95,8 +96,6 @@ def summonerSearch():
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
-    #print(f"matchData:\n{matchData}")
-    print(f"matchData:{len(matchData)}")
 
     playerStats = []
     # Loops through match data, gets player card data and 
@@ -110,8 +109,6 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
-
-    print(f"playerStats:{len(playerStats)}")
 
     return jsonify({ 
         'gameData': gameData,
@@ -124,11 +121,10 @@ def summonerSearch():
 def getHistory():
     print("\ngetHistory endpoint hit\n")
     ingres = request.data.decode("utf8")
-    print(f"INGRES IS THIS {ingres}")
 
     mtrack(ingres, RIOTAPIKEY)
     gameData = fetchFromDB(ingres, 20)
-
+    
     if len(gameData) < 1:
         print("Fetching new user data")
         mtrack(ingres, RIOTAPIKEY)
@@ -137,8 +133,6 @@ def getHistory():
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
-    #print(f"matchData:\n{matchData}")
-    print(f"matchData:{len(matchData)}")
 
     playerStats = []
     # Loops through match data, gets player card data and 
@@ -152,8 +146,6 @@ def getHistory():
             break
         except Exception as e:
             print(e)
-
-    print(f"playerStats:{len(playerStats)}")
 
     return jsonify({ 
         'gameData': gameData,
