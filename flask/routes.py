@@ -78,10 +78,13 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
+    
+    #print(matchData)
 
     return jsonify({ 
         'gameData': gameData,
-        'playerStats': playerStats
+        'playerStats': playerStats,
+        'matchData': matchData
     })
 
     #return render_template('matchHistory.html', ingres=ingres, gameData=gameData, playerStats=playerStats, zip=zip)
@@ -117,9 +120,14 @@ def getHistory():
         except Exception as e:
             print(e)
 
+    print(f"\n\nGAME DATA\n\n{gameData}")
+    print(f"\n\PLAYER STATS\n\n{playerStats}")
+    print(f"\n\MATCH DATA\n\n{matchData}")
+
     return jsonify({ 
         'gameData': gameData,
-        'playerStats': playerStats
+        'playerStats': playerStats,
+        'matchData': matchData
     })
 
 
@@ -132,6 +140,6 @@ if __name__ == '__main__':
         print(f"Running app at - {config['SITE']['address']}:{config['SITE']['port']}")
 
         app.run(debug=True, host=config['SITE']['address'], port=config['SITE']['port'])
-        
+
     except KeyboardInterrupt:
         sys.exit(0)

@@ -199,3 +199,44 @@ img {vertical-align: middle;}
 .accordion-item.active .accordion-body {
   display: block;
 }
+
+
+
+
+
+
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 20px;
+  justify-content: center;
+}
+
+.nested-container {
+  width: 100%;
+  padding: 2px;
+  margin-right: 10px;
+  border: none;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.item-container {
+  width: 150px;
+  padding: 2px;
+  margin-right: 10px;
+  border: none;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.match-card-text {
+font-size: 15px;
+text-align: center;
+}
