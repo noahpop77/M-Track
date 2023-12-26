@@ -75,7 +75,7 @@
       <section class="searchSection text-dark pb-1 pt-3">
         <div class="container">
           <div class="align-items-center">
-            <h3 id="responseParagraph" class="mb-3 mb-md-0 text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 35px;">{{ ingres }}</h3>
+            <h3 id="responseParagraph" class="mb-3 mb-md-0 text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 35px;"></h3>
 
           </div>
         </div>
@@ -83,71 +83,14 @@
     </section>
 
 
-    <script>
-      async function summonerSearch() {
-          var url = "http://10.0.0.150/summonerSearch";
 
-          var responseParagraph = document.getElementById('responseParagraph');
-          var summonerName = document.getElementById("nameInput").value;
-          console.log("Summoner Name:", summonerName);
-          await fetch(url, {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json"
-              },
-              body: summonerName
-          })
-          .then(function(response) {
-              // Check if the response was successful
-              if (response.ok) {
-                  return response.text(); // Convert response to text
-              } else {
-                  throw new Error('Error: ' + response.status); // Throw an error
-              }
-          })
-          .then(function(answer) {
-              responseParagraph.textContent = summonerName; // Display response data in paragraph
-              //location.reload();
-          })
-          .catch(function(error) {
-              responseParagraph.textContent = error.message; // Display error message
-          });
-      }
-    </script>
 
-    <script>
-      async function sendPostRequest() {
-          var url = "http://10.0.0.150/getHistory";
 
-          var responseParagraph = document.getElementById('responseParagraph');
-          responseParagraph.textContent = "Getting history...";
-  
-          await fetch(url, {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json"
-              },
-              body: JSON.stringify({ name: "Chaddam" })
-          })
-          .then(function(response) {
-              // Check if the response was successful
-              if (response.ok) {
-                  return response.text(); // Convert response to text
-              } else {
-                  throw new Error('Error: ' + response.status); // Throw an error
-              }
-          })
-          .then(function(answer) {
-              //responseParagraph.textContent = "Updated, Please Refresh";
-              console.log("TYPE OF ANSWER IS " + typeof answer);
-              // location.reload();
-              responseParagraph.textContent = answer;
-          })
-          .catch(function(error) {
-              responseParagraph.textContent = error.message; // Display error message
-          });
-      }
-    </script>
+
+
+
+
+
     
 
 
@@ -176,47 +119,142 @@
       }
     </style>
     
+  <!-- HTML Structure to Display Data -->
+  <div id="data-container"></div>
+  <script>
+    async function summonerSearch() {
+      var url = "http://10.0.0.150/summonerSearch";
 
-    <h1 style="color: purple;">{{ ingres }}</h1>
+      var responseParagraph = document.getElementById('responseParagraph');
+      responseParagraph.textContent = "Getting history...";
+      var summonerName = document.getElementById("nameInput").value;
 
-    {% for row1, row2 in zip(gameData, playerStats) %}
-      {% if row2['sumName'] == ingress %}
-        <div class="bg-secondary main-container px-5">
+      console.log("Summoner Name:", summonerName);
+      await fetch(url, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: summonerName
+      })
+      .then(function(response) {
+          // Check if the response was successful
+          if (response.ok) {
+              return response.json(); // Convert response to text
+          } else {
+              throw new Error('Error: ' + response.status); // Throw an error
+          }
+      })
+      .then(function(data) {
+          printMatches(data.gameData, data.playerStats, summonerName);
+      })
+      .catch(function(error) {
+          responseParagraph.textContent = error.message;
+           // Display error message
+      });
+    }
+
+
+    async function sendPostRequest() {
+      var url = "http://10.0.0.150/getHistory";
+
+      var responseParagraph = document.getElementById('responseParagraph');
+      responseParagraph.textContent = "Getting history...";
+      var summonerName = document.getElementById("nameInput").value;
+      console.log("summonerName: " + summonerName)
+      console.log("Updating Name:", summonerName);
+      await fetch(url, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: summonerName
+      })
+      .then(function(response) {
+          // Check if the response was successful
+          if (response.ok) {
+              return response.json(); // Convert response to text
+          } else {
+              throw new Error('Error: ' + response.status); // Throw an error
+          }
+      })
+      .then(function(data) {
+          //responseParagraph.textContent = "Updated, Please Refresh";
+          console.log("PRE PRINTING TO SCREEN");
+          // location.reload();
+          printMatches(data.gameData, data.playerStats, summonerName);
+          // responseParagraph.textContent = answer;
+          console.log("Data rewritten to screen");
+      })
+      .catch(function(error) {
+          responseParagraph.textContent = error.message; // Display error message
+      });
+    }
+
+    async function printMatches(gameDataIn, playerStatsIn, summonerName) {
+      // Assuming gameData and playerStats are available as arrays of objects
+      const gameData = gameDataIn;
+      const playerStats = playerStatsIn;
+
+      var responseParagraph = document.getElementById('responseParagraph');
+      responseParagraph.textContent = summonerName;
+      
+
+      // Get the data-container element
+      const dataContainer = document.getElementById('data-container');
+      // Clear existing content in the data-container
+      dataContainer.innerHTML = '';
+
+      // Loop through the arrays simultaneously using forEach
+      gameData.forEach((row1, index) => {
+        const row2 = playerStats[index];
+
+        // Create a new div element
+        const container = document.createElement('div');
+        container.classList.add('bg-secondary', 'main-container', 'px-5');
+
+        // Build the HTML content inside the div
+        container.innerHTML = `
           <div class="nested-container">
             <div class="nested-container">
-              <p class="match-card-text">{{ row1['gameID'] }}</p>
+              <p class="match-card-text">${row1.gameID}</p>
             </div>
             <div class="nested-container">
-              <p class="match-card-text">{{ row1['gameVer'] }}</p>
+              <p class="match-card-text">${row1.gameVer}</p>
             </div>
           </div>
           <div class="nested-container">
             <div class="nested-container">
-              <p class="match-card-text">{{ row1['gameDurationMinutes'] }}</p>
+              <p class="match-card-text">${row1.gameDurationMinutes}</p>
             </div>
             <div class="nested-container">
-              <p class="match-card-text">{{ row2['champLevel'] }}</p>
+              <p class="match-card-text">${row2.champLevel}</p>
             </div>
           </div>
           <div class="nested-container">
             <div class="nested-container">
-              <p class="match-card-text">{{ row2['kills'] }}/{{ row2['deaths'] }}/{{ row2['assists'] }}</p>
+              <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
             </div>
             <div class="nested-container">
-              <p class="match-card-text">{{ row2['Champ'] }}</p>
+              <p class="match-card-text">${row2.Champ}</p>
             </div>
           </div>
           <div class="nested-container">
             <div class="nested-container">
-              <p class="match-card-text">{{ row2['sumName'] }}</p>
+              <p class="match-card-text">${row2.sumName}</p>
             </div>
             <div class="nested-container">
-              <p class="match-card-text">{{ row2['playerTeamID'] }}</p>
+              <p class="match-card-text">${row2.playerTeamID}</p>
             </div>
           </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+        `;
+
+          // Append the container to the data-container
+          document.getElementById('data-container').appendChild(container);
+
+      });
+    }
+  </script>
 
 
 

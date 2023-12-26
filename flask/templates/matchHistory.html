@@ -83,6 +83,17 @@
     </section>
 
 
+
+
+
+
+
+
+
+
+    
+
+
     
     <style>
       .main-container {
@@ -100,6 +111,8 @@
           border: none;
           margin-right: auto;
           margin-left: auto;
+          display: flex;
+          justify-content: center;
       }
 
       .match-card-text {
@@ -109,7 +122,21 @@
     </style>
     
   <!-- HTML Structure to Display Data -->
-  <div id="data-container"></div>
+  <div id="data-container" class="accordion center">
+
+  </div>
+
+  <script>
+    function toggleAccordion(header) {
+        // Get the parent accordion item
+        var accordionItem = header.parentNode;
+
+        // Toggle the "active" class to show/hide the accordion body
+        accordionItem.classList.toggle("active");
+    }
+  </script>
+
+
   <script>
     async function summonerSearch() {
       var url = "http://10.0.0.150/summonerSearch";
@@ -200,41 +227,41 @@
 
         // Create a new div element
         const container = document.createElement('div');
-        container.classList.add('bg-secondary', 'main-container', 'px-5');
+        container.classList.add('px-5');
 
         // Build the HTML content inside the div
+        // ${row2.Champ} - ${row2.kills}/${row2.deaths}/${row2.assists}
         container.innerHTML = `
-          <div class="nested-container">
-            <div class="nested-container">
-              <p class="match-card-text">${row1.gameID}</p>
+          <div class="accordion-item">
+            <div style="display: flex;" class="accordion-header" onclick="toggleAccordion(this)">
+            
+              <div class="nested-container">
+                <div class="nested-container">
+                  <p class="match-card-text">${row1.gameID}</p>
+                </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.champLevel}</p>
+                </div>
+              </div>
+              <div class="nested-container">
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.Champ}</p>
+                </div>
+              </div>
+              <div class="nested-container">
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.sumName}</p>
+                </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.playerTeamID}</p>
+                </div>
+              </div>
+
             </div>
-            <div class="nested-container">
-              <p class="match-card-text">${row1.gameVer}</p>
-            </div>
-          </div>
-          <div class="nested-container">
-            <div class="nested-container">
-              <p class="match-card-text">${row1.gameDurationMinutes}</p>
-            </div>
-            <div class="nested-container">
-              <p class="match-card-text">${row2.champLevel}</p>
-            </div>
-          </div>
-          <div class="nested-container">
-            <div class="nested-container">
-              <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
-            </div>
-            <div class="nested-container">
-              <p class="match-card-text">${row2.Champ}</p>
-            </div>
-          </div>
-          <div class="nested-container">
-            <div class="nested-container">
-              <p class="match-card-text">${row2.sumName}</p>
-            </div>
-            <div class="nested-container">
-              <p class="match-card-text">${row2.playerTeamID}</p>
-            </div>
+            <div class="accordion-body">BODYYYYYYYYYYYYYY</div>
           </div>
         `;
 

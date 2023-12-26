@@ -4,7 +4,6 @@ import sys
 import logging
 from configparser import ConfigParser
 import json
-
 from os.path import abspath, dirname
 
 sys.path.append(dirname(dirname(abspath(__file__))))
@@ -32,18 +31,6 @@ errorlog.setLevel(logging.ERROR)
 
 logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
 
-
-# TODO: Determine if this is needed
-@app.route('/getSummoner', methods=['POST', 'GET'])
-def addSummoner():
-    # Data sent to api decoded and ready to use as a string
-    ingres = request.data.decode("utf8")
-    
-    # RETURN DATA FOR REQUEST (sent to user)
-    #print(f"--------\nConnection from: {request.remote_addr}\nName Searched: {ingres}")
-    decayTimer = dtrack(ingres, RIOTAPIKEY)
-    return decayTimer
-
 # TODO: Need to fix this shit
 @app.route('/', methods=['GET'])
 def homePage():
@@ -55,40 +42,17 @@ def homePage():
 @app.route('/matchHistory', methods=['GET'])
 def matchHistory():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
-
-    #ingres = request.data.decode("utf8")
-    #print(ingres)
-
-    gameData = fetchFromDB("chaddam", 15)
-    
-    matchData = []
-    for i in gameData:
-        matchData.append(json.loads(i['matchdata']))
-
-
-    playerStats = []
-
-    # Loops through match data, gets player card data and 
-    for i in matchData:
-        try:
-            for player in i:
-                if player['sumName'] == "Chaddam":
-                    playerStats.append(player)
-                    break
-        except IndexError:
-            break
-
-    return render_template('matchHistory.html', gameData=gameData, playerStats=playerStats, zip=zip)
+    return render_template('matchHistory.html')
 
 
 # TODO: Look for cleanup
 @app.route('/summonerSearch', methods=['POST'])
 def summonerSearch():
-    print("\nSummonerSearch endpoint hit\n")
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
 
     ingres = request.data.decode("utf8")
 
+    print(f"\nSummonerSearch endpoint hit \nSummoner: {ingres}\n")
     gameData = fetchFromDB(ingres, 20)
 
     if len(gameData) < 1:
@@ -105,7 +69,9 @@ def summonerSearch():
     for i in matchData:
         try:
             for player in i:
-                if player['sumName'] == ingres:
+                lowerName = player['sumName'].lower()
+                #print(f"{player['sumName']} == {ingres} == {lowerName}")
+                if lowerName == ingres.lower():
                     playerStats.append(player)
                     break
         except IndexError:
@@ -155,12 +121,17 @@ def getHistory():
         'gameData': gameData,
         'playerStats': playerStats
     })
-    #return jsonify({"message": "Updated"})
 
 
 # Run Server
 if __name__ == '__main__':
     try:
-        app.run(debug=True, host='0.0.0.0', port=80)
+        os.system("clear")
+
+        print("Starting Flask app 'routes.py'")
+        print(f"Running app at - {config['SITE']['address']}:{config['SITE']['port']}")
+
+        app.run(debug=True, host=config['SITE']['address'], port=config['SITE']['port'])
+        
     except KeyboardInterrupt:
         sys.exit(0)
