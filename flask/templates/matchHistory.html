@@ -105,7 +105,7 @@
       }
 
       .nested-container {
-          width: 33%;
+          width: 100%;
           padding: 2px;
           margin-right: 10px;
           border: none;
@@ -242,16 +242,33 @@
                 <div class="nested-container">
                   <p class="match-card-text">${row2.champLevel}</p>
                 </div>
-              </div>
-              <div class="nested-container">
                 <div class="nested-container">
                   <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
                 </div>
                 <div class="nested-container">
                   <p class="match-card-text">${row2.Champ}</p>
                 </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.sumName}</p>
+                </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.playerTeamID}</p>
+                </div>
               </div>
-              <div class="nested-container">
+
+              <div id="nested2" class="nested-container">
+                <div class="nested-container">
+                  <p class="match-card-text">${row1.gameID}</p>
+                </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.champLevel}</p>
+                </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                </div>
+                <div class="nested-container">
+                  <p class="match-card-text">${row2.Champ}</p>
+                </div>
                 <div class="nested-container">
                   <p class="match-card-text">${row2.sumName}</p>
                 </div>

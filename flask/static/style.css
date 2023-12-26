@@ -188,6 +188,7 @@ img {vertical-align: middle;}
   background-color: #f1f1f1;
   padding: 10px;
   cursor: pointer;
+  flex-direction: column;
 }
 
 .accordion-body {
