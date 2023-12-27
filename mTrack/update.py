@@ -193,11 +193,6 @@ def mtrack(ans, APIKEY):
         gameData.append(history)
     
 
-    # Use the 'w' flag to open the file in write mode
-    with open('gamedatafromriot.json', 'w') as file:
-        # Write the data to the file
-        file.write(str(matchData))
-
     databaseInsert(gameData, "matchHistory", ans)
     return 200
 
