@@ -120,9 +120,9 @@ def getHistory():
         except Exception as e:
             print(e)
 
-    print(f"\n\nGAME DATA\n\n{gameData}")
-    print(f"\n\PLAYER STATS\n\n{playerStats}")
-    print(f"\n\MATCH DATA\n\n{matchData}")
+    #print(f"\n\nGAME DATA\n\n{gameData}")
+    #print(f"\n\PLAYER STATS\n\n{playerStats}")
+    #print(f"\n\MATCH DATA\n\n{matchData}")
 
     return jsonify({ 
         'gameData': gameData,

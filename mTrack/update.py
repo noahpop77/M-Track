@@ -42,7 +42,7 @@ def convert_unix_to_date(unix_timestamp):
 
 
 
-def databaseInsert(matchHistoryGames, table):
+def databaseInsert(matchHistoryGames, table, summoner):
 
     try:
         # Establish a connection to the MySQL server
@@ -58,10 +58,11 @@ def databaseInsert(matchHistoryGames, table):
 
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
-
+            
+            counter = 0
             try:
                 for game in matchHistoryGames:
-                    
+                    summonerWin = ""
                     #print(f"Adding game with ID: \t{game['gamedata']['gameid']}")
 
                     participantList = json.dumps(game['gamedata']['participants'])
@@ -69,7 +70,7 @@ def databaseInsert(matchHistoryGames, table):
                     
 
                     query = (
-                        "INSERT INTO matchHistory "
+                        f"INSERT INTO {table} "
                         "(gameID, gameVer, userSummoner, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, queueType, gameDate, participants, matchdata) "
                         "VALUES "
                         "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
@@ -87,14 +88,14 @@ def databaseInsert(matchHistoryGames, table):
                         participantList,
                         matchDataList
                     )
-                    #print(f"Adding game with ID: \t{game['gamedata']['gameid']}")
-                    #print("pre send")
+                    
                     cursor.execute(query, data)
-                    #print("post send")
+
+            except IndexError:
+                pass
 
             except mysql.connector.Error as e:
                 if e.errno == 1062:
-                    
                     pass
                 else:
                     print(e)
@@ -181,7 +182,8 @@ def mtrack(ans, APIKEY):
                     "deaths": participant['deaths'],
                     "assists": participant['assists'],
                     "champLevel": participant['champLevel'],
-                    "goldEarned": participant['goldEarned']
+                    "goldEarned": participant['goldEarned'],
+                    "win": participant['win']
                 }
                 history['matchdata'].append(newEntry)
         
@@ -190,6 +192,12 @@ def mtrack(ans, APIKEY):
         
         gameData.append(history)
     
-    databaseInsert(gameData, "mtrack.matchHistory")
+
+    # Use the 'w' flag to open the file in write mode
+    with open('gamedatafromriot.json', 'w') as file:
+        # Write the data to the file
+        file.write(str(matchData))
+
+    databaseInsert(gameData, "matchHistory", ans)
     return 200
 

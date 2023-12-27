@@ -174,7 +174,7 @@ img {vertical-align: middle;}
 
 .accordion {
   width: 100%;
-  max-width: 80%; /* Set a maximum width as needed */
+  max-width: 60%; /* Set a maximum width as needed */
 }
 
 .accordion-item {
@@ -199,6 +199,21 @@ img {vertical-align: middle;}
 .accordion-item.active .accordion-body {
   display: block;
 }
+
+
+
+
+
+
+
+
+.winCard {
+  background-color: #28344e;
+}
+.loseCard {
+  background-color: #59343b;
+}
+
 
 
 

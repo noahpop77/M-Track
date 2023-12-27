@@ -5,7 +5,6 @@ async function summonerSearch() {
     responseParagraph.textContent = "Getting history...";
     var summonerName = document.getElementById("nameInput").value;
 
-    console.log("Summoner Name:", summonerName);
     await fetch(url, {
         method: "POST",
         headers: {
@@ -91,106 +90,186 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
     dataContainer.innerHTML = '';
 
 
-
-    console.log(matchData);
-    console.log(typeof matchData);
-
     // Loop through the arrays simultaneously using forEach
     gameData.forEach((row1, index) => {
         const row2 = playerStats[index];
         const row3 = matchData[index];
-
+        // console.log(row2)
         // Create a new div element
         const container = document.createElement('div');
         container.classList.add('px-5');
 
 
+
         const accordionBodyId = `matchData_${index}`;
-        
 
         
+        if (row2.win == true && row2.sumName == summonerName) {
+            container.innerHTML = `
+            <div style="background-color: #28658b;" class="accordion-item">
+                <div style="display: flex; background-color: #28658b; color: white;" class="accordion-header" onclick="toggleAccordion(this)">
+                
+                    <div class="nested-container">
+                        <div class="item-container">
+                            <p class="match-card-text">${row1.gameID}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.champLevel}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.Champ}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.sumName}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.playerTeamID}</p>
+                        </div>
+                    </div>
 
-        // Build the HTML content inside the div
-        // ${row2.Champ} - ${row2.kills}/${row2.deaths}/${row2.assists}
-        container.innerHTML = `
-        <div class="accordion-item">
-            <div style="display: flex;" class="accordion-header" onclick="toggleAccordion(this)">
-            
-                <div class="nested-container">
-                    <div class="item-container">
-                        <p class="match-card-text">${row1.gameID}</p>
+                    <div id="nested2" class="nested-container">
+                        <div class="item-container">
+                            <p class="match-card-text">${row1.gameID}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.champLevel}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.Champ}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.sumName}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.playerTeamID}</p>
+                        </div>
                     </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.champLevel}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.Champ}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.sumName}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.playerTeamID}</p>
-                    </div>
+
                 </div>
+                
 
-                <div id="nested2" class="nested-container">
-                    <div class="item-container">
-                        <p class="match-card-text">${row1.gameID}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.champLevel}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.Champ}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.sumName}</p>
-                    </div>
-                    <div class="item-container">
-                        <p class="match-card-text">${row2.playerTeamID}</p>
-                    </div>
-                </div>
+                <table result="WIN" class="accordion-body" style="color: white;">
+                    <colgroup>
+                        <col width="44">
+                        <col width="18">
+                        <col width="18">
+                        <col>
+                        <col width="68">
+                        <col width="98">
+                        <col width="120">
+                        <col width="48">
+                        <col width="56">
+                        <col width="175">
+                    </colgroup>
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th colspan="3"><span class="result">Victory</span>(Blue Team)</th>
+                            <th>KDA</th>
+                            <th>Damage</th>
+                            <th>CS</th>
+                            <th>Item</th>
+                            <th>Win/Lose</th>
+                        </tr>
+                    </thead>
 
+                    <tbody id="${accordionBodyId}">
+                    </tbody>
+
+                </table>
             </div>
-            
+            `;
+          } 
+          else {
+            // Build the HTML content inside the div
+            container.innerHTML = `
+            <div style="background-color: #59343b;" class="accordion-item">
+                <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header" onclick="toggleAccordion(this)">
+                
+                    <div class="nested-container">
+                        <div class="item-container">
+                            <p class="match-card-text">${row1.gameID}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.champLevel}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.Champ}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.sumName}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.playerTeamID}</p>
+                        </div>
+                    </div>
 
-            <table result="WIN" class="accordion-body" style="color: white;">
-                <colgroup>
-                    <col width="44">
-                    <col width="18">
-                    <col width="18">
-                    <col>
-                    <col width="68">
-                    <col width="98">
-                    <col width="120">
-                    <col width="48">
-                    <col width="56">
-                    <col width="175">
-                </colgroup>
-                <thead>
-                    <tr style="text-align: center;">
-                        <th colspan="3"><span class="result">Victory</span>(Blue Team)</th>
-                        <th>KDA</th>
-                        <th>Damage</th>
-                        <th>Wards</th>
-                        <th>CS</th>
-                        <th>Item</th>
-                    </tr>
-                </thead>
+                    <div id="nested2" class="nested-container">
+                        <div class="item-container">
+                            <p class="match-card-text">${row1.gameID}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.champLevel}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.Champ}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.sumName}</p>
+                        </div>
+                        <div class="item-container">
+                            <p class="match-card-text">${row2.playerTeamID}</p>
+                        </div>
+                    </div>
 
-                <tbody id="${accordionBodyId}">
-                </tbody>
+                </div>
+                
 
-            </table>
-        </div>
-        `;
+                <table result="WIN" class="accordion-body" style="color: white;">
+                    <colgroup>
+                        <col width="44">
+                        <col width="18">
+                        <col width="18">
+                        <col>
+                        <col width="68">
+                        <col width="98">
+                        <col width="120">
+                        <col width="48">
+                        <col width="56">
+                        <col width="175">
+                    </colgroup>
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th colspan="3"><span class="result">Victory</span>(Blue Team)</th>
+                            <th>KDA</th>
+                            <th>Damage</th>
+                            <th>CS</th>
+                            <th>Item</th>
+                            <th>Win/Lose</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="${accordionBodyId}">
+                    </tbody>
+
+                </table>
+            </div>
+            `;
+          }
+        
+
+
 
         // Append the container to the data-container
         document.getElementById('data-container').appendChild(container);
@@ -199,9 +278,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         
 
         const accordionBody = document.getElementById(accordionBodyId);
-        console.log(row3);
-        console.log(typeof row3);
 
+        // ${match.playerTeamID}
         // Loop through matchData and display 10 objects per element inside nested-container
         row3.forEach(match => {
             // Build the HTML content for each match object
@@ -221,14 +299,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td class="spells">
                         ${match.goldEarned}
                     </td>
-                    <td class="champion">
-                        ${match.playerTeamID}
-                    </td>
                     <td class="spells">
                         999 cs
                     </td>
                     <td class="champion">
                         Maw
+                    </td>
+                    <td class="champion">
+                        ${match.win}
                     </td>
                 </tr>
             `;
