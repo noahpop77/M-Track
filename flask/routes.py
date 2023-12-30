@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 import os
 import sys
 import logging
@@ -87,9 +87,7 @@ def summonerSearch():
         'matchData': matchData
     })
 
-    #return render_template('matchHistory.html', ingres=ingres, gameData=gameData, playerStats=playerStats, zip=zip)
 
-# TODO: Look at cleanup
 @app.route('/getHistory', methods=['POST'])
 def getHistory():
     print("\ngetHistory endpoint hit\n")
@@ -120,15 +118,34 @@ def getHistory():
         except Exception as e:
             print(e)
 
-    #print(f"\n\nGAME DATA\n\n{gameData}")
-    #print(f"\n\PLAYER STATS\n\n{playerStats}")
-    #print(f"\n\MATCH DATA\n\n{matchData}")
-
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
         'matchData': matchData
     })
+
+
+
+# Get champ icons
+@app.route('/getIcon', methods=['POST'])
+def getIcon():
+    ingres = request.data.decode("utf8")
+
+    print(f"\getIcon endpoint hit \nSummoner: {ingres}\n")
+
+    # Specify the path to the folder containing PNGs
+    icons_folder = './static/img/champIcons'
+
+    # Check if the file with the given name exists
+    file_path = os.path.join(icons_folder, f'{name}.png')
+    if os.path.exists(file_path):
+        # Return the PNG file as a response
+        return send_file(file_path, mimetype='image/png')
+    else:
+        # If the file doesn't exist, return an error response
+        return "File not found", 404
+
+
 
 
 # Run Server
