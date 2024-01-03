@@ -110,7 +110,10 @@ def getHistory():
     for i in matchData:
         try:
             for player in i:
-                if player['sumName'] == ingres:
+                # lower() is mandatory
+                # If user inputs a username with incorrect cases it will
+                # force it to match the case of the check condition
+                if player['sumName'].lower() == ingres:
                     playerStats.append(player)
                     break
         except IndexError:
@@ -130,8 +133,6 @@ def getHistory():
 @app.route('/getIcon', methods=['POST'])
 def getIcon():
     ingres = request.data.decode("utf8")
-
-    print(f"\getIcon endpoint hit\nSummoner: {ingres}\n")
 
     # Specify the path to the folder containing PNGs
     icons_folder = './static/img/champIcons'

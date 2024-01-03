@@ -124,10 +124,9 @@ def mtrack(ans, APIKEY):
     #Gets PUUID from Summoner Name
     print("Making API call...")
     sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
-    
-    #print(f"Querying summoner name for PUUID: {sumByName}")
-    myID = sumByName.json()
-    matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{myID['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
+    print(sumByName.text)
+    profileData = sumByName.json()
+    matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
     
     #print(f"Querying PUUID for Match IDs: {matches}")
 
@@ -147,31 +146,31 @@ def mtrack(ans, APIKEY):
 
     history = {}
     gameData = []
-   
 
     for i in matchData:
-        
+        #print(i)
+
         queueType = "Not Ranked"
         if i['info']['queueId'] == 420:
             queueType = "Ranked Solo/Duo"
         
         date = convert_unix_to_date(i['info']['gameCreation'])
 
-
+        summonerCardName = ""
         try:
             history = {
-                    'gamedata': {
-                        'gameid': i['metadata']['matchId'], 
-                        'gamever': i['info']['gameVersion'],
-                        'userSummoner': ans,
-                        'gameDurationMinutes': getGameTime(i['info']['gameDuration']),
-                        'gameCreationTimestamp': i['info']['gameCreation'],
-                        'gameEndTimestamp': i['info']['gameEndTimestamp'],
-                        'queueType': queueType,
-                        'gameDate': date,
-                        'participants': i['metadata']['participants']                        
-                    },
-                    'matchdata' : []
+                'gamedata': {
+                    'gameid': i['metadata']['matchId'], 
+                    'gamever': i['info']['gameVersion'],
+                    'userSummoner': profileData['name'],
+                    'gameDurationMinutes': getGameTime(i['info']['gameDuration']),
+                    'gameCreationTimestamp': i['info']['gameCreation'],
+                    'gameEndTimestamp': i['info']['gameEndTimestamp'],
+                    'queueType': queueType,
+                    'gameDate': date,
+                    'participants': i['metadata']['participants']                        
+                },
+                'matchdata' : []
             }
             for participant in i['info']['participants']:
                 newEntry = {
@@ -191,7 +190,7 @@ def mtrack(ans, APIKEY):
             exit()
         
         gameData.append(history)
-    
+    #print(gameData)
 
     databaseInsert(gameData, "matchHistory", ans)
     return 200

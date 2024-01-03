@@ -39,7 +39,7 @@ function toggleAccordion(header) {
 }
 
 
-async function sendPostRequest() {
+async function updateData() {
     var url = "http://10.0.0.150/getHistory";
 
     var responseParagraph = document.getElementById('responseParagraph');
@@ -144,7 +144,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const accordionBodyId = `matchData_${index}`;
         const accordionChampId = `champPic_${index}`;
 
-        if (row2.win == true && row2.sumName == summonerName) {
+        if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
 
             getImage(row2.Champ, accordionChampId);
             console.log(typeof accordionChampId)
