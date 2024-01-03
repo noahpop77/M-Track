@@ -75,6 +75,47 @@ async function sendPostRequest() {
     });
 }
 
+
+
+
+
+
+
+async function getImage(champName, elementID) {
+    var url = "http://10.0.0.150/getIcon";
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: champName
+        });
+
+        // Check if the response was successful
+        if (response.ok) {
+            const blob = await response.blob(); // Await the blob Promise
+            const image = URL.createObjectURL(blob);
+            document.getElementById(elementID).src = image;
+        } else {
+            throw new Error('Error: ' + response.status); // Throw an error
+        }
+    } catch (error) {
+        console.log(error.message);
+        // Display error message
+    }
+}
+
+
+
+
+
+
+
+
+
+
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
     // Assuming gameData and playerStats are available as arrays of objects
     const gameData = gameDataIn;
@@ -100,18 +141,20 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         container.classList.add('px-5');
 
 
-
         const accordionBodyId = `matchData_${index}`;
+        const accordionChampId = `champPic_${index}`;
 
-        
         if (row2.win == true && row2.sumName == summonerName) {
+
+            getImage(row2.Champ, accordionChampId);
+            console.log(typeof accordionChampId)
             container.innerHTML = `
             <div style="background-color: #28658b;" class="accordion-item">
                 <div style="display: flex; background-color: #28658b; color: white;" class="accordion-header" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
                         <div class="item-container">
-                            <p class="match-card-text">${row1.gameID}</p>
+                            <img id="${accordionChampId}" alt="champIcon" style="height: 50px; width: 50px;">
                         </div>
                         <div class="item-container">
                             <p class="match-card-text">${row2.champLevel}</p>
@@ -186,6 +229,9 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             `;
           } 
           else {
+
+            getImage(row2.Champ, accordionChampId);
+
             // Build the HTML content inside the div
             container.innerHTML = `
             <div style="background-color: #59343b;" class="accordion-item">
@@ -193,7 +239,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 
                     <div class="nested-container">
                         <div class="item-container">
-                            <p class="match-card-text">${row1.gameID}</p>
+                            <img id="${accordionChampId}" alt="champIcon" style="height: 50px; width: 50px;">
                         </div>
                         <div class="item-container">
                             <p class="match-card-text">${row2.champLevel}</p>

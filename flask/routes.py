@@ -131,13 +131,13 @@ def getHistory():
 def getIcon():
     ingres = request.data.decode("utf8")
 
-    print(f"\getIcon endpoint hit \nSummoner: {ingres}\n")
+    print(f"\getIcon endpoint hit\nSummoner: {ingres}\n")
 
     # Specify the path to the folder containing PNGs
     icons_folder = './static/img/champIcons'
 
     # Check if the file with the given name exists
-    file_path = os.path.join(icons_folder, f'{name}.png')
+    file_path = os.path.join(icons_folder, f'{ingres}.png')
     if os.path.exists(file_path):
         # Return the PNG file as a response
         return send_file(file_path, mimetype='image/png')
