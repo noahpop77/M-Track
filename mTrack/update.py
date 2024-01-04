@@ -130,15 +130,21 @@ def mtrack(ans, APIKEY):
     matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
 
     try:
-        # Get the current directory of the Python script
-        current_directory = os.path.dirname(os.path.abspath(__file__))
-        # Specify the path to your JSON file
-        json_file_path = os.path.join(current_directory, 'summonerSpellMapping.json')
         print("Got to mapping file")
 
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        summonerPath = os.path.join(current_directory, 'summonerSpellMapping.json')
+        itemPath = os.path.join(current_directory, 'items.json')
+        
         # Opening mapping file for summoner spells
-        with open(json_file_path, 'r') as file:
+        with open(summonerPath, 'r') as file:
             summonerIcons = json.load(file)
+
+        # Loads item id mappings
+        with open(itemPath, 'r') as file:
+            itemIcons = json.load(file)
+
+
     except:
         print(
             '''
@@ -164,7 +170,7 @@ def mtrack(ans, APIKEY):
         
     history = {}
     gameData = []
-
+    counter = 1
     for i in matchData:
 
         queueType = "Not Ranked"
@@ -190,11 +196,7 @@ def mtrack(ans, APIKEY):
                 'matchdata' : []
             }
             for participant in i['info']['participants']:
-                #print(participant['summoner1Id'])
-                #print(type(participant['summoner1Id']))
-                #print("\n")
-                #print(participant['summoner2Id'])
-                #print(type(participant['summoner2Id']))
+                counter += 1
                 newEntry = {
                     "sumName": participant['summonerName'],
                     "playerTeamID": participant['teamId'],
@@ -206,13 +208,21 @@ def mtrack(ans, APIKEY):
                     "goldEarned": participant['goldEarned'],
                     "summonerSpell1": summonerIcons[str(participant['summoner1Id'])],
                     "summonerSpell2": summonerIcons[str(participant['summoner2Id'])],
+                    "item0": itemIcons[str(participant['item0'])],
+                    "item1": itemIcons[str(participant['item1'])],
+                    "item2": itemIcons[str(participant['item2'])],
+                    "item3": itemIcons[str(participant['item3'])],
+                    "item4": itemIcons[str(participant['item4'])],
+                    "item5": itemIcons[str(participant['item5'])],
+                    "item6": itemIcons[str(participant['item6'])],
                     "win": participant['win']
                 }
                 history['matchdata'].append(newEntry)
         
         except KeyError:
-            print("Exiting here")
-            exit()
+            #print("Exiting here")
+            pass
+            #exit()
         
         gameData.append(history)
 

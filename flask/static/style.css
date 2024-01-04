@@ -253,11 +253,16 @@ img {vertical-align: middle;}
 .item-container {
   padding: 2px;
   border: none;
-  margin-right: auto;
+  /* margin-right: auto; */
   justify-content: center;
   flex-direction: column;
 }
 
+.summonerIcons {
+  height: 25px; 
+  width: 25px; 
+  border-radius: 15%;
+}
 
 .innerCard {
   display: flex;

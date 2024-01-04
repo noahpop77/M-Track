@@ -68,12 +68,20 @@ async function updateData() {
 }
 
 
+function toggleAccordion(header) {
+    // Get the parent accordion item
+    var accordionItem = header.parentNode;
+    // Toggle the "active" class to show/hide the accordion body
+    accordionItem.classList.toggle("active");
+}
 
 
 
 
 
-async function getImage(champName, elementID) {
+
+
+async function getChampIcon(champName, elementID) {
     var url = "http://10.0.0.150/getIcon";
 
     try {
@@ -99,18 +107,31 @@ async function getImage(champName, elementID) {
     }
 }
 
+async function getSummonerIcon(summoner, elementID) {
+    var url = "http://10.0.0.150/getSummoners";
 
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: summoner
+        });
 
-
-function toggleAccordion(header) {
-    console.log("Accordion item clicked on")
-    // Get the parent accordion item
-    var accordionItem = header.parentNode;
-    console.log(accordionItem)
-    // Toggle the "active" class to show/hide the accordion body
-    accordionItem.classList.toggle("active");
+        // Check if the response was successful
+        if (response.ok) {
+            const blob = await response.blob(); // Await the blob Promise
+            const image = URL.createObjectURL(blob);
+            document.getElementById(elementID).src = image;
+        } else {
+            throw new Error('Error: ' + response.status); // Throw an error
+        }
+    } catch (error) {
+        console.log(error.message);
+        // Display error message
+    }
 }
-
 
 
 
@@ -142,19 +163,23 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const accordionBodyId = `matchData_${index}`;
         const accordionChampId = `champPic_${index}`;
+        const summoner1ID = `summoner1_${index}`;
+        const summoner2ID = `summoner2_${index}`;
         
         if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
 
-            getImage(row2.Champ, accordionChampId);
-            
+            getChampIcon(row2.Champ, accordionChampId);
+            sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
+            sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
+
             container.innerHTML = `
-            <div style="background-color: #28658b;" class="accordion-item">
-                <div style="display: flex; background-color: #28658b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
+            <div style="background-color: #28344e;" class="accordion-item">
+                <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
                         <div class="item-container" style="width:108px;">
                             <div class="innerCard">
-                                <p class="match-card-text">Ranked Solo</p>
+                                <p class="match-card-text" style="color: #336be3">Ranked Solo</p>
                             </div>
                             <div class="innerCard">
                                 <p class="match-card-text">${row1.gameDate}</p>
@@ -168,9 +193,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             </div>
                         </div>
                         <div class="item-container">
-
-                            <img id="${accordionChampId}" alt="champIcon" style="height: 50px; width: 50px; border-radius: 50%;">
-                            <p class="match-card-text">${row2.champLevel}</p>
+                            <div class="innerCard">
+                                <img id="${accordionChampId}" alt="champIcon" style="height: 56px; width: 56px; border-radius: 15%;">
+                                <div style="flex-direction: row;">
+                                    <img id="${summoner1ID}" alt="summoner1" class="summonerIcons">
+                                    <img id="${summoner2ID}" alt="summoner2" class="summonerIcons">
+                                </div>
+                            </div>
+                            
 
                         </div>
                         <div class="item-container">
@@ -178,7 +208,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                                 <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
                             </div>
                             <div class="item-container">
-                                <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                                <p class="match-card-text">${row2.champLevel}</p>
                             </div>
                         </div>
                     </div>
@@ -217,56 +247,49 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             `;
           } 
           else {
-
-            getImage(row2.Champ, accordionChampId);
-
-            // Build the HTML content inside the div
+            getChampIcon(row2.Champ, accordionChampId);
+            sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
+            sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
+            
             container.innerHTML = `
             <div style="background-color: #59343b;" class="accordion-item">
-                <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header" onclick="toggleAccordion(this)">
+                <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
-                        <div class="item-container">
-                            <img id="${accordionChampId}" alt="champIcon" style="height: 50px; width: 50px;">
+                        <div class="item-container" style="width:108px;">
+                            <div class="innerCard">
+                                <p class="match-card-text" style="color: #e8404b">Ranked Solo</p>
+                            </div>
+                            <div class="innerCard">
+                                <p class="match-card-text">${row1.gameDate}</p>
+                            </div>
+                            <div class="winDivider"></div>
+                            <div class="innerCard">
+                                <p class="match-card-text">Defeat</p>
+                            </div>
+                            <div class="innerCard">
+                                <p class="match-card-text">${row1.gameDurationMinutes}</p>
+                            </div>
                         </div>
                         <div class="item-container">
-                            <p class="match-card-text">${row2.champLevel}</p>
+                            <div class="innerCard">
+                                <img id="${accordionChampId}" alt="champIcon" style="height: 56px; width: 56px; border-radius: 15%;">
+                                <div style="flex-direction: row;">
+                                    <img id="${summoner1ID}" alt="summoner1" class="summonerIcons">
+                                    <img id="${summoner2ID}" alt="summoner2" class="summonerIcons">
+                                </div>
+                            </div>
+
                         </div>
                         <div class="item-container">
-                            <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.Champ}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.sumName}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.playerTeamID}</p>
+                            <div class="item-container">
+                                <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+                            </div>
+                            <div class="item-container">
+                                <p class="match-card-text">${row2.champLevel}</p>
+                            </div>
                         </div>
                     </div>
-
-                    <div id="nested2" class="nested-container">
-                        <div class="item-container">
-                            <p class="match-card-text">${row1.gameID}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.champLevel}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.Champ}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.sumName}</p>
-                        </div>
-                        <div class="item-container">
-                            <p class="match-card-text">${row2.playerTeamID}</p>
-                        </div>
-                    </div>
-
                 </div>
                 
 
@@ -300,7 +323,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 </table>
             </div>
             `;
-          }
+          } 
         
 
 
