@@ -111,7 +111,7 @@ def getHistory():
                 # lower() is mandatory
                 # If user inputs a username with incorrect cases it will
                 # force it to match the case of the check condition
-                if player['sumName'].lower() == ingres:
+                if player['sumName'].lower() == ingres.lower():
                     playerStats.append(player)
                     break
         except IndexError:
