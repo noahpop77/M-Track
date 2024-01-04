@@ -152,7 +152,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 <div style="display: flex; background-color: #28658b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
-                        <div class="item-container flex" style="width:108px;">
+                        <div class="item-container" style="width:108px;">
                             <div class="innerCard">
                                 <p class="match-card-text">Ranked Solo</p>
                             </div>
