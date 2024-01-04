@@ -58,8 +58,9 @@ def summonerSearch():
     if len(gameData) < 1:
         print("Fetching new user data")
         mtrack(ingres, RIOTAPIKEY)
+        print("mtrack() for summonerSearch done")
         gameData = fetchFromDB(ingres, 20)
-
+        print("fetchFromDB() for summonerSearch done")
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
@@ -70,7 +71,6 @@ def summonerSearch():
         try:
             for player in i:
                 lowerName = player['sumName'].lower()
-                #print(f"{player['sumName']} == {ingres} == {lowerName}")
                 if lowerName == ingres.lower():
                     playerStats.append(player)
                     break
@@ -78,8 +78,6 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
-    
-    #print(matchData)
 
     return jsonify({ 
         'gameData': gameData,
@@ -120,7 +118,7 @@ def getHistory():
             break
         except Exception as e:
             print(e)
-
+            
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
@@ -136,6 +134,24 @@ def getIcon():
 
     # Specify the path to the folder containing PNGs
     icons_folder = './static/img/champIcons'
+
+    # Check if the file with the given name exists
+    file_path = os.path.join(icons_folder, f'{ingres}.png')
+    if os.path.exists(file_path):
+        # Return the PNG file as a response
+        return send_file(file_path, mimetype='image/png')
+    else:
+        # If the file doesn't exist, return an error response
+        return "File not found", 404
+
+
+# Get summoner spell icons
+@app.route('/getSummoners', methods=['POST'])
+def getSummoners():
+    ingres = request.data.decode("utf8")
+
+    # Specify the path to the folder containing PNGs
+    icons_folder = './static/img/summonerIcons'
 
     # Check if the file with the given name exists
     file_path = os.path.join(icons_folder, f'{ingres}.png')

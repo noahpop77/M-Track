@@ -33,7 +33,7 @@ def fetchFromDB(summonerName, numberOfRecords):
             
             query = (
                 "SELECT "
-                "gameID, gameVer, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, "
+                "gameID, gameVer, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, gameDate, "
                 "JSON_UNQUOTE(participants) as participants, "
                 "JSON_UNQUOTE(matchdata) as matchdata "
                 "FROM matchHistory "

@@ -1,6 +1,7 @@
 import requests
 import mysql.connector
 import json
+import os
 from datetime import datetime
 from configparser import ConfigParser
 
@@ -33,7 +34,7 @@ def getGameTime(durationInSeconds):
 
 def convert_unix_to_date(unix_timestamp):
     
-    dt = datetime.fromtimestamp(unix_timestamp/100)
+    dt = datetime.fromtimestamp(unix_timestamp/1000)
 
     # Format the datetime object to include only day, month, and year
     formatted_date = dt.strftime('%Y-%m-%d')
@@ -124,11 +125,28 @@ def mtrack(ans, APIKEY):
     #Gets PUUID from Summoner Name
     print("Making API call...")
     sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
-    print(sumByName.text)
+    #print(sumByName.text)
     profileData = sumByName.json()
     matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
-    
-    #print(f"Querying PUUID for Match IDs: {matches}")
+
+    try:
+        # Get the current directory of the Python script
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        # Specify the path to your JSON file
+        json_file_path = os.path.join(current_directory, 'summonerSpellMapping.json')
+        print("Got to mapping file")
+
+        # Opening mapping file for summoner spells
+        with open(json_file_path, 'r') as file:
+            summonerIcons = json.load(file)
+    except:
+        print(
+            '''
+            Mapping File Not Found...
+            Please put mapping file in the same directory as the update.py file so it can populat the database properly.
+            '''
+            )
+        exit(1)
 
     # Gets return as a json/list, Splits it into list of dictionaries
     sepList = str(matches.json()).split(",")
@@ -143,12 +161,11 @@ def mtrack(ans, APIKEY):
     for i in matchList:
         tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
         matchData.append(tempMatch)
-
+        
     history = {}
     gameData = []
 
     for i in matchData:
-        #print(i)
 
         queueType = "Not Ranked"
         if i['info']['queueId'] == 420:
@@ -173,6 +190,11 @@ def mtrack(ans, APIKEY):
                 'matchdata' : []
             }
             for participant in i['info']['participants']:
+                #print(participant['summoner1Id'])
+                #print(type(participant['summoner1Id']))
+                #print("\n")
+                #print(participant['summoner2Id'])
+                #print(type(participant['summoner2Id']))
                 newEntry = {
                     "sumName": participant['summonerName'],
                     "playerTeamID": participant['teamId'],
@@ -182,16 +204,19 @@ def mtrack(ans, APIKEY):
                     "assists": participant['assists'],
                     "champLevel": participant['champLevel'],
                     "goldEarned": participant['goldEarned'],
+                    "summonerSpell1": summonerIcons[str(participant['summoner1Id'])],
+                    "summonerSpell2": summonerIcons[str(participant['summoner2Id'])],
                     "win": participant['win']
                 }
                 history['matchdata'].append(newEntry)
         
         except KeyError:
+            print("Exiting here")
             exit()
         
         gameData.append(history)
-    #print(gameData)
 
+    print("about to insert gamedata into DB")
     databaseInsert(gameData, "matchHistory", ans)
     return 200
 

@@ -174,19 +174,21 @@ img {vertical-align: middle;}
 
 .accordion {
   width: 100%;
-  max-width: 60%; /* Set a maximum width as needed */
 }
 
 .accordion-item {
-  border: 1px solid #ccc;
+  width: 740px;
+  min-height: 96px; /* if you set a static height it will not open the accordion item */
+  border:none;
   margin-bottom: 10px;
-  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
 }
 
 .accordion-header {
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
   flex-direction: column;
 }
@@ -213,6 +215,16 @@ img {vertical-align: middle;}
 .loseCard {
   background-color: #59343b;
 }
+.winDivider {
+  width: 48px;
+  height: 1px;
+  background-color:#2f436e;
+}
+.lossDivider {
+  width: 48px;
+  height: 1px;
+  background-color: #703c47;
+}
 
 
 
@@ -232,26 +244,29 @@ img {vertical-align: middle;}
 .nested-container {
   width: 100%;
   padding: 2px;
-  margin-right: 10px;
   border: none;
   margin-right: auto;
   margin-left: auto;
   display: flex;
-  justify-content: center;
 }
 
 .item-container {
-  width: 150px;
   padding: 2px;
-  margin-right: 10px;
   border: none;
   margin-right: auto;
-  margin-left: auto;
-  display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+
+.innerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  white-space: nowrap;
+  max-height: 20px;
 }
 
 .match-card-text {
 font-size: 15px;
-text-align: center;
 }
