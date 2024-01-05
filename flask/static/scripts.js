@@ -128,7 +128,16 @@ async function getSummonerIcon(summoner, elementID) {
     }
 }
 
+function calculateKDA(kills, deaths, assists) {
 
+    if (deaths === 0) {
+        return 'Infinity';
+    }
+
+    const kda = (kills + assists) / deaths;
+
+    return kda.toFixed(2);
+}
 
 
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
@@ -148,7 +157,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
     // Loop through the arrays simultaneously using forEach
     gameData.forEach((row1, index) => {
-        
+
         const row2 = playerStats[index];
         const row3 = matchData[index];
         
@@ -167,13 +176,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             getChampIcon(row2.Champ, accordionChampId);
             sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
             sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
+            kda = calculateKDA(row2.kills, row2.deaths, row2.assists)
 
             container.innerHTML = `
             <div style="background-color: #28344e;" class="accordion-item">
                 <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
-                        <div class="item-container" style="width:108px;">
+                        <div class="item-container rankedGameCard">
                             <div class="innerCard">
                                 <p class="match-card-text" style="color: #336be3"><b>Ranked Solo</b></p>
                             </div>
@@ -188,22 +198,29 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                                 <p class="match-card-text">${row1.gameDurationMinutes}</p>
                             </div>
                         </div>
-                        <div class="item-container">
+
+                        <div class="item-container portraitCard">
                             <div class="innerCard">
-                                <img id="${accordionChampId}" alt="champIcon" style="height: 56px; width: 56px; border-radius: 15%;">
+                                
+                                <div class="image-container">
+                                    <img id="${accordionChampId}" alt="champIcon" style="height: 56px; width: 56px; border-radius: 15%;">
+                                    <div class="text-over-image">${row2.champLevel}</div>
+                                </div>
                                 <div style="flex-direction: row;">
                                     <img id="${summoner1ID}" alt="summoner1" class="summonerIcons">
                                     <img id="${summoner2ID}" alt="summoner2" class="summonerIcons">
                                 </div>
                             </div>
-                            
-
                         </div>
-                        <div class="item-container">
-                            <div class="item-container">
-                                <p class="match-card-text">${row2.kills}/${row2.deaths}/${row2.assists}</p>
+
+                        <div class="item-container px-2">
+                            <div class="innerCard">
+                                <p class="kda">${row2.kills}/${row2.deaths}/${row2.assists}</p>
                             </div>
-                            <div class="item-container">
+                            <div class="innerCard">
+                                <p class="match-card-text">${kda}:1 KDA</p>
+                            </div>
+                            <div class="innerCard">
                                 <p class="match-card-text">${row2.champLevel}</p>
                             </div>
                         </div>
