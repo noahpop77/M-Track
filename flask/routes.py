@@ -52,15 +52,14 @@ def summonerSearch():
 
     ingres = request.data.decode("utf8")
 
-    print(f"\nSummonerSearch endpoint hit \nSummoner: {ingres}\n")
+    #print(f"\nSummonerSearch endpoint hit \nSummoner: {ingres}\n")
     gameData = fetchFromDB(ingres, 20)
 
     if len(gameData) < 1:
-        print("Fetching new user data")
         mtrack(ingres, RIOTAPIKEY)
-        print("mtrack() for summonerSearch done")
+        #print("mtrack() for summonerSearch done")
         gameData = fetchFromDB(ingres, 20)
-        print("fetchFromDB() for summonerSearch done")
+        #print("fetchFromDB() for summonerSearch done")
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
@@ -88,14 +87,14 @@ def summonerSearch():
 
 @app.route('/getHistory', methods=['POST'])
 def getHistory():
-    print("\ngetHistory endpoint hit\n")
+    #print("\ngetHistory endpoint hit\n")
     ingres = request.data.decode("utf8")
 
     mtrack(ingres, RIOTAPIKEY)
     gameData = fetchFromDB(ingres, 20)
     
     if len(gameData) < 1:
-        print("Fetching new user data")
+        #print("Fetching new user data")
         mtrack(ingres, RIOTAPIKEY)
         gameData = fetchFromDB(ingres, 20)
 
@@ -128,8 +127,8 @@ def getHistory():
 
 
 # Get champ icons
-@app.route('/getIcon', methods=['POST'])
-def getIcon():
+@app.route('/getChampIcon', methods=['POST'])
+def getChampIcon():
     ingres = request.data.decode("utf8")
 
     # Specify the path to the folder containing PNGs
@@ -162,6 +161,23 @@ def getSummoners():
         # If the file doesn't exist, return an error response
         return "File not found", 404
 
+
+# Get summoner spell icons
+@app.route('/getItemIcon', methods=['POST'])
+def getItemIcon():
+    ingres = request.data.decode("utf8")
+
+    # Specify the path to the folder containing PNGs
+    icons_folder = './static/img/itemIcons'
+
+    # Check if the file with the given name exists
+    file_path = os.path.join(icons_folder, f'{ingres}.png')
+    if os.path.exists(file_path):
+        # Return the PNG file as a response
+        return send_file(file_path, mimetype='image/png')
+    else:
+        # If the file doesn't exist, return an error response
+        return "File not found", 404
 
 
 

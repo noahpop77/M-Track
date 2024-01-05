@@ -123,15 +123,14 @@ def mtrack(ans, APIKEY):
     matchCount = 20
 
     #Gets PUUID from Summoner Name
-    print("Making API call...")
+    #print("Making API call...")
     sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
     #print(sumByName.text)
     profileData = sumByName.json()
     matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
-
+    #print(matches)
+    
     try:
-        print("Got to mapping file")
-
         current_directory = os.path.dirname(os.path.abspath(__file__))
         summonerPath = os.path.join(current_directory, 'summonerSpellMapping.json')
         itemPath = os.path.join(current_directory, 'items.json')
@@ -143,7 +142,6 @@ def mtrack(ans, APIKEY):
         # Loads item id mappings
         with open(itemPath, 'r') as file:
             itemIcons = json.load(file)
-
 
     except:
         print(
@@ -164,15 +162,19 @@ def mtrack(ans, APIKEY):
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
     matchData = []
+
     for i in matchList:
-        tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
-        matchData.append(tempMatch)
-        
+        try:
+            tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
+            matchData.append(tempMatch)
+        except:
+            pass
+    
     history = {}
     gameData = []
     counter = 1
     for i in matchData:
-
+        
         queueType = "Not Ranked"
         if i['info']['queueId'] == 420:
             queueType = "Ranked Solo/Duo"
@@ -220,13 +222,10 @@ def mtrack(ans, APIKEY):
                 history['matchdata'].append(newEntry)
         
         except KeyError:
-            #print("Exiting here")
             pass
-            #exit()
         
         gameData.append(history)
 
-    print("about to insert gamedata into DB")
     databaseInsert(gameData, "matchHistory", ans)
     return 200
 

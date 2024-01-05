@@ -216,13 +216,14 @@ img {vertical-align: middle;}
   background-color: #59343b;
 }
 .winDivider {
-  width: 48px;
-  height: 1px;
+  width: 80%;
+  height: 2px;
+  border-radius: 20%;
   background-color:#2f436e;
 }
 .lossDivider {
   width: 48px;
-  height: 1px;
+  height: 2px;
   background-color: #703c47;
 }
 
@@ -273,5 +274,5 @@ img {vertical-align: middle;}
 }
 
 .match-card-text {
-font-size: 15px;
+font-size: 12px;
 }

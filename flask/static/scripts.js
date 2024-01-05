@@ -82,7 +82,7 @@ function toggleAccordion(header) {
 
 
 async function getChampIcon(champName, elementID) {
-    var url = "http://10.0.0.150/getIcon";
+    var url = "http://10.0.0.150/getChampIcon";
 
     try {
         const response = await fetch(url, {
@@ -179,14 +179,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <div class="nested-container">
                         <div class="item-container" style="width:108px;">
                             <div class="innerCard">
-                                <p class="match-card-text" style="color: #336be3">Ranked Solo</p>
+                                <p class="match-card-text" style="color: #336be3"><b>Ranked Solo</b></p>
                             </div>
                             <div class="innerCard">
                                 <p class="match-card-text">${row1.gameDate}</p>
                             </div>
                             <div class="winDivider"></div>
                             <div class="innerCard">
-                                <p class="match-card-text">Victory</p>
+                                <p class="match-card-text"><b>Victory</b></p>
                             </div>
                             <div class="innerCard">
                                 <p class="match-card-text">${row1.gameDurationMinutes}</p>
@@ -263,7 +263,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <div class="innerCard">
                                 <p class="match-card-text">${row1.gameDate}</p>
                             </div>
-                            <div class="winDivider"></div>
+                            <div class="lossDivider"></div>
                             <div class="innerCard">
                                 <p class="match-card-text">Defeat</p>
                             </div>
