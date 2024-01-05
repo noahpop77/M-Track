@@ -37,8 +37,7 @@ async function updateData() {
     var responseParagraph = document.getElementById('responseParagraph');
     responseParagraph.textContent = "Getting history...";
     var summonerName = document.getElementById("nameInput").value;
-    console.log("summonerName: " + summonerName)
-    console.log("Updating Name:", summonerName);
+
     await fetch(url, {
         method: "POST",
         headers: {
@@ -56,11 +55,7 @@ async function updateData() {
     })
     .then(function(data) {
         //responseParagraph.textContent = "Updated, Please Refresh";
-        console.log("PRE PRINTING TO SCREEN");
-        // location.reload();
         printMatches(data.gameData, data.playerStats, data.matchData, summonerName);
-        // responseParagraph.textContent = answer;
-        console.log("Data rewritten to screen");
     })
     .catch(function(error) {
         responseParagraph.textContent = error.message; // Display error message
@@ -102,8 +97,8 @@ async function getChampIcon(champName, elementID) {
             throw new Error('Error: ' + response.status); // Throw an error
         }
     } catch (error) {
-        console.log(error.message);
         // Display error message
+        console.log(error.message);
     }
 }
 
@@ -153,9 +148,10 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
     // Loop through the arrays simultaneously using forEach
     gameData.forEach((row1, index) => {
+        
         const row2 = playerStats[index];
         const row3 = matchData[index];
-        // console.log(row2)
+        
         // Create a new div element
         const container = document.createElement('div');
         container.classList.add('px-5');
