@@ -127,8 +127,10 @@ def mtrack(ans, APIKEY):
     sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
     #print(sumByName.text)
     profileData = sumByName.json()
-    matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
-    #print(matches)
+    try:
+        matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
+    except KeyError:
+        exit(1)
     
     try:
         current_directory = os.path.dirname(os.path.abspath(__file__))

@@ -2,7 +2,7 @@ async function summonerSearch() {
     var url = "http://10.0.0.150/summonerSearch";
 
     var responseParagraph = document.getElementById('responseParagraph');
-    responseParagraph.textContent = "Getting history...";
+    responseParagraph.textContent = "Searching for Summoner...";
     var summonerName = document.getElementById("nameInput").value;
 
     await fetch(url, {
@@ -24,7 +24,8 @@ async function summonerSearch() {
         printMatches(data.gameData, data.playerStats, data.matchData, summonerName);
     })
     .catch(function(error) {
-        responseParagraph.textContent = error.message;
+        responseParagraph.textContent = "Summoner not found..."
+        //responseParagraph.textContent = error.message;
             // Display error message
     });
 }
@@ -147,7 +148,19 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
     var responseParagraph = document.getElementById('responseParagraph');
     responseParagraph.textContent = summonerName;
-
+    responseParagraph.innerHTML = `
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <button id="updateButton" class="btn btn-dark btn-sm rounded-3" style="height: 100%; font-weight:bold; font-size: 50%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none; padding: 7px;" onclick="updateData()">Update</button>
+                </div>
+                <div class="col-8 d-flex justify-content-center align-items-center">
+                <h3 class="mb-3 mb-md-0 fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%;">${summonerName}</h3>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    `;
 
     // Get the data-container element
     const dataContainer = document.getElementById('data-container');
@@ -203,7 +216,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <div class="innerCard">
                                 
                                 <div class="image-container">
-                                    <img id="${accordionChampId}" alt="champIcon" style="height: 56px; width: 56px; border-radius: 15%;">
+                                    <img id="${accordionChampId}" alt="champIcon" style="height: 100%; width: 100%; border-radius: 15%;">
                                     <div class="text-over-image">${row2.champLevel}</div>
                                 </div>
                                 <div style="flex-direction: row;">

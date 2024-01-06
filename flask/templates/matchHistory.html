@@ -26,59 +26,38 @@
     <title>Frontend Bootcamp</title>
   </head>
 
-  <body class="bg-dark" style="">
+  <body class="bg-dark">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-      <div class="container">
-        <a href="/" class="navbar-brand">Home</a>
-        <a href="matchHistory" class="navbar-brand">M-Tracker</a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="#Search" class="nav-link">M-Tracker Search</a>
-            </li>
-            <li class="nav-item">
-              <a href="#projectDetails" class="nav-link">Project Details</a>
-            </li>
-          </ul>
+    <nav class="bg-dark navbar-dark fixed-top">
+      <div class="container" style="min-width: auto !important; max-width: none !important;">
+        <div class="navbar-nav" style="flex-direction: row;">
+          <a href="/" class="nav-link navbar-brand">Home</a>
+          <a href="matchHistory" class="nav-link navbar-brand">M-Tracker</a>
         </div>
       </div>
     </nav>
 
-      <!-- Search Result -->
-      <section class="searchSection text-dark pb-3 pt-3">
-        <div class="container">
-        </div>
-      </section>
+
       <!-- Search Input -->
-      <section class="searchSection text-dark px-5">
-        <div class="container">
-          <div class="justify-content-center">
-            <div class="input-group summoner-input searchContainer rounded-3">
-              <input id="nameInput" style="font-family: VCR OSD Mono, sans-serif; outline: none; background: transparent; border: 0px; font-weight:bold; font-size: x-large;" type="text" class="form-control rounded-5 text-center shadow-none" placeholder="Name..." />
-              <button id="searchButton" class="btn btn-dark btn-sm rounded-3" style="height: 50px; width: 11%; font-weight:bold; font-size: 22px; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none;" type="button" onclick="summonerSearch()">GO</button>
-              
-            </div>
-            <button id="updateButton" class="btn btn-dark btn-sm rounded-pill" onclick="updateData()">Update Data</button>
+      <section class="searchSection text-dark pt-2">
+        <div class="container" style="width: 100%; max-width: 952px;">
+
+          <div class="input-group summoner-input searchContainer rounded-3">
+
+            <input id="nameInput" style="height: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; background: transparent; border: 0px; font-weight:bold; font-size: 120%;" type="text" class="form-control rounded-5 text-center shadow-none" placeholder="Search Summoner..." />
+            
+            <button id="searchButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none;" type="button" onclick="summonerSearch()">TRACK</button>
+
           </div>
+            
         </div>
       </section>
       <!-- Search Result -->
-      <section class="searchSection text-dark pb-1 pt-3">
-        <div class="container">
+      <section class="searchSection text-dark pb-1 pt-2">
+        <div class="container" style="min-width: 100%; max-width:none;">
           <div class="align-items-center">
-            <h3 id="responseParagraph" class="mb-3 mb-md-0 text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 35px;"></h3>
+            <h3 id="responseParagraph" class="mb-3 mb-md-0 text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 200%;"></h3>
 
           </div>
         </div>

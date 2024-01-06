@@ -10,13 +10,8 @@ body {
   font-family: '__Roboto_2d0052','__Roboto_Fallback_2d0052',sans-serif,system-ui,sans-serif;
   margin:0;
 }
-#map {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
 
-@media (min-width: 900px) {
+@media (min-width: 50%) {
   .summoner-input {
     width: 50%;
     margin-left: auto;
@@ -26,16 +21,17 @@ body {
 
 .searchContainer {
   background: white;
-  padding: 1%;
+  padding: 4px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 40px;
 }
-
-
 .searchSection {
   background-color: #57ffd7;
   color: #57ffd7;
 }
 
-  
 
 
 
@@ -112,13 +108,12 @@ img {
 }
 .winDivider {
   width: 80%;
-  height: 2px;
-  border-radius: 20%;
+  height: 1px;
   background-color:#2f436e;
 }
 .lossDivider {
   width: 80%;
-  height: 2px;
+  height: 1px;
   background-color: #703c47;
 }
 
@@ -176,16 +171,14 @@ img {
   width:10%;
   max-width: 56px;
 }
-
-.match-card-text {
-font-size: 12px;
-}
 .kda {
   font-size: 15px;
   font-weight: bold;
 }
 
-
+.match-card-text {
+  font-size: 12px;
+  }
 
 
 
