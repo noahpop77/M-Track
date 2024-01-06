@@ -66,8 +66,8 @@ img {
 }
 
 .accordion-item {
-  /*width: 740px;*/
-  width: 100%;
+  width: 740px;
+  /*width: 100%;*/
   max-width: 740px;
   min-height: 96px; /* if you set a static height it will not open the accordion item */
   border:none;
@@ -136,6 +136,7 @@ img {
 .nested-container {
   width: 100%;
   padding: 2px;
+  gap: 5px;
   border: none;
   margin-right: auto;
   margin-left: auto;
@@ -149,49 +150,73 @@ img {
   flex-direction: column;
 }
 
-.summonerIcons {
-  height: 25px; 
-  width: 25px; 
-  border-radius: 15%;
-}
+
+
 
 .innerCard {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 3px;
   white-space: nowrap;
   max-height: 20px;
 }
 
 .rankedGameCard {
-  width:12%;
+  width: 12%;
   min-width: 75px;
 }
 .portraitCard {
-  width:10%;
+  width: 11%;
   max-width: 56px;
+}
+.itemCard {
+  width: 3%;
+  gap: 2px;
 }
 .kda {
   font-size: 15px;
   font-weight: bold;
 }
+.gameStatsWin {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-color: #2f436e;
+  line-height: 100%;
+  padding-left: 8px;
+}
+.gameStatsLose {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-color: #703c47;
+  line-height: 100%;
+  padding-left: 8px;
+}
 
 .match-card-text {
   font-size: 12px;
-  }
+}
 
-
-
+.summonerIcons {
+  height: 49%; 
+  width: 49%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+}
+.champIcon {
+  height: 105%;
+  width: 105%;
+  min-width: 54px;
+  min-width: 54px; 
+  border-radius: 15%;
+}
 /* IMAGES STUFF */
 /* Container to position the text */
 .image-container {
   position: relative;
-  width: 56px; /* Set the width of the container */
 }
-
 /* Image styling */
 .image-container img {
-  width: 100%;
   height: auto;
   display: block; /* Remove default image spacing */
 }

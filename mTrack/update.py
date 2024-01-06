@@ -125,7 +125,7 @@ def mtrack(ans, APIKEY):
     #Gets PUUID from Summoner Name
     #print("Making API call...")
     sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
-    #print(sumByName.text)
+
     profileData = sumByName.json()
     try:
         matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
@@ -161,6 +161,12 @@ def mtrack(ans, APIKEY):
     for i in sepList:   # Cuts random useless characters in match list
         matchList.append(i.replace(" ","").replace("'", "").replace("[", "").replace("]", ""))
 
+    # TODO: ADD FUNCTIONALITY
+    # Make it so that instead of always querying every single match id
+    # it will only query ones that arent in the DB.
+    # I added a gameID field for a reason after all.
+    print(matchList)
+    
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
     matchData = []
@@ -171,6 +177,10 @@ def mtrack(ans, APIKEY):
             matchData.append(tempMatch)
         except:
             pass
+    
+    # Open the file in write mode and write the content
+    #with open("MatchData.json", 'w') as json_file:
+    #    json.dump(matchData, json_file, indent=4)
     
     history = {}
     gameData = []
@@ -212,6 +222,8 @@ def mtrack(ans, APIKEY):
                     "goldEarned": participant['goldEarned'],
                     "summonerSpell1": summonerIcons[str(participant['summoner1Id'])],
                     "summonerSpell2": summonerIcons[str(participant['summoner2Id'])],
+                    "visionScore": participant['visionScore'],
+                    "totalCS": int(participant['totalMinionsKilled'] + participant['neutralMinionsKilled']),
                     "item0": itemIcons[str(participant['item0'])],
                     "item1": itemIcons[str(participant['item1'])],
                     "item2": itemIcons[str(participant['item2'])],
