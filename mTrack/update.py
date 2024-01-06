@@ -165,7 +165,7 @@ def mtrack(ans, APIKEY):
     # Make it so that instead of always querying every single match id
     # it will only query ones that arent in the DB.
     # I added a gameID field for a reason after all.
-    print(matchList)
+    #print(matchList)
     
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary

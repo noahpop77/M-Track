@@ -201,6 +201,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const row2 = playerStats[index];
         const row3 = matchData[index];
         
+        console.log(row3)
+
         // Create a new div element
         const container = document.createElement('div');
         container.classList.add('px-5');
@@ -218,6 +220,20 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const item4ID = `item4ID_${index}`;
         const item5ID = `item5ID_${index}`;
         const item6ID = `item6ID_${index}`;
+
+        const playerIcon1ID = `playerIcon1ID_${index}`;
+        const playerIcon2ID = `playerIcon2ID_${index}`;
+        const playerIcon3ID = `playerIcon3ID_${index}`;
+        const playerIcon4ID = `playerIcon4ID_${index}`;
+        const playerIcon5ID = `playerIcon5ID_${index}`;
+        const playerIcon6ID = `playerIcon6ID_${index}`;
+        const playerIcon7ID = `playerIcon7ID_${index}`;
+        const playerIcon8ID = `playerIcon8ID_${index}`;
+        const playerIcon9ID = `playerIcon9ID_${index}`;
+        const playerIcon10ID = `playerIcon10ID_${index}`;
+        
+        // TODO: There is a large problem with getting the wrong summoner names
+        // Happens enough times that it is a serious problem
         
         // Enters searched user data
         if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
@@ -234,12 +250,32 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             item5 = getItemIcon(row2.item5, item5ID);
             item6 = getItemIcon(row2.item6, item6ID);
 
+            player1 = getChampIcon(row3[0].Champ, playerIcon1ID);
+            player2 = getChampIcon(row3[1].Champ, playerIcon2ID);
+            player3 = getChampIcon(row3[2].Champ, playerIcon3ID);
+            player4 = getChampIcon(row3[3].Champ, playerIcon4ID);
+            player5 = getChampIcon(row3[4].Champ, playerIcon5ID);
+            player6 = getChampIcon(row3[5].Champ, playerIcon6ID);
+            player7 = getChampIcon(row3[6].Champ, playerIcon7ID);
+            player8 = getChampIcon(row3[7].Champ, playerIcon8ID);
+            player9 = getChampIcon(row3[8].Champ, playerIcon9ID);
+            player10 = getChampIcon(row3[9].Champ, playerIcon10ID);
+
+            player1Name = row3[0].sumName;
+            player2Name = row3[1].sumName;
+            player3Name = row3[2].sumName; 
+            player4Name = row3[3].sumName; 
+            player5Name = row3[4].sumName; 
+            player6Name = row3[5].sumName; 
+            player7Name = row3[6].sumName; 
+            player8Name = row3[7].sumName; 
+            player9Name = row3[8].sumName; 
+            player10Name = row3[9].sumName;
+
             //Gets the Kill participation
             var killTotalTeam = 0;
             row3.forEach(player => {
-                console.log(player)
                 if (player.playerTeamID == row2.playerTeamID) {
-                    console.log("player.playerTeamID " + player.playerTeamID)
                     killTotalTeam = killTotalTeam + player.kills;
                 };
             });
@@ -321,19 +357,45 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             </div>
                             
                         </div>
-
-                        <div class="item-container rankedGameCard gameStatsWin">
+                        
+                        <div class="item-container teamCard">
                             <div class="innerCard">
-                                <p class="match-card-text">${row1.gameID}</p>
-                            </div>
-                            <div class="winDivider"></div>
-                            <div class="innerCard">
-                                <p class="match-card-text"><b>Victory</b></p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">${row1.gameDurationMinutes}</p>
+                                <img id="${playerIcon1ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon2ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon3ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon4ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon5ID}" alt="summoner1" class="teamIcon">
                             </div>
                         </div>
+                        <div class="item-container teamName">
+                            <div class="innerCard">
+                                <div>${player1Name}</div>
+                                <div>${player2Name}</div>
+                                <div>${player3Name}</div>
+                                <div>${player4Name}</div>
+                                <div>${player5Name}</div>
+                            </div>
+                        </div>
+
+                        <div class="item-container teamCard ">
+                            <div class="innerCard">
+                                <img id="${playerIcon6ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon7ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon8ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon9ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon10ID}" alt="summoner1" class="teamIcon">
+                            </div>
+                        </div>
+                        <div class="item-container teamName">
+                            <div class="innerCard">
+                                <div>${player6Name}</div>
+                                <div>${player7Name}</div>
+                                <div>${player8Name}</div>
+                                <div>${player9Name}</div>
+                                <div>${player10Name}</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 
@@ -376,7 +438,51 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             getChampIcon(row2.Champ, accordionChampId);
             sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
             sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
+
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
+
+            item0 = getItemIcon(row2.item0, item0ID);
+            item1 = getItemIcon(row2.item1, item1ID);
+            item2 = getItemIcon(row2.item2, item2ID);
+            item3 = getItemIcon(row2.item3, item3ID);
+            item4 = getItemIcon(row2.item4, item4ID);
+            item5 = getItemIcon(row2.item5, item5ID);
+            item6 = getItemIcon(row2.item6, item6ID);
+
+            player1 = getChampIcon(row3[0].Champ, playerIcon1ID);
+            player2 = getChampIcon(row3[1].Champ, playerIcon2ID);
+            player3 = getChampIcon(row3[2].Champ, playerIcon3ID);
+            player4 = getChampIcon(row3[3].Champ, playerIcon4ID);
+            player5 = getChampIcon(row3[4].Champ, playerIcon5ID);
+            player6 = getChampIcon(row3[5].Champ, playerIcon6ID);
+            player7 = getChampIcon(row3[6].Champ, playerIcon7ID);
+            player8 = getChampIcon(row3[7].Champ, playerIcon8ID);
+            player9 = getChampIcon(row3[8].Champ, playerIcon9ID);
+            player10 = getChampIcon(row3[9].Champ, playerIcon10ID);
+
+            player1Name = row3[0].sumName;
+            player2Name = row3[1].sumName;
+            player3Name = row3[2].sumName; 
+            player4Name = row3[3].sumName; 
+            player5Name = row3[4].sumName; 
+            player6Name = row3[5].sumName; 
+            player7Name = row3[6].sumName; 
+            player8Name = row3[7].sumName; 
+            player9Name = row3[8].sumName; 
+            player10Name = row3[9].sumName;
+
+            //Gets the Kill participation
+            var killTotalTeam = 0;
+            row3.forEach(player => {
+                if (player.playerTeamID == row2.playerTeamID) {
+                    killTotalTeam = killTotalTeam + player.kills;
+                };
+            });
+            participation = Math.round((row2.kills / killTotalTeam) * 100);
+
+            // Gets cs per minute
+            csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
+            csPerMin = csPerMinFloat.toFixed(1);
 
             container.innerHTML = `
             <div style="background-color: #59343b;" class="accordion-item">
@@ -390,7 +496,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <div class="innerCard">
                                 <p class="match-card-text">${row1.gameDate}</p>
                             </div>
-                            <div class="lossDivider"></div>
+                            <div class="winDivider"></div>
                             <div class="innerCard">
                                 <p class="match-card-text"><b>Defeat</b></p>
                             </div>
@@ -413,17 +519,83 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             </div>
                         </div>
 
-                        <div class="item-container px-2">
+
+                        <div class="item-container itemCard">
                             <div class="innerCard">
-                                <p class="kda">${row2.kills}/${row2.deaths}/${row2.assists}</p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">${kda}:1 KDA</p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">${row2.champLevel}</p>
+                                <img id="${item0ID}" alt="summoner1" class="summonerIcons">
+                                <img id="${item1ID}" alt="summoner1" class="summonerIcons">
+                                <img id="${item2ID}" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
+                        <div class="item-container itemCard">
+                            <div class="innerCard">
+                                <img id="${item3ID}" alt="summoner1" class="summonerIcons">
+                                <img id="${item4ID}" alt="summoner1" class="summonerIcons">
+                                <img id="${item5ID}" alt="summoner1" class="summonerIcons">
+                            </div>
+                        </div>
+                        <div class="item-container itemCard">
+                            <div class="innerCard">
+                                <img id="${item6ID}" style="margin-top: 56px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
+                            </div>
+                        </div>
+                        
+
+                        <div class="item-container px-2">
+                            <div class="innerCard">
+                                <p class="kda">${row2.kills} / <span style="color: #e84057">${row2.deaths}</span> / ${row2.assists}</p>
+                            </div>
+                            <div class="innerCard">
+                                <p class="match-card-text" style="color: #7c7e97; font-weight:400;">${kda}:1 KDA</p>
+                            </div>
+                            <div class="winDivider"></div>
+                            <div class="innerCard">
+                                <p class="match-card-text" style="color: #336be3"><b>K/P: ${participation}%</b></p>
+                            </div>
+                            <div class="innerCard">
+                                <p class="match-card-text">${row2.totalCS} (${csPerMin})</p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="item-container teamCard">
+                            <div class="innerCard">
+                                <img id="${playerIcon1ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon2ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon3ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon4ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon5ID}" alt="summoner1" class="teamIcon">
+                            </div>
+                        </div>
+                        <div class="item-container teamName">
+                            <div class="innerCard">
+                                <div>${player1Name}</div>
+                                <div>${player2Name}</div>
+                                <div>${player3Name}</div>
+                                <div>${player4Name}</div>
+                                <div>${player5Name}</div>
+                            </div>
+                        </div>
+
+                        <div class="item-container teamCard ">
+                            <div class="innerCard">
+                                <img id="${playerIcon6ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon7ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon8ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon9ID}" alt="summoner1" class="teamIcon">
+                                <img id="${playerIcon10ID}" alt="summoner1" class="teamIcon">
+                            </div>
+                        </div>
+                        <div class="item-container teamName">
+                            <div class="innerCard">
+                                <div>${player6Name}</div>
+                                <div>${player7Name}</div>
+                                <div>${player8Name}</div>
+                                <div>${player9Name}</div>
+                                <div>${player10Name}</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 
@@ -449,6 +621,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <th>CS</th>
                             <th>Item</th>
                             <th>Win/Lose</th>
+                            <th>${row1.gameID}</th>
                         </tr>
                     </thead>
 
