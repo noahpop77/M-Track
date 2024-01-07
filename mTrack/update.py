@@ -172,6 +172,12 @@ def mtrack(ans, APIKEY):
     # https://developer.riotgames.com/docs/lol#summoner-names-to-riot-ids
     # https://developer.riotgames.com/apis#account-v1/GET_getByPuuid
     # Change the name input methods from summonerNames to RiotIDs
+    
+    # TODO: ADD FUNCTIONALITY
+    # Make it so that the initial request to search for a summoners data is through
+    # The riotID instead of the summonerID BUT on the javascript client side of things
+    # Make it so that it does its check with the riotID
+        # Only need to send 1 pair of requests rather than saving the summoner of every single user as their riotID
         
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
@@ -248,4 +254,3 @@ def mtrack(ans, APIKEY):
 
     databaseInsert(gameData, "matchHistory", ans)
     return 200
-

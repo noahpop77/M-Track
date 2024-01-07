@@ -25,6 +25,7 @@ async function summonerSearch() {
     })
     .catch(function(error) {
         responseParagraph.textContent = "Summoner not found..."
+        console.log(error)
         //responseParagraph.textContent = error.message;
             // Display error message
     });
@@ -167,6 +168,20 @@ function calculateKDA(kills, deaths, assists) {
     return kda.toFixed(2);
 }
 
+function riotIDSplitter(inputString) {
+    // Splitting the string at the '#' symbol
+    const nameParts = inputString.split("#");
+  
+    // Extracting the parts
+    const gamename = nameParts[0];
+    const tag = nameParts[1] || null;
+  
+    // Returning the results
+    return {
+      gamename,
+      tag
+    };
+}
 
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
     // Assuming gameData and playerStats are available as arrays of objects
@@ -200,8 +215,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const row2 = playerStats[index];
         const row3 = matchData[index];
-        
-        console.log(row3)
 
         // Create a new div element
         const container = document.createElement('div');
@@ -234,7 +247,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         
         // TODO: There is a large problem with getting the wrong summoner names
         // Happens enough times that it is a serious problem
-
+        console.log(row2)
+        console.log(row2.sumName);
         // Enters searched user data
         if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
             
