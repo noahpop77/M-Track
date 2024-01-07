@@ -234,7 +234,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         
         // TODO: There is a large problem with getting the wrong summoner names
         // Happens enough times that it is a serious problem
-        
+
         // Enters searched user data
         if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
             
@@ -353,7 +353,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                                 <p class="match-card-text" style="color: #336be3"><b>K/P: ${participation}%</b></p>
                             </div>
                             <div class="innerCard">
-                                <p class="match-card-text">${row2.totalCS} (${csPerMin})</p>
+                                <p class="match-card-text">CS ${row2.totalCS} (${csPerMin})</p>
                             </div>
                             
                         </div>
@@ -496,7 +496,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <div class="innerCard">
                                 <p class="match-card-text">${row1.gameDate}</p>
                             </div>
-                            <div class="winDivider"></div>
+                            <div class="lossDivider"></div>
                             <div class="innerCard">
                                 <p class="match-card-text"><b>Defeat</b></p>
                             </div>
@@ -548,12 +548,12 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <div class="innerCard">
                                 <p class="match-card-text" style="color: #7c7e97; font-weight:400;">${kda}:1 KDA</p>
                             </div>
-                            <div class="winDivider"></div>
+                            <div class="lossDivider"></div>
                             <div class="innerCard">
-                                <p class="match-card-text" style="color: #336be3"><b>K/P: ${participation}%</b></p>
+                                <p class="match-card-text" style="color: #e83d42"><b>K/P: ${participation}%</b></p>
                             </div>
                             <div class="innerCard">
-                                <p class="match-card-text">${row2.totalCS} (${csPerMin})</p>
+                                <p class="match-card-text">CS ${row2.totalCS} (${csPerMin})</p>
                             </div>
                             
                         </div>

@@ -166,7 +166,13 @@ def mtrack(ans, APIKEY):
     # it will only query ones that arent in the DB.
     # I added a gameID field for a reason after all.
     #print(matchList)
+        
     
+    # TODO: ADD FUNCTIONALITY
+    # https://developer.riotgames.com/docs/lol#summoner-names-to-riot-ids
+    # https://developer.riotgames.com/apis#account-v1/GET_getByPuuid
+    # Change the name input methods from summonerNames to RiotIDs
+        
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
     matchData = []
