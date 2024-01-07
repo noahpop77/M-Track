@@ -60,7 +60,6 @@ def databaseInsert(matchHistoryGames, table, summoner):
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
             
-            counter = 0
             try:
                 for game in matchHistoryGames:
                     summonerWin = ""
@@ -115,20 +114,42 @@ def databaseInsert(matchHistoryGames, table, summoner):
             #print("MySQL connection closed.")
 
 
+def riotSplitID(fullRiotID):
+    # Splitting the string at the '#' symbol
+    name_parts = fullRiotID.split("#")
+
+    # Extracting the parts
+    gamename = name_parts[0]
+    tag = name_parts[1] if len(name_parts) > 1 else None
+    return gamename, tag
 
 
 
-
-def mtrack(ans, APIKEY):
+def mtrack(summonerName, puuid, APIKEY):
     matchCount = 20
+    #riotGameName, riotTagLine = riotSplitID(summonerName)
+    
+    #Gets PUUID from riotID
+    #sumByName = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={APIKEY}")
+    #sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
 
-    #Gets PUUID from Summoner Name
-    #print("Making API call...")
-    sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
+    #profileData = sumByName.json()
 
-    profileData = sumByName.json()
+
+    # Gets riotID Data
+    #riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-puuid/{profileData['puuid']}?api_key={APIKEY}").json()
+
+    #riotGameName = riotIDData['gameName']
+    #riotTagLine = riotIDData['tagLine']
+
+    #print(f"\n{riotGameName}#{riotTagLine}")
+    #print(riotGameName)
+    #print(riotTagLine)
+    #print(f"{profileData}\n")
+
+    
     try:
-        matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{profileData['puuid']}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
+        matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
     except KeyError:
         exit(1)
     
@@ -166,18 +187,7 @@ def mtrack(ans, APIKEY):
     # it will only query ones that arent in the DB.
     # I added a gameID field for a reason after all.
     #print(matchList)
-        
-    
-    # TODO: ADD FUNCTIONALITY
-    # https://developer.riotgames.com/docs/lol#summoner-names-to-riot-ids
-    # https://developer.riotgames.com/apis#account-v1/GET_getByPuuid
-    # Change the name input methods from summonerNames to RiotIDs
-    
-    # TODO: ADD FUNCTIONALITY
-    # Make it so that the initial request to search for a summoners data is through
-    # The riotID instead of the summonerID BUT on the javascript client side of things
-    # Make it so that it does its check with the riotID
-        # Only need to send 1 pair of requests rather than saving the summoner of every single user as their riotID
+
         
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
@@ -196,22 +206,24 @@ def mtrack(ans, APIKEY):
     
     history = {}
     gameData = []
-    counter = 1
     for i in matchData:
         
         queueType = "Not Ranked"
-        if i['info']['queueId'] == 420:
-            queueType = "Ranked Solo/Duo"
-        
+        try:
+            if i['info']['queueId'] == 420:
+                queueType = "Ranked Solo/Duo"
+        except KeyError:
+            pass
+        #print(i)
         date = convert_unix_to_date(i['info']['gameCreation'])
 
-        summonerCardName = ""
         try:
             history = {
                 'gamedata': {
                     'gameid': i['metadata']['matchId'], 
                     'gamever': i['info']['gameVersion'],
-                    'userSummoner': profileData['name'],
+                    #'userSummoner': profileData['name'],
+                    'userSummoner': summonerName,
                     'gameDurationMinutes': getGameTime(i['info']['gameDuration']),
                     'gameCreationTimestamp': i['info']['gameCreation'],
                     'gameEndTimestamp': i['info']['gameEndTimestamp'],
@@ -222,7 +234,6 @@ def mtrack(ans, APIKEY):
                 'matchdata' : []
             }
             for participant in i['info']['participants']:
-                counter += 1
                 newEntry = {
                     "sumName": participant['summonerName'],
                     "playerTeamID": participant['teamId'],
@@ -245,12 +256,13 @@ def mtrack(ans, APIKEY):
                     "item6": itemIcons[str(participant['item6'])],
                     "win": participant['win']
                 }
+                
                 history['matchdata'].append(newEntry)
         
         except KeyError:
             pass
-        
+        #print(history)
         gameData.append(history)
-
-    databaseInsert(gameData, "matchHistory", ans)
+    
+    databaseInsert(gameData, "matchHistory", summonerName)
     return 200

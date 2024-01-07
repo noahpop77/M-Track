@@ -21,7 +21,7 @@ async function summonerSearch() {
         }
     })
     .then(function(data) {
-        printMatches(data.gameData, data.playerStats, data.matchData, summonerName);
+        printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
     })
     .catch(function(error) {
         responseParagraph.textContent = "Summoner not found..."
@@ -187,7 +187,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
     // Assuming gameData and playerStats are available as arrays of objects
     const gameData = gameDataIn;
     const playerStats = playerStatsIn;
-
+    
     var responseParagraph = document.getElementById('responseParagraph');
     responseParagraph.textContent = summonerName;
     responseParagraph.innerHTML = `
@@ -215,7 +215,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const row2 = playerStats[index];
         const row3 = matchData[index];
-
+        
         // Create a new div element
         const container = document.createElement('div');
         container.classList.add('px-5');
@@ -247,9 +247,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         
         // TODO: There is a large problem with getting the wrong summoner names
         // Happens enough times that it is a serious problem
-        console.log(row2)
-        console.log(row2.sumName);
         // Enters searched user data
+        
         if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
             
             getChampIcon(row2.Champ, accordionChampId);

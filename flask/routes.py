@@ -51,15 +51,19 @@ def summonerSearch():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
 
     ingres = request.data.decode("utf8")
+    riotGameName, riotTagLine = riotSplitID(ingres)
+    
+    #Gets PUUID from riotID
+    riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+    sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+    
+    summonerName = sumNameData['name']
 
-    #print(f"\nSummonerSearch endpoint hit \nSummoner: {ingres}\n")
-    gameData = fetchFromDB(ingres, 20)
-
+    gameData = fetchFromDB(summonerName, 20)
+    
     if len(gameData) < 1:
-        mtrack(ingres, RIOTAPIKEY)
-        #print("mtrack() for summonerSearch done")
-        gameData = fetchFromDB(ingres, 20)
-        #print("fetchFromDB() for summonerSearch done")
+        mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
+        gameData = fetchFromDB(summonerName, 20)
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
@@ -69,34 +73,35 @@ def summonerSearch():
     for i in matchData:
         try:
             for player in i:
-                lowerName = player['sumName'].lower()
-                if lowerName == ingres.lower():
+                lowerName = summonerName.lower()
+                if lowerName == player['sumName'].lower():
                     playerStats.append(player)
                     break
         except IndexError:
             break
         except Exception as e:
             print(e)
-
+            
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
-        'matchData': matchData
+        'matchData': matchData,
+        'summonerName': summonerName
     })
 
 
 @app.route('/getHistory', methods=['POST'])
 def getHistory():
     #print("\ngetHistory endpoint hit\n")
-    ingres = request.data.decode("utf8")
+    summonerName = request.data.decode("utf8")
 
-    mtrack(ingres, RIOTAPIKEY)
-    gameData = fetchFromDB(ingres, 20)
+    mtrack(summonerName, RIOTAPIKEY)
+    gameData = fetchFromDB(summonerName, 20)
     
     if len(gameData) < 1:
         #print("Fetching new user data")
-        mtrack(ingres, RIOTAPIKEY)
-        gameData = fetchFromDB(ingres, 20)
+        mtrack(summonerName, RIOTAPIKEY)
+        gameData = fetchFromDB(summonerName, 20)
 
     matchData = []
     for i in gameData:
@@ -110,7 +115,7 @@ def getHistory():
                 # lower() is mandatory
                 # If user inputs a username with incorrect cases it will
                 # force it to match the case of the check condition
-                if player['sumName'].lower() == ingres.lower():
+                if player['sumName'].lower() == summonerName.lower():
                     playerStats.append(player)
                     break
         except IndexError:
