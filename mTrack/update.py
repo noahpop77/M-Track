@@ -42,8 +42,63 @@ def convert_unix_to_date(unix_timestamp):
     return formatted_date
 
 
+def insertDatabaseRiotID(riotID, summonerName, riotIDPuuid):
+    try:
+        # Establish a connection to the MySQL server
+        connection = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database
+        )
 
-def databaseInsert(matchHistoryGames, table, summoner):
+        if connection.is_connected():
+            #print(f"Connected to MySQL Server: {host} | Database: {database}")
+
+            # Create a cursor object to interact with the database
+            cursor = connection.cursor()
+            
+            try:
+                query = (
+                    f"INSERT INTO riotIDData "
+                    "(riotID, summonerName, puuid) "
+                    "VALUES "
+                    "(%s, %s, %s)"
+                )
+                data = (
+                    riotID,
+                    summonerName,
+                    riotIDPuuid
+                )
+                
+                cursor.execute(query, data)
+
+            except IndexError:
+                pass
+
+            except mysql.connector.Error as e:
+                if e.errno == 1062:
+                    pass
+                else:
+                    print(e)
+
+            connection.commit()
+
+    except mysql.connector.Error as e:
+        print(f"Error connecting to MySQL Server: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+
+
+
+def insertDatabaseMatchHistory(matchHistoryGames, summoner):
 
     try:
         # Establish a connection to the MySQL server
@@ -70,7 +125,7 @@ def databaseInsert(matchHistoryGames, table, summoner):
                     
 
                     query = (
-                        f"INSERT INTO {table} "
+                        f"INSERT INTO matchHistory "
                         "(gameID, gameVer, userSummoner, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, queueType, gameDate, participants, matchdata) "
                         "VALUES "
                         "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
@@ -344,5 +399,5 @@ def mtrack(summonerName, puuid, APIKEY):
         
         gameData.append(history)
     
-    databaseInsert(gameData, "matchHistory", summonerName)
+    insertDatabaseMatchHistory(gameData, summonerName)
     return 200

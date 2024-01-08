@@ -52,24 +52,31 @@ def summonerSearch():
 
     ingres = request.data.decode("utf8")
     riotGameName, riotTagLine = riotSplitID(ingres)
-
-    # TODO: Research if you can move the 2 searches here into mtrack() to save time on execution if just a fetchFromDB is done
+    riotID = f"{riotGameName}#{riotTagLine}"
+    # TODO: Research if you can move the 2 searches here into mtrack() to save time on execution if just a fetchFromMatchHistoryDB is done
 
     # TODO: Possibly can make another database table that contains riotIDs and summoner names in it. 
     # Can do a DB search instead of an api request.
     # Much faster.
 
     #Gets PUUID from riotID
-    riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
-    sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
-    
-    summonerName = sumNameData['name']
-    
-    gameData = fetchFromDB(summonerName, 20)
+    try:
+        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+    except TypeError:
+        riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+
+        sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+        
+        summonerName = sumNameData['name']
+        riotIDPuuid = riotIDData['puuid']
+        
+        insertDatabaseRiotID(riotID, summonerName, riotIDData['puuid'])
+
+    gameData = fetchFromMatchHistoryDB(summonerName, 20)
     
     if len(gameData) < 1:
-        mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
-        gameData = fetchFromDB(summonerName, 20)
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
+        gameData = fetchFromMatchHistoryDB(summonerName, 20)
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
@@ -112,12 +119,12 @@ def getHistory():
     summonerName = sumNameData['name']
 
     mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
-    gameData = fetchFromDB(summonerName, 20)
+    gameData = fetchFromMatchHistoryDB(summonerName, 20)
     
     if len(gameData) < 1:
         #print("Fetching new user data")
         mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
-        gameData = fetchFromDB(summonerName, 20)
+        gameData = fetchFromMatchHistoryDB(summonerName, 20)
 
     matchData = []
     for i in gameData:
