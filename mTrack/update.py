@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 from configparser import ConfigParser
 
+
 # Config file initiators for use in getting API key from config.ini
 # in the sanity check for the /addSummoner API endpoint
 file = "../config.ini"

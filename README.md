@@ -70,7 +70,14 @@ This spawns from the projects web server to refine the process of performign all
 - Working out of my ubuntu server for now.
 - This is a great tool for working with the data to format it
    - `https://jsonformatter.curiousconcept.com/#`
-- Riot games developer portal: `https://developer.riotgames.com/`
+- Riot games developer portal
+  - `https://developer.riotgames.com/`
+- Riot developer website page on riotIDs and summoner names
+  - `https://developer.riotgames.com/docs/lol#summoner-names-to-riot-ids`
+    - `https://developer.riotgames.com/apis#account-v1/GET_getByRiotId`
+    - `https://developer.riotgames.com/docs/lol#data-dragon_items`
+- All League of Legends visual assets (splashes, tiles, runes, everything)
+  - `https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html`
 - Riot IDs that I can use for testing:
    - `https://www.op.gg/summoners/na/Chaddam-NA1`
      - `Chaddam#NA1`
