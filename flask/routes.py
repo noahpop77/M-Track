@@ -88,8 +88,7 @@ def summonerSearch():
     for i in matchData:
         try:
             for player in i:
-                lowerName = summonerName.lower()
-                if lowerName == player['sumName'].lower():
+                if player['sumName'].lower() == summonerName.lower():
                     playerStats.append(player)
                     break
         except IndexError:
@@ -106,8 +105,7 @@ def summonerSearch():
 
 
 
-# TODO: same as summonerSearch? 
-# Examine this endpoint and /summonerSearch to see if they are the same thing
+# /getHistory is different from summonerSearch in that it will ALWAYS get new info rather than displaying existing data and only getting new data if there is no gamedata on the searched user like summonerSearch
 
 # Endpoint hit when the update button is hit on the match history page
 @app.route('/getHistory', methods=['POST'])
@@ -125,7 +123,6 @@ def getHistory():
     # future functions
     # The ordering of this block matters to save time execution on the 2 API requests
     try:
-        print("TIME SAVED!!!")
         summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
         print("MAKING MORE REQUESTS...")
