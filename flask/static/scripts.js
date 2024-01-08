@@ -245,10 +245,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const playerIcon9ID = `playerIcon9ID_${index}`;
         const playerIcon10ID = `playerIcon10ID_${index}`;
         
-        // TODO: There is a large problem with getting the wrong summoner names
-        // Happens enough times that it is a serious problem
-        // Enters searched user data
-        
         if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
             
             getChampIcon(row2.Champ, accordionChampId);
