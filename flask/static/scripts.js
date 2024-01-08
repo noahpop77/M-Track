@@ -57,7 +57,7 @@ async function updateData() {
     })
     .then(function(data) {
         //responseParagraph.textContent = "Updated, Please Refresh";
-        printMatches(data.gameData, data.playerStats, data.matchData, summonerName);
+        printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
     })
     .catch(function(error) {
         responseParagraph.textContent = error.message; // Display error message

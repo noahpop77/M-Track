@@ -58,7 +58,7 @@ def summonerSearch():
     sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
     
     summonerName = sumNameData['name']
-
+    
     gameData = fetchFromDB(summonerName, 20)
     
     if len(gameData) < 1:
@@ -93,14 +93,24 @@ def summonerSearch():
 @app.route('/getHistory', methods=['POST'])
 def getHistory():
     #print("\ngetHistory endpoint hit\n")
-    summonerName = request.data.decode("utf8")
+    ingres = request.data.decode("utf8")
+    riotGameName, riotTagLine = riotSplitID(ingres)
+    
+    # TODO: Find out if it is necessary to perform the following 2 requests
+    # to save on execution time.
 
-    mtrack(summonerName, RIOTAPIKEY)
+    #Gets PUUID from riotID
+    riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+    sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+    
+    summonerName = sumNameData['name']
+
+    mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
     gameData = fetchFromDB(summonerName, 20)
     
     if len(gameData) < 1:
         #print("Fetching new user data")
-        mtrack(summonerName, RIOTAPIKEY)
+        mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
         gameData = fetchFromDB(summonerName, 20)
 
     matchData = []
@@ -126,7 +136,8 @@ def getHistory():
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
-        'matchData': matchData
+        'matchData': matchData,
+        'summonerName': summonerName
     })
 
 
