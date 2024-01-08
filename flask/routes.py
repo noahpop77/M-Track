@@ -45,16 +45,21 @@ def matchHistory():
     return render_template('matchHistory.html')
 
 
-
+# Main search function associated with the websites searchbar.
 @app.route('/summonerSearch', methods=['POST'])
 def summonerSearch():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
 
+    # Takes input name from request body
+    # Splits riotID and loads it into variables for use later
     ingres = request.data.decode("utf8")
     riotGameName, riotTagLine = riotSplitID(ingres)
     riotID = f"{riotGameName}#{riotTagLine}"
 
-    #Gets PUUID from riotID
+    # This try except clause will take the riotID gamename and tagline
+    # and get the summoner name and PUUID associated with it for use in
+    # future functions
+    # The ordering of this block matters to save time execution on the 2 API requests
     try:
         summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
@@ -67,8 +72,9 @@ def summonerSearch():
 
         insertDatabaseRiotID(riotID, summonerName, riotIDData['puuid'])
 
+    # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
     gameData = fetchFromMatchHistoryDB(summonerName, 20)
-    
+    # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
     if len(gameData) < 1:
         mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
         gameData = fetchFromMatchHistoryDB(summonerName, 20)
@@ -76,6 +82,7 @@ def summonerSearch():
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
 
+    # Player card data
     playerStats = []
     # Loops through match data, gets player card data and 
     for i in matchData:
@@ -89,7 +96,7 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
-            
+    
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
@@ -98,15 +105,25 @@ def summonerSearch():
     })
 
 
+
+# TODO: same as summonerSearch? 
+# Examine this endpoint and /summonerSearch to see if they are the same thing
+
+# Endpoint hit when the update button is hit on the match history page
 @app.route('/getHistory', methods=['POST'])
 def getHistory():
     
+    # Takes input name from request body
+    # Splits riotID and loads it into variables for use later
     ingres = request.data.decode("utf8")
     riotGameName, riotTagLine = riotSplitID(ingres)
     riotID = f"{riotGameName}#{riotTagLine}"
 
 
-    #Gets PUUID from riotID
+    # This try except clause will take the riotID gamename and tagline
+    # and get the summoner name and PUUID associated with it for use in
+    # future functions
+    # The ordering of this block matters to save time execution on the 2 API requests
     try:
         print("TIME SAVED!!!")
         summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
@@ -156,6 +173,11 @@ def getHistory():
         'matchData': matchData,
         'summonerName': summonerName
     })
+
+
+
+
+
 
 
 
@@ -211,6 +233,9 @@ def getItemIcon():
     else:
         # If the file doesn't exist, return an error response
         return "File not found", 404
+
+
+
 
 
 

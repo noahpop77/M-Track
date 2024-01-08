@@ -17,7 +17,8 @@ password = config['DATABASE']['password']
 database = config['DATABASE']['database']
 
 
-
+# Takes in a total amount of seconds of game timer and converts it to minute and second format
+# Ex: formatted_time = 30:12
 def getGameTime(durationInSeconds):
 
     # Convert seconds to minutes and round using modulo
@@ -31,7 +32,7 @@ def getGameTime(durationInSeconds):
 
 
 
-
+# Riot API gives linux epoc time in milliseconds so you have to divide their time by 1000 and then convert THAT time with the fromtimestamp function which takes seconds.
 def convert_unix_to_date(unix_timestamp):
     
     dt = datetime.fromtimestamp(unix_timestamp/1000)
@@ -42,6 +43,7 @@ def convert_unix_to_date(unix_timestamp):
     return formatted_date
 
 
+# Uses riotID, summonerName and PUUID as required data fields for the db table of mtrack.riotIDData which contains riotID account information.
 def insertDatabaseRiotID(riotID, summonerName, riotIDPuuid):
     try:
         # Establish a connection to the MySQL server
@@ -97,7 +99,8 @@ def insertDatabaseRiotID(riotID, summonerName, riotIDPuuid):
 
 
 
-
+# Takes in a list of dictionaries which is a list containing game data information per match. Also takes in a summoenr name associated as the "owner" of the games (the searcher).
+# Those games are then uploaded to the database as a new entry. 
 def insertDatabaseMatchHistory(matchHistoryGames, summoner):
 
     try:
@@ -175,7 +178,7 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
 
 
 
-
+# Rather than always running an extra 2 Riot API requests if we pre store some of the previously searched riotIDs we can save execution time.
 def fetchGameIDsFromDB(summonerName):
 
     try:
@@ -246,7 +249,8 @@ def findUniqueIDs(list1, list2):
 
 
 
-
+# Splits a full riotID into its components of a gameName and a tag
+# Useful tool
 def riotSplitID(fullRiotID):
     # Splitting the string at the '#' symbol
     name_parts = fullRiotID.split("#")
@@ -260,27 +264,8 @@ def riotSplitID(fullRiotID):
 
 def mtrack(summonerName, puuid, APIKEY):
     matchCount = 20
-    #riotGameName, riotTagLine = riotSplitID(summonerName)
     
-    #Gets PUUID from riotID
-    #sumByName = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={APIKEY}")
-    #sumByName = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{ans.replace(' ','%20')}?api_key={APIKEY}")
-
-    #profileData = sumByName.json()
-
-
-    # Gets riotID Data
-    #riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-puuid/{profileData['puuid']}?api_key={APIKEY}").json()
-
-    #riotGameName = riotIDData['gameName']
-    #riotTagLine = riotIDData['tagLine']
-
-    #print(f"\n{riotGameName}#{riotTagLine}")
-    #print(riotGameName)
-    #print(riotTagLine)
-    #print(f"{profileData}\n")
-    
-    
+    # Gets a list of the last 20(matchcount variable) matches associated with the specified puuid
     try:
         matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
     except KeyError:
@@ -335,9 +320,6 @@ def mtrack(summonerName, puuid, APIKEY):
         except:
             pass
     
-    # Open the file in write mode and write the content
-    #with open("MatchData.json", 'w') as json_file:
-    #    json.dump(matchData, json_file, indent=4)
     
     history = {}
     gameData = []

@@ -6,10 +6,14 @@ M-Track is a web application designed to track and display detailed statistics f
 
 ## Table of Contents
 
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+- [THIS PROJECT IS STILL UNDER HEAVY DEVELOPMENT](#this-project-is-still-under-heavy-development)
+- [M-Track](#m-track)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Personal Notes](#personal-notes)
 
 ## Features
 
@@ -69,6 +73,9 @@ This spawns from the projects web server to refine the process of performign all
 - Riot games developer portal: `https://developer.riotgames.com/`
 - Riot IDs that I can use for testing:
    - `https://www.op.gg/summoners/na/Chaddam-NA1`
+     - `Chaddam#NA1`
+     - `Uday#6666`
    - `https://www.op.gg/summoners/na/Scyrnn-NA1`
+     - `Scyrnn#NA1`
 
 hehehehehe
