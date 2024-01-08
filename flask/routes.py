@@ -45,14 +45,20 @@ def matchHistory():
     return render_template('matchHistory.html')
 
 
-# TODO: Look for cleanup
+
 @app.route('/summonerSearch', methods=['POST'])
 def summonerSearch():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
 
     ingres = request.data.decode("utf8")
     riotGameName, riotTagLine = riotSplitID(ingres)
-    
+
+    # TODO: Research if you can move the 2 searches here into mtrack() to save time on execution if just a fetchFromDB is done
+
+    # TODO: Possibly can make another database table that contains riotIDs and summoner names in it. 
+    # Can do a DB search instead of an api request.
+    # Much faster.
+
     #Gets PUUID from riotID
     riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
     sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()

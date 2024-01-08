@@ -114,6 +114,84 @@ def databaseInsert(matchHistoryGames, table, summoner):
             #print("MySQL connection closed.")
 
 
+
+
+
+
+
+
+
+def fetchGameIDsFromDB(summonerName):
+
+    try:
+        # Establish a connection to the MySQL server
+        connection = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database
+        )
+
+        if connection.is_connected():
+            #print(f"Query made to MySQL Server: {host} | Database: {database}")
+
+            # Create a cursor object to interact with the database
+            cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
+
+            # Execute the SQL query to retrieve the last 20 rows from matchHistory
+            
+            query = (
+                "SELECT "
+                "gameID "
+                "FROM matchHistory "
+                f"WHERE userSummoner = '{summonerName}'"
+
+            )
+
+            # Runs query
+            cursor.execute(query)
+
+            # Fetch the results as a list of dictionaries
+            querylistOfDict = cursor.fetchall()
+            #queryListOfValues = [row[0] for row in cursor.fetchall()]
+            gameIDList = []
+            for i in querylistOfDict:
+                gameIDList.append(i['gameID'])
+
+            # Return the retrieved data
+            return gameIDList
+
+    except mysql.connector.Error as e:
+        print(f"Error connecting to MySQL Server: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+
+def findUniqueIDs(list1, list2):
+    # Convert the lists to sets for efficient comparison
+    set1 = set(list1)
+    set2 = set(list2)
+
+    # Find the unique IDs by taking the symmetric difference of the sets
+    uniqueIDs = set1.symmetric_difference(set2)
+
+    # Convert the result back to a list
+    uniqueIDsList = list(uniqueIDs)
+
+    return uniqueIDsList
+
+
+
+
+
+
+
 def riotSplitID(fullRiotID):
     # Splitting the string at the '#' symbol
     name_parts = fullRiotID.split("#")
@@ -146,13 +224,14 @@ def mtrack(summonerName, puuid, APIKEY):
     #print(riotGameName)
     #print(riotTagLine)
     #print(f"{profileData}\n")
-
+    
     
     try:
         matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
     except KeyError:
         exit(1)
     
+    # Gets the mapping information for items and summoners to map their IDs to their Names
     try:
         current_directory = os.path.dirname(os.path.abspath(__file__))
         summonerPath = os.path.join(current_directory, 'summonerSpellMapping.json')
@@ -181,19 +260,20 @@ def mtrack(summonerName, puuid, APIKEY):
     matchList = []      # Appends to a new list with proper formatting       
     for i in sepList:   # Cuts random useless characters in match list
         matchList.append(i.replace(" ","").replace("'", "").replace("[", "").replace("]", ""))
+    
+    # Gets the IDs for summonerName from the DB as a list of gameIDs
+    gameIDsFromDB = fetchGameIDsFromDB(summonerName)
 
-    # TODO: ADD FUNCTIONALITY
-    # Make it so that instead of always querying every single match id
-    # it will only query ones that arent in the DB.
-    # I added a gameID field for a reason after all.
-    #print(matchList)
+    # Gets the unique IDs between the past 20 matches in the request that was made and all all of the IDs that are associated with the summoner searched in the DB
+    # This might prove to be a performance issue if the DB accumulates enough entries on a single user the search will take long?
+    uniqueGameIDs = findUniqueIDs(gameIDsFromDB, matchList)
 
         
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
     matchData = []
 
-    for i in matchList:
+    for i in uniqueGameIDs:
         try:
             tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
             matchData.append(tempMatch)
@@ -214,7 +294,7 @@ def mtrack(summonerName, puuid, APIKEY):
                 queueType = "Ranked Solo/Duo"
         except KeyError:
             pass
-        #print(i)
+        
         date = convert_unix_to_date(i['info']['gameCreation'])
 
         try:
@@ -261,7 +341,7 @@ def mtrack(summonerName, puuid, APIKEY):
         
         except KeyError:
             pass
-        #print(history)
+        
         gameData.append(history)
     
     databaseInsert(gameData, "matchHistory", summonerName)
