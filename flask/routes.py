@@ -31,7 +31,7 @@ errorlog.setLevel(logging.ERROR)
 
 logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
 
-# TODO: Need to fix this shit
+# TODO: Need to decide what I am going to do with the home page.
 @app.route('/', methods=['GET'])
 def homePage():
     logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
@@ -53,11 +53,6 @@ def summonerSearch():
     ingres = request.data.decode("utf8")
     riotGameName, riotTagLine = riotSplitID(ingres)
     riotID = f"{riotGameName}#{riotTagLine}"
-    # TODO: Research if you can move the 2 searches here into mtrack() to save time on execution if just a fetchFromMatchHistoryDB is done
-
-    # TODO: Possibly can make another database table that contains riotIDs and summoner names in it. 
-    # Can do a DB search instead of an api request.
-    # Much faster.
 
     #Gets PUUID from riotID
     try:
@@ -69,7 +64,7 @@ def summonerSearch():
         
         summonerName = sumNameData['name']
         riotIDPuuid = riotIDData['puuid']
-        
+
         insertDatabaseRiotID(riotID, summonerName, riotIDData['puuid'])
 
     gameData = fetchFromMatchHistoryDB(summonerName, 20)
@@ -105,25 +100,34 @@ def summonerSearch():
 
 @app.route('/getHistory', methods=['POST'])
 def getHistory():
-    #print("\ngetHistory endpoint hit\n")
+    
     ingres = request.data.decode("utf8")
     riotGameName, riotTagLine = riotSplitID(ingres)
-    
-    # TODO: Find out if it is necessary to perform the following 2 requests
-    # to save on execution time.
+    riotID = f"{riotGameName}#{riotTagLine}"
+
 
     #Gets PUUID from riotID
-    riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
-    sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
-    
-    summonerName = sumNameData['name']
+    try:
+        print("TIME SAVED!!!")
+        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+    except TypeError:
+        print("MAKING MORE REQUESTS...")
+        riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
 
-    mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
+        sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+        
+        summonerName = sumNameData['name']
+        riotIDPuuid = riotIDData['puuid']
+
+        insertDatabaseRiotID(riotID, summonerName, riotIDData['puuid'])
+
+
+    mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
     gameData = fetchFromMatchHistoryDB(summonerName, 20)
     
     if len(gameData) < 1:
         #print("Fetching new user data")
-        mtrack(summonerName, riotIDData['puuid'], RIOTAPIKEY)
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
         gameData = fetchFromMatchHistoryDB(summonerName, 20)
 
     matchData = []
