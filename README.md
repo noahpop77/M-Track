@@ -85,4 +85,15 @@ This spawns from the projects web server to refine the process of performign all
    - `https://www.op.gg/summoners/na/Scyrnn-NA1`
      - `Scyrnn#NA1`
 
-hehehehehe
+
+
+# Future Ideas
+- On hover item description
+- Clicking on a team mates name will take you to their profile
+- Function to filter match history for specific champion
+  - Dropdown
+  - List
+  - Search Bar
+  - whatever
+- Profile Stat Card
+  - (Like the stats on the left )

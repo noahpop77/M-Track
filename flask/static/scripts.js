@@ -1,9 +1,12 @@
-async function summonerSearch() {
+async function summonerSearch(summonerNameParam) {
     var url = "http://10.0.0.150/summonerSearch";
 
     var responseParagraph = document.getElementById('responseParagraph');
+
+    // Use the provided summonerNameParam if available; otherwise, use the input value
+    var summonerName = summonerNameParam || document.getElementById("nameInput").value;
+
     responseParagraph.textContent = "Searching for Summoner...";
-    var summonerName = document.getElementById("nameInput").value;
 
     await fetch(url, {
         method: "POST",
@@ -26,11 +29,9 @@ async function summonerSearch() {
     .catch(function(error) {
         responseParagraph.textContent = "Summoner not found..."
         console.log(error)
-        //responseParagraph.textContent = error.message;
-            // Display error message
+        // Display error message
     });
 }
-
 
 
 async function updateData() {

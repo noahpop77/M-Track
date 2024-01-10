@@ -46,7 +46,6 @@ def fetchFromRiotIDDB(riotID):
 
             # Check if the result is None, indicating no rows were found
             if riotIDDictionary is None:
-                print(f"No data found for riotID: {riotID}")
                 return None
 
             # Return the retrieved data

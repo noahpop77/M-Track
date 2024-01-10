@@ -53,7 +53,10 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-
+.maxWidth{
+  width: 100%; 
+  max-width: 740px;
+}
 
 
 
@@ -66,8 +69,9 @@ img {
 }
 
 .accordion-item {
-  width: 740px;
-  /*width: 100%;*/
+  width: 550px;
+  /* width: 740px; */
+  /* width: 100%; */
   max-width: 740px;
   min-height: 100px; /* if you set a static height it will not open the accordion item */
   border:none;
@@ -204,7 +208,7 @@ img {
 }
 
 .teamName {
-  font-size: 10px;
+  font-size: 10.6px;
   width: 70px;
   white-space: nowrap;
   overflow: hidden;
@@ -225,7 +229,7 @@ img {
   border-radius: 15%;
 }
 .teamCard {
-  width: 2.65%;
+  width: 20px;
   gap: 2px;
   border-radius: 15%;
 }

@@ -119,7 +119,6 @@ def getHistory():
     try:
         summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        print("MAKING MORE REQUESTS...")
         summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
 
