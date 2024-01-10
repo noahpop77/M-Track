@@ -63,14 +63,8 @@ def summonerSearch():
     try:
         summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
-
-        sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
-        
-        summonerName = sumNameData['name']
-        riotIDPuuid = riotIDData['puuid']
-
-        insertDatabaseRiotID(riotID, summonerName, riotIDData['puuid'])
+        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
 
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
     gameData = fetchFromMatchHistoryDB(summonerName, 20)
@@ -126,22 +120,17 @@ def getHistory():
         summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
         print("MAKING MORE REQUESTS...")
-        riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
-
-        sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
-        
-        summonerName = sumNameData['name']
-        riotIDPuuid = riotIDData['puuid']
-
-        insertDatabaseRiotID(riotID, summonerName, riotIDData['puuid'])
+        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
 
 
     mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
     gameData = fetchFromMatchHistoryDB(summonerName, 20)
     
     if len(gameData) < 1:
-        #print("Fetching new user data")
+        # Searches the new summoner and adds their information to the DB
         mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
+        # After the information was just retrieved from the riot API and saved to the DB we fetch it from that DB
         gameData = fetchFromMatchHistoryDB(summonerName, 20)
 
     matchData = []

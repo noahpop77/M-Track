@@ -232,6 +232,26 @@ def fetchGameIDsFromDB(summonerName):
 
 
 
+
+
+def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
+    riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+
+    sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+
+    summonerName = sumNameData['name']
+    riotIDPuuid = riotIDData['puuid']
+    print(f"Name Queried\t{summonerName} {riotIDPuuid}")
+    return summonerName, riotIDPuuid
+
+
+
+
+
+
+
+
+
 def findUniqueIDs(list1, list2):
     # Convert the lists to sets for efficient comparison
     set1 = set(list1)
@@ -244,11 +264,6 @@ def findUniqueIDs(list1, list2):
     uniqueIDsList = list(uniqueIDs)
 
     return uniqueIDsList
-
-
-
-
-
 
 # Splits a full riotID into its components of a gameName and a tag
 # Useful tool
