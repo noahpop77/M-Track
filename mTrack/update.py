@@ -262,7 +262,6 @@ def findUniqueIDs(list1, list2):
 
     # Convert the result back to a list
     uniqueIDsList = list(uniqueIDs)
-
     return uniqueIDsList
 
 # Splits a full riotID into its components of a gameName and a tag
@@ -323,19 +322,21 @@ def mtrack(summonerName, puuid, APIKEY):
     # Gets the unique IDs between the past 20 matches in the request that was made and all all of the IDs that are associated with the summoner searched in the DB
     # This might prove to be a performance issue if the DB accumulates enough entries on a single user the search will take long?
     uniqueGameIDs = findUniqueIDs(gameIDsFromDB, matchList)
-
-        
+    # TODO: There seems to be some odd behavior where there is a delay in updating the games. It will show the unique game IDs but getting the game data takes longer than OP.GG.
+    
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
     matchData = []
 
     for i in uniqueGameIDs:
+        print(i)
         try:
             tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
             matchData.append(tempMatch)
-        except:
+        except Exception as e:
+            print(e)
             pass
-    
+    print(len(matchData))
     
     history = {}
     gameData = []
