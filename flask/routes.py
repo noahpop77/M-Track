@@ -44,6 +44,7 @@ def matchHistory():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
     return render_template('matchHistory.html')
 
+# TODO: What the fuck is wrong with item ID 3191?
 
 # Main search function associated with the websites searchbar.
 @app.route('/summonerSearch', methods=['POST'])
@@ -72,10 +73,6 @@ def summonerSearch():
     if len(gameData) < 1:
         mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
         gameData = fetchFromMatchHistoryDB(summonerName, 20)
-    
-    # TODO: There is a problem with how the data for the players gets populated.
-    # It looks like it fucks up with the item placements.
-    # Look up 5 / 9 / 3 game on uday and 2 / 3 / 4 ekko game on Chaddam
 
     matchData = []
     for i in gameData:
