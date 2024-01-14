@@ -193,9 +193,7 @@ function riotIDSplitter(inputString) {
 }
 
 
-// TODO: For some reason the names dont properly show up.
-// In one case the name was sumName: ""
-// TODO: Rendering the champ cards getting cut short for some reason.
+// TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD 
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
     // Assuming gameData and playerStats are available as arrays of objects
     const gameData = gameDataIn;
