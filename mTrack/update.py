@@ -367,6 +367,7 @@ def mtrack(summonerName, puuid, APIKEY):
                 'matchdata' : []
             }
             for participant in i['info']['participants']:
+                print(participant)
                 newEntry = {
                     "sumName": participant['summonerName'],
                     "playerTeamID": participant['teamId'],
@@ -389,6 +390,7 @@ def mtrack(summonerName, puuid, APIKEY):
                     "item6": itemIcons[str(participant['item6'])],
                     "win": participant['win']
                 }
+                print("-------------------------------------")
                 
                 history['matchdata'].append(newEntry)
         

@@ -96,6 +96,8 @@ async function getItemIcon(itemName, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
+            //console.log(image)
+            //console.log(typeof image)
             document.getElementById(elementID).src = image;
         } else {
             throw new Error('Error: ' + response.status); // Throw an error
@@ -122,12 +124,16 @@ async function getChampIcon(champName, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
+            //console.log(image)
+            //console.log(typeof image)
             document.getElementById(elementID).src = image;
+            
         } else {
             throw new Error('Error: ' + response.status); // Throw an error
         }
     } catch (error) {
         // Display error message
+        //console.log(champName);
         console.log(error.message);
     }
 }
@@ -148,6 +154,8 @@ async function getSummonerIcon(summoner, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
+            //console.log(image)
+            //console.log(typeof image)
             document.getElementById(elementID).src = image;
         } else {
             throw new Error('Error: ' + response.status); // Throw an error
@@ -184,6 +192,10 @@ function riotIDSplitter(inputString) {
     };
 }
 
+
+// TODO: For some reason the names dont properly show up.
+// In one case the name was sumName: ""
+// TODO: Rendering the champ cards getting cut short for some reason.
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
     // Assuming gameData and playerStats are available as arrays of objects
     const gameData = gameDataIn;
@@ -216,10 +228,10 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const row2 = playerStats[index];
         const row3 = matchData[index];
-        
+        //console.log(row1);
+        console.log(row3);
         // Create a new div element
         const container = document.createElement('div');
-        container.classList.add('px-5');
 
 
         const accordionBodyId = `matchData_${index}`;
@@ -346,7 +358,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         </div>
                         <div class="item-container itemCard">
                             <div class="innerCard">
-                                <img id="${item6ID}" style="margin-top: 56px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
+                                <img id="${item6ID}" style="margin-top: 54px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         
@@ -546,7 +558,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         </div>
                         <div class="item-container itemCard">
                             <div class="innerCard">
-                                <img id="${item6ID}" style="margin-top: 56px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
+                                <img id="${item6ID}" style="margin-top: 54px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         

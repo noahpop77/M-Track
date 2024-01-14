@@ -72,10 +72,15 @@ def summonerSearch():
     if len(gameData) < 1:
         mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
         gameData = fetchFromMatchHistoryDB(summonerName, 20)
+    
+    # TODO: There is a problem with how the data for the players gets populated.
+    # It looks like it fucks up with the item placements.
+    # Look up 5 / 9 / 3 game on uday and 2 / 3 / 4 ekko game on Chaddam
+
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
-
+    #print(matchData)
     # Player card data
     playerStats = []
     # Loops through match data, gets player card data and 
@@ -89,7 +94,7 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
-    
+    #print(matchData[0])
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
@@ -217,8 +222,9 @@ def getItemIcon():
         return send_file(file_path, mimetype='image/png')
     else:
         # If the file doesn't exist, return an error response
-        return "File not found", 404
-
+        #return "File not found", 404
+        blank = os.path.join(icons_folder, f'NA.png')
+        return send_file(blank, mimetype='image/png')
 
 
 
