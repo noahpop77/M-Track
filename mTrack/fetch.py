@@ -30,7 +30,6 @@ def fetchFromRiotIDDB(riotID):
             cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
 
             # Execute the SQL query to retrieve the last 20 rows from matchHistory
-            
             query = (
                 "SELECT "
                 "summonerName, puuid "
