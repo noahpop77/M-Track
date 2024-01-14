@@ -1,2 +1,2 @@
 *.ini
-*.log
+Logs/routes.log
