@@ -9,6 +9,8 @@ body::before {
 body {
   font-family: '__Roboto_2d0052','__Roboto_Fallback_2d0052',sans-serif,system-ui,sans-serif;
   margin:0;
+  overflow: auto;
+  min-width: 785px;
 }
 
 @media (min-width: 50%) {
@@ -164,6 +166,13 @@ img {
   white-space: nowrap;
   max-height: 20px;
 }
+.itemColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  max-height: 20px;
+}
 
 .rankedGameCard {
   width: 12%;
@@ -177,6 +186,7 @@ img {
   /* width: 4.2%; */
   width: 3%;
   gap: 2px;
+  margin-left: 4px;
 }
 .kda {
   font-size: 15px;
@@ -210,7 +220,7 @@ img {
 
 .teamName {
   font-size: 10.6px;
-  width: 70px;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

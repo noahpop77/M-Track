@@ -207,10 +207,10 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
     <div class="container-fluid">
         <div class="row">
             <div class="col-2">
-                <button id="updateButton" class="btn btn-dark btn-sm rounded-3" style="height: 100%; font-weight:bold; font-size: 50%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none; padding: 7px;" onclick="updateData()">Update</button>
+                <button id="updateButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 50%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none; padding: 7px;" onclick="updateData()">Update</button>
                 </div>
                 <div class="col-8 d-flex justify-content-center align-items-center">
-                <h3 class="mb-3 mb-md-0 fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%;">${summonerName}</h3>
+                <h3 class="fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%;">${summonerName}</h3>
             </div>
             <div class="col-2"></div>
         </div>
@@ -343,22 +343,22 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
 
                         <div class="item-container itemCard">
-                            <div class="innerCard">
+                            <div class="itemColumn">
                                 <img id="${item0ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item1ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item2ID}" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         <div class="item-container itemCard">
-                            <div class="innerCard">
+                            <div class="itemColumn">
                                 <img id="${item3ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item4ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item5ID}" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         <div class="item-container itemCard">
-                            <div class="innerCard">
-                                <img id="${item6ID}" style="margin-top: 54px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
+                            <div class="itemColumn">
+                                <img id="${item6ID}" style="margin-top: 58px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         
@@ -543,22 +543,22 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
 
                         <div class="item-container itemCard">
-                            <div class="innerCard">
+                            <div class="itemColumn">
                                 <img id="${item0ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item1ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item2ID}" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         <div class="item-container itemCard">
-                            <div class="innerCard">
+                            <div class="itemColumn">
                                 <img id="${item3ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item4ID}" alt="summoner1" class="summonerIcons">
                                 <img id="${item5ID}" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         <div class="item-container itemCard">
-                            <div class="innerCard">
-                                <img id="${item6ID}" style="margin-top: 54px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
+                            <div class="itemColumn">
+                                <img id="${item6ID}" style="margin-top: 58px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
                             </div>
                         </div>
                         
