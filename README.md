@@ -88,6 +88,12 @@ This spawns from the projects web server to refine the process of performign all
 
 
 # Future Ideas
+- Scalable Cloud Infrastructure
+  - AWS RDS for database
+  - Host web server
+  - Containerize webapp for scalability
+- FAST API
+  - Faster performing API (look into testing it)
 - On hover item description
 - Clicking on a team mates name will take you to their profile
 - Function to filter match history for specific champion

@@ -193,9 +193,7 @@ function riotIDSplitter(inputString) {
 }
 
 
-// TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD PLEASE
-
-// TODO: Got it to display the winning team on winning game cards first and losing teams last consistently. Next I need to adjust what the data looks like
+// TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD 
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
     // Assuming gameData and playerStats are available as arrays of objects
     const gameData = gameDataIn;
@@ -244,8 +242,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
 
 
-        const primaryTableID = `primaryTable_${index}`
-        const secondaryTableID = `secondaryTable_${index}`
+        const accordionBodyId = `matchData_${index}`;
         const accordionChampId = `champPic_${index}`;
         const summoner1ID = `summoner1_${index}`;
         const summoner2ID = `summoner2_${index}`;
@@ -431,8 +428,9 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                     </div>
                 </div>
+                
 
-                <table class="accordion-body" style="color: white;">
+                <table result="WIN" class="accordion-body" style="color: white;">
                     <colgroup>
                         <col width="44">
                         <col width="18">
@@ -447,46 +445,19 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
-                            <th colspan="3"><span class="result">Your Team</th>
+                            <th colspan="3"><span class="result">Victory</span>(Blue Team)</th>
                             <th>KDA</th>
                             <th>Damage</th>
                             <th>CS</th>
                             <th>Item</th>
                             <th>Win/Lose</th>
-                        </tr>
-                    </thead>
-                    
-
-                    <tbody id="${primaryTableID}">
-                    </tbody>
-                </table>
-
-                <table class="accordion-body" style="color: white;">
-                    <colgroup>
-                        <col width="44">
-                        <col width="18">
-                        <col width="18">
-                        <col>
-                        <col width="68">
-                        <col width="98">
-                        <col width="120">
-                        <col width="48">
-                        <col width="56">
-                        <col width="175">
-                    </colgroup>
-                    <thead>
-                        <tr style="text-align: center;">
-                            <th colspan="3"><span class="result">Enemy Team</th>
-                            <th>KDA</th>
-                            <th>Damage</th>
-                            <th>CS</th>
-                            <th>Item</th>
-                            <th>Win/Lose</th>
+                            <th>${row1.gameID}</th>
                         </tr>
                     </thead>
 
-                    <tbody id="${secondaryTableID}">
+                    <tbody id="${accordionBodyId}">
                     </tbody>
+
                 </table>
             </div>
             `;
@@ -674,48 +645,20 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
-                            <th colspan="3"><span class="result">Your Team</th>
+                            <th colspan="3"><span class="result">Victory</span>(Blue Team)</th>
                             <th>KDA</th>
                             <th>Damage</th>
                             <th>CS</th>
                             <th>Item</th>
                             <th>Win/Lose</th>
+                            <th>${row1.gameID}</th>
                         </tr>
                     </thead>
 
-                    <tbody id="${primaryTableID}">
+                    <tbody id="${accordionBodyId}">
                     </tbody>
+
                 </table>
-
-                <table class="accordion-body" style="color: white;">
-                    <colgroup>
-                        <col width="44">
-                        <col width="18">
-                        <col width="18">
-                        <col>
-                        <col width="68">
-                        <col width="98">
-                        <col width="120">
-                        <col width="48">
-                        <col width="56">
-                        <col width="175">
-                    </colgroup>
-                    <thead>
-                        <tr style="text-align: center;">
-                            <th colspan="3"><span class="result">Enemy Team</th>
-                            <th>KDA</th>
-                            <th>Damage</th>
-                            <th>CS</th>
-                            <th>Item</th>
-                            <th>Win/Lose</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="${secondaryTableID}">
-                    </tbody>
-                </table>
-
-
             </div>
             `;
           } 
@@ -727,145 +670,49 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         document.getElementById('data-container').appendChild(container);
 
 
-        const primaryTable = document.getElementById(primaryTableID);
-        const secondaryTable = document.getElementById(secondaryTableID);
+        const accordionBody = document.getElementById(accordionBodyId);
 
         if (row2.win === true) {
             winners.forEach(match =>{
-                // Build the HTML content for each match object
-                const winHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
-                        ${match.Champ}
-                    </td>
-                    <td class="spells">
-                        ${match.champLevel}
-                    </td><td class="champion">
-                        ${match.sumName}
-                    </td>
-                    <td class="champion">
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td class="spells">
-                        ${match.goldEarned}
-                    </td>
-                    <td class="spells">
-                        999 cs
-                    </td>
-                    <td class="champion">
-                        Maw
-                    </td>
-                    <td class="champion">
-                        ${match.win}
-                    </td>
-                </tr>
-                `;
                 
-                // Append the HTML for the current match object to nested-container
-                primaryTable.innerHTML += winHTML;
-            });
-            losers.forEach(match =>{
-                // Build the HTML content for each match object
-                const loseHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
-                        ${match.Champ}
-                    </td>
-                    <td class="spells">
-                        ${match.champLevel}
-                    </td><td class="champion">
-                        ${match.sumName}
-                    </td>
-                    <td class="champion">
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td class="spells">
-                        ${match.goldEarned}
-                    </td>
-                    <td class="spells">
-                        999 cs
-                    </td>
-                    <td class="champion">
-                        Maw
-                    </td>
-                    <td class="champion">
-                        ${match.win}
-                    </td>
-                </tr>
-                `;
-                
-                // Append the HTML for the current match object to nested-container
-                secondaryTable.innerHTML += loseHTML;
             });
         }
-        else{
-            losers.forEach(match =>{
-                // Build the HTML content for each match object
-                const loseHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
-                        ${match.Champ}
-                    </td>
-                    <td class="spells">
-                        ${match.champLevel}
-                    </td><td class="champion">
-                        ${match.sumName}
-                    </td>
-                    <td class="champion">
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td class="spells">
-                        ${match.goldEarned}
-                    </td>
-                    <td class="spells">
-                        999 cs
-                    </td>
-                    <td class="champion">
-                        Maw
-                    </td>
-                    <td class="champion">
-                        ${match.win}
-                    </td>
-                </tr>
-                `;
-                
-                // Append the HTML for the current match object to nested-container
-                primaryTable.innerHTML += loseHTML;
-            });
-            winners.forEach(match =>{
-                // Build the HTML content for each match object
-                const winHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
-                        ${match.Champ}
-                    </td>
-                    <td class="spells">
-                        ${match.champLevel}
-                    </td><td class="champion">
-                        ${match.sumName}
-                    </td>
-                    <td class="champion">
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td class="spells">
-                        ${match.goldEarned}
-                    </td>
-                    <td class="spells">
-                        999 cs
-                    </td>
-                    <td class="champion">
-                        Maw
-                    </td>
-                    <td class="champion">
-                        ${match.win}
-                    </td>
-                </tr>
-                `;
-                
-                // Append the HTML for the current match object to nested-container
-                secondaryTable.innerHTML += winHTML;
-            });
-        }
+        // Loop through matchData and display 10 objects per element inside nested-container
+        row3.forEach(match => {
+            // Build the HTML content for each match object
+            const matchHTML = `
+            <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
+                <td class="champion">
+                    ${match.Champ}
+                </td>
+                <td class="spells">
+                    ${match.champLevel}
+                </td><td class="champion">
+                    ${match.sumName}
+                </td>
+                <td class="champion">
+                    ${match.kills}/${match.deaths}/${match.assists}
+                </td>
+                <td class="spells">
+                    ${match.goldEarned}
+                </td>
+                <td class="spells">
+                    999 cs
+                </td>
+                <td class="champion">
+                    Maw
+                </td>
+                <td class="champion">
+                    ${match.win}
+                </td>
+            </tr>
+            `;
+            
+
+            // Append the HTML for the current match object to nested-container
+            accordionBody.innerHTML += matchHTML;
+        });
+        
 
     });
 }

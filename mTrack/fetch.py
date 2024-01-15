@@ -13,6 +13,57 @@ password = config['DATABASE']['password']
 database = config['DATABASE']['database']
 
 
+# Rather than always running an extra 2 Riot API requests if we pre store some of the previously searched riotIDs we can save execution time.
+def fetchGameIDsFromDB(summonerName):
+    try:
+        # Establish a connection to the MySQL server
+        connection = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database
+        )
+
+        if connection.is_connected():
+            #print(f"Query made to MySQL Server: {host} | Database: {database}")
+
+            # Create a cursor object to interact with the database
+            cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
+
+            # Execute the SQL query to retrieve the last 20 rows from matchHistory
+            
+            query = (
+                "SELECT "
+                "gameID "
+                "FROM matchHistory "
+                f"WHERE userSummoner = '{summonerName}'"
+
+            )
+
+            # Runs query
+            cursor.execute(query)
+
+            # Fetch the results as a list of dictionaries
+            querylistOfDict = cursor.fetchall()
+            #queryListOfValues = [row[0] for row in cursor.fetchall()]
+            gameIDList = []
+            for i in querylistOfDict:
+                gameIDList.append(i['gameID'])
+
+            # Return the retrieved data
+            return gameIDList
+
+    except mysql.connector.Error as e:
+        print(f"Error connecting to MySQL Server: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
 def fetchFromRiotIDDB(riotID):
     try:
         # Establish a connection to the MySQL server

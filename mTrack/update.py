@@ -4,7 +4,7 @@ import json
 import os
 from datetime import datetime
 from configparser import ConfigParser
-
+from .fetch import *
 
 # Config file initiators for use in getting API key from config.ini
 # in the sanity check for the /addSummoner API endpoint
@@ -179,55 +179,7 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
 
 
 
-# Rather than always running an extra 2 Riot API requests if we pre store some of the previously searched riotIDs we can save execution time.
-def fetchGameIDsFromDB(summonerName):
 
-    try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database
-        )
-
-        if connection.is_connected():
-            #print(f"Query made to MySQL Server: {host} | Database: {database}")
-
-            # Create a cursor object to interact with the database
-            cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
-
-            # Execute the SQL query to retrieve the last 20 rows from matchHistory
-            
-            query = (
-                "SELECT "
-                "gameID "
-                "FROM matchHistory "
-                f"WHERE userSummoner = '{summonerName}'"
-
-            )
-
-            # Runs query
-            cursor.execute(query)
-
-            # Fetch the results as a list of dictionaries
-            querylistOfDict = cursor.fetchall()
-            #queryListOfValues = [row[0] for row in cursor.fetchall()]
-            gameIDList = []
-            for i in querylistOfDict:
-                gameIDList.append(i['gameID'])
-
-            # Return the retrieved data
-            return gameIDList
-
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
-
-    finally:
-        # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
-            cursor.close()
-            connection.close()
 
 
 
@@ -248,21 +200,29 @@ def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
 
 
 
-
-
-
-
+# It doesnt just do a unique id check both ways but it checks to see what elements from list 2 are NOT in list 1. This way it only checks to see what game IDs are not in the database and not what ids in the database are in the past 20 game IDs searched.
 def findUniqueIDs(list1, list2):
     # Convert the lists to sets for efficient comparison
     set1 = set(list1)
     set2 = set(list2)
-
-    # Find the unique IDs by taking the symmetric difference of the sets
-    uniqueIDs = set1.symmetric_difference(set2)
-
+    # Find the elements in list2 that are not in list1
+    uniqueIDs = set2 - set1
     # Convert the result back to a list
     uniqueIDsList = list(uniqueIDs)
     return uniqueIDsList
+
+
+#def findUniqueIDsss(list1, list2):
+#    # Convert the lists to sets for efficient comparison
+#    set1 = set(list1)
+#    set2 = set(list2)
+#
+#    # Find the unique IDs by taking the symmetric difference of the sets
+#    uniqueIDs = set1.symmetric_difference(set2)
+#
+#    # Convert the result back to a list
+#    uniqueIDsList = list(uniqueIDs)
+#    return uniqueIDsList
 
 # Splits a full riotID into its components of a gameName and a tag
 # Useful tool
@@ -274,6 +234,21 @@ def riotSplitID(fullRiotID):
     gamename = name_parts[0]
     tag = name_parts[1] if len(name_parts) > 1 else None
     return gamename, tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -322,21 +297,21 @@ def mtrack(summonerName, puuid, APIKEY):
     # Gets the unique IDs between the past 20 matches in the request that was made and all all of the IDs that are associated with the summoner searched in the DB
     # This might prove to be a performance issue if the DB accumulates enough entries on a single user the search will take long?
     uniqueGameIDs = findUniqueIDs(gameIDsFromDB, matchList)
-    # TODO: There seems to be some odd behavior where there is a delay in updating the games. It will show the unique game IDs but getting the game data takes longer than OP.GG.
+    # TODO: There seems to be some odd behavior where there is a delay in updating the games. It will show the unique game IDs but getting the game data takes longer than OP.GG. This happens when it has a set of data, the player plays some games to add to the new list of matches naturally but it doesnt show the new games until later. Whereas op.gg does it instantly almost.
     
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
     matchData = []
 
     for i in uniqueGameIDs:
-        print(i)
+        #print(i)
         try:
             tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
             matchData.append(tempMatch)
         except Exception as e:
             print(e)
             pass
-    print(len(matchData))
+
     
     history = {}
     gameData = []
