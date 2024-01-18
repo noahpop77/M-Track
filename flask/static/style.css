@@ -93,6 +93,7 @@ img {
 .accordion-body {
   padding: 10px;
   display: none;
+  text-wrap: nowrap;
 }
 
 .accordion-item.active .accordion-body {

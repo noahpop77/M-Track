@@ -195,7 +195,7 @@ function riotIDSplitter(inputString) {
 
 // TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD PLEASE
 
-// TODO: Got it to display the winning team on winning game cards first and losing teams last consistently. Next I need to adjust what the data looks like
+// TODO: The items are lined up a bit better than before but with the different name sizes there is still some level of unevenness. Address this.
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
     // Assuming gameData and playerStats are available as arrays of objects
     const gameData = gameDataIn;
@@ -434,16 +434,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="44">
-                        <col width="18">
-                        <col width="18">
-                        <col>
-                        <col width="68">
-                        <col width="98">
-                        <col width="120">
-                        <col width="48">
-                        <col width="56">
-                        <col width="175">
+                        <col width="10%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="5%">
+                        <col width="10%">
+                        <col width="45%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -452,7 +449,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <th>Damage</th>
                             <th>CS</th>
                             <th>Item</th>
-                            <th>Win/Lose</th>
                         </tr>
                     </thead>
                     
@@ -463,16 +459,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="44">
-                        <col width="18">
-                        <col width="18">
-                        <col>
-                        <col width="68">
-                        <col width="98">
-                        <col width="120">
-                        <col width="48">
-                        <col width="56">
-                        <col width="175">
+                        <col width="10%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="5%">
+                        <col width="10%">
+                        <col width="45%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -481,7 +474,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <th>Damage</th>
                             <th>CS</th>
                             <th>Item</th>
-                            <th>Win/Lose</th>
                         </tr>
                     </thead>
 
@@ -661,16 +653,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="44">
-                        <col width="18">
-                        <col width="18">
-                        <col>
-                        <col width="68">
-                        <col width="98">
-                        <col width="120">
-                        <col width="48">
-                        <col width="56">
-                        <col width="175">
+                        <col width="10%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="5%">
+                        <col width="10%">
+                        <col width="45%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -679,7 +668,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <th>Damage</th>
                             <th>CS</th>
                             <th>Item</th>
-                            <th>Win/Lose</th>
                         </tr>
                     </thead>
 
@@ -689,25 +677,21 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="44">
-                        <col width="18">
-                        <col width="18">
-                        <col>
-                        <col width="68">
-                        <col width="98">
-                        <col width="120">
-                        <col width="48">
-                        <col width="56">
-                        <col width="175">
+                        <col width="10%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="5%">
+                        <col width="10%">
+                        <col width="45%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
-                            <th colspan="3"><span class="result">Enemy Team</th>
+                            <th colspan="3"><span class="result">Your Team</th>
                             <th>KDA</th>
                             <th>Damage</th>
                             <th>CS</th>
                             <th>Item</th>
-                            <th>Win/Lose</th>
                         </tr>
                     </thead>
 
@@ -755,9 +739,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td class="champion">
                         Maw
                     </td>
-                    <td class="champion">
-                        ${match.win}
-                    </td>
                 </tr>
                 `;
                 
@@ -787,9 +768,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     </td>
                     <td class="champion">
                         Maw
-                    </td>
-                    <td class="champion">
-                        ${match.win}
                     </td>
                 </tr>
                 `;
@@ -823,9 +801,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td class="champion">
                         Maw
                     </td>
-                    <td class="champion">
-                        ${match.win}
-                    </td>
                 </tr>
                 `;
                 
@@ -855,9 +830,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     </td>
                     <td class="champion">
                         Maw
-                    </td>
-                    <td class="champion">
-                        ${match.win}
                     </td>
                 </tr>
                 `;
