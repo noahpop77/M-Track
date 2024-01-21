@@ -434,13 +434,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="10%">
-                        <col width="5%">
                         <col width="20%">
                         <col width="5%">
+                        <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="45%">
+                        <col width="10%">
+                        <col width="25%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -459,13 +459,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="10%">
-                        <col width="5%">
                         <col width="20%">
                         <col width="5%">
+                        <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="45%">
+                        <col width="10%">
+                        <col width="25%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -653,13 +653,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="10%">
-                        <col width="5%">
                         <col width="20%">
                         <col width="5%">
+                        <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="45%">
+                        <col width="10%">
+                        <col width="25%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -677,13 +677,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                 <table class="accordion-body" style="color: white;">
                     <colgroup>
-                        <col width="10%">
-                        <col width="5%">
                         <col width="20%">
                         <col width="5%">
+                        <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="45%">
+                        <col width="10%">
+                        <col width="25%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -719,24 +719,25 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 // Build the HTML content for each match object
                 const winHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
+                    <td>
                         ${match.Champ}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.champLevel}
-                    </td><td class="champion">
+                    </td>
+                    <td>
                         ${match.sumName}
                     </td>
-                    <td class="champion">
+                    <td>
                         ${match.kills}/${match.deaths}/${match.assists}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.goldEarned}
                     </td>
-                    <td class="spells">
+                    <td>
                         999 cs
                     </td>
-                    <td class="champion">
+                    <td>
                         Maw
                     </td>
                 </tr>
@@ -749,24 +750,25 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 // Build the HTML content for each match object
                 const loseHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
+                    <td>
                         ${match.Champ}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.champLevel}
-                    </td><td class="champion">
+                    </td>
+                    <td>
                         ${match.sumName}
                     </td>
-                    <td class="champion">
+                    <td>
                         ${match.kills}/${match.deaths}/${match.assists}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.goldEarned}
                     </td>
-                    <td class="spells">
+                    <td>
                         999 cs
                     </td>
-                    <td class="champion">
+                    <td>
                         Maw
                     </td>
                 </tr>
@@ -781,24 +783,25 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 // Build the HTML content for each match object
                 const loseHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
+                    <td>
                         ${match.Champ}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.champLevel}
-                    </td><td class="champion">
+                    </td>
+                    <td>
                         ${match.sumName}
                     </td>
-                    <td class="champion">
+                    <td>
                         ${match.kills}/${match.deaths}/${match.assists}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.goldEarned}
                     </td>
-                    <td class="spells">
+                    <td>
                         999 cs
                     </td>
-                    <td class="champion">
+                    <td>
                         Maw
                     </td>
                 </tr>
@@ -811,24 +814,25 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 // Build the HTML content for each match object
                 const winHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td class="champion">
+                    <td>
                         ${match.Champ}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.champLevel}
-                    </td><td class="champion">
+                    </td>
+                    <td>
                         ${match.sumName}
                     </td>
-                    <td class="champion">
+                    <td>
                         ${match.kills}/${match.deaths}/${match.assists}
                     </td>
-                    <td class="spells">
+                    <td>
                         ${match.goldEarned}
                     </td>
-                    <td class="spells">
+                    <td>
                         999 cs
                     </td>
-                    <td class="champion">
+                    <td>
                         Maw
                     </td>
                 </tr>

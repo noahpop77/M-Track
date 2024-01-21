@@ -226,6 +226,14 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.scoreboardSummonerName {
+  max-width: 120px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
 .summonerIcons {
   height: 49%; 
   width: 49%;
