@@ -234,6 +234,21 @@ img {
   text-overflow: ellipsis;
 }
 
+.itemIcons {
+  height: 10%; 
+  width: 10%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+}
+.scoreboardChamp {
+  height: 10%; 
+  width: 10%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+}
+
 .summonerIcons {
   height: 49%; 
   width: 49%;
