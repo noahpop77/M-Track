@@ -65,12 +65,18 @@ async function updateData() {
     });
 }
 
-
+// TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
 function toggleAccordion(header) {
     // Get the parent accordion item
     var accordionItem = header.parentNode;
     // Toggle the "active" class to show/hide the accordion body
     accordionItem.classList.toggle("active");
+    if (accordionItem.classList.contains("active") == true) {
+        console.log("ITS CURRENTLY ACTIVE");
+    } else {
+        console.log("ITS CURRENTLY NOT ACTIVE");
+    }
+    
 }
 
 
@@ -549,8 +555,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="10%">
-                        <col width="25%">
+                        <col width="5%">
+                        <col width="30%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -574,8 +580,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="10%">
-                        <col width="25%">
+                        <col width="5%">
+                        <col width="30%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -768,8 +774,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="10%">
-                        <col width="25%">
+                        <col width="5%">
+                        <col width="30%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -792,8 +798,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <col width="25%">
                         <col width="5%">
                         <col width="10%">
-                        <col width="10%">
-                        <col width="25%">
+                        <col width="5%">
+                        <col width="30%">
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
@@ -850,6 +856,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 getItemIcon(match.item4, winPlayerItem4ID);
                 getItemIcon(match.item5, winPlayerItem5ID);
                 getItemIcon(match.item6, winPlayerItem6ID);
+                
                 // Build the HTML content for each match object
                 const winHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
