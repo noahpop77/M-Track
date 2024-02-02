@@ -39,16 +39,19 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone https://github.com/noahpop77/M-Track.git
    ```
+
 2. Move into the directory:
 
    ```bash
    cd M-Track
    ```
+
 3. Install the requirements:
 
    ```bash
    pip install -r requirements.txt
    ```
+
 4. Run the flask server:
 
    ```bash
@@ -59,6 +62,7 @@ Before you begin, ensure you have the following installed:
 ## Personal Notes
 
 To start the app go into the correct directory and run the routes.py file.
+
 ```bash
 sawa@sawa:~/mainShare/devenv/gitrepos/M-Track/flask$ sudo python3 routes.py
 ```
@@ -69,7 +73,7 @@ This spawns from the projects web server to refine the process of performign all
 
 - Working out of my ubuntu server for now.
 - This is a great tool for working with the data to format it
-   - `https://jsonformatter.curiousconcept.com/#`
+  - `https://jsonformatter.curiousconcept.com/#`
 - Riot games developer portal
   - `https://developer.riotgames.com/`
 - Riot developer website page on riotIDs and summoner names
@@ -79,15 +83,16 @@ This spawns from the projects web server to refine the process of performign all
 - All League of Legends visual assets (splashes, tiles, runes, everything)
   - `https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html`
 - Riot IDs that I can use for testing:
-   - `https://www.op.gg/summoners/na/Chaddam-NA1`
-     - `Chaddam#NA1`
-     - `Uday#6666`
-   - `https://www.op.gg/summoners/na/Scyrnn-NA1`
-     - `Scyrnn#NA1`
-
-
+  - `https://www.op.gg/summoners/na/Chaddam-NA1`
+    - `Chaddam#NA1`
+    - `Uday#6666`
+  - `https://www.op.gg/summoners/na/Scyrnn-NA1`
+    - `Scyrnn#NA1`
+- Sprite Sheet maker
+  - `https://www.codeandweb.com/free-sprite-sheet-packer`
 
 # Future Ideas
+
 - Scalable Cloud Infrastructure
   - AWS RDS for database
   - Host web server

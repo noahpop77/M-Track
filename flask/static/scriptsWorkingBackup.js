@@ -66,15 +66,7 @@ async function updateData() {
 }
 
 
-function toggleAccordion(header) {
-    // Get the parent accordion item
-    var accordionItem = header.parentNode;
-    // Toggle the "active" class to show/hide the accordion body
-    accordionItem.classList.toggle("active");
-}
-
-
-async function getItemIcon(itemName, elementID, maxRetries = 3) {
+async function getItemIcon(itemName, elementID, maxRetries = 5) {
     if (itemName === "N/A") {
         itemName = "NA";
     }
@@ -134,8 +126,6 @@ async function getItemIconBackup(itemName, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
-            //console.log(image)
-            //console.log(typeof image)
             document.getElementById(elementID).src = image;
         } else {
             throw new Error('Error: ' + response.status); // Throw an error
@@ -162,8 +152,6 @@ async function getChampIconBackup(champName, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
-            //console.log(image)
-            //console.log(typeof image)
             document.getElementById(elementID).src = image;
             
         } else {
@@ -171,12 +159,11 @@ async function getChampIconBackup(champName, elementID) {
         }
     } catch (error) {
         // Display error message
-        //console.log(champName);
         console.log(error.message);
     }
 }
 
-async function getChampIcon(champName, elementID, maxRetries = 3) {
+async function getChampIcon(champName, elementID, maxRetries = 5) {
     const url = "http://10.0.0.150/getChampIcon";
 
     for (let retry = 0; retry < maxRetries; retry++) {
@@ -228,8 +215,6 @@ async function getSummonerIconBackup(summoner, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
-            //console.log(image)
-            //console.log(typeof image)
             document.getElementById(elementID).src = image;
         } else {
             throw new Error('Error: ' + response.status); // Throw an error
@@ -240,7 +225,9 @@ async function getSummonerIconBackup(summoner, elementID) {
     }
 }
 
-async function getSummonerIcon(summoner, elementID, maxRetries = 3) {
+
+
+async function getSummonerIcon(summoner, elementID, maxRetries = 5) {
     const url = "http://10.0.0.150/getSummoners";
 
     for (let retry = 0; retry < maxRetries; retry++) {
@@ -276,6 +263,42 @@ async function getSummonerIcon(summoner, elementID, maxRetries = 3) {
 // getSummonerIconWithRetry("summoner_name", "element_id", 3);
 
 
+// TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
+function toggleAccordion(header) {
+    //console.log(header.parentNode)
+    //console.log(header.parentNode.classList.contains("active"))
+    //console.log(header.getAttribute("data-card-count"))
+    //console.log(header.getAttribute("data-winners"))
+    //console.log(header.getAttribute("data-losers"))
+    //console.log(header.getAttribute("data-win"))
+    // Get the parent accordion item
+    var accordionItem = header.parentNode;
+    // Toggle the "active" class to show/hide the accordion body
+    accordionItem.classList.toggle("active");
+
+    // Get the accordion-body element
+    var accordionBodies = accordionItem.querySelectorAll(".accordion-body");
+    //console.log(accordionBodies[0])
+    //console.log(accordionBodies[1])
+    firstScoreboardID = accordionBodies[0].querySelector("tbody").id
+    secondScoreboardID = accordionBodies[1].querySelector("tbody").id
+    //console.log(firstScoreboardID)
+    //console.log(secondScoreboardID)
+    
+    // TODO: I CAN MAKE ALL OF THE ITEMS IMAGES INTO A SINGLE IMAGE SPRITE AND THEN USE THE BACKGROUND POSITION TO DISPLAY THE CORRECT IMAGE
+    // https://www.w3schools.com/css/css_image_sprites.asp
+
+    // getScoreboard(firstScoreboardID, secondScoreboardID)
+    if (accordionItem.classList.contains("active") == true) {
+        //console.log("ITS CURRENTLY ACTIVE");
+    } else {
+        //console.log("ITS CURRENTLY NOT ACTIVE");
+    }
+    
+}
+
+
+
 function calculateKDA(kills, deaths, assists) {
 
     if (deaths === 0) {
@@ -301,6 +324,11 @@ function riotIDSplitter(inputString) {
       tag
     };
 }
+
+
+
+
+
 
 
 // TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD PLEASE
@@ -347,15 +375,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         // Access the array and separate based on the 'win' field
         const winners = row3.filter(obj => obj.win === true);
         const losers = row3.filter(obj => obj.win === false);
-
-        // Log the results
-        console.log('Winners:', winners);
-        console.log('Losers:', losers);
-
+        //console.log(JSON.stringify(winners))
+        //console.log(JSON.stringify(losers))
 
 
         const primaryTableID = `primaryTable_${index}`
         const secondaryTableID = `secondaryTable_${index}`
+        
         const accordionChampId = `champPic_${index}`;
         const summoner1ID = `summoner1_${index}`;
         const summoner2ID = `summoner2_${index}`;
@@ -392,7 +418,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             item4 = getItemIcon(row2.item4, item4ID);
             item5 = getItemIcon(row2.item5, item5ID);
             item6 = getItemIcon(row2.item6, item6ID);
-
+            
             player1 = getChampIcon(row3[0].Champ, playerIcon1ID);
             player2 = getChampIcon(row3[1].Champ, playerIcon2ID);
             player3 = getChampIcon(row3[2].Champ, playerIcon3ID);
@@ -403,7 +429,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             player8 = getChampIcon(row3[7].Champ, playerIcon8ID);
             player9 = getChampIcon(row3[8].Champ, playerIcon9ID);
             player10 = getChampIcon(row3[9].Champ, playerIcon10ID);
-
+            
             player1Name = row3[0].sumName;
             player2Name = row3[1].sumName;
             player3Name = row3[2].sumName; 
@@ -423,13 +449,15 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 };
             });
             participation = Math.round((row2.kills / killTotalTeam) * 100);
-
             // Gets cs per minute
             csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
             csPerMin = csPerMinFloat.toFixed(1);
+
+            // Takes data and submits it to the header of the tag for usage if referenced
+            // <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" data-win="win" data-card-count="${cardCount}" data-winners="${JSON.stringify(winners)}" data-losers="${JSON.stringify(losers)}" onclick='toggleAccordion(this)'>
             container.innerHTML = `
             <div style="background-color: #28344e;" class="accordion-item">
-                <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
+                <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick='toggleAccordion(this)'>
                 
                     <div class="nested-container">
                         <div class="item-container rankedGameCard">
@@ -817,8 +845,48 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
 
 
+        
         // Append the container to the data-container
         document.getElementById('data-container').appendChild(container);
+        
+
+        // let testelement0 = document.getElementById(item0ID);
+        // console.log(testelement0);
+        // testelement0.classList.add('Deicide');
+
+
+        // let imgElement = document.querySelector(item0ID);
+        // console.log(imgElement);
+        // let style = window.getComputedStyle(imgElement);
+        // let backgroundImage = style.getPropertyValue('background-image');
+
+        // // Extract the URL from the background-image property
+        // let imageUrl = backgroundImage.slice(5, -2);
+
+        // // Select the img element and change its src attribute
+        // let testelement = document.getElementById(item0ID);
+        // testelement.src = imageUrl;
+
+
+        
+        // let testelement1 = document.getElementById(item1ID);
+        // console.log(testelement);
+        // testelement1.classList.add('Deicide');
+        // let testelement2 = document.getElementById(item2ID);
+        // console.log(testelement);
+        // testelement2.classList.add('Deicide');
+        // let testelement3 = document.getElementById(item3ID);
+        // console.log(testelement);
+        // testelement3.classList.add('Deicide');
+        // let testelement4 = document.getElementById(item4ID);
+        // console.log(testelement);
+        // testelement4.classList.add('Deicide');
+        // let testelement5 = document.getElementById(item5ID);
+        // console.log(testelement);
+        // testelement5.classList.add('Deicide');
+        // let testelement6 = document.getElementById(item6ID);
+        // console.log(testelement);
+        // testelement6.classList.add('Deicide');
 
 
         const primaryTable = document.getElementById(primaryTableID);
@@ -843,6 +911,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 const winPlayerItem4ID = `winPlayerItem4ID_${cardCount}_${itemIndex}`;
                 const winPlayerItem5ID = `winPlayerItem5ID_${cardCount}_${itemIndex}`;
                 const winPlayerItem6ID = `winPlayerItem6ID_${cardCount}_${itemIndex}`;
+                
                 getItemIcon(match.item0, winPlayerItem0ID);
                 getItemIcon(match.item1, winPlayerItem1ID);
                 getItemIcon(match.item2, winPlayerItem2ID);
@@ -850,6 +919,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 getItemIcon(match.item4, winPlayerItem4ID);
                 getItemIcon(match.item5, winPlayerItem5ID);
                 getItemIcon(match.item6, winPlayerItem6ID);
+                
                 // Build the HTML content for each match object
                 const winHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
@@ -1076,4 +1146,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         }
         cardCount = cardCount + 1;
     });
+
+    showMoreButton = document.getElementById('showMoreButton')
+    showMoreButton.innerHTML = `<button class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;">SHOW MORE</button>`
+    
 }

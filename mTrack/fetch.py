@@ -117,7 +117,7 @@ def fetchFromRiotIDDB(riotID):
 
 
 
-def fetchFromMatchHistoryDB(summonerName, numberOfRecords):
+def fetchFromMatchHistoryDB(summonerName, numberOfRecords, recordOffset = 0):
 
     try:
         # Establish a connection to the MySQL server
@@ -143,8 +143,7 @@ def fetchFromMatchHistoryDB(summonerName, numberOfRecords):
                 "JSON_UNQUOTE(matchdata) as matchdata "
                 "FROM matchHistory "
                 f"WHERE userSummoner = '{summonerName}'"
-                f"ORDER BY gameID DESC LIMIT {numberOfRecords}"
-
+                f"ORDER BY gameID DESC LIMIT {recordOffset}, {numberOfRecords}"
             )
 
             # Runs query

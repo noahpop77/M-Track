@@ -307,3 +307,27 @@ img {
 
 
 
+
+
+
+
+
+
+
+.placeholderContainer {
+  height: 49%; 
+  width: 49%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+  background-color: transparent;
+  z-index: 1;
+}
+.placeholderImage {
+  height: 49%; 
+  width: 49%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+  background-color: transparent;
+}

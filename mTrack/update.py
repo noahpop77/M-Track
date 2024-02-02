@@ -252,12 +252,12 @@ def riotSplitID(fullRiotID):
 
 
 
-def mtrack(summonerName, puuid, APIKEY):
-    matchCount = 20
+def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
     
-    # Gets a list of the last 20(matchcount variable) matches associated with the specified puuid
+    # Gets a list of the last 20(reqCount variable) matches associated with the specified puuid
+    # start=10&count=20
     try:
-        matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start=0&count={matchCount}&api_key={APIKEY}")
+        matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
     except KeyError:
         exit(1)
     

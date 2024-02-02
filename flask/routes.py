@@ -10,6 +10,7 @@ sys.path.append(dirname(dirname(abspath(__file__))))
 from mTrack.decayTracker import *
 from mTrack.update import *
 from mTrack.fetch import *
+from flask import request
 
 
 # Config file initiators for use in getting API key from config.ini
@@ -44,6 +45,83 @@ def matchHistory():
     logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
     return render_template('matchHistory.html')
 
+
+
+
+
+
+# Main search function associated with the websites searchbar.
+@app.route('/showMore', methods=['POST'])
+def showMore():
+
+    # Takes input name from request body
+    # Splits riotID and loads it into variables for use later
+    ingres = request.data.decode("utf8")
+    showMoreDict = json.loads(ingres)
+    #print(showMoreDict)
+    #print(type(showMoreDict))
+
+    riotGameName, riotTagLine = riotSplitID(showMoreDict['searchedUser'])
+    riotID = f"{riotGameName}#{riotTagLine}"
+    
+
+    alreadyShownGameIDs = showMoreDict['excludeGameIDs']
+    gameIDs = alreadyShownGameIDs.split(",")
+    
+
+    # This try except clause will take the riotID gamename and tagline
+    # and get the summoner name and PUUID associated with it for use in
+    # future functions
+    # The ordering of this block matters to save time execution on the 2 API requests
+    try:
+        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+    except TypeError:
+        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
+
+    startPosition = len(gameIDs)
+    # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
+    gameData = fetchFromMatchHistoryDB(summonerName, 10, startPosition)
+    # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
+    
+    
+    if len(gameData) < 1:
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10, startPosition)
+        gameData = fetchFromMatchHistoryDB(summonerName, 10, startPosition)
+
+    matchData = []
+    for i in gameData:
+        matchData.append(json.loads(i['matchdata']))
+    
+    # Player card data
+    playerStats = []
+    # Loops through match data, gets player card data and 
+    for i in matchData:
+        try:
+            for player in i:
+                if player['sumName'].lower() == summonerName.lower():
+                    playerStats.append(player)
+                    break
+        except IndexError:
+            break
+        except Exception as e:
+            print(e)
+    
+    return jsonify({ 
+        'gameData': gameData,
+        'playerStats': playerStats,
+        'matchData': matchData,
+        'summonerName': summonerName
+    })
+
+
+
+
+
+
+
+
+
 # TODO: What the fuck is wrong with item ID 3191?
 
 # Main search function associated with the websites searchbar.
@@ -68,11 +146,11 @@ def summonerSearch():
         insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
 
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
-    gameData = fetchFromMatchHistoryDB(summonerName, 20)
+    gameData = fetchFromMatchHistoryDB(summonerName, 10)
     # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
     if len(gameData) < 1:
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
-        gameData = fetchFromMatchHistoryDB(summonerName, 20)
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10)
+        gameData = fetchFromMatchHistoryDB(summonerName, 10)
 
     matchData = []
     for i in gameData:
@@ -125,14 +203,14 @@ def getHistory():
         insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
 
 
-    mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
-    gameData = fetchFromMatchHistoryDB(summonerName, 20)
+    mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10)
+    gameData = fetchFromMatchHistoryDB(summonerName, 10)
     
     if len(gameData) < 1:
         # Searches the new summoner and adds their information to the DB
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY)
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10)
         # After the information was just retrieved from the riot API and saved to the DB we fetch it from that DB
-        gameData = fetchFromMatchHistoryDB(summonerName, 20)
+        gameData = fetchFromMatchHistoryDB(summonerName, 10)
 
     matchData = []
     for i in gameData:
@@ -224,6 +302,20 @@ def getItemIcon():
         return send_file(blank, mimetype='image/png')
 
 
+
+@app.route('/getItemIcons/<path:filename>', methods=['GET'])
+def getItemIcons(filename):
+    # Specify the path to the folder containing PNGs
+    icons_folder = './static/img/itemIcons'
+    print("SPRITE ENDPOINT HIT")
+    # Check if the file with the given name exists
+    file_path = os.path.join(icons_folder, filename)
+    if os.path.exists(file_path):
+        # Return the PNG file as a response
+        return send_file(file_path, mimetype='image/png')
+    else:
+        # If the file doesn't exist, return an error response
+        return "Error: The images sprite is not in the correct location"
 
 # Run Server
 if __name__ == '__main__':

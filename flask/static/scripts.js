@@ -33,6 +33,42 @@ async function summonerSearch(summonerNameParam) {
     });
 }
 
+async function showMore(searchedUser, excludeGameIDs) {
+    var url = "http://10.0.0.150/showMore";
+    var showMoreButtonTag = document.getElementById('showMoreButtonTag');
+    showMoreButtonTag.innerText = "Loading more games...";
+    
+    var requestBody = {
+        searchedUser: searchedUser,
+        excludeGameIDs: excludeGameIDs
+    };
+
+    await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(requestBody)
+    })
+    .then(function(response) {
+        // Check if the response was successful
+        if (response.ok) {
+            return response.json(); // Convert response to text
+        } else {
+            throw new Error('Error: ' + response.status); // Throw an error
+        }
+    })
+    .then(function(data) {
+        showMoreButtonTag.innerText = "SHOW MORE";
+        printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
+    })
+    .catch(function(error) {
+        // responseParagraph.textContent = "Summoner not found..."
+        console.log(error)
+        // Display error message
+    });
+}
+
 
 async function updateData() {
     var url = "http://10.0.0.150/getHistory";
@@ -65,22 +101,8 @@ async function updateData() {
     });
 }
 
-// TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
-function toggleAccordion(header) {
-    // Get the parent accordion item
-    var accordionItem = header.parentNode;
-    // Toggle the "active" class to show/hide the accordion body
-    accordionItem.classList.toggle("active");
-    if (accordionItem.classList.contains("active") == true) {
-        console.log("ITS CURRENTLY ACTIVE");
-    } else {
-        console.log("ITS CURRENTLY NOT ACTIVE");
-    }
-    
-}
 
-
-async function getItemIcon(itemName, elementID, maxRetries = 3) {
+async function getItemIcon(itemName, elementID, maxRetries = 5) {
     if (itemName === "N/A") {
         itemName = "NA";
     }
@@ -140,8 +162,6 @@ async function getItemIconBackup(itemName, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
-            //console.log(image)
-            //console.log(typeof image)
             document.getElementById(elementID).src = image;
         } else {
             throw new Error('Error: ' + response.status); // Throw an error
@@ -168,8 +188,6 @@ async function getChampIconBackup(champName, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
-            //console.log(image)
-            //console.log(typeof image)
             document.getElementById(elementID).src = image;
             
         } else {
@@ -177,12 +195,11 @@ async function getChampIconBackup(champName, elementID) {
         }
     } catch (error) {
         // Display error message
-        //console.log(champName);
         console.log(error.message);
     }
 }
 
-async function getChampIcon(champName, elementID, maxRetries = 3) {
+async function getChampIcon(champName, elementID, maxRetries = 5) {
     const url = "http://10.0.0.150/getChampIcon";
 
     for (let retry = 0; retry < maxRetries; retry++) {
@@ -234,8 +251,6 @@ async function getSummonerIconBackup(summoner, elementID) {
         if (response.ok) {
             const blob = await response.blob(); // Await the blob Promise
             const image = URL.createObjectURL(blob);
-            //console.log(image)
-            //console.log(typeof image)
             document.getElementById(elementID).src = image;
         } else {
             throw new Error('Error: ' + response.status); // Throw an error
@@ -246,7 +261,9 @@ async function getSummonerIconBackup(summoner, elementID) {
     }
 }
 
-async function getSummonerIcon(summoner, elementID, maxRetries = 3) {
+
+
+async function getSummonerIcon(summoner, elementID, maxRetries = 5) {
     const url = "http://10.0.0.150/getSummoners";
 
     for (let retry = 0; retry < maxRetries; retry++) {
@@ -282,6 +299,42 @@ async function getSummonerIcon(summoner, elementID, maxRetries = 3) {
 // getSummonerIconWithRetry("summoner_name", "element_id", 3);
 
 
+// TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
+function toggleAccordion(header) {
+    //console.log(header.parentNode)
+    //console.log(header.parentNode.classList.contains("active"))
+    //console.log(header.getAttribute("data-card-count"))
+    //console.log(header.getAttribute("data-winners"))
+    //console.log(header.getAttribute("data-losers"))
+    //console.log(header.getAttribute("data-win"))
+    // Get the parent accordion item
+    var accordionItem = header.parentNode;
+    // Toggle the "active" class to show/hide the accordion body
+    accordionItem.classList.toggle("active");
+
+    // Get the accordion-body element
+    var accordionBodies = accordionItem.querySelectorAll(".accordion-body");
+    //console.log(accordionBodies[0])
+    //console.log(accordionBodies[1])
+    firstScoreboardID = accordionBodies[0].querySelector("tbody").id
+    secondScoreboardID = accordionBodies[1].querySelector("tbody").id
+    //console.log(firstScoreboardID)
+    //console.log(secondScoreboardID)
+    
+    // TODO: I CAN MAKE ALL OF THE ITEMS IMAGES INTO A SINGLE IMAGE SPRITE AND THEN USE THE BACKGROUND POSITION TO DISPLAY THE CORRECT IMAGE
+    // https://www.w3schools.com/css/css_image_sprites.asp
+
+    // getScoreboard(firstScoreboardID, secondScoreboardID)
+    if (accordionItem.classList.contains("active") == true) {
+        //console.log("ITS CURRENTLY ACTIVE");
+    } else {
+        //console.log("ITS CURRENTLY NOT ACTIVE");
+    }
+    
+}
+
+
+
 function calculateKDA(kills, deaths, assists) {
 
     if (deaths === 0) {
@@ -308,6 +361,22 @@ function riotIDSplitter(inputString) {
     };
 }
 
+function generateRandomNumber() {
+    const length = 10;
+    let randomNumber = '';
+
+    for (let i = 0; i < length; i++) {
+        randomNumber += Math.floor(Math.random() * 10);
+    }
+
+    return randomNumber;
+}
+
+
+
+
+
+
 
 // TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD PLEASE
 
@@ -326,64 +395,75 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 <button id="updateButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 50%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none; padding: 7px;" onclick="updateData()">Update</button>
                 </div>
                 <div class="col-8 d-flex justify-content-center align-items-center">
-                <h3 class="fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%;">${summonerName}</h3>
+                <h3 id="searchedUser" class="fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%;">${summonerName}</h3>
             </div>
             <div class="col-2"></div>
         </div>
     </div>
     `;
 
+    let container;
+    if (document.getElementById('matchHistoryFeed')) {
+        console.log("matchHistoryFeed exists")
+        container = document.getElementById('matchHistoryFeed');
+    }
+    else {
+        console.log("matchHistoryFeed Just Created")
+        // Create a new div element with a custom ID
+        container = document.createElement('div');
+        container.id = `matchHistoryFeed`;
+    }
+
+    
     // Get the data-container element
     const dataContainer = document.getElementById('data-container');
     // Clear existing content in the data-container
     dataContainer.innerHTML = '';
 
-    cardCount = 0;
+
+    // Gets a value from the formControl div on the main page. This value is then iterated for as many times as the same page calls the printMatches function meaning how many times they hit the SHOW MORE button.
+    formControl = document.getElementById('formControl')
+    const dataKey = formControl.getAttribute('data-key');
+    cardCount = dataKey + 7
+    formControl.setAttribute('data-key', cardCount);
+
+
     // Loop through the arrays simultaneously using forEach
     gameData.forEach((row1, index) => {
 
         const row2 = playerStats[index];
         const row3 = matchData[index];
-        
-        // Create a new div element
-        const container = document.createElement('div');
 
-
-        
         // Access the array and separate based on the 'win' field
         const winners = row3.filter(obj => obj.win === true);
         const losers = row3.filter(obj => obj.win === false);
 
-        // Log the results
-        console.log('Winners:', winners);
-        console.log('Losers:', losers);
 
+        const primaryTableID = `primaryTable_${index}_${cardCount}`
+        const secondaryTableID = `secondaryTable_${index}_${cardCount}`
+        
+        const accordionChampId = `champPic_${index}_${cardCount}`;
+        const summoner1ID = `summoner1_${index}_${cardCount}`;
+        const summoner2ID = `summoner2_${index}_${cardCount}`;
 
+        const item0ID = `item0ID_${index}_${cardCount}`;
+        const item1ID = `item1ID_${index}_${cardCount}`;
+        const item2ID = `item2ID_${index}_${cardCount}`;
+        const item3ID = `item3ID_${index}_${cardCount}`;
+        const item4ID = `item4ID_${index}_${cardCount}`;
+        const item5ID = `item5ID_${index}_${cardCount}`;
+        const item6ID = `item6ID_${index}_${cardCount}`;
 
-        const primaryTableID = `primaryTable_${index}`
-        const secondaryTableID = `secondaryTable_${index}`
-        const accordionChampId = `champPic_${index}`;
-        const summoner1ID = `summoner1_${index}`;
-        const summoner2ID = `summoner2_${index}`;
-
-        const item0ID = `item0ID_${index}`;
-        const item1ID = `item1ID_${index}`;
-        const item2ID = `item2ID_${index}`;
-        const item3ID = `item3ID_${index}`;
-        const item4ID = `item4ID_${index}`;
-        const item5ID = `item5ID_${index}`;
-        const item6ID = `item6ID_${index}`;
-
-        const playerIcon1ID = `playerIcon1ID_${index}`;
-        const playerIcon2ID = `playerIcon2ID_${index}`;
-        const playerIcon3ID = `playerIcon3ID_${index}`;
-        const playerIcon4ID = `playerIcon4ID_${index}`;
-        const playerIcon5ID = `playerIcon5ID_${index}`;
-        const playerIcon6ID = `playerIcon6ID_${index}`;
-        const playerIcon7ID = `playerIcon7ID_${index}`;
-        const playerIcon8ID = `playerIcon8ID_${index}`;
-        const playerIcon9ID = `playerIcon9ID_${index}`;
-        const playerIcon10ID = `playerIcon10ID_${index}`;
+        const playerIcon1ID = `playerIcon1ID_${index}_${cardCount}`;
+        const playerIcon2ID = `playerIcon2ID_${index}_${cardCount}`;
+        const playerIcon3ID = `playerIcon3ID_${index}_${cardCount}`;
+        const playerIcon4ID = `playerIcon4ID_${index}_${cardCount}`;
+        const playerIcon5ID = `playerIcon5ID_${index}_${cardCount}`;
+        const playerIcon6ID = `playerIcon6ID_${index}_${cardCount}`;
+        const playerIcon7ID = `playerIcon7ID_${index}_${cardCount}`;
+        const playerIcon8ID = `playerIcon8ID_${index}_${cardCount}`;
+        const playerIcon9ID = `playerIcon9ID_${index}_${cardCount}`;
+        const playerIcon10ID = `playerIcon10ID_${index}_${cardCount}`;
         
         if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
             
@@ -398,7 +478,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             item4 = getItemIcon(row2.item4, item4ID);
             item5 = getItemIcon(row2.item5, item5ID);
             item6 = getItemIcon(row2.item6, item6ID);
-
+            
             player1 = getChampIcon(row3[0].Champ, playerIcon1ID);
             player2 = getChampIcon(row3[1].Champ, playerIcon2ID);
             player3 = getChampIcon(row3[2].Champ, playerIcon3ID);
@@ -409,7 +489,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             player8 = getChampIcon(row3[7].Champ, playerIcon8ID);
             player9 = getChampIcon(row3[8].Champ, playerIcon9ID);
             player10 = getChampIcon(row3[9].Champ, playerIcon10ID);
-
+            
             player1Name = row3[0].sumName;
             player2Name = row3[1].sumName;
             player3Name = row3[2].sumName; 
@@ -429,13 +509,17 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 };
             });
             participation = Math.round((row2.kills / killTotalTeam) * 100);
-
             // Gets cs per minute
             csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
             csPerMin = csPerMinFloat.toFixed(1);
-            container.innerHTML = `
-            <div style="background-color: #28344e;" class="accordion-item">
-                <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
+            
+
+            // Takes data and submits it to the header of the tag for usage if referenced
+            // <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" data-win="win" data-card-count="${cardCount}" data-winners="${JSON.stringify(winners)}" data-losers="${JSON.stringify(losers)}" onclick='toggleAccordion(this)'>
+
+            container.innerHTML += `
+            <div style="background-color: #28344e;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
+                <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick='toggleAccordion(this)'>
                 
                     <div class="nested-container">
                         <div class="item-container rankedGameCard">
@@ -651,8 +735,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
             csPerMin = csPerMinFloat.toFixed(1);
 
-            container.innerHTML = `
-            <div style="background-color: #59343b;" class="accordion-item">
+            container.innerHTML += `
+            <div style="background-color: #59343b;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
                 <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
@@ -823,8 +907,48 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
 
 
+        
         // Append the container to the data-container
         document.getElementById('data-container').appendChild(container);
+        
+
+        // let testelement0 = document.getElementById(item0ID);
+        // console.log(testelement0);
+        // testelement0.classList.add('Deicide');
+
+
+        // let imgElement = document.querySelector(item0ID);
+        // console.log(imgElement);
+        // let style = window.getComputedStyle(imgElement);
+        // let backgroundImage = style.getPropertyValue('background-image');
+
+        // // Extract the URL from the background-image property
+        // let imageUrl = backgroundImage.slice(5, -2);
+
+        // // Select the img element and change its src attribute
+        // let testelement = document.getElementById(item0ID);
+        // testelement.src = imageUrl;
+
+
+        
+        // let testelement1 = document.getElementById(item1ID);
+        // console.log(testelement);
+        // testelement1.classList.add('Deicide');
+        // let testelement2 = document.getElementById(item2ID);
+        // console.log(testelement);
+        // testelement2.classList.add('Deicide');
+        // let testelement3 = document.getElementById(item3ID);
+        // console.log(testelement);
+        // testelement3.classList.add('Deicide');
+        // let testelement4 = document.getElementById(item4ID);
+        // console.log(testelement);
+        // testelement4.classList.add('Deicide');
+        // let testelement5 = document.getElementById(item5ID);
+        // console.log(testelement);
+        // testelement5.classList.add('Deicide');
+        // let testelement6 = document.getElementById(item6ID);
+        // console.log(testelement);
+        // testelement6.classList.add('Deicide');
 
 
         const primaryTable = document.getElementById(primaryTableID);
@@ -834,21 +958,22 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         itemIndex = 0;
         if (row2.win === true) {
             winners.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${cardCount}_${itemIndex}`;
+                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
 
                 getChampIcon(match.Champ, winPlayerChamp0ID);
                 getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
                 getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
 
-                const winPlayerItem0ID = `winPlayerItem0ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem1ID = `winPlayerItem1ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem2ID = `winPlayerItem2ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem3ID = `winPlayerItem3ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem4ID = `winPlayerItem4ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem5ID = `winPlayerItem5ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem6ID = `winPlayerItem6ID_${cardCount}_${itemIndex}`;
+                const winPlayerItem0ID = `winPlayerItem0ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem1ID = `winPlayerItem1ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem2ID = `winPlayerItem2ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem3ID = `winPlayerItem3ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem4ID = `winPlayerItem4ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem5ID = `winPlayerItem5ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem6ID = `winPlayerItem6ID_${itemIndex}_${cardCount}`;
+                
                 getItemIcon(match.item0, winPlayerItem0ID);
                 getItemIcon(match.item1, winPlayerItem1ID);
                 getItemIcon(match.item2, winPlayerItem2ID);
@@ -896,21 +1021,21 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 primaryTable.innerHTML += winHTML;
             });
             losers.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${cardCount}_${itemIndex}`;
+                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
 
                 getChampIcon(match.Champ, winPlayerChamp0ID);
                 getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
                 getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
 
-                const lossPlayerItem0ID = `lossPlayerItem0ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem1ID = `lossPlayerItem1ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem2ID = `lossPlayerItem2ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem3ID = `lossPlayerItem3ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem4ID = `lossPlayerItem4ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem5ID = `lossPlayerItem5ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem6ID = `lossPlayerItem6ID_${cardCount}_${itemIndex}`;
+                const lossPlayerItem0ID = `lossPlayerItem0ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem1ID = `lossPlayerItem1ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem2ID = `lossPlayerItem2ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem3ID = `lossPlayerItem3ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem4ID = `lossPlayerItem4ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem5ID = `lossPlayerItem5ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem6ID = `lossPlayerItem6ID_${itemIndex}_${cardCount}`;
                 getItemIcon(match.item0, lossPlayerItem0ID);
                 getItemIcon(match.item1, lossPlayerItem1ID);
                 getItemIcon(match.item2, lossPlayerItem2ID);
@@ -959,21 +1084,21 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         }
         else{
             losers.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${cardCount}_${itemIndex}`;
+                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
 
                 getChampIcon(match.Champ, winPlayerChamp0ID);
                 getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
                 getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
                 
-                const lossPlayerItem0ID = `lossPlayerItem0ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem1ID = `lossPlayerItem1ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem2ID = `lossPlayerItem2ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem3ID = `lossPlayerItem3ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem4ID = `lossPlayerItem4ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem5ID = `lossPlayerItem5ID_${cardCount}_${itemIndex}`;
-                const lossPlayerItem6ID = `lossPlayerItem6ID_${cardCount}_${itemIndex}`;
+                const lossPlayerItem0ID = `lossPlayerItem0ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem1ID = `lossPlayerItem1ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem2ID = `lossPlayerItem2ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem3ID = `lossPlayerItem3ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem4ID = `lossPlayerItem4ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem5ID = `lossPlayerItem5ID_${itemIndex}_${cardCount}`;
+                const lossPlayerItem6ID = `lossPlayerItem6ID_${itemIndex}_${cardCount}`;
                 getItemIcon(match.item0, lossPlayerItem0ID);
                 getItemIcon(match.item1, lossPlayerItem1ID);
                 getItemIcon(match.item2, lossPlayerItem2ID);
@@ -1020,21 +1145,21 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 primaryTable.innerHTML += loseHTML;
             });
             winners.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${cardCount}_${itemIndex}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${cardCount}_${itemIndex}`;
+                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
+                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
 
                 getChampIcon(match.Champ, winPlayerChamp0ID);
                 getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
                 getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
 
-                const winPlayerItem0ID = `winPlayerItem0ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem1ID = `winPlayerItem1ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem2ID = `winPlayerItem2ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem3ID = `winPlayerItem3ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem4ID = `winPlayerItem4ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem5ID = `winPlayerItem5ID_${cardCount}_${itemIndex}`;
-                const winPlayerItem6ID = `winPlayerItem6ID_${cardCount}_${itemIndex}`;
+                const winPlayerItem0ID = `winPlayerItem0ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem1ID = `winPlayerItem1ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem2ID = `winPlayerItem2ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem3ID = `winPlayerItem3ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem4ID = `winPlayerItem4ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem5ID = `winPlayerItem5ID_${itemIndex}_${cardCount}`;
+                const winPlayerItem6ID = `winPlayerItem6ID_${itemIndex}_${cardCount}`;
                 getItemIcon(match.item0, winPlayerItem0ID);
                 getItemIcon(match.item1, winPlayerItem1ID);
                 getItemIcon(match.item2, winPlayerItem2ID);
@@ -1083,4 +1208,16 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         }
         cardCount = cardCount + 1;
     });
+
+    const matchCardTags = document.querySelectorAll('[id="matchCard"]');
+    const gameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
+    const searchedUserElement = document.getElementById('nameInput').value;
+
+    console.log(matchCardTags);
+    console.log(gameIDs);
+    console.log(searchedUserElement);
+
+    showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
+    showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore('${searchedUserElement}', '${gameIDs}')">SHOW MORE</button>`;
+    
 }

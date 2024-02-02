@@ -20,6 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/items.css" />
 
     <script src="../static/scripts.js"></script>
 
@@ -39,35 +40,47 @@
     </nav>
 
 
-      <!-- Search Input -->
-      <section class="searchSection text-dark pt-2">
-        <div class="container maxWidth">
+    <!-- Search Input -->
+    <section class="searchSection text-dark pt-2">
+      <div class="container maxWidth">
 
-          <div class="input-group summoner-input searchContainer rounded-3">
+        <div class="input-group summoner-input searchContainer rounded-3">
 
-            <input id="nameInput" style="height: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; background: transparent; border: 0px; font-weight:bold; font-size: 120%;" type="text" class="form-control rounded-5 text-center shadow-none" placeholder="Game Name + #Tagline" />
-            
-            <button id="searchButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none;" type="button" onclick="summonerSearch()">TRACK</button>
+          <input id="nameInput" style="height: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; background: transparent; border: 0px; font-weight:bold; font-size: 120%;" type="text" class="form-control rounded-5 text-center shadow-none" placeholder="Game Name + #Tagline" />
+          
+          <button id="searchButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none;" type="button" onclick="summonerSearch()">TRACK</button>
 
-          </div>
-            
         </div>
-      </section>
-      <!-- Search Result -->
-      <section class="searchSection text-dark pt-2">
-        <div class="container" style="min-width: 100%; max-width:none;">
-          <div class="align-items-center">
-            <h3 id="responseParagraph" class="text-center fw-bold maxWidth" style="font-family: VCR OSD Mono, sans-serif; font-size: 200%; margin-left: auto; margin-right: auto;"></h3>
-
-          </div>
-        </div>
-      </section>
+          
+      </div>
     </section>
+    <!-- Search Result -->
+    <section class="searchSection text-dark pt-2">
+      <div class="container" style="min-width: 100%; max-width:none;">
+        <div class="align-items-center">
+          <h3 id="responseParagraph" class="text-center fw-bold maxWidth" style="font-family: VCR OSD Mono, sans-serif; font-size: 200%; margin-left: auto; margin-right: auto;"></h3>
 
+        </div>
+      </div>
+    </section>
 
 
     <!-- HTML Structure to Display Data -->
     <div id="data-container" class="accordion center pt-2"></div>
+
+
+    <div id="formControl" data-key="7"></div>
+    
+    <!-- Show More -->
+    <div id="showMoreButtonDiv">
+      
+    </div>
+    
+    
+
+    
+    
+
 
 
     <script>
