@@ -24,6 +24,8 @@ async function summonerSearch(summonerNameParam) {
         }
     })
     .then(function(data) {
+        const dataContainer = document.getElementById('data-container');
+        dataContainer.innerHTML = '';
         printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
     })
     .catch(function(error) {
