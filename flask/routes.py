@@ -301,21 +301,28 @@ def getItemIcon():
         blank = os.path.join(icons_folder, f'NA.png')
         return send_file(blank, mimetype='image/png')
 
+# TODO: Implement an endpoint that when queried will get the rank and LP amount of a player.
+# To get this information you will need to leverage 2 APIs
+# /lol/league/v4/entries/by-summoner/{encryptedSummonerId}
+    # This will get the actual ranked data
+# /lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}
+# /lol/summoner/v4/summoners/by-name/{summonerName}
+    # Both of these APIs work to get the ID field.
+    # Plug the ID field into the first API to get the ranked data
 
-
-@app.route('/getItemIcons/<path:filename>', methods=['GET'])
-def getItemIcons(filename):
-    # Specify the path to the folder containing PNGs
-    icons_folder = './static/img/itemIcons'
-    print("SPRITE ENDPOINT HIT")
-    # Check if the file with the given name exists
-    file_path = os.path.join(icons_folder, filename)
-    if os.path.exists(file_path):
-        # Return the PNG file as a response
-        return send_file(file_path, mimetype='image/png')
-    else:
-        # If the file doesn't exist, return an error response
-        return "Error: The images sprite is not in the correct location"
+#@app.route('/getItemIcons/<path:filename>', methods=['GET'])
+#def getItemIcons(filename):
+#    # Specify the path to the folder containing PNGs
+#    icons_folder = './static/img/itemIcons'
+#    print("SPRITE ENDPOINT HIT")
+#    # Check if the file with the given name exists
+#    file_path = os.path.join(icons_folder, filename)
+#    if os.path.exists(file_path):
+#        # Return the PNG file as a response
+#        return send_file(file_path, mimetype='image/png')
+#    else:
+#        # If the file doesn't exist, return an error response
+#        return "Error: The images sprite is not in the correct location"
 
 # Run Server
 if __name__ == '__main__':
