@@ -241,6 +241,8 @@ def getHistory():
 
 
 
+# TODO: Need to edit the MySQL database to include a new column which will contain the rank data of the account that was searched such as Division and LP count. That information will get displayed in the div which has the ID of player-container. The ranked information will appear in a card above where the match history is displayed. 
+
 
 
 
