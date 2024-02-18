@@ -263,7 +263,8 @@ def getChampIcon():
         return send_file(file_path, mimetype='image/png')
     else:
         # If the file doesn't exist, return an error response
-        return "File not found", 404
+        return send_file("./static/img/champIcons/Placehoder.png", mimetype='image/png')
+        #return "File not found", 404
 
 
 # Get summoner spell icons
@@ -281,7 +282,8 @@ def getSummoners():
         return send_file(file_path, mimetype='image/png')
     else:
         # If the file doesn't exist, return an error response
-        return "File not found", 404
+        return send_file("./static/img/summonerIcons/Placehoder.png", mimetype='image/png')
+        #return "File not found", 404
 
 
 # Get summoner spell icons
@@ -300,8 +302,9 @@ def getItemIcon():
     else:
         # If the file doesn't exist, return an error response
         #return "File not found", 404
-        blank = os.path.join(icons_folder, f'NA.png')
-        return send_file(blank, mimetype='image/png')
+        return send_file("./static/img/itemIcons/Placehoder.png", mimetype='image/png')
+        #blank = os.path.join(icons_folder, f'NA.png')
+        #return send_file(blank, mimetype='image/png')
 
 # TODO: Implement an endpoint that when queried will get the rank and LP amount of a player.
 # To get this information you will need to leverage 2 APIs
