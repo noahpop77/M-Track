@@ -174,6 +174,90 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
 
 
 
+def insertDatabaseRankedInfo(puuid, summonerID, summonerName, tier, rank, leaguePoints, queueType, wins, losses):
+    try:
+        # Establish a connection to the MySQL server
+        connection = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database
+        )
+
+        if connection.is_connected():
+            #print(f"Connected to MySQL Server: {host} | Database: {database}")
+
+            # Create a cursor object to interact with the database
+            cursor = connection.cursor()
+            
+            try:
+                query = (
+                    f"INSERT INTO summonerRankedInfo "
+                    "(encryptedPUUID, summonerID, summonerName, tier, `rank`, leaguePoints, queueType, wins, losses) "
+                    "VALUES "
+                    "(%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                )
+                data = (
+                    puuid, 
+                    summonerID, 
+                    summonerName, 
+                    tier, 
+                    rank, 
+                    leaguePoints, 
+                    queueType, 
+                    wins, 
+                    losses
+                )
+                
+                cursor.execute(query, data)
+
+            except IndexError:
+                pass
+
+            except mysql.connector.Error as e:
+                if e.errno == 1062:
+                    pass
+                else:
+                    print(e)
+
+            connection.commit()
+
+    except mysql.connector.Error as e:
+        print(f"Error connecting to MySQL Server: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+
+
+
+def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
+    
+    summonerID = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
+    print(summonerID)
+
+    rankedInfo = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()[0]
+    print(rankedInfo)
+    print(type(rankedInfo))
+    insertDatabaseRankedInfo(
+        encryptedSummonerPUUID, 
+        rankedInfo["summonerId"], 
+        rankedInfo["summonerName"], 
+        rankedInfo["tier"], 
+        rankedInfo["rank"], 
+        rankedInfo["leaguePoints"], 
+        rankedInfo["queueType"], 
+        rankedInfo["wins"], 
+        rankedInfo["losses"], 
+        )
+    
+    return 200
+
 
 
 
@@ -198,8 +282,6 @@ def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
 
 
 
-
-
 # It doesnt just do a unique id check both ways but it checks to see what elements from list 2 are NOT in list 1. This way it only checks to see what game IDs are not in the database and not what ids in the database are in the past 20 game IDs searched.
 def findUniqueIDs(list1, list2):
     # Convert the lists to sets for efficient comparison
@@ -211,19 +293,6 @@ def findUniqueIDs(list1, list2):
     uniqueIDsList = list(uniqueIDs)
     return uniqueIDsList
 
-
-#def findUniqueIDsss(list1, list2):
-#    # Convert the lists to sets for efficient comparison
-#    set1 = set(list1)
-#    set2 = set(list2)
-#
-#    # Find the unique IDs by taking the symmetric difference of the sets
-#    uniqueIDs = set1.symmetric_difference(set2)
-#
-#    # Convert the result back to a list
-#    uniqueIDsList = list(uniqueIDs)
-#    return uniqueIDsList
-
 # Splits a full riotID into its components of a gameName and a tag
 # Useful tool
 def riotSplitID(fullRiotID):
@@ -234,18 +303,6 @@ def riotSplitID(fullRiotID):
     gamename = name_parts[0]
     tag = name_parts[1] if len(name_parts) > 1 else None
     return gamename, tag
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

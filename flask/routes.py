@@ -202,7 +202,9 @@ def getHistory():
         summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
 
-
+    # When the update button is pressed it will requery the ranked data associated with the account to update the database
+    queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
+    
     mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10)
     gameData = fetchFromMatchHistoryDB(summonerName, 10)
     
@@ -314,6 +316,7 @@ def getItemIcon():
 # /lol/summoner/v4/summoners/by-name/{summonerName}
     # Both of these APIs work to get the ID field.
     # Plug the ID field into the first API to get the ranked data
+
 
 #@app.route('/getItemIcons/<path:filename>', methods=['GET'])
 #def getItemIcons(filename):
