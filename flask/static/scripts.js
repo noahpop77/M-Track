@@ -309,12 +309,7 @@ async function getSummonerIcon(summoner, elementID, maxRetries = 5) {
 
 // TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
 function toggleAccordion(header) {
-    //console.log(header.parentNode)
-    //console.log(header.parentNode.classList.contains("active"))
-    //console.log(header.getAttribute("data-card-count"))
-    //console.log(header.getAttribute("data-winners"))
-    //console.log(header.getAttribute("data-losers"))
-    //console.log(header.getAttribute("data-win"))
+
     // Get the parent accordion item
     var accordionItem = header.parentNode;
     // Toggle the "active" class to show/hide the accordion body
@@ -322,22 +317,12 @@ function toggleAccordion(header) {
 
     // Get the accordion-body element
     var accordionBodies = accordionItem.querySelectorAll(".accordion-body");
-    //console.log(accordionBodies[0])
-    //console.log(accordionBodies[1])
+
     firstScoreboardID = accordionBodies[0].querySelector("tbody").id
     secondScoreboardID = accordionBodies[1].querySelector("tbody").id
-    //console.log(firstScoreboardID)
-    //console.log(secondScoreboardID)
     
     // TODO: I CAN MAKE ALL OF THE ITEMS IMAGES INTO A SINGLE IMAGE SPRITE AND THEN USE THE BACKGROUND POSITION TO DISPLAY THE CORRECT IMAGE
     // https://www.w3schools.com/css/css_image_sprites.asp
-
-    // getScoreboard(firstScoreboardID, secondScoreboardID)
-    if (accordionItem.classList.contains("active") == true) {
-        //console.log("ITS CURRENTLY ACTIVE");
-    } else {
-        //console.log("ITS CURRENTLY NOT ACTIVE");
-    }
     
 }
 
@@ -387,10 +372,6 @@ function winrateCalculator(wins, losses) {
     var totalGamesPlayed = wins + losses;
     var winrateFloat = wins / totalGamesPlayed * 100;
     var winrate = Math.round(winrateFloat, 1)
-    console.log("wins: " + wins);
-    console.log("losses: " + losses);
-    console.log("totalGamesPlayed: " + totalGamesPlayed);
-    console.log("Winrate: " + winrate)
     return winrate;
 }
 
@@ -417,7 +398,6 @@ async function rankSearch(riotIDParam) {
         }
     })
     .then(function(data) {
-        console.log(data)
         const dataContainer = document.getElementById('player-container');
         dataContainer.innerHTML = `
         <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
@@ -545,11 +525,9 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
     let container;
     if (document.getElementById('matchHistoryFeed')) {
-        console.log("matchHistoryFeed exists")
         container = document.getElementById('matchHistoryFeed');
     }
     else {
-        console.log("matchHistoryFeed Just Created")
         // Create a new div element with a custom ID
         container = document.createElement('div');
         container.id = `matchHistoryFeed`;
@@ -1052,45 +1030,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         // Append the container to the data-container
         document.getElementById('data-container').appendChild(container);
-        
 
-        // let testelement0 = document.getElementById(item0ID);
-        // console.log(testelement0);
-        // testelement0.classList.add('Deicide');
-
-
-        // let imgElement = document.querySelector(item0ID);
-        // console.log(imgElement);
-        // let style = window.getComputedStyle(imgElement);
-        // let backgroundImage = style.getPropertyValue('background-image');
-
-        // // Extract the URL from the background-image property
-        // let imageUrl = backgroundImage.slice(5, -2);
-
-        // // Select the img element and change its src attribute
-        // let testelement = document.getElementById(item0ID);
-        // testelement.src = imageUrl;
-
-
-        
-        // let testelement1 = document.getElementById(item1ID);
-        // console.log(testelement);
-        // testelement1.classList.add('Deicide');
-        // let testelement2 = document.getElementById(item2ID);
-        // console.log(testelement);
-        // testelement2.classList.add('Deicide');
-        // let testelement3 = document.getElementById(item3ID);
-        // console.log(testelement);
-        // testelement3.classList.add('Deicide');
-        // let testelement4 = document.getElementById(item4ID);
-        // console.log(testelement);
-        // testelement4.classList.add('Deicide');
-        // let testelement5 = document.getElementById(item5ID);
-        // console.log(testelement);
-        // testelement5.classList.add('Deicide');
-        // let testelement6 = document.getElementById(item6ID);
-        // console.log(testelement);
-        // testelement6.classList.add('Deicide');
 
 
         const primaryTable = document.getElementById(primaryTableID);
@@ -1356,9 +1296,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
     const gameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
     const searchedUserElement = document.getElementById('nameInput').value;
 
-    console.log(matchCardTags);
-    console.log(gameIDs);
-    console.log(searchedUserElement);
 
     showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
     showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore('${searchedUserElement}', '${gameIDs}')">SHOW MORE</button>`;

@@ -114,16 +114,12 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
         )
 
         if connection.is_connected():
-            #print(f"Connected to MySQL Server: {host} | Database: {database}")
-
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
             
             try:
                 for game in matchHistoryGames:
                     summonerWin = ""
-                    #print(f"Adding game with ID: \t{game['gamedata']['gameid']}")
-
                     participantList = json.dumps(game['gamedata']['participants'])
                     matchDataList = json.dumps(game['matchdata'])
                     
@@ -170,7 +166,6 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
         if 'connection' in locals() and connection.is_connected():
             cursor.close()
             connection.close()
-            #print("MySQL connection closed.")
 
 
 
@@ -185,8 +180,6 @@ def insertDatabaseRankedInfo(puuid, summonerID, summonerName, tier, rank, league
         )
 
         if connection.is_connected():
-            #print(f"Connected to MySQL Server: {host} | Database: {database}")
-
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
             
@@ -239,7 +232,7 @@ def insertDatabaseRankedInfo(puuid, summonerID, summonerName, tier, rank, league
 def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
     
     summonerID = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
-    print(summonerID)
+
     try:
         rankedInfo = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()[0]
     except:
@@ -357,7 +350,6 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
     matchData = []
 
     for i in uniqueGameIDs:
-        #print(i)
         try:
             tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
             matchData.append(tempMatch)

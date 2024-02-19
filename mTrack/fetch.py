@@ -129,8 +129,6 @@ def fetchFromMatchHistoryDB(summonerName, numberOfRecords, recordOffset = 0):
         )
 
         if connection.is_connected():
-            #print(f"Query made to MySQL Server: {host} | Database: {database}")
-
             # Create a cursor object to interact with the database
             cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
 
