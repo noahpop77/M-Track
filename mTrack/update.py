@@ -240,10 +240,10 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
     
     summonerID = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
     print(summonerID)
-
-    rankedInfo = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()[0]
-    print(rankedInfo)
-    print(type(rankedInfo))
+    try:
+        rankedInfo = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()[0]
+    except:
+        return "No ranked data found function"
     insertDatabaseRankedInfo(
         encryptedSummonerPUUID, 
         rankedInfo["summonerId"], 
@@ -264,20 +264,16 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
 
 
 
-
-
-
-
-
-
 def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
-    riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
-
-    sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+    try:
+        riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+        
+        sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+    except:
+        return "No ranked data found..."
 
     summonerName = sumNameData['name']
     riotIDPuuid = riotIDData['puuid']
-    print(f"Name Queried\t{summonerName} {riotIDPuuid}")
     return summonerName, riotIDPuuid
 
 

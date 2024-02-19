@@ -58,8 +58,6 @@ def showMore():
     # Splits riotID and loads it into variables for use later
     ingres = request.data.decode("utf8")
     showMoreDict = json.loads(ingres)
-    #print(showMoreDict)
-    #print(type(showMoreDict))
 
     riotGameName, riotTagLine = riotSplitID(showMoreDict['searchedUser'])
     riotID = f"{riotGameName}#{riotTagLine}"
@@ -155,7 +153,7 @@ def summonerSearch():
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
-    #print(matchData)
+
     # Player card data
     playerStats = []
     # Loops through match data, gets player card data and 
@@ -169,7 +167,7 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
-    #print(matchData[0])
+            
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
@@ -241,6 +239,37 @@ def getHistory():
         'summonerName': summonerName
     })
 
+@app.route('/getRank', methods=['POST'])
+def getRank():
+    ingres = request.data.decode("utf8")
+    riotGameName, riotTagLine = riotSplitID(ingres)
+    riotID = f"{riotGameName}#{riotTagLine}"
+
+    try:
+        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+    except TypeError:
+        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
+    
+    summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
+    if len(summonerRankDict) < 1:
+        queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
+        summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
+    return summonerRankDict
+
+@app.route('/updateRank', methods=['POST'])
+def updateRank():
+    ingres = request.data.decode("utf8")
+    riotGameName, riotTagLine = riotSplitID(ingres)
+    riotID = f"{riotGameName}#{riotTagLine}"
+
+    summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+    insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
+    summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+    
+    summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
+
+    return summonerRankDict
 
 
 # TODO: Need to edit the MySQL database to include a new column which will contain the rank data of the account that was searched such as Division and LP count. That information will get displayed in the div which has the ID of player-container. The ranked information will appear in a card above where the match history is displayed. 

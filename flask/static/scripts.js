@@ -26,6 +26,9 @@ async function summonerSearch(summonerNameParam) {
     .then(function(data) {
         const dataContainer = document.getElementById('data-container');
         dataContainer.innerHTML = '';
+        /////////////////////////////////////////////////
+        const riotID = document.getElementById('nameInput').value;
+        rankSearch(riotID);
         printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
     })
     .catch(function(error) {
@@ -95,6 +98,9 @@ async function updateData() {
         }
     })
     .then(function(data) {
+        /////////////////////////////////////////////////
+        const riotID = document.getElementById('nameInput').value;
+        rankSearchUpdate(riotID);
         //responseParagraph.textContent = "Updated, Please Refresh";
         printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
     })
@@ -374,8 +380,139 @@ function generateRandomNumber() {
     return randomNumber;
 }
 
+function winrateCalculator(wins, losses) {
+    wins = parseInt(wins, 10);
+    losses = parseInt(losses, 10);
+
+    var totalGamesPlayed = wins + losses;
+    var winrateFloat = wins / totalGamesPlayed * 100;
+    var winrate = Math.round(winrateFloat, 1)
+    console.log("wins: " + wins);
+    console.log("losses: " + losses);
+    console.log("totalGamesPlayed: " + totalGamesPlayed);
+    console.log("Winrate: " + winrate)
+    return winrate;
+}
 
 
+async function rankSearch(riotIDParam) {
+    var url = "http://10.0.0.150/getRank";
+
+    // Use the provided summonerNameParam if available; otherwise, use the input value
+    var riotID = riotIDParam || document.getElementById("nameInput").value;
+
+    await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: riotID
+    })
+    .then(function(response) {
+        // Check if the response was successful
+        if (response.ok) {
+            return response.json(); // Convert response to text
+        } else {
+            throw new Error('Error: ' + response.status); // Throw an error
+        }
+    })
+    .then(function(data) {
+        console.log(data)
+        const dataContainer = document.getElementById('player-container');
+        dataContainer.innerHTML = `
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                ${data[0].queueType}
+            </div>
+        </div>
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                 ${data[0].tier} ${data[0].rank}
+            </div>
+        </div>
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                Wins: ${data[0].wins} / Losses: ${data[0].losses}
+            </div>
+        </div>
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                Win Rate ${winrateCalculator(data[0].wins, data[0].losses)}%
+            </div>
+        </div>
+        `;
+    })
+    .catch(function(error) {
+        console.log(error)
+        const dataContainer = document.getElementById('player-container');
+        dataContainer.innerHTML = `
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                Not enough ranked data found... bruh...
+            </div>
+        </div>
+        `;
+    });
+}
+
+async function rankSearchUpdate(riotIDParam) {
+    var url = "http://10.0.0.150/updateRank";
+
+    // Use the provided summonerNameParam if available; otherwise, use the input value
+    var riotID = riotIDParam || document.getElementById("nameInput").value;
+
+    await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: riotID
+    })
+    .then(function(response) {
+        // Check if the response was successful
+        if (response.ok) {
+            return response.json(); // Convert response to text
+        } else {
+            throw new Error('Error: ' + response.status); // Throw an error
+        }
+    })
+    .then(function(data) {
+        const dataContainer = document.getElementById('player-container');
+        dataContainer.innerHTML = `
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                ${data[0].queueType}
+            </div>
+        </div>
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                 ${data[0].tier} ${data[0].rank}
+            </div>
+        </div>
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                Wins: ${data[0].wins} / Losses: ${data[0].losses}
+            </div>
+        </div>
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                Win Rate ${winrateCalculator(data[0].wins, data[0].losses)}%
+            </div>
+        </div>
+        `;
+    })
+    .catch(function(error) {
+        console.log(error)
+        const dataContainer = document.getElementById('player-container');
+        dataContainer.innerHTML = `
+        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+            <div class="nested-container" style="justify-content: center;">
+                Not enough ranked data found... bruh2...
+            </div>
+        </div>
+        `;
+    });
+}
 
 
 
@@ -403,6 +540,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         </div>
     </div>
     `;
+
+
 
     let container;
     if (document.getElementById('matchHistoryFeed')) {
@@ -910,6 +1049,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
 
         
+
         // Append the container to the data-container
         document.getElementById('data-container').appendChild(container);
         
@@ -1210,6 +1350,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         }
         cardCount = cardCount + 1;
     });
+    
 
     const matchCardTags = document.querySelectorAll('[id="matchCard"]');
     const gameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
