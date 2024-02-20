@@ -38,6 +38,9 @@ async function summonerSearch(summonerNameParam) {
     });
 }
 
+// TODO: If it hits the end of someones match history it breaks and deletes everything on the page except the ranked information
+// you can test this with the following user with a short match history
+// nosh#noshh
 async function showMore(searchedUser, excludeGameIDs) {
     var url = "http://10.0.0.150/showMore";
     var showMoreButtonTag = document.getElementById('showMoreButtonTag');
@@ -376,6 +379,7 @@ function winrateCalculator(wins, losses) {
 }
 
 
+// TODO: Sometimes it shows RANKED_FLEX_SR instead of ranked solo duo
 async function rankSearch(riotIDParam) {
     var url = "http://10.0.0.150/getRank";
 
