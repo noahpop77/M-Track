@@ -234,19 +234,28 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
     summonerID = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
 
     try:
-        rankedInfo = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()[0]
+        rankedInfo = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()
     except:
         return "No ranked data found function"
+    
+    # Check to only pull ranked information that is for Ranked Solo/Duo
+    soloQueueRankInfo = ""
+    for i in rankedInfo:
+        if i["queueType"] == "RANKED_SOLO_5x5":
+            soloQueueRankInfo = i
+        else:
+            soloQueueRankInfo = "No valid ranked info found..."
+
     insertDatabaseRankedInfo(
         encryptedSummonerPUUID, 
-        rankedInfo["summonerId"], 
-        rankedInfo["summonerName"], 
-        rankedInfo["tier"], 
-        rankedInfo["rank"], 
-        rankedInfo["leaguePoints"], 
-        rankedInfo["queueType"], 
-        rankedInfo["wins"], 
-        rankedInfo["losses"], 
+        soloQueueRankInfo["summonerId"], 
+        soloQueueRankInfo["summonerName"], 
+        soloQueueRankInfo["tier"], 
+        soloQueueRankInfo["rank"], 
+        soloQueueRankInfo["leaguePoints"], 
+        soloQueueRankInfo["queueType"], 
+        soloQueueRankInfo["wins"], 
+        soloQueueRankInfo["losses"], 
         )
     
     return 200

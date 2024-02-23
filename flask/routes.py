@@ -255,6 +255,7 @@ def getRank():
     if len(summonerRankDict) < 1:
         queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
         summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
+    print(summonerRankDict)
     return summonerRankDict
 
 @app.route('/updateRank', methods=['POST'])
