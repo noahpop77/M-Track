@@ -64,8 +64,9 @@ def showMore():
     
 
     alreadyShownGameIDs = showMoreDict['excludeGameIDs']
-    gameIDs = alreadyShownGameIDs.split(",")
     
+    gameIDs = alreadyShownGameIDs.split(",")
+
 
     # This try except clause will take the riotID gamename and tagline
     # and get the summoner name and PUUID associated with it for use in
@@ -120,7 +121,6 @@ def showMore():
 
 
 
-# TODO: What the fuck is wrong with item ID 3191?
 
 # Main search function associated with the websites searchbar.
 @app.route('/summonerSearch', methods=['POST'])
@@ -255,7 +255,6 @@ def getRank():
     if len(summonerRankDict) < 1:
         queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
         summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
-    print(summonerRankDict)
     return summonerRankDict
 
 @app.route('/updateRank', methods=['POST'])
@@ -271,9 +270,6 @@ def updateRank():
     summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
 
     return summonerRankDict
-
-
-# TODO: Need to edit the MySQL database to include a new column which will contain the rank data of the account that was searched such as Division and LP count. That information will get displayed in the div which has the ID of player-container. The ranked information will appear in a card above where the match history is displayed. 
 
 
 
@@ -324,7 +320,7 @@ def getItemIcon():
     ingres = request.data.decode("utf8")
 
     # Specify the path to the folder containing PNGs
-    icons_folder = './static/img/itemIcons'
+    icons_folder = 'static/img/itemIcons'
 
     # Check if the file with the given name exists
     file_path = os.path.join(icons_folder, f'{ingres}.png')
@@ -334,18 +330,9 @@ def getItemIcon():
     else:
         # If the file doesn't exist, return an error response
         #return "File not found", 404
-        return send_file("./static/img/itemIcons/Placehoder.png", mimetype='image/png')
+        return send_file("static/img/itemIcons/Placehoder.png", mimetype='image/png')
         #blank = os.path.join(icons_folder, f'NA.png')
         #return send_file(blank, mimetype='image/png')
-
-# TODO: Implement an endpoint that when queried will get the rank and LP amount of a player.
-# To get this information you will need to leverage 2 APIs
-# /lol/league/v4/entries/by-summoner/{encryptedSummonerId}
-    # This will get the actual ranked data
-# /lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}
-# /lol/summoner/v4/summoners/by-name/{summonerName}
-    # Both of these APIs work to get the ID field.
-    # Plug the ID field into the first API to get the ranked data
 
 
 #@app.route('/getItemIcons/<path:filename>', methods=['GET'])

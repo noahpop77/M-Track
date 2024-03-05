@@ -244,19 +244,22 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
         if i["queueType"] == "RANKED_SOLO_5x5":
             soloQueueRankInfo = i
         else:
-            soloQueueRankInfo = "No valid ranked info found..."
-
-    insertDatabaseRankedInfo(
-        encryptedSummonerPUUID, 
-        soloQueueRankInfo["summonerId"], 
-        soloQueueRankInfo["summonerName"], 
-        soloQueueRankInfo["tier"], 
-        soloQueueRankInfo["rank"], 
-        soloQueueRankInfo["leaguePoints"], 
-        soloQueueRankInfo["queueType"], 
-        soloQueueRankInfo["wins"], 
-        soloQueueRankInfo["losses"], 
-        )
+            continue
+    
+    try:
+        insertDatabaseRankedInfo(
+            encryptedSummonerPUUID, 
+            soloQueueRankInfo["summonerId"], 
+            soloQueueRankInfo["summonerName"], 
+            soloQueueRankInfo["tier"], 
+            soloQueueRankInfo["rank"], 
+            soloQueueRankInfo["leaguePoints"], 
+            soloQueueRankInfo["queueType"], 
+            soloQueueRankInfo["wins"], 
+            soloQueueRankInfo["losses"], 
+            )
+    except:
+        return 500
     
     return 200
 
@@ -352,7 +355,6 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
     # Gets the unique IDs between the past 20 matches in the request that was made and all all of the IDs that are associated with the summoner searched in the DB
     # This might prove to be a performance issue if the DB accumulates enough entries on a single user the search will take long?
     uniqueGameIDs = findUniqueIDs(gameIDsFromDB, matchList)
-    # TODO: There seems to be some odd behavior where there is a delay in updating the games. It will show the unique game IDs but getting the game data takes longer than OP.GG. This happens when it has a set of data, the player plays some games to add to the new list of matches naturally but it doesnt show the new games until later. Whereas op.gg does it instantly almost.
     
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
@@ -378,8 +380,10 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
         except KeyError:
             pass
         
-        date = convert_unix_to_date(i['info']['gameCreation'])
-
+        try:
+            date = convert_unix_to_date(i['info']['gameCreation'])
+        except:
+            print("uh oh")
         try:
             history = {
                 'gamedata': {
@@ -410,13 +414,13 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
                     "summonerSpell2": summonerIcons[str(participant['summoner2Id'])],
                     "visionScore": participant['visionScore'],
                     "totalCS": int(participant['totalMinionsKilled'] + participant['neutralMinionsKilled']),
-                    "item0": itemIcons[str(participant['item0'])],
-                    "item1": itemIcons[str(participant['item1'])],
-                    "item2": itemIcons[str(participant['item2'])],
-                    "item3": itemIcons[str(participant['item3'])],
-                    "item4": itemIcons[str(participant['item4'])],
-                    "item5": itemIcons[str(participant['item5'])],
-                    "item6": itemIcons[str(participant['item6'])],
+                    "item0": translateItemCodesToNames(itemIcons, str(participant['item0'])),
+                    "item1": translateItemCodesToNames(itemIcons, str(participant['item1'])),
+                    "item2": translateItemCodesToNames(itemIcons, str(participant['item2'])),
+                    "item3": translateItemCodesToNames(itemIcons, str(participant['item3'])),
+                    "item4": translateItemCodesToNames(itemIcons, str(participant['item4'])),
+                    "item5": translateItemCodesToNames(itemIcons, str(participant['item5'])),
+                    "item6": translateItemCodesToNames(itemIcons, str(participant['item6'])),
                     "win": participant['win']
                 }
                 
@@ -429,3 +433,10 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
     
     insertDatabaseMatchHistory(gameData, summonerName)
     return 200
+
+def translateItemCodesToNames(itemIcons, itemId):
+    try:
+        return str(itemIcons[itemId])
+    except KeyError:
+        # Handle the error (e.g., return a default icon or log the issue)
+        return "Placeholder"

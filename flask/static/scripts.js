@@ -38,9 +38,7 @@ async function summonerSearch(summonerNameParam) {
     });
 }
 
-// TODO: If it hits the end of someones match history it breaks and deletes everything on the page except the ranked information
-// you can test this with the following user with a short match history
-// nosh#noshh
+
 async function showMore(searchedUser, excludeGameIDs) {
     var url = "http://10.0.0.150/showMore";
     var showMoreButtonTag = document.getElementById('showMoreButtonTag');
@@ -379,7 +377,6 @@ function winrateCalculator(wins, losses) {
 }
 
 
-// TODO: Sometimes it shows RANKED_FLEX_SR instead of ranked solo duo
 async function rankSearch(riotIDParam) {
     var url = "http://10.0.0.150/getRank";
 
@@ -501,8 +498,6 @@ async function rankSearchUpdate(riotIDParam) {
 
 
 
-// TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD PLEASE
-
 // TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
     // Assuming gameData and playerStats are available as arrays of objects
@@ -602,6 +597,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             item5 = getItemIcon(row2.item5, item5ID);
             item6 = getItemIcon(row2.item6, item6ID);
             
+            console.log(row3);
+            console.log(row1);
             player1 = getChampIcon(row3[0].Champ, playerIcon1ID);
             player2 = getChampIcon(row3[1].Champ, playerIcon2ID);
             player3 = getChampIcon(row3[2].Champ, playerIcon3ID);
@@ -823,6 +820,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             item5 = getItemIcon(row2.item5, item5ID);
             item6 = getItemIcon(row2.item6, item6ID);
 
+            console.log(row3);
+            console.log(row1);
             player1 = getChampIcon(row3[0].Champ, playerIcon1ID);
             player2 = getChampIcon(row3[1].Champ, playerIcon2ID);
             player3 = getChampIcon(row3[2].Champ, playerIcon3ID);
@@ -1298,6 +1297,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
     const matchCardTags = document.querySelectorAll('[id="matchCard"]');
     const gameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
+    console.log(gameIDs)
     const searchedUserElement = document.getElementById('nameInput').value;
 
 
