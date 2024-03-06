@@ -67,8 +67,8 @@ async function updateData() {
 
 
 async function getItemIcon(itemName, elementID, maxRetries = 5) {
-    if (itemName === "N/A") {
-        itemName = "NA";
+    if (itemName === "Empty") {
+        itemName = "Empty";
     }
 
     const url = "http://10.0.0.150/getItemIcon";
@@ -108,8 +108,8 @@ async function getItemIcon(itemName, elementID, maxRetries = 5) {
 
 
 async function getItemIconBackup(itemName, elementID) {
-    if (itemName === "N/A") {
-        itemName = "NA"
+    if (itemName === "Empty") {
+        itemName = "Empty"
     }
     var url = "http://10.0.0.150/getItemIcon";
 
@@ -284,9 +284,6 @@ function toggleAccordion(header) {
     secondScoreboardID = accordionBodies[1].querySelector("tbody").id
     //console.log(firstScoreboardID)
     //console.log(secondScoreboardID)
-    
-    // TODO: I CAN MAKE ALL OF THE ITEMS IMAGES INTO A SINGLE IMAGE SPRITE AND THEN USE THE BACKGROUND POSITION TO DISPLAY THE CORRECT IMAGE
-    // https://www.w3schools.com/css/css_image_sprites.asp
 
     // getScoreboard(firstScoreboardID, secondScoreboardID)
     if (accordionItem.classList.contains("active") == true) {
@@ -329,9 +326,6 @@ function riotIDSplitter(inputString) {
 
 
 
-
-
-// TODO: START FIXING THE ACCORDION ITEM GAME SCORE BOARD PLEASE
 
 // TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
 async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {

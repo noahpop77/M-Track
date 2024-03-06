@@ -1,3133 +1,3838 @@
-
 .Abyssal-Mask {
-    width: 64px;
-    height: 64px;
-    background-position: 0 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 0;
 }
 
 .Adaptive-Helm {
-    width: 64px;
-    height: 64px;
-    background-position: -64px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px 0;
 }
 
 .Aegis-of-the-Legion {
-    width: 64px;
-    height: 64px;
-    background-position: -128px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px 0;
 }
 
 .Aether-Wisp {
-    width: 64px;
-    height: 64px;
-    background-position: -192px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px 0;
 }
 
 .Amplifying-Tome {
-    width: 64px;
-    height: 64px;
-    background-position: -256px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px 0;
 }
 
 .Anathema_s-Chains {
-    width: 64px;
-    height: 64px;
-    background-position: -320px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px 0;
 }
 
 .Anti-tower-Socks {
-    width: 64px;
-    height: 64px;
-    background-position: -384px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px 0;
 }
 
 .Arcane-Sweeper {
-    width: 64px;
-    height: 64px;
-    background-position: -448px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px 0;
 }
 
 .Archangel_s-Staff {
-    width: 64px;
-    height: 64px;
-    background-position: -512px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px 0;
 }
 
 .Ardent-Censer {
-    width: 64px;
-    height: 64px;
-    background-position: -576px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px 0;
 }
 
 .Ataraxia {
-    width: 64px;
-    height: 64px;
-    background-position: -640px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px 0;
 }
 
 .Atma_s-Reckoning {
-    width: 64px;
-    height: 64px;
-    background-position: -704px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px 0;
 }
 
 .Axiom-Arc {
-    width: 64px;
-    height: 64px;
-    background-position: -768px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px 0;
 }
 
 .B-F-Sword {
-    width: 64px;
-    height: 64px;
-    background-position: -832px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px 0;
 }
 
 .Bami_s-Cinder {
-    width: 64px;
-    height: 64px;
-    background-position: -896px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px 0;
 }
 
 .Bandleglass-Mirror {
-    width: 64px;
-    height: 64px;
-    background-position: -960px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px 0;
 }
 
 .Banshee_s-Veil {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px 0;
 }
 
 .Berserker_s-Greaves {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px 0;
 }
 
 .Black-Cleaver {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -25px;
 }
 
 .Black-Mist-Scythe {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -25px;
 }
 
 .Blade-of-The-Ruined-King {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -25px;
 }
 
 .Blasting-Wand {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -25px;
 }
 
 .Blighting-Jewel {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -25px;
 }
 
 .Bloodletter_s-Curse {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -25px;
 }
 
 .Bloodsong {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -25px;
 }
 
 .Bloodthirster {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
-}
-
-.Boots {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -64px;
-    background-image: url(http://10.0.0.150/getItemIcons/items.png);
-    background-repeat: no-repeat;
-    display: block;
+    background-position: -175px -25px;
 }
 
 .Boots-of-Swiftness {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -25px;
+}
+
+.Boots {
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
+    background-image: url(http://10.0.0.150/getItemIcons/items.png);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -225px -25px;
 }
 
 .Bounty-of-Worlds {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -25px;
 }
 
 .Bramble-Vest {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -25px;
 }
 
 .Bulwark-of-the-Mountain {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -25px;
 }
 
 .Caesura {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -25px;
 }
 
 .Cappa-Juice {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -25px;
 }
 
 .Catalyst-of-Aeons {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -25px;
 }
 
 .Caulfield_s-Warhammer {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -25px;
 }
 
 .Ceaseless-Hunger {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -25px;
 }
 
 .Celestial-Opposition {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -50px;
 }
 
 .Certainty {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -50px;
 }
 
 .Chain-Vest {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -50px;
 }
 
 .Chalice-of-Blessing {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -50px;
 }
 
 .Chempunk-Chainsword {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -50px;
 }
 
 .Chemtech-Putrifier {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -50px;
 }
 
 .Cloak-of-Agility {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -50px;
 }
 
 .Cloth-Armor {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -50px;
 }
 
 .Commencing-Stopwatch {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -50px;
 }
 
 .Control-Ward {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -50px;
 }
 
 .Corrupting-Potion {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -50px;
 }
 
 .Cosmic-Drive {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -50px;
 }
 
 .Crown-of-the-Shattered-Queen {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -50px;
 }
 
 .Cry-of-the-Shrieking-City {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -50px;
 }
 
 .Cryptbloom {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -50px;
 }
 
 .Crystalline-Bracer {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -50px;
 }
 
 .Cull {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -50px;
 }
 
 .Dagger {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -50px;
 }
 
 .Dark-Seal {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -75px;
 }
 
 .Dawncore {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -75px;
 }
 
 .Daybreak {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -75px;
 }
 
 .Dead-Man_s-Plate {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -75px;
 }
 
 .Death_s-Dance {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -75px;
 }
 
 .Death_s-Daughter {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -75px;
 }
 
 .Deathblade {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -75px;
 }
 
 .Deathfire-Grasp {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -75px;
 }
 
 .Deicide {
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
-    width: 64px;
-    height: 64px;
-    background-position: -512px -192px;
-    
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -75px;
 }
 
 .Demonic-Embrace {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -75px;
 }
 
 .Divine-Sunderer {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -75px;
 }
 
 .Doran_s-Blade {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -75px;
 }
 
 .Doran_s-Ring {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -75px;
 }
 
 .Doran_s-Shield {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -75px;
 }
 
 .Draktharr_s-Shadowcarver {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -75px;
 }
 
 .Dream-Maker {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -75px;
 }
 
 .Dreamshatter {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -75px;
 }
 
 .Duskblade-of-Draktharr {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -75px;
 }
 
 .Echoes-of-Helia {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -100px;
 }
 
 .Eclipse {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -100px;
 }
 
 .Edge-of-Finality {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -100px;
 }
 
 .Edge-of-Night {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -100px;
 }
 
 .Elixir-of-Avarice {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -100px;
 }
 
 .Elixir-of-Force {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -100px;
 }
 
 .Elixir-of-Iron {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -100px;
 }
 
 .Elixir-of-Skill {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -100px;
 }
 
 .Elixir-of-Sorcery {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -100px;
 }
 
 .Elixir-of-Wrath {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -100px;
 }
 
 .Emberknife {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -100px;
 }
 
 .Enmity-of-the-Masses {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -100px;
 }
 
 .Equinox {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -100px;
 }
 
 .Essence-Reaver {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -100px;
 }
 
 .Eternal-Winter {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -100px;
 }
 
 .Evenshroud {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -100px;
 }
 
 .Everfrost {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -100px;
 }
 
 .Executioner_s-Calling {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -100px;
 }
 
 .Experimental-Hexplate {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -125px;
 }
 
 .Eye-of-the-Herald {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -125px;
 }
 
 .Eye-of-the-Storm {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -125px;
 }
 
 .Faerie-Charm {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -125px;
 }
 
 .Farsight-Alteration {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -125px;
 }
 
 .Fiendish-Codex {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -125px;
 }
 
 .Fimbulwinter {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -125px;
 }
 
 .Fire-at-Will {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -125px;
 }
 
 .Flicker {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -125px;
 }
 
 .Forbidden-Idol {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -125px;
 }
 
 .Force-of-Arms {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -125px;
 }
 
 .Force-of-Nature {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -125px;
 }
 
 .Fortification {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -125px;
 }
 
 .Frostfang {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -125px;
 }
 
 .Frozen-Fist {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -125px;
 }
 
 .Frozen-Heart {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -125px;
 }
 
 .Frozen-Mallet {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -125px;
 }
 
 .Galeforce {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -125px;
 }
 
 .Gangplank-Placeholder {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -150px;
 }
 
 .Gargoyle-Stoneplate {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -150px;
 }
 
 .Ghostcrawlers {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -150px;
 }
 
 .Giant_s-Belt {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -150px;
 }
 
 .Glacial-Buckler {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -150px;
 }
 
 .Glowing-Mote {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -150px;
 }
 
 .Goredrinker {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -150px;
 }
 
 .Guardian-Angel {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -150px;
 }
 
 .Guardian_s-Amulet {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -150px;
 }
 
 .Guardian_s-Blade {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -150px;
 }
 
 .Guardian_s-Dirk {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -150px;
 }
 
 .Guardian_s-Hammer {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -150px;
 }
 
 .Guardian_s-Horn {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -150px;
 }
 
 .Guardian_s-Orb {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -150px;
 }
 
 .Guardian_s-Shroud {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -150px;
 }
 
 .Guinsoo_s-Rageblade {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -150px;
 }
 
 .Gusto {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -150px;
 }
 
 .Gustwalker-Hatchling {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -150px;
 }
 
 .Hailblade {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -175px;
 }
 
 .Harrowing-Crescent {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -175px;
 }
 
 .Haunting-Guise {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -175px;
 }
 
 .Health-Potion {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -175px;
 }
 
 .Hearthbound-Axe {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -175px;
 }
 
 .Heartsteel {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -175px;
 }
 
 .Heavensfall {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -175px;
 }
 
 .Hellfire-Hatchet {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -175px;
 }
 
 .Hexdrinker {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -175px;
 }
 
 .Hextech-Alternator {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -175px;
 }
 
 .Hextech-Gunblade {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -175px;
 }
 
 .Hextech-Rocketbelt {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -175px;
 }
 
 .Hollow-Radiance {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -175px;
 }
 
 .Hope-Adrift {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -175px;
 }
 
 .Horizon-Focus {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -175px;
 }
 
 .Hubris {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -175px;
 }
 
 .Hullbreaker {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -175px;
 }
 
 .Icathia_s-Curse {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -175px;
 }
 
 .Iceborn-Gauntlet {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -200px;
 }
 
 .Immortal-Shieldbow {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -200px;
 }
 
 .Imperial-Mandate {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -200px;
 }
 
 .Infinite-Convergence {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -200px;
 }
 
 .Infinity-Edge {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -200px;
 }
 
 .Infinity-Force {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -200px;
 }
 
 .Innervating-Locket {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -200px;
 }
 
 .Ionian-Boots-of-Lucidity {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -200px;
 }
 
 .Ironspike-Whip {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -200px;
 }
 
 .Jak_Sho_-The-Protean {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -200px;
 }
 
 .Juice-of-Haste {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -200px;
 }
 
 .Juice-of-Power {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -200px;
 }
 
 .Juice-of-Vitality {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -200px;
 }
 
 .Kaenic-Rookern {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -200px;
 }
 
 .Kalista_s-Black-Spear {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -200px;
 }
 
 .Kindlegem {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -200px;
 }
 
 .Kircheis-Shard {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -200px;
 }
 
 .Knight_s-Vow {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -200px;
 }
 
 .Kraken-Slayer {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -225px;
 }
 
 .Last-Whisper {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -225px;
 }
 
 .Leeching-Leer {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -225px;
 }
 
 .Leviathan {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -225px;
 }
 
 .Liandry_s-Anguish {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -225px;
 }
 
 .Liandry_s-Lament {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -225px;
 }
 
 .Liandry_s-Torment {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -225px;
 }
 
 .Lich-Bane {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -225px;
 }
 
 .Lifeline {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -225px;
 }
 
 .Lifewell-Pendant {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -225px;
 }
 
 .Lightning-Braid {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -225px;
 }
 
 .Locket-of-the-Iron-Solari {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -225px;
 }
 
 .Long-Sword {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -225px;
 }
 
 .Lord-Dominik_s-Regards {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -225px;
 }
 
 .Lost-Chapter {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -225px;
 }
 
 .Lucent-Singularity {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -225px;
 }
 
 .Luden_s-Companion {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -225px;
 }
 
 .Luden_s-Tempest {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -225px;
 }
 
 .Malignance {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -250px;
 }
 
 .Manamune {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -250px;
 }
 
 .Maw-of-Malmortius {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -250px;
 }
 
 .Mejai_s-Soulstealer {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -250px;
 }
 
 .Mercurial-Scimitar {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -250px;
 }
 
 .Mercury_s-Treads {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -250px;
 }
 
 .Mikael_s-Blessing {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -250px;
 }
 
 .Minion-Dematerializer {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -250px;
 }
 
 .Mobility-Boots {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -250px;
 }
 
 .Moonstone-Renewer {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -250px;
 }
 
 .Morellonomicon {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -250px;
 }
 
 .Mortal-Reminder {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -250px;
 }
 
 .Mosstomper-Seedling {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -250px;
 }
 
 .Muramana {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -250px;
 }
 
-.NA {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -640px;
+.Empty {
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -250px;
 }
 
 .Nashor_s-Tooth {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -250px;
 }
 
 .Navori-Quickblades {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -250px;
 }
 
 .Needlessly-Large-Rod {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -250px;
 }
 
 .Negatron-Cloak {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -275px;
 }
 
 .Night-Harvester {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -275px;
 }
 
 .Noonquiver {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -275px;
 }
 
 .Null-Magic-Mantle {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -275px;
 }
 
 .Oblivion-Orb {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -275px;
 }
 
 .Obsidian-Cleaver {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -275px;
 }
 
 .Obsidian-Edge {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -275px;
 }
 
 .Opportunity {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -275px;
 }
 
 .Oracle-Lens {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -275px;
 }
 
 .Overcharged {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -275px;
 }
 
 .OvererchargedHA {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -275px;
 }
 
 .Pauldrons-of-Whiterock {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -275px;
 }
 
 .Penetrating-Bullets {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -275px;
 }
 
 .Perfectly-Timed-Stopwatch {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -275px;
 }
 
 .Perplexity {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -275px;
 }
 
 .Phage {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -275px;
 }
 
 .Phantom-Dancer {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -275px;
 }
 
 .Phreakish-Gusto {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -275px;
 }
 
 .Pickaxe {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -300px;
 }
 
 .Placeholder {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -300px;
 }
 
 .Plated-Steelcaps {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -300px;
 }
 
 .Poro-Snax {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -300px;
 }
 
 .Primordial-Dawn {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -300px;
 }
 
 .Profane-Hydra {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -300px;
 }
 
 .Prowler_s-Claw {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -300px;
 }
 
 .Quicksilver-Sash {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -300px;
 }
 
 .Rabadon_s-Deathcap {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -300px;
 }
 
 .Rabadon_s-Deathcrown {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -300px;
 }
 
 .Radiant-Virtue {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -300px;
 }
 
 .Rageknife {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -300px;
 }
 
 .Raise-Morale {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -300px;
 }
 
 .Randuin_s-Omen {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -300px;
 }
 
 .Rapid-Firecannon {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -300px;
 }
 
 .Ravenous-Hydra {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -300px;
 }
 
 .Rectrix {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -300px;
 }
 
 .Recurve-Bow {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -300px;
 }
 
 .Redemption {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -325px;
 }
 
 .Refillable-Potion {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -325px;
 }
 
 .Reinforced-Armor {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -325px;
 }
 
 .Rejuvenation-Bead {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -325px;
 }
 
 .Relic-Shield {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -325px;
 }
 
 .Reliquary-of-the-Golden-Dawn {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -325px;
 }
 
 .Riftmaker {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -325px;
 }
 
-.Rite-Of-Ruin {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -832px;
+.Rite-of-Ruin {
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -325px;
 }
 
 .Rod-of-Ages {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -325px;
 }
 
 .Ruby-Crystal {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -325px;
 }
 
 .Runaan_s-Hurricane {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -325px;
 }
 
 .Runeglaive {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -325px;
 }
 
 .Runesteel-Spaulders {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -325px;
 }
 
 .Runic-Compass {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -325px;
 }
 
 .Rylai_s-Crystal-Scepter {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -325px;
 }
 
 .Sandshrike_s-Claw {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -325px;
 }
 
 .Sanguine-Blade {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -325px;
 }
 
 .Sapphire-Crystal {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -325px;
 }
 
 .Scarecrow-Effigy {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -350px;
 }
 
 .Scorchclaw-Pup {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -350px;
 }
 
 .Seeker_s-Armguard {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -350px;
 }
 
 .Seething-Sorrow {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -350px;
 }
 
 .Seraph_s-Embrace {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -350px;
 }
 
 .Serpent_s-Fang {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -350px;
 }
 
 .Serrated-Dirk {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -350px;
 }
 
 .Serylda_s-Grudge {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -350px;
 }
 
 .Shadowflame {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -350px;
 }
 
 .Shard-of-True-Ice {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -350px;
 }
 
 .Shattered-Armguard {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -350px;
 }
 
 .Sheen {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -350px;
 }
 
 .Shield-of-the-Rakkor {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -350px;
 }
 
 .Shojin_s-Resolve {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -350px;
 }
 
 .Shurelya_s-Battlesong {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -350px;
 }
 
 .Shurelya_s-Requiem {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -350px;
 }
 
 .Silvermere-Dawn {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -350px;
 }
 
 .Sin-Eater {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -350px;
 }
 
 .Slightly-Magical-Footwear {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -375px;
 }
 
 .Solstice-Sleigh {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -375px;
 }
 
 .Sorcerer_s-Shoes {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -375px;
 }
 
 .Spear-of-Shojin {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -375px;
 }
 
 .Spectral-Cutlass {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -375px;
 }
 
 .Spectral-Sickle {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -375px;
 }
 
 .Spectre_s-Cowl {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -375px;
 }
 
 .Spellthief_s-Edge {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -375px;
 }
 
 .Spirit-Visage {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -375px;
 }
 
 .Staff-of-Flowing-Water {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -375px;
 }
 
 .Starcaster {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -375px;
 }
 
 .Statikk-Shiv {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -375px;
 }
 
 .Stealth-Ward {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -375px;
 }
 
 .Steel-Shoulderguards {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -375px;
 }
 
 .Steel-Sigil {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -375px;
 }
 
 .Sterak_s-Gage {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -375px;
 }
 
 .Stirring-Wardstone {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -375px;
 }
 
 .Stormrazor {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -375px;
 }
 
 .Stormsurge {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -400px;
 }
 
 .Stridebreaker {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -400px;
 }
 
 .Structure-Bounty {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -400px;
 }
 
 .Sundered-Sky {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -400px;
 }
 
 .Sunfire-Aegis {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -400px;
 }
 
 .Super-Mech-Armor {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -400px;
 }
 
 .Super-Mech-Power-Field {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -400px;
 }
 
 .Sword-of-Blossoming-Dawn {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -400px;
 }
 
 .Sword-of-the-Divine {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -400px;
 }
 
 .Swordnado {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -400px;
 }
 
 .Syzygy {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -400px;
 }
 
 .T-U-R-B-O- {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -400px;
 }
 
 .Targon_s-Buckler {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -400px;
 }
 
 .Tear-of-the-Goddess {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -400px;
 }
 
 .Terminus {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -400px;
 }
 
 .The-Baron_s-Gift {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -400px;
 }
 
 .The-Brutalizer {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -400px;
 }
 
 .The-Collector {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -400px;
 }
 
 .The-Golden-Spatula {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -425px;
 }
 
 .The-Unspoken-Parasite {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -425px;
 }
 
 .Thornmail {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -425px;
 }
 
 .Tiamat {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -425px;
 }
 
 .Titanic-Hydra {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -425px;
 }
 
 .Total-Biscuit-of-Everlasting-Will {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -425px;
 }
 
 .Tower-Power-Up {
-    width: 64px;
-    height: 64px;
-    background-position: -384px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -150px -425px;
 }
 
 .Trailblazer {
-    width: 64px;
-    height: 64px;
-    background-position: -448px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -175px -425px;
 }
 
 .Trinity-Force {
-    width: 64px;
-    height: 64px;
-    background-position: -512px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -200px -425px;
 }
 
 .Tunneler {
-    width: 64px;
-    height: 64px;
-    background-position: -576px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -225px -425px;
 }
 
 .Turbo-Chemtank {
-    width: 64px;
-    height: 64px;
-    background-position: -640px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -250px -425px;
 }
 
 .Turret-Plating {
-    width: 64px;
-    height: 64px;
-    background-position: -704px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -275px -425px;
 }
 
 .Typhoon {
-    width: 64px;
-    height: 64px;
-    background-position: -768px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -300px -425px;
 }
 
 .Umbral-Glaive {
-    width: 64px;
-    height: 64px;
-    background-position: -832px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -325px -425px;
 }
 
 .Unending-Despair {
-    width: 64px;
-    height: 64px;
-    background-position: -896px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -350px -425px;
 }
 
 .Upgraded-Aeropack {
-    width: 64px;
-    height: 64px;
-    background-position: -960px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -375px -425px;
 }
 
 .Vampiric-Scepter {
-    width: 64px;
-    height: 64px;
-    background-position: -1024px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -400px -425px;
 }
 
 .Vanguard {
-    width: 64px;
-    height: 64px;
-    background-position: -1088px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -425px -425px;
 }
 
 .Verdant-Barrier {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px 0;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px 0;
 }
 
 .Vespertide {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -64px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -25px;
 }
 
 .Vigilant-Wardstone {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -128px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -50px;
 }
 
 .Void-Staff {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -192px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -75px;
 }
 
 .Voltaic-Cyclosword {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -256px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -100px;
 }
 
 .Warden_s-Eye {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -320px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -125px;
 }
 
 .Warden_s-Mail {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -384px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -150px;
 }
 
 .Warmog_s-Armor {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -448px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -175px;
 }
 
 .Watchful-Wardstone {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -512px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -200px;
 }
 
 .Winged-Moonplate {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -576px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -225px;
 }
 
 .Winter_s-Approach {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -640px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -250px;
 }
 
 .Wit_s-End {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -704px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -275px;
 }
 
 .Wooglet_s-Witchcap {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -768px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -300px;
 }
 
 .Wordless-Promise {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -832px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -325px;
 }
 
 .World-Atlas {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -896px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -350px;
 }
 
 .Wyrmfallen-Sacrifice {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -960px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -375px;
 }
 
 .Youmuu_s-Ghostblade {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -1024px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -400px;
 }
 
 .Youmuu_s-Wake {
-    width: 64px;
-    height: 64px;
-    background-position: -1152px -1088px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -450px -425px;
 }
 
 .Your-Cut {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -1152px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: 0 -450px;
 }
 
 .Zaz_Zak_s-Realmspike {
-    width: 64px;
-    height: 64px;
-    background-position: -64px -1152px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -25px -450px;
 }
 
 .Zeal {
-    width: 64px;
-    height: 64px;
-    background-position: -128px -1152px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -50px -450px;
 }
 
 .Zeke_s-Convergence {
-    width: 64px;
-    height: 64px;
-    background-position: -192px -1152px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -75px -450px;
 }
 
 .Zephyr {
-    width: 64px;
-    height: 64px;
-    background-position: -256px -1152px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -100px -450px;
 }
 
 .Zhonya_s-Hourglass {
-    width: 64px;
-    height: 64px;
-    background-position: -320px -1152px;
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
     background-image: url(http://10.0.0.150/getItemIcons/items.png);
     background-repeat: no-repeat;
     display: block;
+    background-position: -125px -450px;
+}
+
+.items {
+    width: 25px;
+    height: 25px;
+    padding: 12.1px;
+    border-radius: 15%;
+    background-image: url(http://10.0.0.150/getItemIcons/items.png);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -150px -450px;
 }

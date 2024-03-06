@@ -80,13 +80,13 @@ def showMore():
 
     startPosition = len(gameIDs)
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
-    gameData = fetchFromMatchHistoryDB(summonerName, 10, startPosition)
+    gameData = fetchFromMatchHistoryDB(summonerName, 20, startPosition)
     # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
     
     
     if len(gameData) < 1:
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10, startPosition)
-        gameData = fetchFromMatchHistoryDB(summonerName, 10, startPosition)
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20, startPosition)
+        gameData = fetchFromMatchHistoryDB(summonerName, 20, startPosition)
 
     matchData = []
     for i in gameData:
@@ -144,11 +144,11 @@ def summonerSearch():
         insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
 
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
-    gameData = fetchFromMatchHistoryDB(summonerName, 10)
+    gameData = fetchFromMatchHistoryDB(summonerName, 20)
     # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
     if len(gameData) < 1:
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10)
-        gameData = fetchFromMatchHistoryDB(summonerName, 10)
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20)
+        gameData = fetchFromMatchHistoryDB(summonerName, 20)
 
     matchData = []
     for i in gameData:
@@ -203,14 +203,14 @@ def getHistory():
     # When the update button is pressed it will requery the ranked data associated with the account to update the database
     queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
     
-    mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10)
-    gameData = fetchFromMatchHistoryDB(summonerName, 10)
+    mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20)
+    gameData = fetchFromMatchHistoryDB(summonerName, 20)
     
     if len(gameData) < 1:
         # Searches the new summoner and adds their information to the DB
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 10)
+        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20)
         # After the information was just retrieved from the riot API and saved to the DB we fetch it from that DB
-        gameData = fetchFromMatchHistoryDB(summonerName, 10)
+        gameData = fetchFromMatchHistoryDB(summonerName, 20)
 
     matchData = []
     for i in gameData:
@@ -312,28 +312,6 @@ def getSummoners():
         # If the file doesn't exist, return an error response
         return send_file("./static/img/summonerIcons/Placehoder.png", mimetype='image/png')
         #return "File not found", 404
-
-
-# Get summoner spell icons
-@app.route('/getItemIcon', methods=['POST'])
-def getItemIcon():
-    ingres = request.data.decode("utf8")
-
-    # Specify the path to the folder containing PNGs
-    icons_folder = 'static/img/itemIcons'
-
-    # Check if the file with the given name exists
-    file_path = os.path.join(icons_folder, f'{ingres}.png')
-    if os.path.exists(file_path):
-        # Return the PNG file as a response
-        return send_file(file_path, mimetype='image/png')
-    else:
-        # If the file doesn't exist, return an error response
-        #return "File not found", 404
-        return send_file("static/img/itemIcons/Placehoder.png", mimetype='image/png')
-        #blank = os.path.join(icons_folder, f'NA.png')
-        #return send_file(blank, mimetype='image/png')
-
 
 # Get summoner spell icons
 #@app.route('/getItemIcons', methods=['POST'])

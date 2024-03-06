@@ -111,75 +111,6 @@ async function updateData() {
 }
 
 
-async function getItemIcon(itemName, elementID, maxRetries = 5) {
-    if (itemName === "N/A") {
-        itemName = "NA";
-    }
-
-    const url = "http://10.0.0.150/getItemIcon";
-
-    for (let retry = 0; retry < maxRetries; retry++) {
-        try {
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: itemName,
-            });
-
-            // Check if the response was successful
-            if (response.ok) {
-                const blob = await response.blob(); // Await the blob Promise
-                const image = URL.createObjectURL(blob);
-                document.getElementById(elementID).src = image;
-                return; // Break out of the retry loop if successful
-            } else {
-                throw new Error('Error: ' + response.status); // Throw an error
-            }
-        } catch (error) {
-            // Log the error and retry
-            console.log(`Error: ${error.message}. Retrying...`);
-        }
-    }
-
-    // Display an error message after maxRetries
-    console.log(`Max retries (${maxRetries}) reached. Unable to fetch item icon.`);
-}
-
-// Example usage:
-// getItemIconWithRetry("item_name", "element_id", 3);
-
-
-
-async function getItemIconBackup(itemName, elementID) {
-    if (itemName === "N/A") {
-        itemName = "NA"
-    }
-    var url = "http://10.0.0.150/getItemIcon";
-
-    try {
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: itemName
-        });
-
-        // Check if the response was successful
-        if (response.ok) {
-            const blob = await response.blob(); // Await the blob Promise
-            const image = URL.createObjectURL(blob);
-            document.getElementById(elementID).src = image;
-        } else {
-            throw new Error('Error: ' + response.status); // Throw an error
-        }
-    } catch (error) {
-        // Display error message
-        console.log(error.message);
-    }
-}
 
 async function getChampIconBackup(champName, elementID) {
     var url = "http://10.0.0.150/getChampIcon";
@@ -321,10 +252,6 @@ function toggleAccordion(header) {
 
     firstScoreboardID = accordionBodies[0].querySelector("tbody").id
     secondScoreboardID = accordionBodies[1].querySelector("tbody").id
-    
-    // TODO: I CAN MAKE ALL OF THE ITEMS IMAGES INTO A SINGLE IMAGE SPRITE AND THEN USE THE BACKGROUND POSITION TO DISPLAY THE CORRECT IMAGE
-    // https://www.w3schools.com/css/css_image_sprites.asp
-    
 }
 
 
@@ -374,6 +301,11 @@ function winrateCalculator(wins, losses) {
     var winrateFloat = wins / totalGamesPlayed * 100;
     var winrate = Math.round(winrateFloat, 1)
     return winrate;
+}
+
+function itemToClass(itemName) {
+    const itemClassName = itemName.replace(/ /g, '-').replace(/'/g, '_');
+    return itemClassName;
 }
 
 
@@ -589,13 +521,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
             sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
-            item0 = getItemIcon(row2.item0, item0ID);
-            item1 = getItemIcon(row2.item1, item1ID);
-            item2 = getItemIcon(row2.item2, item2ID);
-            item3 = getItemIcon(row2.item3, item3ID);
-            item4 = getItemIcon(row2.item4, item4ID);
-            item5 = getItemIcon(row2.item5, item5ID);
-            item6 = getItemIcon(row2.item6, item6ID);
+
+
+
+
+
+
+
             
             console.log(row3);
             console.log(row1);
@@ -673,23 +605,23 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         </div>
 
 
-                        <div class="item-container itemCard">
-                            <div class="itemColumn">
-                                <img id="${item0ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item1ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item2ID}" alt="summoner1" class="summonerIcons">
+                        <div style="padding-top: 5px;">
+                            <div class="">
+                                <img class="${itemToClass(row2.item0)}">
+                                <img class="${itemToClass(row2.item1)}">
+                                <img class="${itemToClass(row2.item2)}">
                             </div>
                         </div>
-                        <div class="item-container itemCard">
-                            <div class="itemColumn">
-                                <img id="${item3ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item4ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item5ID}" alt="summoner1" class="summonerIcons">
+                        <div style="padding-top: 5px;">
+                            <div class="">
+                                <img class="${itemToClass(row2.item3)}">
+                                <img class="${itemToClass(row2.item4)}">
+                                <img class="${itemToClass(row2.item5)}">
                             </div>
                         </div>
-                        <div class="item-container itemCard">
-                            <div class="itemColumn">
-                                <img id="${item6ID}" style="margin-top: 58px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
+                        <div style="padding-top: 5px;">
+                            <div class="">
+                                <img style="margin-top: 25px; border-radius: 50%;" class="${itemToClass(row2.item6)}">
                             </div>
                         </div>
                         
@@ -812,13 +744,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
 
-            item0 = getItemIcon(row2.item0, item0ID);
-            item1 = getItemIcon(row2.item1, item1ID);
-            item2 = getItemIcon(row2.item2, item2ID);
-            item3 = getItemIcon(row2.item3, item3ID);
-            item4 = getItemIcon(row2.item4, item4ID);
-            item5 = getItemIcon(row2.item5, item5ID);
-            item6 = getItemIcon(row2.item6, item6ID);
+
+
+
+
+
+
+
 
             console.log(row3);
             console.log(row1);
@@ -893,23 +825,23 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         </div>
 
 
-                        <div class="item-container itemCard">
-                            <div class="itemColumn">
-                                <img id="${item0ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item1ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item2ID}" alt="summoner1" class="summonerIcons">
+                        <div style="padding-top: 5px;">
+                            <div class="">
+                                <img class="${itemToClass(row2.item0)}">
+                                <img class="${itemToClass(row2.item1)}">
+                                <img class="${itemToClass(row2.item2)}">
                             </div>
                         </div>
-                        <div class="item-container itemCard">
-                            <div class="itemColumn">
-                                <img id="${item3ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item4ID}" alt="summoner1" class="summonerIcons">
-                                <img id="${item5ID}" alt="summoner1" class="summonerIcons">
+                        <div style="padding-top: 5px;">
+                            <div class="">
+                                <img class="${itemToClass(row2.item3)}">
+                                <img class="${itemToClass(row2.item4)}">
+                                <img class="${itemToClass(row2.item5)}">
                             </div>
                         </div>
-                        <div class="item-container itemCard">
-                            <div class="itemColumn">
-                                <img id="${item6ID}" style="margin-top: 58px; border-radius: 50%;" alt="summoner1" class="summonerIcons">
+                        <div style="padding-top: 5px;">
+                            <div class="">
+                                <img style="margin-top: 25px; border-radius: 50%;" class="${itemToClass(row2.item6)}">
                             </div>
                         </div>
                         
@@ -1059,13 +991,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 const winPlayerItem5ID = `winPlayerItem5ID_${itemIndex}_${cardCount}`;
                 const winPlayerItem6ID = `winPlayerItem6ID_${itemIndex}_${cardCount}`;
                 
-                getItemIcon(match.item0, winPlayerItem0ID);
-                getItemIcon(match.item1, winPlayerItem1ID);
-                getItemIcon(match.item2, winPlayerItem2ID);
-                getItemIcon(match.item3, winPlayerItem3ID);
-                getItemIcon(match.item4, winPlayerItem4ID);
-                getItemIcon(match.item5, winPlayerItem5ID);
-                getItemIcon(match.item6, winPlayerItem6ID);
+
+
+
+
+
+
+
                 
                 // Build the HTML content for each match object
                 const winHTML = `
@@ -1090,14 +1022,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.totalCS}
                     </td>
-                    <td>
-                        <img id="${winPlayerItem0ID}" alt="item0" class="itemIcons">
-                        <img id="${winPlayerItem1ID}" alt="item1" class="itemIcons">
-                        <img id="${winPlayerItem2ID}" alt="item2" class="itemIcons">
-                        <img id="${winPlayerItem3ID}" alt="item3" class="itemIcons">
-                        <img id="${winPlayerItem4ID}" alt="item4" class="itemIcons">
-                        <img id="${winPlayerItem5ID}" alt="item5" class="itemIcons">
-                        <img id="${winPlayerItem6ID}" alt="item6" class="itemIcons">
+                    <td style="display: flex;">
+                        <img class="${itemToClass(match.item0)}">
+                        <img class="${itemToClass(match.item1)}">
+                        <img class="${itemToClass(match.item2)}">
+                        <img class="${itemToClass(match.item3)}">
+                        <img class="${itemToClass(match.item4)}">
+                        <img class="${itemToClass(match.item5)}">
+                        <img class="${itemToClass(match.item6)}">
                     </td>
                 </tr>
                 `;
@@ -1121,13 +1053,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 const lossPlayerItem4ID = `lossPlayerItem4ID_${itemIndex}_${cardCount}`;
                 const lossPlayerItem5ID = `lossPlayerItem5ID_${itemIndex}_${cardCount}`;
                 const lossPlayerItem6ID = `lossPlayerItem6ID_${itemIndex}_${cardCount}`;
-                getItemIcon(match.item0, lossPlayerItem0ID);
-                getItemIcon(match.item1, lossPlayerItem1ID);
-                getItemIcon(match.item2, lossPlayerItem2ID);
-                getItemIcon(match.item3, lossPlayerItem3ID);
-                getItemIcon(match.item4, lossPlayerItem4ID);
-                getItemIcon(match.item5, lossPlayerItem5ID);
-                getItemIcon(match.item6, lossPlayerItem6ID);
+
+
+
+
+
+
+
                 // Build the HTML content for each match object
                 const loseHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
@@ -1151,14 +1083,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.totalCS}
                     </td>
-                    <td>
-                        <img id="${lossPlayerItem0ID}" alt="item0" class="itemIcons">
-                        <img id="${lossPlayerItem1ID}" alt="item1" class="itemIcons">
-                        <img id="${lossPlayerItem2ID}" alt="item2" class="itemIcons">
-                        <img id="${lossPlayerItem3ID}" alt="item3" class="itemIcons">
-                        <img id="${lossPlayerItem4ID}" alt="item4" class="itemIcons">
-                        <img id="${lossPlayerItem5ID}" alt="item5" class="itemIcons">
-                        <img id="${lossPlayerItem6ID}" alt="item6" class="itemIcons">
+                    <td style="display: flex;">
+                        <img class="${itemToClass(match.item0)}">
+                        <img class="${itemToClass(match.item1)}">
+                        <img class="${itemToClass(match.item2)}">
+                        <img class="${itemToClass(match.item3)}">
+                        <img class="${itemToClass(match.item4)}">
+                        <img class="${itemToClass(match.item5)}">
+                        <img class="${itemToClass(match.item6)}">
                     </td>
                 </tr>
                 `;
@@ -1184,13 +1116,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 const lossPlayerItem4ID = `lossPlayerItem4ID_${itemIndex}_${cardCount}`;
                 const lossPlayerItem5ID = `lossPlayerItem5ID_${itemIndex}_${cardCount}`;
                 const lossPlayerItem6ID = `lossPlayerItem6ID_${itemIndex}_${cardCount}`;
-                getItemIcon(match.item0, lossPlayerItem0ID);
-                getItemIcon(match.item1, lossPlayerItem1ID);
-                getItemIcon(match.item2, lossPlayerItem2ID);
-                getItemIcon(match.item3, lossPlayerItem3ID);
-                getItemIcon(match.item4, lossPlayerItem4ID);
-                getItemIcon(match.item5, lossPlayerItem5ID);
-                getItemIcon(match.item6, lossPlayerItem6ID);
+
+
+
+
+
+
+
                 // Build the HTML content for each match object
                 const loseHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
@@ -1214,14 +1146,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.totalCS}
                     </td>
-                    <td>
-                        <img id="${lossPlayerItem0ID}" alt="item0" class="itemIcons">
-                        <img id="${lossPlayerItem1ID}" alt="item1" class="itemIcons">
-                        <img id="${lossPlayerItem2ID}" alt="item2" class="itemIcons">
-                        <img id="${lossPlayerItem3ID}" alt="item3" class="itemIcons">
-                        <img id="${lossPlayerItem4ID}" alt="item4" class="itemIcons">
-                        <img id="${lossPlayerItem5ID}" alt="item5" class="itemIcons">
-                        <img id="${lossPlayerItem6ID}" alt="item6" class="itemIcons">
+                    <td style="display: flex;">
+                        <img class="${itemToClass(match.item0)}">
+                        <img class="${itemToClass(match.item1)}">
+                        <img class="${itemToClass(match.item2)}">
+                        <img class="${itemToClass(match.item3)}">
+                        <img class="${itemToClass(match.item4)}">
+                        <img class="${itemToClass(match.item5)}">
+                        <img class="${itemToClass(match.item6)}">
                     </td>
                 </tr>
                 `;
@@ -1245,13 +1177,13 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 const winPlayerItem4ID = `winPlayerItem4ID_${itemIndex}_${cardCount}`;
                 const winPlayerItem5ID = `winPlayerItem5ID_${itemIndex}_${cardCount}`;
                 const winPlayerItem6ID = `winPlayerItem6ID_${itemIndex}_${cardCount}`;
-                getItemIcon(match.item0, winPlayerItem0ID);
-                getItemIcon(match.item1, winPlayerItem1ID);
-                getItemIcon(match.item2, winPlayerItem2ID);
-                getItemIcon(match.item3, winPlayerItem3ID);
-                getItemIcon(match.item4, winPlayerItem4ID);
-                getItemIcon(match.item5, winPlayerItem5ID);
-                getItemIcon(match.item6, winPlayerItem6ID);
+
+
+
+
+
+
+
                 // Build the HTML content for each match object
                 const winHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
@@ -1275,14 +1207,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.totalCS}
                     </td>
-                    <td>
-                        <img id="${winPlayerItem0ID}" alt="item0" class="itemIcons">
-                        <img id="${winPlayerItem1ID}" alt="item1" class="itemIcons">
-                        <img id="${winPlayerItem2ID}" alt="item2" class="itemIcons">
-                        <img id="${winPlayerItem3ID}" alt="item3" class="itemIcons">
-                        <img id="${winPlayerItem4ID}" alt="item4" class="itemIcons">
-                        <img id="${winPlayerItem5ID}" alt="item5" class="itemIcons">
-                        <img id="${winPlayerItem6ID}" alt="item6" class="itemIcons">
+                    <td style="display: flex;">
+                        <img class="${itemToClass(match.item0)}">
+                        <img class="${itemToClass(match.item1)}">
+                        <img class="${itemToClass(match.item2)}">
+                        <img class="${itemToClass(match.item3)}">
+                        <img class="${itemToClass(match.item4)}">
+                        <img class="${itemToClass(match.item5)}">
+                        <img class="${itemToClass(match.item6)}">
                     </td>
                 </tr>
                 `;
