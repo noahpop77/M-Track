@@ -27,22 +27,22 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # Initializes logger for fask routes
 
 # Sets the log level of the default flask logger to ERROR so the log file doesnt get spammed
-errorlog = logging.getLogger('werkzeug')
-errorlog.setLevel(logging.ERROR)
+#errorlog = logging.getLogger('werkzeug')
+#errorlog.setLevel(logging.ERROR)
 
-logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
+#logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
 
 # TODO: Need to decide what I am going to do with the home page.
 @app.route('/', methods=['GET'])
 def homePage():
-    logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
+    #logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
     return render_template('mtrack.html')
 
 
 # Actual webpage for the match history of a person
 @app.route('/matchHistory', methods=['GET'])
 def matchHistory():
-    logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
+    #logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
     return render_template('matchHistory.html')
 
 
@@ -125,7 +125,7 @@ def showMore():
 # Main search function associated with the websites searchbar.
 @app.route('/summonerSearch', methods=['POST'])
 def summonerSearch():
-    logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
+    #logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
 
     # Takes input name from request body
     # Splits riotID and loads it into variables for use later
@@ -325,7 +325,6 @@ def getSummoners():
 def getItemIcons(filename):
     # Specify the path to the folder containing PNGs
     icons_folder = './static/img/itemIcons'
-    print("SPRITE ENDPOINT HIT")
     # Check if the file with the given name exists
     file_path = os.path.join(icons_folder, filename)
     if os.path.exists(file_path):
