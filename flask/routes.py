@@ -27,10 +27,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # Initializes logger for fask routes
 
 # Sets the log level of the default flask logger to ERROR so the log file doesnt get spammed
-#errorlog = logging.getLogger('werkzeug')
-#errorlog.setLevel(logging.ERROR)
+errorlog = logging.getLogger('werkzeug')
+errorlog.setLevel(logging.ERROR)
 
-#logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
+logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
 
 # TODO: Need to decide what I am going to do with the home page.
 @app.route('/', methods=['GET'])
