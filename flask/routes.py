@@ -53,7 +53,6 @@ def matchHistory():
 # Main search function associated with the websites searchbar.
 @app.route('/showMore', methods=['POST'])
 def showMore():
-
     # Takes input name from request body
     # Splits riotID and loads it into variables for use later
     ingres = request.data.decode("utf8")
