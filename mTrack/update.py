@@ -46,15 +46,6 @@ def convert_unix_to_date(unix_timestamp):
 
 # Uses riotID, summonerName and PUUID as required data fields for the db table of mtrack.riotIDData which contains riotID account information.
 def insertDatabaseRiotID(riotID, summonerName, riotIDPuuid):
-
-    print(f"------------------------------------")
-    print(f"summonerName = {riotID}")
-    print(f"summonerName = {summonerName}")
-    print(f"Length summonerName = {len(summonerName)}")
-    print(f"------------------------------------")
-
-    #if len(summonerName) == 0:
-    #    summonerName = "--NoNameAvailable--"
     try:
         # Establish a connection to the MySQL server
         connection = mysql.connector.connect(
