@@ -1,0 +1,2015 @@
+.AatroxScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 0;
+}
+
+.AhriScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px 0;
+}
+
+.AkaliScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px 0;
+}
+
+.AkshanScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px 0;
+}
+
+.AlistarScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px 0;
+}
+
+.AmumuScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px 0;
+}
+
+.AniviaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px 0;
+}
+
+.AnnieScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px 0;
+}
+
+.ApheliosScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px 0;
+}
+
+.AsheScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px 0;
+}
+
+.AurelionSolScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px 0;
+}
+
+.AzirScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px 0;
+}
+
+.BardScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -16px;
+}
+
+.BelVethScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -16px;
+}
+
+.BlitzcrankScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -16px;
+}
+
+.BrandScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -16px;
+}
+
+.BraumScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -16px;
+}
+
+.BriarScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -16px;
+}
+
+.CaitlynScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -16px;
+}
+
+.CamilleScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -16px;
+}
+
+.CassiopeiaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -16px;
+}
+
+.ChogathScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -16px;
+}
+
+.CorkiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -16px;
+}
+
+.DariusScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -16px;
+}
+
+.DianaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -32px;
+}
+
+.DrMundoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -32px;
+}
+
+.DravenScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -32px;
+}
+
+.EkkoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -32px;
+}
+
+.EliseScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -32px;
+}
+
+.EvelynnScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -32px;
+}
+
+.EzrealScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -32px;
+}
+
+.FiddleSticksScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -32px;
+}
+
+.FioraScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -32px;
+}
+
+.FizzScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -32px;
+}
+
+.GalioScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -32px;
+}
+
+.GangplankScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -32px;
+}
+
+.GarenScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -48px;
+}
+
+.GnarScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -48px;
+}
+
+.GragasScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -48px;
+}
+
+.GravesScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -48px;
+}
+
+.GwenScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -48px;
+}
+
+.HecarimScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -48px;
+}
+
+.HeimerdingerScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -48px;
+}
+
+.HweiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -48px;
+}
+
+.IllaoiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -48px;
+}
+
+.IreliaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -48px;
+}
+
+.IvernScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -48px;
+}
+
+.JannaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -48px;
+}
+
+.JarvanIVScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -64px;
+}
+
+.JaxScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -64px;
+}
+
+.JayceScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -64px;
+}
+
+.JhinScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -64px;
+}
+
+.JinxScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -64px;
+}
+
+.KSanteScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -64px;
+}
+
+.KaisaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -64px;
+}
+
+.KalistaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -64px;
+}
+
+.KarmaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -64px;
+}
+
+.KarthusScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -64px;
+}
+
+.KassadinScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -64px;
+}
+
+.KatarinaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -64px;
+}
+
+.KayleScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -80px;
+}
+
+.KaynScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -80px;
+}
+
+.KennenScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -80px;
+}
+
+.KhazixScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -80px;
+}
+
+.KindredScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -80px;
+}
+
+.KledScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -80px;
+}
+
+.KogMawScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -80px;
+}
+
+.LeBlancScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -80px;
+}
+
+.LeeSinScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -80px;
+}
+
+.LeonaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -80px;
+}
+
+.LilliaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -80px;
+}
+
+.LissandraScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -80px;
+}
+
+.LucianScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -96px;
+}
+
+.LuluScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -96px;
+}
+
+.LuxScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -96px;
+}
+
+.MalphiteScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -96px;
+}
+
+.MalzaharScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -96px;
+}
+
+.MaokaiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -96px;
+}
+
+.MasterYiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -96px;
+}
+
+.MilioScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -96px;
+}
+
+.MissFortuneScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -96px;
+}
+
+.MonkeyKingScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -96px;
+}
+
+.MordekaiserScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -96px;
+}
+
+.MorganaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -96px;
+}
+
+.NaafiriScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -112px;
+}
+
+.NamiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -112px;
+}
+
+.NasusScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -112px;
+}
+
+.NautilusScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -112px;
+}
+
+.NeekoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -112px;
+}
+
+.NidaleeScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -112px;
+}
+
+.NilahScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -112px;
+}
+
+.NocturneScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -112px;
+}
+
+.NunuScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -112px;
+}
+
+.OlafScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -112px;
+}
+
+.OriannaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -112px;
+}
+
+.OrnnScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -112px;
+}
+
+.PantheonScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -128px;
+}
+
+.PlaceholderScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -128px;
+}
+
+.PoppyScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -128px;
+}
+
+.PykeScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -128px;
+}
+
+.QiyanaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -128px;
+}
+
+.QuinnScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -128px;
+}
+
+.RakanScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -128px;
+}
+
+.RammusScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -128px;
+}
+
+.RekSaiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -128px;
+}
+
+.RellScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -128px;
+}
+
+.RenataScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -128px;
+}
+
+.RenektonScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -128px;
+}
+
+.RengarScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -144px;
+}
+
+.RivenScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -144px;
+}
+
+.RumbleScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -144px;
+}
+
+.RyzeScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -144px;
+}
+
+.SamiraScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -144px;
+}
+
+.SejuaniScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -144px;
+}
+
+.SennaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -144px;
+}
+
+.SeraphineScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -144px;
+}
+
+.SettScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -144px;
+}
+
+.ShacoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -144px;
+}
+
+.ShenScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -144px;
+}
+
+.ShyvanaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -144px;
+}
+
+.SingedScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -160px;
+}
+
+.SionScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -160px;
+}
+
+.SivirScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -160px;
+}
+
+.SkarnerScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -160px;
+}
+
+.SmolderScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -160px;
+}
+
+.SonaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -160px;
+}
+
+.SorakaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -160px;
+}
+
+.SwainScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -160px;
+}
+
+.SylasScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -160px;
+}
+
+.SyndraScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -160px;
+}
+
+.TahmKenchScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -160px;
+}
+
+.TaliyahScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -160px;
+}
+
+.TalonScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -176px;
+}
+
+.TaricScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -176px;
+}
+
+.TeemoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -176px;
+}
+
+.ThreshScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -176px;
+}
+
+.TristanaScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -176px;
+}
+
+.TrundleScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -176px;
+}
+
+.TryndamereScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -176px;
+}
+
+.TwistedFateScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -176px;
+}
+
+.TwitchScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -176px;
+}
+
+.UdyrScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -176px;
+}
+
+.UrgotScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -176px;
+}
+
+.VarusScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -176px;
+}
+
+.VayneScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px 0;
+}
+
+.VeigarScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -16px;
+}
+
+.VelkozScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -32px;
+}
+
+.VexScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -48px;
+}
+
+.ViScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -64px;
+}
+
+.ViegoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -80px;
+}
+
+.ViktorScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -96px;
+}
+
+.VladimirScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -112px;
+}
+
+.VolibearScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -128px;
+}
+
+.WarwickScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -144px;
+}
+
+.XayahScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -160px;
+}
+
+.XerathScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -176px;
+}
+
+.XinZhaoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -192px;
+}
+
+.YasuoScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -16px -192px;
+}
+
+.YoneScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -32px -192px;
+}
+
+.YorickScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -48px -192px;
+}
+
+.YuumiScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -64px -192px;
+}
+
+.ZacScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -80px -192px;
+}
+
+.ZedScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -96px -192px;
+}
+
+.ZeriScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -112px -192px;
+}
+
+.ZiggsScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -128px -192px;
+}
+
+.ZileanScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -144px -192px;
+}
+
+.ZoeScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -160px -192px;
+}
+
+.ZyraScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(http://10.0.0.150/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -176px -192px;
+}

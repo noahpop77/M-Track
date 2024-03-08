@@ -158,7 +158,13 @@ img {
 }
 
 
-
+.scoreboardCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  white-space: nowrap;
+  max-height: 20px;
+}
 
 .innerCard {
   display: flex;

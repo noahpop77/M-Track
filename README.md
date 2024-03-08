@@ -89,7 +89,11 @@ This spawns from the projects web server to refine the process of performign all
   - `https://www.op.gg/summoners/na/Scyrnn-NA1`
     - `Scyrnn#NA1`
 - Sprite Sheet maker
+
   - `https://www.codeandweb.com/free-sprite-sheet-packer`
+
+- For some reason this user has a riot ID name and tagline but doesnt have a summoner name. So watch out.
+  - https://www.op.gg/summoners/na/BARRRRRRRREL-GPGOD
 
 # Future Ideas
 
