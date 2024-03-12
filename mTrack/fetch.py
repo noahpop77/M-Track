@@ -54,7 +54,7 @@ def fetchGameIDsFromDB(riotID):
             return gameIDList
 
     except mysql.connector.Error as e:
-        print(f"1 Error connecting to MySQL Server: {e}")
+        print(f"Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
@@ -102,7 +102,7 @@ def fetchFromRiotIDDB(riotID):
             return riotIDDictionary['puuid']
 
     except mysql.connector.Error as e:
-        print(f"2 Error connecting to MySQL Server: {e}")
+        print(f"Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
@@ -154,7 +154,7 @@ def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset = 0):
             return querylistOfDict
 
     except mysql.connector.Error as e:
-        print(f"3 Error connecting to MySQL Server: {e}")
+        print(f"Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
@@ -206,7 +206,7 @@ def fetchFromSummonerRankedInfoDB(puuid):
             return rankedInfoDict
 
     except mysql.connector.Error as e:
-        print(f"4 Error connecting to MySQL Server: {e}")
+        print(f"Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done

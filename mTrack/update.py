@@ -102,7 +102,7 @@ def insertDatabaseRiotID(riotID, riotIDPuuid):
 # Takes in a list of dictionaries which is a list containing game data information per match. Also takes in a summoenr name associated as the "owner" of the games (the searcher).
 # Those games are then uploaded to the database as a new entry. 
 def insertDatabaseMatchHistory(matchHistoryGames):
-    print("-------------------------------")
+
     try:
         # Establish a connection to the MySQL server
         connection = mysql.connector.connect(
@@ -118,7 +118,6 @@ def insertDatabaseMatchHistory(matchHistoryGames):
             
             try:
                 for game in matchHistoryGames:
-                    print(f"game {game}")
                     participantList = json.dumps(game['gamedata']['participants'])
                     matchDataList = json.dumps(game['matchdata'])
                     
@@ -244,8 +243,7 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
             soloQueueRankInfo = i
         else:
             continue
-    print("=========")
-    print(soloQueueRankInfo)
+    
     try:
         insertDatabaseRankedInfo(
             encryptedSummonerPUUID, 
@@ -270,10 +268,6 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
 
 
 def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
-    print("ikljsbgioawrg")
-    print(riotGameName)
-    print(riotTagLine)
-    print("ikljsbgioawrg")
     try:
         riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
         
@@ -282,7 +276,6 @@ def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
         return "No ranked data found..."
 
     riotIDPuuid = riotIDData['puuid']
-    print(riotIDPuuid)
     return riotIDPuuid
 
 
@@ -322,7 +315,7 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
         matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
     except KeyError:
         exit(1)
-    print(matches)
+    
     # Gets the mapping information for items and summoners to map their IDs to their Names
     try:
         current_directory = os.path.dirname(os.path.abspath(__file__))
