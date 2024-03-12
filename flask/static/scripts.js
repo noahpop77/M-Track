@@ -1080,6 +1080,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
   
 
     showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
-    showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore('${searchedUserElement}', '${gameIDs}')">SHOW MORE</button>`;
+    showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="border-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore('${searchedUserElement}', '${gameIDs}')">SHOW MORE</button>`;
     
 }
