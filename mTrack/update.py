@@ -118,10 +118,11 @@ def insertDatabaseMatchHistory(matchHistoryGames):
             
             try:
                 for game in matchHistoryGames:
-                    participantList = json.dumps(game['gamedata']['participants'])
-                    matchDataList = json.dumps(game['matchdata'])
-                    
-
+                    try:
+                        participantList = json.dumps(game['gamedata']['participants'])
+                        matchDataList = json.dumps(game['matchdata'])
+                    except:
+                        return None
                     query = (
                         f"INSERT INTO matchHistory "
                         "(gameID, gameVer, riotID, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, queueType, gameDate, participants, matchdata) "
@@ -381,6 +382,8 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
             date = convert_unix_to_date(i['info']['gameCreation'])
         except:
             print("uh oh")
+        
+        
         try:
             history = {
                 'gamedata': {
@@ -434,6 +437,6 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
 def translateItemCodesToNames(itemIcons, itemId):
     try:
         return str(itemIcons[itemId])
-    except KeyError:
+    except:
         # Handle the error (e.g., return a default icon or log the issue)
-        return "Placeholder"
+        return "PlaceholderItem"

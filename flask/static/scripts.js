@@ -429,7 +429,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         
         const row2 = playerStats[index];
         const row3 = matchData[index];
-
+        console.log(row1);
+        console.log(row2);
         // Access the array and separate based on the 'win' field
         const winners = row3.filter(obj => obj.win === true);
         const losers = row3.filter(obj => obj.win === false);
@@ -443,9 +444,12 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const summoner2ID = `summoner2_${index}_${cardCount}`;
 
         if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
+            
+            // TODO: These items can be turned into sprites
             getChampIcon(row2.Champ, accordionChampId);
             sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
             sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
+            
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
             
             player1Name = row3[0].riotID;
@@ -474,7 +478,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
             // Takes data and submits it to the header of the tag for usage if referenced
             // <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" data-win="win" data-card-count="${cardCount}" data-winners="${JSON.stringify(winners)}" data-losers="${JSON.stringify(losers)}" onclick='toggleAccordion(this)'>
-            console.log(row2)
             container.innerHTML += `
             <div style="background-color: #28344e;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
                 <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick='toggleAccordion(this)'>
