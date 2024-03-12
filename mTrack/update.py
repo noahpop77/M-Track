@@ -45,7 +45,7 @@ def convert_unix_to_date(unix_timestamp):
 
 
 # Uses riotID, summonerName and PUUID as required data fields for the db table of mtrack.riotIDData which contains riotID account information.
-def insertDatabaseRiotID(riotID, summonerName, riotIDPuuid):
+def insertDatabaseRiotID(riotID, riotIDPuuid):
     try:
         # Establish a connection to the MySQL server
         connection = mysql.connector.connect(
@@ -64,13 +64,12 @@ def insertDatabaseRiotID(riotID, summonerName, riotIDPuuid):
             try:
                 query = (
                     f"INSERT INTO riotIDData "
-                    "(riotID, summonerName, puuid) "
+                    "(riotID, puuid) "
                     "VALUES "
-                    "(%s, %s, %s)"
+                    "(%s, %s)"
                 )
                 data = (
                     riotID,
-                    summonerName,
                     riotIDPuuid
                 )
                 
@@ -102,8 +101,8 @@ def insertDatabaseRiotID(riotID, summonerName, riotIDPuuid):
 
 # Takes in a list of dictionaries which is a list containing game data information per match. Also takes in a summoenr name associated as the "owner" of the games (the searcher).
 # Those games are then uploaded to the database as a new entry. 
-def insertDatabaseMatchHistory(matchHistoryGames, summoner):
-
+def insertDatabaseMatchHistory(matchHistoryGames):
+    print("-------------------------------")
     try:
         # Establish a connection to the MySQL server
         connection = mysql.connector.connect(
@@ -119,14 +118,14 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
             
             try:
                 for game in matchHistoryGames:
-                    summonerWin = ""
+                    print(f"game {game}")
                     participantList = json.dumps(game['gamedata']['participants'])
                     matchDataList = json.dumps(game['matchdata'])
                     
 
                     query = (
                         f"INSERT INTO matchHistory "
-                        "(gameID, gameVer, userSummoner, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, queueType, gameDate, participants, matchdata) "
+                        "(gameID, gameVer, riotID, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, queueType, gameDate, participants, matchdata) "
                         "VALUES "
                         "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                     )
@@ -134,7 +133,7 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
                     data = (
                         game['gamedata']['gameid'],
                         game['gamedata']['gamever'],
-                        game['gamedata']['userSummoner'],
+                        game['gamedata']['riotID'],
                         game['gamedata']['gameDurationMinutes'],
                         game['gamedata']['gameCreationTimestamp'],
                         game['gamedata']['gameEndTimestamp'],
@@ -169,7 +168,7 @@ def insertDatabaseMatchHistory(matchHistoryGames, summoner):
 
 
 
-def insertDatabaseRankedInfo(puuid, summonerID, summonerName, tier, rank, leaguePoints, queueType, wins, losses):
+def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints, queueType, wins, losses):
     try:
         # Establish a connection to the MySQL server
         connection = mysql.connector.connect(
@@ -186,14 +185,14 @@ def insertDatabaseRankedInfo(puuid, summonerID, summonerName, tier, rank, league
             try:
                 query = (
                     f"INSERT INTO summonerRankedInfo "
-                    "(encryptedPUUID, summonerID, summonerName, tier, `rank`, leaguePoints, queueType, wins, losses) "
+                    "(encryptedPUUID, summonerID, riotID, tier, `rank`, leaguePoints, queueType, wins, losses) "
                     "VALUES "
                     "(%s, %s, %s, %s, %s, %s, %s, %s, %s)"
                 )
                 data = (
                     puuid, 
                     summonerID, 
-                    summonerName, 
+                    riotID, 
                     tier, 
                     rank, 
                     leaguePoints, 
@@ -245,7 +244,8 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
             soloQueueRankInfo = i
         else:
             continue
-    
+    print("=========")
+    print(soloQueueRankInfo)
     try:
         insertDatabaseRankedInfo(
             encryptedSummonerPUUID, 
@@ -270,6 +270,10 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
 
 
 def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
+    print("ikljsbgioawrg")
+    print(riotGameName)
+    print(riotTagLine)
+    print("ikljsbgioawrg")
     try:
         riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
         
@@ -277,9 +281,9 @@ def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
     except:
         return "No ranked data found..."
 
-    summonerName = sumNameData['name']
     riotIDPuuid = riotIDData['puuid']
-    return summonerName, riotIDPuuid
+    print(riotIDPuuid)
+    return riotIDPuuid
 
 
 
@@ -310,7 +314,7 @@ def riotSplitID(fullRiotID):
 
 
 
-def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
+def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
     
     # Gets a list of the last 20(reqCount variable) matches associated with the specified puuid
     # start=10&count=20
@@ -318,7 +322,7 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
         matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
     except KeyError:
         exit(1)
-    
+    print(matches)
     # Gets the mapping information for items and summoners to map their IDs to their Names
     try:
         current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -350,7 +354,7 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
         matchList.append(i.replace(" ","").replace("'", "").replace("[", "").replace("]", ""))
     
     # Gets the IDs for summonerName from the DB as a list of gameIDs
-    gameIDsFromDB = fetchGameIDsFromDB(summonerName)
+    gameIDsFromDB = fetchGameIDsFromDB(riotID)
 
     # Gets the unique IDs between the past 20 matches in the request that was made and all all of the IDs that are associated with the summoner searched in the DB
     # This might prove to be a performance issue if the DB accumulates enough entries on a single user the search will take long?
@@ -390,7 +394,7 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
                     'gameid': i['metadata']['matchId'], 
                     'gamever': i['info']['gameVersion'],
                     #'userSummoner': profileData['name'],
-                    'userSummoner': summonerName,
+                    'riotID': riotID,
                     'gameDurationMinutes': getGameTime(i['info']['gameDuration']),
                     'gameCreationTimestamp': i['info']['gameCreation'],
                     'gameEndTimestamp': i['info']['gameEndTimestamp'],
@@ -402,7 +406,7 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
             }
             for participant in i['info']['participants']:
                 newEntry = {
-                    "sumName": participant['summonerName'],
+                    "riotID": f'{participant["riotIdGameName"]}#{participant["riotIdTagline"]}',
                     "playerTeamID": participant['teamId'],
                     "Champ": participant['championName'],
                     "kills": participant['kills'],
@@ -431,7 +435,7 @@ def mtrack(summonerName, puuid, APIKEY, reqCount, startPosition=0):
         
         gameData.append(history)
     
-    insertDatabaseMatchHistory(gameData, summonerName)
+    insertDatabaseMatchHistory(gameData)
     return 200
 
 def translateItemCodesToNames(itemIcons, itemId):

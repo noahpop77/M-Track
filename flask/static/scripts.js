@@ -29,7 +29,8 @@ async function summonerSearch(summonerNameParam) {
         /////////////////////////////////////////////////
         const riotID = document.getElementById('nameInput').value;
         rankSearch(riotID);
-        printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
+
+        printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
         responseParagraph.textContent = "Summoner not found..."
@@ -43,7 +44,11 @@ async function showMore(searchedUser, excludeGameIDs) {
     var url = "http://10.0.0.150/showMore";
     var showMoreButtonTag = document.getElementById('showMoreButtonTag');
     showMoreButtonTag.innerText = "Loading more games...";
-    
+
+    console.log("-------------");
+    console.log(searchedUser);
+    console.log(excludeGameIDs);
+
     var requestBody = {
         searchedUser: searchedUser,
         excludeGameIDs: excludeGameIDs
@@ -66,7 +71,8 @@ async function showMore(searchedUser, excludeGameIDs) {
     })
     .then(function(data) {
         showMoreButtonTag.innerText = "SHOW MORE";
-        printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
+        console.log(data);
+        printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
         // responseParagraph.textContent = "Summoner not found..."
@@ -103,7 +109,8 @@ async function updateData() {
         const riotID = document.getElementById('nameInput').value;
         rankSearchUpdate(riotID);
         //responseParagraph.textContent = "Updated, Please Refresh";
-        printMatches(data.gameData, data.playerStats, data.matchData, data.summonerName);
+
+        printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
         responseParagraph.textContent = error.message; // Display error message
@@ -440,28 +447,28 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const accordionChampId = `champPic_${index}_${cardCount}`;
         const summoner1ID = `summoner1_${index}_${cardCount}`;
         const summoner2ID = `summoner2_${index}_${cardCount}`;
-        
-        if (row2.win == true && row2.sumName.toLowerCase() == summonerName.toLowerCase()) {
-            
+
+        console.log(row2)
+        console.log(typeof summonerName)
+        console.log(row2.riotID)
+
+        if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
+            console.log("poggers");
             getChampIcon(row2.Champ, accordionChampId);
             sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
             sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
-
             
-            console.log(row3);
-            console.log(row1);
-            
-            player1Name = row3[0].sumName;
-            player2Name = row3[1].sumName;
-            player3Name = row3[2].sumName; 
-            player4Name = row3[3].sumName; 
-            player5Name = row3[4].sumName; 
-            player6Name = row3[5].sumName; 
-            player7Name = row3[6].sumName; 
-            player8Name = row3[7].sumName; 
-            player9Name = row3[8].sumName; 
-            player10Name = row3[9].sumName;
+            player1Name = row3[0].riotID;
+            player2Name = row3[1].riotID;
+            player3Name = row3[2].riotID; 
+            player4Name = row3[3].riotID; 
+            player5Name = row3[4].riotID; 
+            player6Name = row3[5].riotID; 
+            player7Name = row3[6].riotID; 
+            player8Name = row3[7].riotID; 
+            player9Name = row3[8].riotID; 
+            player10Name = row3[9].riotID;
 
             //Gets the Kill participation
             var killTotalTeam = 0;
@@ -484,6 +491,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick='toggleAccordion(this)'>
                 
                     <div class="nested-container">
+                    <div style="width: 35px; background-color: rgb(83, 131, 232);"></div>
                         <div class="item-container rankedGameCard">
                             <div class="innerCard">
                                 <p class="match-card-text" style="color: #336be3;"><b>Ranked Solo</b></p>
@@ -608,7 +616,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
-                            <th colspan="3"><span class="result"><span class="result"><span style="font-size: 10px; padding-right: 105px;">${row1.gameID}</span> <span>Your Team</span></th>
+                            <th colspan="3">Your Team</th>
                             <th>KDA</th>
                             <th>Damage</th>
                             <th>CS</th>
@@ -667,16 +675,16 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             console.log(row3);
             console.log(row1);
 
-            player1Name = row3[0].sumName;
-            player2Name = row3[1].sumName;
-            player3Name = row3[2].sumName; 
-            player4Name = row3[3].sumName; 
-            player5Name = row3[4].sumName; 
-            player6Name = row3[5].sumName; 
-            player7Name = row3[6].sumName; 
-            player8Name = row3[7].sumName; 
-            player9Name = row3[8].sumName; 
-            player10Name = row3[9].sumName;
+            player1Name = row3[0].riotID;
+            player2Name = row3[1].riotID;
+            player3Name = row3[2].riotID; 
+            player4Name = row3[3].riotID; 
+            player5Name = row3[4].riotID; 
+            player6Name = row3[5].riotID; 
+            player7Name = row3[6].riotID; 
+            player8Name = row3[7].riotID; 
+            player9Name = row3[8].riotID; 
+            player10Name = row3[9].riotID;
 
             //Gets the Kill participation
             var killTotalTeam = 0;
@@ -696,6 +704,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
+                        <div style="width: 35px; background-color: rgb(232, 64, 87);"></div>
                         <div class="item-container rankedGameCard">
                             <div class="innerCard">
                                 <p class="match-card-text" style="color: #e8404b"><b>Ranked Solo</b></p>
@@ -898,8 +907,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.champLevel}
                     </td>
-                    <td>
-                        ${match.sumName}
+                    <td class="innerScoreboardName">
+                        ${match.riotID}
                     </td>
                     <td>
                         ${match.kills}/${match.deaths}/${match.assists}
@@ -946,8 +955,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.champLevel}
                     </td>
-                    <td>
-                        ${match.sumName}
+                    <td class="innerScoreboardName">
+                        ${match.riotID}
                     </td>
                     <td>
                         ${match.kills}/${match.deaths}/${match.assists}
@@ -1001,8 +1010,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.champLevel}
                     </td>
-                    <td>
-                        ${match.sumName}
+                    <td class="innerScoreboardName">
+                        ${match.riotID}
                     </td>
                     <td>
                         ${match.kills}/${match.deaths}/${match.assists}
@@ -1049,8 +1058,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     <td>
                         ${match.champLevel}
                     </td>
-                    <td>
-                        ${match.sumName}
+                    <td class="innerScoreboardName">
+                        ${match.riotID}
                     </td>
                     <td>
                         ${match.kills}/${match.deaths}/${match.assists}
@@ -1083,9 +1092,12 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
     const matchCardTags = document.querySelectorAll('[id="matchCard"]');
     const gameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
+    console.log("MY GAME IDs")
     console.log(gameIDs)
     const searchedUserElement = document.getElementById('nameInput').value;
 
+    console.log(document.getElementById('nameInput').value)
+  
 
     showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
     showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore('${searchedUserElement}', '${gameIDs}')">SHOW MORE</button>`;

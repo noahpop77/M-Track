@@ -72,20 +72,20 @@ def showMore():
     # future functions
     # The ordering of this block matters to save time execution on the 2 API requests
     try:
-        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+        riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
-        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, riotIDPuuid)
 
     startPosition = len(gameIDs)
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
-    gameData = fetchFromMatchHistoryDB(summonerName, 20, startPosition)
+    gameData = fetchFromMatchHistoryDB(riotID, 20, startPosition)
     # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
     
     
     if len(gameData) < 1:
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20, startPosition)
-        gameData = fetchFromMatchHistoryDB(summonerName, 20, startPosition)
+        mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20, startPosition)
+        gameData = fetchFromMatchHistoryDB(riotID, 20, startPosition)
 
     matchData = []
     for i in gameData:
@@ -97,7 +97,8 @@ def showMore():
     for i in matchData:
         try:
             for player in i:
-                if player['sumName'].lower() == summonerName.lower():
+                
+                if player['riotID'].lower() == riotID.lower():
                     playerStats.append(player)
                     break
         except IndexError:
@@ -109,7 +110,7 @@ def showMore():
         'gameData': gameData,
         'playerStats': playerStats,
         'matchData': matchData,
-        'summonerName': summonerName
+        'riotID': riotID
     })
 
 
@@ -131,35 +132,47 @@ def summonerSearch():
     ingres = request.data.decode("utf8")
     riotGameName, riotTagLine = riotSplitID(ingres)
     riotID = f"{riotGameName}#{riotTagLine}"
-
+    
     # This try except clause will take the riotID gamename and tagline
     # and get the summoner name and PUUID associated with it for use in
     # future functions
     # The ordering of this block matters to save time execution on the 2 API requests
-    try:
-        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
-    except TypeError:
-        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
-        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
+
+    riotIDPuuid = fetchFromRiotIDDB(riotID)
+    if riotIDPuuid == None:
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, riotIDPuuid)
+    
+    #try:
+    #    riotIDPuuid = fetchFromRiotIDDB(riotID)
+    #except TypeError:
+    #    print("happy path")
+    #    riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+    #    insertDatabaseRiotID(riotID, riotIDPuuid)
 
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
-    gameData = fetchFromMatchHistoryDB(summonerName, 20)
+    gameData = fetchFromMatchHistoryDB(riotID, 20)
+
     # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
-    if len(gameData) < 1:
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20)
-        gameData = fetchFromMatchHistoryDB(summonerName, 20)
+    try:
+        if len(gameData) < 1:
+            mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
+            gameData = fetchFromMatchHistoryDB(riotID, 20)
+    except TypeError:
+        mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
+        gameData = fetchFromMatchHistoryDB(riotID, 20)
 
     matchData = []
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
-
+    
     # Player card data
     playerStats = []
     # Loops through match data, gets player card data and 
     for i in matchData:
         try:
             for player in i:
-                if player['sumName'].lower() == summonerName.lower():
+                if player['riotID'].lower() == riotID.lower():
                     playerStats.append(player)
                     break
         except IndexError:
@@ -171,7 +184,7 @@ def summonerSearch():
         'gameData': gameData,
         'playerStats': playerStats,
         'matchData': matchData,
-        'summonerName': summonerName
+        'riotID': riotID
     })
 
 
@@ -194,22 +207,22 @@ def getHistory():
     # future functions
     # The ordering of this block matters to save time execution on the 2 API requests
     try:
-        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+        riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
-        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, riotIDPuuid)
 
     # When the update button is pressed it will requery the ranked data associated with the account to update the database
     queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
     
-    mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20)
-    gameData = fetchFromMatchHistoryDB(summonerName, 20)
+    mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
+    gameData = fetchFromMatchHistoryDB(riotID, 20)
     
     if len(gameData) < 1:
         # Searches the new summoner and adds their information to the DB
-        mtrack(summonerName, riotIDPuuid, RIOTAPIKEY, 20)
+        mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
         # After the information was just retrieved from the riot API and saved to the DB we fetch it from that DB
-        gameData = fetchFromMatchHistoryDB(summonerName, 20)
+        gameData = fetchFromMatchHistoryDB(riotID, 20)
 
     matchData = []
     for i in gameData:
@@ -223,7 +236,7 @@ def getHistory():
                 # lower() is mandatory
                 # If user inputs a username with incorrect cases it will
                 # force it to match the case of the check condition
-                if player['sumName'].lower() == summonerName.lower():
+                if player['riotID'].lower() == riotID.lower():
                     playerStats.append(player)
                     break
         except IndexError:
@@ -235,7 +248,7 @@ def getHistory():
         'gameData': gameData,
         'playerStats': playerStats,
         'matchData': matchData,
-        'summonerName': summonerName
+        'riotID': riotID
     })
 
 @app.route('/getRank', methods=['POST'])
@@ -245,10 +258,10 @@ def getRank():
     riotID = f"{riotGameName}#{riotTagLine}"
 
     try:
-        summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+        riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
-        insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        insertDatabaseRiotID(riotID, riotIDPuuid)
     
     summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
     if len(summonerRankDict) < 1:
@@ -262,9 +275,9 @@ def updateRank():
     riotGameName, riotTagLine = riotSplitID(ingres)
     riotID = f"{riotGameName}#{riotTagLine}"
 
-    summonerName, riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
-    insertDatabaseRiotID(riotID, summonerName, riotIDPuuid)
-    summonerName, riotIDPuuid = fetchFromRiotIDDB(riotID)
+    riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+    insertDatabaseRiotID(riotID, riotIDPuuid)
+    riotIDPuuid = fetchFromRiotIDDB(riotID)
     
     summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
 

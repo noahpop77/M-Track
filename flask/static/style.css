@@ -150,6 +150,13 @@ img {
   display: flex;
 }
 
+.innerScoreboardName {
+  max-width: 150px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
 .item-container {
   padding: 2px;
   border: none;

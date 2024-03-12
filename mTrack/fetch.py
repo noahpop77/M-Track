@@ -14,7 +14,7 @@ database = config['DATABASE']['database']
 
 
 # Rather than always running an extra 2 Riot API requests if we pre store some of the previously searched riotIDs we can save execution time.
-def fetchGameIDsFromDB(summonerName):
+def fetchGameIDsFromDB(riotID):
     try:
         # Establish a connection to the MySQL server
         connection = mysql.connector.connect(
@@ -36,7 +36,7 @@ def fetchGameIDsFromDB(summonerName):
                 "SELECT "
                 "gameID "
                 "FROM matchHistory "
-                f"WHERE userSummoner = '{summonerName}'"
+                f"WHERE riotID = '{riotID}'"
 
             )
 
@@ -54,7 +54,7 @@ def fetchGameIDsFromDB(summonerName):
             return gameIDList
 
     except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+        print(f"1 Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
@@ -73,7 +73,7 @@ def fetchFromRiotIDDB(riotID):
             password=password,
             database=database
         )
-
+        
         if connection.is_connected():
             #print(f"Query made to MySQL Server: {host} | Database: {database}")
 
@@ -83,7 +83,7 @@ def fetchFromRiotIDDB(riotID):
             # Execute the SQL query to retrieve the last 20 rows from matchHistory
             query = (
                 "SELECT "
-                "summonerName, puuid "
+                "puuid "
                 "FROM riotIDData "
                 f"WHERE riotID = '{riotID}'"
             )
@@ -97,12 +97,12 @@ def fetchFromRiotIDDB(riotID):
             # Check if the result is None, indicating no rows were found
             if riotIDDictionary is None:
                 return None
-
+            
             # Return the retrieved data
-            return riotIDDictionary['summonerName'], riotIDDictionary['puuid']
+            return riotIDDictionary['puuid']
 
     except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+        print(f"2 Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
@@ -117,7 +117,7 @@ def fetchFromRiotIDDB(riotID):
 
 
 
-def fetchFromMatchHistoryDB(summonerName, numberOfRecords, recordOffset = 0):
+def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset = 0):
 
     try:
         # Establish a connection to the MySQL server
@@ -140,7 +140,7 @@ def fetchFromMatchHistoryDB(summonerName, numberOfRecords, recordOffset = 0):
                 "JSON_UNQUOTE(participants) as participants, "
                 "JSON_UNQUOTE(matchdata) as matchdata "
                 "FROM matchHistory "
-                f"WHERE userSummoner = '{summonerName}'"
+                f"WHERE riotID = '{riotID}' "
                 f"ORDER BY gameID DESC LIMIT {recordOffset}, {numberOfRecords}"
             )
 
@@ -154,7 +154,7 @@ def fetchFromMatchHistoryDB(summonerName, numberOfRecords, recordOffset = 0):
             return querylistOfDict
 
     except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+        print(f"3 Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
@@ -206,7 +206,7 @@ def fetchFromSummonerRankedInfoDB(puuid):
             return rankedInfoDict
 
     except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+        print(f"4 Error connecting to MySQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
