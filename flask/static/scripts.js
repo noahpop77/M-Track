@@ -45,10 +45,6 @@ async function showMore(searchedUser, excludeGameIDs) {
     var showMoreButtonTag = document.getElementById('showMoreButtonTag');
     showMoreButtonTag.innerText = "Loading more games...";
 
-    console.log("-------------");
-    console.log(searchedUser);
-    console.log(excludeGameIDs);
-
     var requestBody = {
         searchedUser: searchedUser,
         excludeGameIDs: excludeGameIDs
@@ -71,7 +67,7 @@ async function showMore(searchedUser, excludeGameIDs) {
     })
     .then(function(data) {
         showMoreButtonTag.innerText = "SHOW MORE";
-        console.log(data);
+
         printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
@@ -433,9 +429,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         
         const row2 = playerStats[index];
         const row3 = matchData[index];
-        console.log(row1);
-        console.log(row2);
-        console.log(row3);
+
         // Access the array and separate based on the 'win' field
         const winners = row3.filter(obj => obj.win === true);
         const losers = row3.filter(obj => obj.win === false);
@@ -448,12 +442,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const summoner1ID = `summoner1_${index}_${cardCount}`;
         const summoner2ID = `summoner2_${index}_${cardCount}`;
 
-        console.log(row2)
-        console.log(typeof summonerName)
-        console.log(row2.riotID)
-
         if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
-            console.log("poggers");
             getChampIcon(row2.Champ, accordionChampId);
             sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
             sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
@@ -485,7 +474,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
             // Takes data and submits it to the header of the tag for usage if referenced
             // <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" data-win="win" data-card-count="${cardCount}" data-winners="${JSON.stringify(winners)}" data-losers="${JSON.stringify(losers)}" onclick='toggleAccordion(this)'>
-
+            console.log(row2)
             container.innerHTML += `
             <div style="background-color: #28344e;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
                 <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick='toggleAccordion(this)'>
@@ -511,8 +500,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <div class="item-container portraitCard">
                             <div class="innerCard">
                                 
-                                <div class="image-container">
-                                    <img class="champIcon" id="${accordionChampId}" alt="champIcon">
+                                <div class="">
+                                    <img class="${row2.Champ}">
                                     <div class="text-over-image">${row2.champLevel}</div>
                                 </div>
                                 <div style="flex-direction: row;">
@@ -665,15 +654,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
 
 
-
-
-
-
-
-
-
-            console.log(row3);
-            console.log(row1);
 
             player1Name = row3[0].riotID;
             player2Name = row3[1].riotID;
@@ -1092,11 +1072,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
     const matchCardTags = document.querySelectorAll('[id="matchCard"]');
     const gameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
-    console.log("MY GAME IDs")
-    console.log(gameIDs)
-    const searchedUserElement = document.getElementById('nameInput').value;
 
-    console.log(document.getElementById('nameInput').value)
+    const searchedUserElement = document.getElementById('nameInput').value;
   
 
     showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
