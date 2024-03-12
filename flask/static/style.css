@@ -176,7 +176,7 @@ img {
 .innerCard {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   white-space: nowrap;
   max-height: 20px;
 }

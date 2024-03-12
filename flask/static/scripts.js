@@ -279,7 +279,7 @@ async function rankSearch(riotIDParam) {
     .then(function(data) {
         const dataContainer = document.getElementById('player-container');
         dataContainer.innerHTML = `
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+        <div class="center searchSection text-dark text-center fw-bold" style="border-top-left-radius: 15px; border-top-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
             <div class="nested-container" style="justify-content: center;">
                 ${data[0].queueType}
             </div>
@@ -294,7 +294,7 @@ async function rankSearch(riotIDParam) {
                 Wins: ${data[0].wins} / Losses: ${data[0].losses}
             </div>
         </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+        <div class="center searchSection text-dark text-center fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
             <div class="nested-container" style="justify-content: center;">
                 Win Rate ${winrateCalculator(data[0].wins, data[0].losses)}%
             </div>
@@ -479,11 +479,11 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             // Takes data and submits it to the header of the tag for usage if referenced
             // <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" data-win="win" data-card-count="${cardCount}" data-winners="${JSON.stringify(winners)}" data-losers="${JSON.stringify(losers)}" onclick='toggleAccordion(this)'>
             container.innerHTML += `
-            <div style="background-color: #28344e;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
+            <div style="background-color: #28344e; border-radius: 15px;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
                 <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick='toggleAccordion(this)'>
                 
                     <div class="nested-container">
-                    <div style="width: 35px; background-color: rgb(83, 131, 232);"></div>
+                    <div style="border-radius: 15px; width: 35px; background-color: rgb(83, 131, 232);"></div>
                         <div class="item-container rankedGameCard">
                             <div class="innerCard">
                                 <p class="match-card-text" style="color: #336be3;"><b>Ranked Solo</b></p>
@@ -683,11 +683,11 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             csPerMin = csPerMinFloat.toFixed(1);
 
             container.innerHTML += `
-            <div style="background-color: #59343b;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
+            <div style="background-color: #59343b; border-radius: 15px;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
                 <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
                 
                     <div class="nested-container">
-                        <div style="width: 35px; background-color: rgb(232, 64, 87);"></div>
+                        <div style="border-radius: 15px; width: 35px; background-color: rgb(232, 64, 87);"></div>
                         <div class="item-container rankedGameCard">
                             <div class="innerCard">
                                 <p class="match-card-text" style="color: #e8404b"><b>Ranked Solo</b></p>
