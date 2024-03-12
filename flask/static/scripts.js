@@ -500,7 +500,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <div class="item-container portraitCard">
                             <div class="innerCard">
                                 
-                                <div class="">
+                                <div class="image-container">
                                     <img class="${row2.Champ}">
                                     <div class="text-over-image">${row2.champLevel}</div>
                                 </div>
