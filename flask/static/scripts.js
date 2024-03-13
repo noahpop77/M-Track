@@ -29,7 +29,7 @@ async function summonerSearch(summonerNameParam) {
         /////////////////////////////////////////////////
         const riotID = document.getElementById('nameInput').value;
         rankSearch(riotID);
-
+        console.log(data.playerStats);
         printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
@@ -102,10 +102,12 @@ async function updateData() {
     })
     .then(function(data) {
         /////////////////////////////////////////////////
+        const dataContainer = document.getElementById('data-container');
+        dataContainer.innerHTML = '';
         const riotID = document.getElementById('nameInput').value;
         rankSearchUpdate(riotID);
         //responseParagraph.textContent = "Updated, Please Refresh";
-
+        
         printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
@@ -114,90 +116,13 @@ async function updateData() {
 }
 
 
-
-async function getChampIcon(champName, elementID, maxRetries = 5) {
-    const url = "http://10.0.0.150/getChampIcon";
-
-    for (let retry = 0; retry < maxRetries; retry++) {
-        try {
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: champName,
-            });
-
-            // Check if the response was successful
-            if (response.ok) {
-                const blob = await response.blob(); // Await the blob Promise
-                const image = URL.createObjectURL(blob);
-                document.getElementById(elementID).src = image;
-                return; // Break out of the retry loop if successful
-            } else {
-                throw new Error('Error: ' + response.status); // Throw an error
-            }
-        } catch (error) {
-            // Log the error and retry
-            console.log(`Error: ${error.message}. Retrying...`);
-        }
-    }
-
-    // Display an error message after maxRetries
-    console.log(`Max retries (${maxRetries}) reached. Unable to fetch champion icon.`);
-}
-
-
-
-async function getSummonerIcon(summoner, elementID, maxRetries = 5) {
-    const url = "http://10.0.0.150/getSummoners";
-
-    for (let retry = 0; retry < maxRetries; retry++) {
-        try {
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: summoner,
-            });
-
-            // Check if the response was successful
-            if (response.ok) {
-                const blob = await response.blob(); // Await the blob Promise
-                const image = URL.createObjectURL(blob);
-                document.getElementById(elementID).src = image;
-                return; // Break out of the retry loop if successful
-            } else {
-                throw new Error('Error: ' + response.status); // Throw an error
-            }
-        } catch (error) {
-            // Log the error and retry
-            console.log(`Error: ${error.message}. Retrying...`);
-        }
-    }
-
-    // Display an error message after maxRetries
-    console.log(`Max retries (${maxRetries}) reached. Unable to fetch summoner icon.`);
-}
-
-// Example usage:
-// getSummonerIconWithRetry("summoner_name", "element_id", 3);
-
-
 // TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
-function toggleAccordion(header) {
-
+async function toggleAccordion(header) {
+    console.log(header)
     // Get the parent accordion item
     var accordionItem = header.parentNode;
     // Toggle the "active" class to show/hide the accordion body
     accordionItem.classList.toggle("active");
-
-    // Get the accordion-body element
-    var accordionBodies = accordionItem.querySelectorAll(".accordion-body");
-
-    firstScoreboardID = accordionBodies[0].querySelector("tbody").id
-    secondScoreboardID = accordionBodies[1].querySelector("tbody").id
 }
 
 
@@ -338,7 +263,7 @@ async function rankSearchUpdate(riotIDParam) {
     .then(function(data) {
         const dataContainer = document.getElementById('player-container');
         dataContainer.innerHTML = `
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+        <div class="center searchSection text-dark text-center fw-bold" style="border-top-left-radius: 15px; border-top-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
             <div class="nested-container" style="justify-content: center;">
                 ${data[0].queueType}
             </div>
@@ -353,7 +278,7 @@ async function rankSearchUpdate(riotIDParam) {
                 Wins: ${data[0].wins} / Losses: ${data[0].losses}
             </div>
         </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
+        <div class="center searchSection text-dark text-center fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
             <div class="nested-container" style="justify-content: center;">
                 Win Rate ${winrateCalculator(data[0].wins, data[0].losses)}%
             </div>
@@ -429,8 +354,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         
         const row2 = playerStats[index];
         const row3 = matchData[index];
-        console.log(row1);
-        console.log(row2);
+
+
         // Access the array and separate based on the 'win' field
         const winners = row3.filter(obj => obj.win === true);
         const losers = row3.filter(obj => obj.win === false);
@@ -438,17 +363,10 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const primaryTableID = `primaryTable_${index}_${cardCount}`
         const secondaryTableID = `secondaryTable_${index}_${cardCount}`
-        
-        const accordionChampId = `champPic_${index}_${cardCount}`;
-        const summoner1ID = `summoner1_${index}_${cardCount}`;
-        const summoner2ID = `summoner2_${index}_${cardCount}`;
 
         if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
             
             // TODO: These items can be turned into sprites
-            getChampIcon(row2.Champ, accordionChampId);
-            sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
-            sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
             
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
             
@@ -508,8 +426,8 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                                     <div class="text-over-image">${row2.champLevel}</div>
                                 </div>
                                 <div style="flex-direction: row;">
-                                    <img id="${summoner1ID}" alt="summoner1" class="summonerIcons">
-                                    <img id="${summoner2ID}" alt="summoner2" class="summonerIcons">
+                                    <img class="${row2.summonerSpell1}">
+                                    <img class="${row2.summonerSpell2}">
                                 </div>
                             </div>
                         </div>
@@ -608,7 +526,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
-                            <th colspan="3">Your Team</th>
+                        <th colspan="3">Your Team</th>
                             <th>KDA</th>
                             <th>Damage</th>
                             <th>CS</th>
@@ -640,7 +558,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <th>Items</th>
                         </tr>
                     </thead>
-
                     <tbody id="${secondaryTableID}">
                     </tbody>
                 </table>
@@ -650,9 +567,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
 
           else {
-            getChampIcon(row2.Champ, accordionChampId);
-            sum1 = getSummonerIcon(row2.summonerSpell1, summoner1ID);
-            sum2 = getSummonerIcon(row2.summonerSpell2, summoner2ID);
 
             kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
 
@@ -708,12 +622,12 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <div class="innerCard">
                                 
                                 <div class="image-container">
-                                    <img class="champIcon" id="${accordionChampId}" alt="champIcon">
+                                    <img class="${row2.Champ}">
                                     <div class="text-over-image">${row2.champLevel}</div>
                                 </div>
                                 <div style="flex-direction: row;">
-                                    <img id="${summoner1ID}" alt="summoner1" class="summonerIcons">
-                                    <img id="${summoner2ID}" alt="summoner2" class="summonerIcons">
+                                    <img class="${row2.summonerSpell1}">
+                                    <img class="${row2.summonerSpell2}">
                                 </div>
                             </div>
                         </div>
@@ -813,7 +727,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     </colgroup>
                     <thead>
                         <tr style="text-align: center;">
-                            <th colspan="3"><span class="result"><span class="result"><span style="font-size: 10px; padding-right: 105px;">${row1.gameID}</span> <span>Your Team</span></th>
+                            <th colspan="3">Your Team</th>
                             <th>KDA</th>
                             <th>Damage</th>
                             <th>CS</th>
@@ -844,7 +758,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                             <th>Items</th>
                         </tr>
                     </thead>
-
+                    
                     <tbody id="${secondaryTableID}">
                     </tbody>
                 </table>
@@ -865,75 +779,57 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const primaryTable = document.getElementById(primaryTableID);
         const secondaryTable = document.getElementById(secondaryTableID);
-        
 
         itemIndex = 0;
         if (row2.win === true) {
             winners.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
-
-                getChampIcon(match.Champ, winPlayerChamp0ID);
-                getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
-                getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
-                
-                
                 // Build the HTML content for each match object
                 const winHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td>
-                        <img id="${winPlayerChamp0ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum1ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum2ID}" alt="item0" class="scoreboardChamp">
-                    </td>
-                    <td>
-                        ${match.champLevel}
-                    </td>
-                    <td class="innerScoreboardName">
-                        ${match.riotID}
-                    </td>
-                    <td>
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td>
-                        ${match.goldEarned}
-                    </td>
-                    <td>
-                        ${match.totalCS}
-                    </td>
-                    <td style="display: flex;">
-                        <img class="${itemToClass(match.item0)}">
-                        <img class="${itemToClass(match.item1)}">
-                        <img class="${itemToClass(match.item2)}">
-                        <img class="${itemToClass(match.item3)}">
-                        <img class="${itemToClass(match.item4)}">
-                        <img class="${itemToClass(match.item5)}">
-                        <img class="${itemToClass(match.item6)}">
-                    </td>
-                </tr>
-                `;
+                    <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
+                        <td>
+                            <img class="innerScoreboard${match.Champ}">
+                            <img class="${match.summonerSpell1}">
+                            <img class="${match.summonerSpell2}">
+                        </td>
+                        <td>
+                            ${match.champLevel}
+                        </td>
+                        <td class="innerScoreboardName">
+                            ${match.riotID}
+                        </td>
+                        <td>
+                            ${match.kills}/${match.deaths}/${match.assists}
+                        </td>
+                        <td>
+                            ${match.goldEarned}
+                        </td>
+                        <td>
+                            ${match.totalCS}
+                        </td>
+                        <td style="display: flex;">
+                            <img class="${itemToClass(match.item0)}">
+                            <img class="${itemToClass(match.item1)}">
+                            <img class="${itemToClass(match.item2)}">
+                            <img class="${itemToClass(match.item3)}">
+                            <img class="${itemToClass(match.item4)}">
+                            <img class="${itemToClass(match.item5)}">
+                            <img class="${itemToClass(match.item6)}">
+                        </td>
+                    </tr>`;
                 itemIndex = itemIndex + 1;
                 // Append the HTML for the current match object to nested-container
                 primaryTable.innerHTML += winHTML;
             });
+            
             losers.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
-
-                getChampIcon(match.Champ, winPlayerChamp0ID);
-                getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
-                getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
-
 
                 // Build the HTML content for each match object
                 const loseHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
                     <td>
-                        <img id="${winPlayerChamp0ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum1ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum2ID}" alt="item0" class="scoreboardChamp">
+                        <img class="innerScoreboard${match.Champ}">
+                        <img class="${match.summonerSpell1}">
+                        <img class="${match.summonerSpell2}">
                     </td>
                     <td>
                         ${match.champLevel}
@@ -960,6 +856,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <img class="${itemToClass(match.item6)}">
                     </td>
                 </tr>
+                
                 `;
                 itemIndex = itemIndex + 1;
                 // Append the HTML for the current match object to nested-container
@@ -968,27 +865,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         }
         else{
             losers.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
-
-                getChampIcon(match.Champ, winPlayerChamp0ID);
-                getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
-                getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
-
-
-
-
-
-
 
                 // Build the HTML content for each match object
                 const loseHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
                     <td>
-                        <img id="${winPlayerChamp0ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum1ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum2ID}" alt="item0" class="scoreboardChamp">
+                        <img class="innerScoreboard${match.Champ}">
+                        <img class="${match.summonerSpell1}">
+                        <img class="${match.summonerSpell2}">
                     </td>
                     <td>
                         ${match.champLevel}
@@ -1021,22 +905,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 primaryTable.innerHTML += loseHTML;
             });
             winners.forEach(match =>{
-                const winPlayerChamp0ID = `winPlayerChamp0ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum1ID = `winPlayerSum1ID_${itemIndex}_${cardCount}`;
-                const winPlayerSum2ID = `winPlayerSum2ID_${itemIndex}_${cardCount}`;
-
-                getChampIcon(match.Champ, winPlayerChamp0ID);
-                getSummonerIcon(match.summonerSpell1, winPlayerSum1ID);
-                getSummonerIcon(match.summonerSpell2, winPlayerSum2ID);
-
 
                 // Build the HTML content for each match object
                 const winHTML = `
                 <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
                     <td>
-                        <img id="${winPlayerChamp0ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum1ID}" alt="item0" class="scoreboardChamp">
-                        <img id="${winPlayerSum2ID}" alt="item0" class="scoreboardChamp">
+                        <img class="innerScoreboard${match.Champ}">
+                        <img class="${match.summonerSpell1}">
+                        <img class="${match.summonerSpell2}">
                     </td>
                     <td>
                         ${match.champLevel}

@@ -179,7 +179,10 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
-            
+    
+    #for i in playerStats:
+    #    print(i['Champ'])
+
     return jsonify({ 
         'gameData': gameData,
         'playerStats': playerStats,
@@ -359,12 +362,24 @@ def getChampIcons(filename):
         # If the file doesn't exist, return an error response
         return "Error: The images sprite is not in the correct location"
 
+@app.route('/getSummonerIcons/<path:filename>', methods=['GET'])
+def getSummonerIcons(filename):
+    # Specify the path to the folder containing PNGs
+    icons_folder = './static/img/summonerIcons'
+    # Check if the file with the given name exists
+    file_path = os.path.join(icons_folder, filename)
+    if os.path.exists(file_path):
+        # Return the PNG file as a response
+        return send_file(file_path, mimetype='image/png')
+    else:
+        # If the file doesn't exist, return an error response
+        return "Error: The images sprite is not in the correct location"
 
 # Run Server
 if __name__ == '__main__':
     try:
         os.system("clear")
-
+        print(__name__)
         print("Starting Flask app 'routes.py'")
         print(f"Running app at - {config['SITE']['address']}:{config['SITE']['port']}")
 
