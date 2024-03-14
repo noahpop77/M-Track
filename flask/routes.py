@@ -214,7 +214,9 @@ def getHistory():
     except TypeError:
         riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
-
+    
+    print("-------------------------------")
+    print(riotIDPuuid)
     # When the update button is pressed it will requery the ranked data associated with the account to update the database
     queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
     
@@ -268,6 +270,8 @@ def getRank():
     
     summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
     if len(summonerRankDict) < 1:
+        print("-------------------------------")
+        print(riotIDPuuid)
         queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
         summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
     return summonerRankDict

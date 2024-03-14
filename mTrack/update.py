@@ -101,6 +101,14 @@ def insertDatabaseRiotID(riotID, riotIDPuuid):
 # TODO: THIS SHIT IS BROKEN AND I DONT KNOW WHY
 # Use the riot account geeyokay#5964 to test
 # MULTIPLE USERS CAN SEARCH UP THE SAME GAME ID AND IT BREAKS BECAUSE GAME ID IS UNIQUE
+            
+# Turning off the primary key flag on the gameID field in the database fixes this problem but I have not tested any other ramifications.
+
+# TODO: Some users have games with no riot id and riot tags associated with it. 
+# This means that you can only look up games up until they added riot IDs properly to the game.
+
+# This is most likely due to viewing games that were from before riot added the riot game id tag system as a mandatory. It tries looking up the in game stats in the matchdata field then breaks there. 
+
 
 # Takes in a list of dictionaries which is a list containing game data information per match. Also takes in a summoenr name associated as the "owner" of the games (the searcher).
 # Those games are then uploaded to the database as a new entry. 

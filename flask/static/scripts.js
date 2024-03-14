@@ -349,6 +349,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
     formControl.setAttribute('data-key', cardCount);
 
 
+
     // Loop through the arrays simultaneously using forEach
     gameData.forEach((row1, index) => {
         
@@ -363,7 +364,11 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const primaryTableID = `primaryTable_${index}_${cardCount}`
         const secondaryTableID = `secondaryTable_${index}_${cardCount}`
-
+        
+        console.log("row 2");
+        console.log(row1.gameID);
+        console.log(row2);
+        
         if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
             
             // TODO: These items can be turned into sprites
