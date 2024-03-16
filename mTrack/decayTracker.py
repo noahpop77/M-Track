@@ -20,7 +20,6 @@ class bcolors:
 # THE CHONKY BOIIIIIIIIIIIIIIIIIIII
 def dtrack(ans, mykey):
     logging.info(f"dtrack function started, scanning for decay on account {ans}")
-    print(f"Searching for name {ans}")
     if ans == "" or ans == None:
         return "--No Summoner Name was provided--"
     # Sets API key variable

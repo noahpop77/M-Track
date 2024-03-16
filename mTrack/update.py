@@ -126,17 +126,14 @@ def insertDatabaseMatchHistory(matchHistoryGames):
         if connection.is_connected():
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
-            print("matchHistoryGames vvvvvvvv")
-            print(len(matchHistoryGames))
             #print(matchHistoryGames)
             try:
                 for game in matchHistoryGames:
-                    print(f"gamedata gameID: {game['gamedata']['gameid']}")
+                    
                     try:
                         participantList = json.dumps(game['gamedata']['participants'])
                         matchDataList = json.dumps(game['matchdata'])
                     except:
-                        print("error caught")
                         return None
                     query = (
                         f"INSERT INTO matchHistory "
@@ -161,16 +158,13 @@ def insertDatabaseMatchHistory(matchHistoryGames):
                     cursor.execute(query, data)
 
             except IndexError:
-                print("Index error")
                 pass
 
             except mysql.connector.Error as e:
                 if e.errno == 1062:
                     print(e)
-                    print("pass")
                     pass
                 else:
-                    print("Else")
                     print(e)
 
             # Commit the changes
@@ -248,7 +242,8 @@ def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints
 
 
 def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
-    
+    print("queryRankedInfo ------------------------------------------------------")
+    print(f"encryptedSummonerPUUID: {encryptedSummonerPUUID}")
     summonerID = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
 
     try:
@@ -365,22 +360,14 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
     matchList = []      # Appends to a new list with proper formatting       
     for i in sepList:   # Cuts random useless characters in match list
         matchList.append(i.replace(" ","").replace("'", "").replace("[", "").replace("]", ""))
-    
-    print("matchList")
-    print(len(matchList))
 
     # Gets the IDs for summonerName from the DB as a list of gameIDs
     gameIDsFromDB = fetchGameIDsFromDB(riotID)
 
-    print("gameIDsFromDB")
-    print(len(gameIDsFromDB))
-    print(gameIDsFromDB)
     # Gets the unique IDs between the past 20 matches in the request that was made and all all of the IDs that are associated with the summoner searched in the DB
     # This might prove to be a performance issue if the DB accumulates enough entries on a single user the search will take long?
     uniqueGameIDs = findUniqueIDs(gameIDsFromDB, matchList)
-    print("uniqueGameIDs")
-    print(len(uniqueGameIDs))
-    print(uniqueGameIDs)
+
     # Itterates through Match ID list and gets match data
     # Appends it to a new dictionary
     matchData = []
@@ -392,9 +379,7 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
         except Exception as e:
             print(e)
             pass
-
-    print("Length matchData")
-    print(len(matchData))
+        
     
     history = {}
     gameData = []
@@ -459,8 +444,7 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
             pass
         
         gameData.append(history)
-    print("gameData length")
-    print(len(gameData))
+
     insertDatabaseMatchHistory(gameData)
     return 200
 

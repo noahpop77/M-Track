@@ -215,8 +215,6 @@ def getHistory():
         riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
     
-    print("-------------------------------")
-    print(riotIDPuuid)
     # When the update button is pressed it will requery the ranked data associated with the account to update the database
     queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
     
@@ -270,8 +268,6 @@ def getRank():
     
     summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
     if len(summonerRankDict) < 1:
-        print("-------------------------------")
-        print(riotIDPuuid)
         queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
         summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
     return summonerRankDict
@@ -383,7 +379,7 @@ def getSummonerIcons(filename):
 if __name__ == '__main__':
     try:
         os.system("clear")
-        print(__name__)
+        
         print("Starting Flask app 'routes.py'")
         print(f"Running app at - {config['SITE']['address']}:{config['SITE']['port']}")
 

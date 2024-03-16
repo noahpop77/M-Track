@@ -29,7 +29,6 @@ async function summonerSearch(summonerNameParam) {
         /////////////////////////////////////////////////
         const riotID = document.getElementById('nameInput').value;
         rankSearch(riotID);
-        console.log(data.playerStats);
         printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
@@ -118,7 +117,6 @@ async function updateData() {
 
 // TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
 async function toggleAccordion(header) {
-    console.log(header)
     // Get the parent accordion item
     var accordionItem = header.parentNode;
     // Toggle the "active" class to show/hide the accordion body
@@ -364,10 +362,6 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
         const primaryTableID = `primaryTable_${index}_${cardCount}`
         const secondaryTableID = `secondaryTable_${index}_${cardCount}`
-        
-        console.log("row 2");
-        console.log(row1.gameID);
-        console.log(row2);
         
         if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
             
