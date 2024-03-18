@@ -464,7 +464,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
 
                         <div style="padding-top: 5px;">
                             <div class="">
-                                <img class="${itemToClass(row2.keystone)}" style="margin-top:12.5px;">
+                                <img class="${itemToClass(row2.keystone)}">
                                 <img class="${itemToClass(row2.secondaryRune)}">
                             </div>
                         </div>
@@ -672,7 +672,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         
                         <div style="padding-top: 5px;">
                             <div class="">
-                                <img class="${itemToClass(row2.keystone)}" style="margin-top:12.5px;">
+                                <img class="${itemToClass(row2.keystone)}">
                                 <img class="${itemToClass(row2.secondaryRune)}">
                             </div>
                         </div>
