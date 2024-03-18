@@ -303,20 +303,21 @@ img {
 
 /* Text styling */
 .text-over-image {
+  margin-top: -1px;
+  width: 18.5px;
+  height: 23.5px;
   position: absolute;
   top: 60%;
   left: 0%;
   color: white;
   font-size: 13px;
   text-align: center;
-  background-color: #28344e;
-  border-radius: 30%;
+  background-color: #1c1f23;
+  border-radius: 8px;
   font-weight: bolder;
   padding: 2px;
   z-index: +1;
 }
-
-
 
 
 

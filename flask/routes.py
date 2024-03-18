@@ -375,6 +375,19 @@ def getSummonerIcons(filename):
         # If the file doesn't exist, return an error response
         return "Error: The images sprite is not in the correct location"
 
+@app.route('/getRuneIcons/<path:filename>', methods=['GET'])
+def getRuneIcons(filename):
+    # Specify the path to the folder containing PNGs
+    icons_folder = './static/img/runeIcons'
+    # Check if the file with the given name exists
+    file_path = os.path.join(icons_folder, filename)
+    if os.path.exists(file_path):
+        # Return the PNG file as a response
+        return send_file(file_path, mimetype='image/png')
+    else:
+        # If the file doesn't exist, return an error response
+        return "Error: The images sprite is not in the correct location"
+
 # Run Server
 if __name__ == '__main__':
     try:

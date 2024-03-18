@@ -1,0 +1,59 @@
+.Domination {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(http://10.0.0.150/getRuneIcons/RuneCategories.png);
+    background-size: calc(255px/ 3.4) calc(170px / 3.4);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 0;
+}
+
+.Inspiration {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(http://10.0.0.150/getRuneIcons/RuneCategories.png);
+    background-size: calc(255px/ 3.4) calc(170px / 3.4);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -25px 0;
+}
+
+.Precision {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(http://10.0.0.150/getRuneIcons/RuneCategories.png);
+    background-size: calc(255px/ 3.4) calc(170px / 3.4);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: 0 -25px;
+}
+
+.Resolve {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(http://10.0.0.150/getRuneIcons/RuneCategories.png);
+    background-size: calc(255px/ 3.4) calc(170px / 3.4);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -25px -25px;
+}
+
+.Sorcery {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(http://10.0.0.150/getRuneIcons/RuneCategories.png);
+    background-size: calc(255px/ 3.4) calc(170px / 3.4);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -50px 0;
+}
