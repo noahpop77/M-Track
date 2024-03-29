@@ -62,9 +62,7 @@ def showMore():
     riotID = f"{riotGameName}#{riotTagLine}"
     
 
-    alreadyShownGameIDs = showMoreDict['excludeGameIDs']
-    
-    gameIDs = alreadyShownGameIDs.split(",")
+    gameIDs = showMoreDict['excludeGameIDs']
 
 
     # This try except clause will take the riotID gamename and tagline
@@ -78,6 +76,7 @@ def showMore():
         insertDatabaseRiotID(riotID, riotIDPuuid)
 
     startPosition = len(gameIDs)
+    
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
     gameData = fetchFromMatchHistoryDB(riotID, 20, startPosition)
     # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
@@ -143,13 +142,6 @@ def summonerSearch():
         riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
     
-    #try:
-    #    riotIDPuuid = fetchFromRiotIDDB(riotID)
-    #except TypeError:
-    #    print("happy path")
-    #    riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
-    #    insertDatabaseRiotID(riotID, riotIDPuuid)
-
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
     gameData = fetchFromMatchHistoryDB(riotID, 20)
 
@@ -179,9 +171,6 @@ def summonerSearch():
             break
         except Exception as e:
             print(e)
-    
-    #for i in playerStats:
-    #    print(i['Champ'])
 
     return jsonify({ 
         'gameData': gameData,
@@ -328,13 +317,7 @@ def getSummoners():
         return send_file("./static/img/summonerIcons/Placehoder.png", mimetype='image/png')
         #return "File not found", 404
 
-# Get summoner spell icons
-#@app.route('/getItemIcons', methods=['POST'])
-#def getItemIcons():
-#    # Specify the path to the folder containing PNGs
-#    icons_folder = 'static/img/itemIcons'
-#    file_path = os.path.join(icons_folder, f'items.png')
-#    return send_file(file_path, mimetype='image/png')
+
 
 @app.route('/getItemIcons/<path:filename>', methods=['GET'])
 def getItemIcons(filename):

@@ -39,14 +39,17 @@ async function summonerSearch(summonerNameParam) {
 }
 
 
-async function showMore(searchedUser, excludeGameIDs) {
+async function showMore() {
     var url = "http://10.0.0.150/showMore";
     var showMoreButtonTag = document.getElementById('showMoreButtonTag');
     showMoreButtonTag.innerText = "Loading more games...";
 
-    console.log(searchedUser);
-    console.log(excludeGameIDs);
 
+    const matchCardTags = document.querySelectorAll('[id="matchCard"]');
+    const excludeGameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
+
+    const searchedUser = document.getElementById('nameInput').value;
+    
     var requestBody = {
         searchedUser: searchedUser,
         excludeGameIDs: excludeGameIDs
@@ -240,6 +243,8 @@ async function rankSearch(riotIDParam) {
     });
 }
 
+
+
 async function rankSearchUpdate(riotIDParam) {
     var url = "http://10.0.0.150/updateRank";
 
@@ -348,14 +353,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
     cardCount = dataKey + 7
     formControl.setAttribute('data-key', cardCount);
 
-    const matchCardTags = document.querySelectorAll('[id="matchCard"]');
-    const gameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
-
-    const searchedUserElement = document.getElementById('nameInput').value;
-  
-
-    showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
-    showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="border-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore('${searchedUserElement}', '${gameIDs}')">SHOW MORE</button>`;
+    
 
 
     // Loop through the arrays simultaneously using forEach
@@ -364,13 +362,9 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         const row2 = playerStats[index];
         const row3 = matchData[index];
 
-        console.log(row2.secondaryRune);
-        console.log(row2.keystone);
-
         // Access the array and separate based on the 'win' field
         const winners = row3.filter(obj => obj.win === true);
         const losers = row3.filter(obj => obj.win === false);
-
 
         const primaryTableID = `primaryTable_${index}_${cardCount}`;
         const secondaryTableID = `secondaryTable_${index}_${cardCount}`;
@@ -381,17 +375,14 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         // conditional wont work and will throw a row2 undefined TypeError.
         // This block of code catches that and catches the undefined TypeError of possibly
         // trying to remove the showmore button multiple times.
-
         if (typeof row2 == 'undefined'){
             try {
                 var removeShowMore = document.getElementById("showMoreButtonTag");
                 removeShowMore.remove();
-                console.log("Removed Show More Button!");
             } catch (error) {}
             return;
         }
 
-        console.log(row2);
 
         if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
             
@@ -418,6 +409,11 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                 };
             });
             participation = Math.round((row2.kills / killTotalTeam) * 100);
+
+            if (isNaN(participation)){
+                participation = 0;
+            }
+
             // Gets cs per minute
             csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
             csPerMin = csPerMinFloat.toFixed(1);
@@ -626,7 +622,12 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                     killTotalTeam = killTotalTeam + player.kills;
                 };
             });
+            
             participation = Math.round((row2.kills / killTotalTeam) * 100);
+
+            if (isNaN(participation)){
+                participation = 0;
+            }
 
             // Gets cs per minute
             csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
@@ -992,6 +993,9 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
         cardCount = cardCount + 1;
     });
     
+    
+    showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
+    showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="border-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore()">SHOW MORE</button>`;
 
     
     

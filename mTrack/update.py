@@ -126,7 +126,6 @@ def insertDatabaseMatchHistory(matchHistoryGames):
         if connection.is_connected():
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
-            #print(matchHistoryGames)
             try:
                 for game in matchHistoryGames:
                     
@@ -134,7 +133,6 @@ def insertDatabaseMatchHistory(matchHistoryGames):
                         participantList = json.dumps(game['gamedata']['participants'])
                         matchDataList = json.dumps(game['matchdata'])
                     except:
-                        print(matchDataList)
                         return None
                     query = (
                         f"INSERT INTO matchHistory "
@@ -243,8 +241,6 @@ def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints
 
 
 def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
-    print("queryRankedInfo ------------------------------------------------------")
-    print(f"encryptedSummonerPUUID: {encryptedSummonerPUUID}")
     summonerID = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
 
     try:
@@ -402,8 +398,7 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
             date = convert_unix_to_date(i['info']['gameCreation'])
         except:
             continue
-        
-        
+
         try:
             history = {
                 'gamedata': {
@@ -421,11 +416,6 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
                 'matchdata' : []
             }
             for participant in i['info']['participants']:
-                print(f"\n\nKeystone: {participant['perks']['styles'][0]['selections'][0]['perk']}")
-                print(f"{translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][0]['selections'][0]['perk']))}")
-
-                print(f"Keystone: {participant['perks']['styles'][1]['style']}")
-                print(f"{translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][1]['style']))}")
 
                 newEntry = {
                     "riotID": f'{participant["riotIdGameName"]}#{participant["riotIdTagline"]}',
@@ -456,10 +446,12 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
         
         except KeyError:
             pass
-        
-        gameData.append(history)
+
+        if len(history['matchdata']) > 1:
+            gameData.append(history)
 
     insertDatabaseMatchHistory(gameData)
+
     return 200
 
 def translateItemCodesToNames(itemIcons, itemId):
