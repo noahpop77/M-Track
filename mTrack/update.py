@@ -12,6 +12,7 @@ file = "../config.ini"
 config = ConfigParser()
 config.read(file)
 
+
 host = config['DATABASE']['host']
 user = config['DATABASE']['user']
 password = config['DATABASE']['password']

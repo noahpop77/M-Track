@@ -374,7 +374,7 @@ def getRuneIcons(filename):
 # Run Server
 if __name__ == '__main__':
     try:
-        os.system("clear")
+        #os.system("clear")
         
         print("Starting Flask app 'routes.py'")
         print(f"Running app at - {config['SITE']['address']}:{config['SITE']['port']}")
