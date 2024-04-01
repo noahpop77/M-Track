@@ -150,7 +150,6 @@ def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset = 0):
 
             # Fetch the results as a list of dictionaries
             querylistOfDict = cursor.fetchall()
-
             # Return the retrieved data
             return querylistOfDict
 

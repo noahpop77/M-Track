@@ -36,13 +36,7 @@ logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding=
 @app.route('/', methods=['GET'])
 def homePage():
     #logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
-    return render_template('mtrack.html')
-
-
-# Actual webpage for the match history of a person
-@app.route('/matchHistory', methods=['GET'])
-def matchHistory():
-    #logging.info(f"Connection incoming from - {request.remote_addr} to /matchHistory")
+    #return render_template('mtrack.html')
     return render_template('matchHistory.html')
 
 
@@ -138,6 +132,7 @@ def summonerSearch():
     # The ordering of this block matters to save time execution on the 2 API requests
 
     riotIDPuuid = fetchFromRiotIDDB(riotID)
+
     if riotIDPuuid == None:
         riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
@@ -280,45 +275,6 @@ def updateRank():
 
 
 
-# Get champ icons
-@app.route('/getChampIcon', methods=['POST'])
-def getChampIcon():
-    ingres = request.data.decode("utf8")
-
-    # Specify the path to the folder containing PNGs
-    icons_folder = './static/img/champIcons'
-
-    # Check if the file with the given name exists
-    file_path = os.path.join(icons_folder, f'{ingres}.png')
-    if os.path.exists(file_path):
-        # Return the PNG file as a response
-        return send_file(file_path, mimetype='image/png')
-    else:
-        # If the file doesn't exist, return an error response
-        return send_file("./static/img/champIcons/Placehoder.png", mimetype='image/png')
-        #return "File not found", 404
-
-
-# Get summoner spell icons
-@app.route('/getSummoners', methods=['POST'])
-def getSummoners():
-    ingres = request.data.decode("utf8")
-
-    # Specify the path to the folder containing PNGs
-    icons_folder = './static/img/summonerIcons'
-
-    # Check if the file with the given name exists
-    file_path = os.path.join(icons_folder, f'{ingres}.png')
-    if os.path.exists(file_path):
-        # Return the PNG file as a response
-        return send_file(file_path, mimetype='image/png')
-    else:
-        # If the file doesn't exist, return an error response
-        return send_file("./static/img/summonerIcons/Placehoder.png", mimetype='image/png')
-        #return "File not found", 404
-
-
-
 @app.route('/getItemIcons/<path:filename>', methods=['GET'])
 def getItemIcons(filename):
     # Specify the path to the folder containing PNGs
@@ -371,11 +327,11 @@ def getRuneIcons(filename):
         # If the file doesn't exist, return an error response
         return "Error: The images sprite is not in the correct location"
 
+
+
 # Run Server
 if __name__ == '__main__':
     try:
-        #os.system("clear")
-        
         print("Starting Flask app 'routes.py'")
         print(f"Running app at - {config['SITE']['address']}:{config['SITE']['port']}")
 
