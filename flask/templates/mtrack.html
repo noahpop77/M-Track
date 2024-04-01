@@ -20,88 +20,52 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/style.css" />
-    <title>Frontend Bootcamp</title>
+    <link rel="stylesheet" href="../static/items.css" />
+    <link rel="stylesheet" href="../static/summoners.css" />
+    <link rel="stylesheet" href="../static/innerScoreboardChamps.css" />
+    <link rel="stylesheet" href="../static/scoreboardChamps.css" />
+    <link rel="stylesheet" href="../static/champs.css" />
+    <link rel="stylesheet" href="../static/keystones.css" />
+    <link rel="stylesheet" href="../static/runeCategories.css" />
+
+    <script src="../static/scripts.js"></script>
+
+    <title>M-Track</title>
   </head>
 
   <body class="bg-dark">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-      <div class="container">
-        <a href="/" class="navbar-brand">Home</a>
-        <a href="matchHistory" class="navbar-brand">M-Tracker</a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="#Search" class="nav-link">M-Tracker Search</a>
-            </li>
-            <li class="nav-item">
-              <a href="#projectDetails" class="nav-link">Project Details</a>
-            </li>
-          </ul>
+    <nav style="font-family: VCR OSD Mono, sans-serif" class="bg-dark navbar-dark fixed-top">
+      <div class="container" style="min-width: auto !important; max-width: none !important;">
+        <div class="navbar-nav" style="flex-direction: row;">
+          <a href="/" class="nav-link navbar-brand" style="font-size: xx-large;">M-Tracker</a>
         </div>
       </div>
     </nav>
 
 
+    <!-- Search Input -->
+    <section class="searchSection text-dark pt-2">
+      <div class="container maxWidth">
 
-    <!-- Showcase -->    
-    <section class="bg-dark text-light text-center text-sm-start" style="height: 100vh; min-height:900px;" id="Search">
-      
-      <!-- Summoner Search -->
-      <section class="searchSection text-dark pt-5 pb-3" id="Search">
-        <div class="container">
-          <div class="align-items-center">
-            <h3 class="mb-3 mb-md-0 text-center fw-bold " style="font-size:300%; font-family: VCR OSD Mono, sans-serif;">Summoner Search</h3>
+        <div class="input-group summoner-input searchContainer rounded-3">
 
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Search Input -->
-      <section class="searchSection text-dark px-5">
-        <div class="container">
-          <div class="justify-content-center">
-            <div class="input-group summoner-input searchContainer rounded-pill ">
-              <input id="nameInput" style="font-family: VCR OSD Mono, sans-serif; outline: none; background: transparent; border: 0px; font-weight:bold; font-size: x-large;" type="text" class="form-control rounded-pill text-center shadow-none" placeholder="Name..." />
-              <button id="searchButton" class="btn btn-dark btn-sm rounded-pill" style="height: 60px; width: 22%; font-weight:bold; font-size: 35px; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none;" type="button" onclick="sendPostRequest()">GO</button>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Search Result -->
-      <section class="searchSection text-dark pb-5 pt-3">
-        <div class="container">
-          <div class="align-items-center">
-            <h3 id="responseParagraph" class="mb-3 mb-md-0 text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 35px;"></h3>
-
-          </div>
-        </div>
-      </section>
-
-      <div class="container">
-        <div class="d-sm-flex align-items-center justify-content-between">
-          <div class="">
-            <h1 style="font-size:300%; font-family: VCR OSD Mono, sans-serif;">Welcome to <br><span class="text-warning"><b>M-Tracker</b></span></h1>
-            <p class="lead" style="font-family: VCR OSD Mono, sans-serif;">
-              Type in a League of Legends summoner name into the search bar to get some game history. 
-            </p>
-          </div>
-            <img class="img-fluid w-50 d-none d-sm-block p-3" src="../static/img/ekko.png" alt=""/>
-        </div>
-      </div>
+          <input id="nameInput" style="height: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; background: transparent; border: 0px; font-weight:bold; font-size: 120%;" type="text" class="form-control rounded-5 text-center shadow-none" placeholder="Game Name + #Tagline" />
           
+          <button id="searchButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none;" type="button" onclick="summonerSearch()">TRACK</button>
+
+        </div>
+          
+      </div>
+    </section>
+    <!-- Search Result -->
+    <section class="searchSection text-dark pt-2">
+      <div class="container" style="min-width: 100%; max-width:none;">
+        <div class="align-items-center">
+          <h3 id="responseParagraph" class="text-center fw-bold maxWidth" style="font-family: VCR OSD Mono, sans-serif; font-size: 200%; margin-left: auto; margin-right: auto;"></h3>
+
+        </div>
       </div>
     </section>
 
@@ -109,59 +73,49 @@
 
 
 
+    <!-- HTML Structure to Display Summoner Rank Data -->
+    <div id="player-container" class="center"></div>
+    <!-- HTML Structure to Display Data -->
+    <div id="data-container" class="accordion center pt-2"></div>
+
+
+    
+
+    <div id="formControl" data-key="7"></div>
+    
+    <!-- Show More -->
+    <div id="showMoreButtonDiv">
+      
+    </div>
+    
+    
+
+    
+    
+
+
+
     <script>
-      // Sends post request to the add summoner API
-      async function sendPostRequest() {
-          var name = document.getElementById("nameInput").value;
-          var url = "http://10.0.0.150/getHistory";
-          var data = name;
-          
-          var responseParagraph = document.getElementById('responseParagraph');
-          
-          responseParagraph.textContent = "Getting decay timer..."
-          
-          await fetch(url, {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json"
-              },
-              body: data
-          })
-  
-          .then(function(response) {
-              // Check if the response was successful
-              if (response.ok) {
-              return response.text(); // Convert response to text
-              } else {
-              throw new Error('Error: ' + response.status); // Throw an error
-              }
-          })
-          .then(function(answer) {
-              responseParagraph.textContent = answer; // Display response data in paragraph
-          })
-          .catch(function(error) {
-              responseParagraph.textContent = error.message; // Display error message
-          });
-      }
+      var input = document.getElementById("nameInput");
+      input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("searchButton").click();
+        }
+      });
     </script>
 
-
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="p-5 bg-dark text-white text-center position-relative">
-    </footer>
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative"></footer>
+    
   </body>
 </html>

@@ -37,7 +37,7 @@ logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding=
 def homePage():
     #logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
     #return render_template('mtrack.html')
-    return render_template('matchHistory.html')
+    return render_template('mtrack.html')
 
 
 
