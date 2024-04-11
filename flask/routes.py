@@ -32,14 +32,17 @@ errorlog.setLevel(logging.ERROR)
 
 logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
 
+
+
+
+
+
 # TODO: Need to decide what I am going to do with the home page.
 @app.route('/', methods=['GET'])
 def homePage():
     #logging.info(f"Connection incoming from - {request.remote_addr} to Homepage")
     #return render_template('mtrack.html')
     return render_template('mtrack.html')
-
-
 
 
 
@@ -51,6 +54,9 @@ def showMore():
     # Splits riotID and loads it into variables for use later
     ingres = request.data.decode("utf8")
     showMoreDict = json.loads(ingres)
+
+    summonerSearchDict = json.loads(ingres)
+    regionSelect = summonerSearchDict['regionSelect']
 
     riotGameName, riotTagLine = riotSplitID(showMoreDict['searchedUser'])
     riotID = f"{riotGameName}#{riotTagLine}"
@@ -66,7 +72,7 @@ def showMore():
     try:
         riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
 
     startPosition = len(gameIDs)
@@ -77,7 +83,7 @@ def showMore():
     
     
     if len(gameData) < 1:
-        mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20, startPosition)
+        mtrack(riotID, riotIDPuuid, regionSelect, RIOTAPIKEY, 20, startPosition)
         gameData = fetchFromMatchHistoryDB(riotID, 20, startPosition)
 
     matchData = []
@@ -123,7 +129,10 @@ def summonerSearch():
     # Takes input name from request body
     # Splits riotID and loads it into variables for use later
     ingres = request.data.decode("utf8")
-    riotGameName, riotTagLine = riotSplitID(ingres)
+    summonerSearchDict = json.loads(ingres)
+    regionSelect = summonerSearchDict['regionSelect']
+
+    riotGameName, riotTagLine = riotSplitID(summonerSearchDict['summonerName'])
     riotID = f"{riotGameName}#{riotTagLine}"
     
     # This try except clause will take the riotID gamename and tagline
@@ -134,7 +143,7 @@ def summonerSearch():
     riotIDPuuid = fetchFromRiotIDDB(riotID)
 
     if riotIDPuuid == None:
-        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
     
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
@@ -143,10 +152,10 @@ def summonerSearch():
     # If there is no pre-existing data it will run mtrack(get new data) and then pull it from the database
     try:
         if len(gameData) < 1:
-            mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
+            mtrack(riotID, riotIDPuuid, regionSelect, RIOTAPIKEY, 20)
             gameData = fetchFromMatchHistoryDB(riotID, 20)
     except TypeError:
-        mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
+        mtrack(riotID, riotIDPuuid, regionSelect, RIOTAPIKEY, 20)
         gameData = fetchFromMatchHistoryDB(riotID, 20)
 
     matchData = []
@@ -176,6 +185,8 @@ def summonerSearch():
 
 
 
+
+
 # /getHistory is different from summonerSearch in that it will ALWAYS get new info rather than displaying existing data and only getting new data if there is no gamedata on the searched user like summonerSearch
 
 # Endpoint hit when the update button is hit on the match history page
@@ -185,8 +196,12 @@ def getHistory():
     # Takes input name from request body
     # Splits riotID and loads it into variables for use later
     ingres = request.data.decode("utf8")
-    riotGameName, riotTagLine = riotSplitID(ingres)
-    riotID = f"{riotGameName}#{riotTagLine}"
+    getHistoryDict = json.loads(ingres)
+
+    riotID = getHistoryDict['riotID']
+    regionSelect = getHistoryDict['regionSelect']
+
+    riotGameName, riotTagLine = riotSplitID(riotID)
 
 
     # This try except clause will take the riotID gamename and tagline
@@ -196,18 +211,18 @@ def getHistory():
     try:
         riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
     
     # When the update button is pressed it will requery the ranked data associated with the account to update the database
-    queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
+    queryRankedInfo(riotIDPuuid, regionSelect, riotID, RIOTAPIKEY)
     
-    mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
+    mtrack(riotID, riotIDPuuid, regionSelect, RIOTAPIKEY, 20)
     gameData = fetchFromMatchHistoryDB(riotID, 20)
     
     if len(gameData) < 1:
         # Searches the new summoner and adds their information to the DB
-        mtrack(riotID, riotIDPuuid, RIOTAPIKEY, 20)
+        mtrack(riotID, riotIDPuuid, regionSelect, RIOTAPIKEY, 20)
         # After the information was just retrieved from the riot API and saved to the DB we fetch it from that DB
         gameData = fetchFromMatchHistoryDB(riotID, 20)
 
@@ -238,31 +253,48 @@ def getHistory():
         'riotID': riotID
     })
 
+
+
+
+
 @app.route('/getRank', methods=['POST'])
 def getRank():
     ingres = request.data.decode("utf8")
-    riotGameName, riotTagLine = riotSplitID(ingres)
+    summonerSearchDict = json.loads(ingres)
+
+    riotID = summonerSearchDict['riotID']
+    regionSelect = summonerSearchDict['regionSelect']
+
+    riotGameName, riotTagLine = riotSplitID(riotID)
     riotID = f"{riotGameName}#{riotTagLine}"
 
     try:
         riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
-        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+        riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
     
     summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
     if len(summonerRankDict) < 1:
-        queryRankedInfo(riotIDPuuid, RIOTAPIKEY)
+        queryRankedInfo(riotIDPuuid, regionSelect, riotID, RIOTAPIKEY)
         summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
     return summonerRankDict
+
+
+
+
 
 @app.route('/updateRank', methods=['POST'])
 def updateRank():
     ingres = request.data.decode("utf8")
-    riotGameName, riotTagLine = riotSplitID(ingres)
+    
+    summonerSearchDict = json.loads(ingres)
+    regionSelect = summonerSearchDict['regionSelect']
+
+    riotGameName, riotTagLine = riotSplitID(summonerSearchDict['riotID'])
     riotID = f"{riotGameName}#{riotTagLine}"
 
-    riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY)
+    riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
     insertDatabaseRiotID(riotID, riotIDPuuid)
     riotIDPuuid = fetchFromRiotIDDB(riotID)
     
@@ -326,6 +358,8 @@ def getRuneIcons(filename):
     else:
         # If the file doesn't exist, return an error response
         return "Error: The images sprite is not in the correct location"
+
+
 
 
 

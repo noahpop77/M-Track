@@ -1,19 +1,31 @@
 async function summonerSearch(summonerNameParam) {
-    var url = "http://10.0.0.150/summonerSearch";
+    var url = "https://www.mtrack.lol/summonerSearch";
 
     var responseParagraph = document.getElementById('responseParagraph');
-
     // Use the provided summonerNameParam if available; otherwise, use the input value
     var summonerName = summonerNameParam || document.getElementById("nameInput").value;
+
+    // Get the select element
+    var selectElement = document.getElementById('region');
+    var regionSelect = selectElement.value;
+    console.log(regionSelect);
+
+    var requestBody = {
+        summonerName: summonerName,
+        regionSelect: regionSelect
+    };
+    
 
     responseParagraph.textContent = "Searching for Summoner...";
 
     await fetch(url, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Credentials": "true"
         },
-        body: summonerName
+        body: JSON.stringify(requestBody)
     })
     .then(function(response) {
         // Check if the response was successful
@@ -40,7 +52,7 @@ async function summonerSearch(summonerNameParam) {
 
 
 async function showMore() {
-    var url = "http://10.0.0.150/showMore";
+    var url = "https://www.mtrack.lol/showMore";
     var showMoreButtonTag = document.getElementById('showMoreButtonTag');
     showMoreButtonTag.innerText = "Loading more games...";
 
@@ -49,16 +61,24 @@ async function showMore() {
     const excludeGameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
 
     const searchedUser = document.getElementById('nameInput').value;
-    
+
+    // Get the select element
+    var selectElement = document.getElementById('region');
+    var regionSelect = selectElement.value;
+    console.log(regionSelect);
+
     var requestBody = {
         searchedUser: searchedUser,
-        excludeGameIDs: excludeGameIDs
+        excludeGameIDs: excludeGameIDs,
+        regionSelect: regionSelect
     };
-
+    
     await fetch(url, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
     })
@@ -84,18 +104,30 @@ async function showMore() {
 
 
 async function updateData() {
-    var url = "http://10.0.0.150/getHistory";
+    var url = "https://www.mtrack.lol/getHistory";
 
     var responseParagraph = document.getElementById('responseParagraph');
     responseParagraph.textContent = "Getting history...";
-    var summonerName = document.getElementById("nameInput").value;
+    var riotID = document.getElementById("nameInput").value;
+
+    // Get the select element
+    var selectElement = document.getElementById('region');
+    var regionSelect = selectElement.value;
+    console.log(regionSelect);
+
+    var requestBody = {
+        regionSelect: regionSelect,
+        riotID: riotID
+    };
 
     await fetch(url, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Credentials": "true"
         },
-        body: summonerName
+        body: JSON.stringify(requestBody)
     })
     .then(function(response) {
         // Check if the response was successful
@@ -185,17 +217,28 @@ function itemToClass(itemName) {
 
 
 async function rankSearch(riotIDParam) {
-    var url = "http://10.0.0.150/getRank";
+    var url = "https://www.mtrack.lol/getRank";
 
     // Use the provided summonerNameParam if available; otherwise, use the input value
     var riotID = riotIDParam || document.getElementById("nameInput").value;
 
+    // Get the select element
+    var selectElement = document.getElementById('region');
+    var regionSelect = selectElement.value;
+
+    var requestBody = {
+        riotID: riotID,
+        regionSelect: regionSelect
+    };
+
     await fetch(url, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Credentials": "true"
         },
-        body: riotID
+        body: JSON.stringify(requestBody)
     })
     .then(function(response) {
         // Check if the response was successful
@@ -236,7 +279,7 @@ async function rankSearch(riotIDParam) {
         dataContainer.innerHTML = `
         <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
             <div class="nested-container" style="justify-content: center;">
-                Not enough ranked data(Placements not done maybe)
+                Not valid ranked data(Placements not done or wrong region)
             </div>
         </div>
         `;
@@ -246,17 +289,29 @@ async function rankSearch(riotIDParam) {
 
 
 async function rankSearchUpdate(riotIDParam) {
-    var url = "http://10.0.0.150/updateRank";
+    var url = "https://www.mtrack.lol/updateRank";
 
     // Use the provided summonerNameParam if available; otherwise, use the input value
     var riotID = riotIDParam || document.getElementById("nameInput").value;
 
+    // Get the select element
+    var selectElement = document.getElementById('region');
+    var regionSelect = selectElement.value;
+    console.log(regionSelect);
+
+    var requestBody = {
+        riotID: riotID,
+        regionSelect: regionSelect
+    };
+
     await fetch(url, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Credentials": "true"
         },
-        body: riotID
+        body: JSON.stringify(requestBody)
     })
     .then(function(response) {
         // Check if the response was successful
@@ -297,7 +352,7 @@ async function rankSearchUpdate(riotIDParam) {
         dataContainer.innerHTML = `
         <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
             <div class="nested-container" style="justify-content: center;">
-                Not enough ranked data(Placements not done maybe)
+                Not valid ranked data(Placements not done or wrong region)
             </div>
         </div>
         `;

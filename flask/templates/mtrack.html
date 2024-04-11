@@ -50,7 +50,11 @@
       <div class="container maxWidth">
 
         <div class="input-group summoner-input searchContainer rounded-3">
-
+          <select style="border-radius: 4px; background-color: #1c1f23; font-family: VCR OSD Mono, sans-serif; font-weight: bold; font-size: 100%; outline: none; box-shadow: none; color: white; width: 10%;" name="region" id="region">
+            <option value="eun1">EUN1</option>
+            <option value="euw1">EUW1</option>
+            <option value="na1" selected>NA1</option>
+          </select>
           <input id="nameInput" style="height: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; background: transparent; border: 0px; font-weight:bold; font-size: 120%;" type="text" class="form-control rounded-5 text-center shadow-none" placeholder="Game Name + #Tagline" />
           
           <button id="searchButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 100%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none;" type="button" onclick="summonerSearch()">TRACK</button>

@@ -241,13 +241,13 @@ def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints
 
 
 
-def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
-    summonerID = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
-
+def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
     try:
-        rankedInfo = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()
-    except:
-        return "No ranked data found function"
+        summonerID = requests.get(f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
+
+        rankedInfo = requests.get(f"https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()
+    except Exception as e:
+        return "No user/ranked data found..."
     
     # Check to only pull ranked information that is for Ranked Solo/Duo
     soloQueueRankInfo = ""
@@ -256,12 +256,11 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
             soloQueueRankInfo = i
         else:
             continue
-    
     try:
         insertDatabaseRankedInfo(
             encryptedSummonerPUUID, 
             soloQueueRankInfo["summonerId"], 
-            soloQueueRankInfo["summonerName"], 
+            riotID, 
             soloQueueRankInfo["tier"], 
             soloQueueRankInfo["rank"], 
             soloQueueRankInfo["leaguePoints"], 
@@ -269,7 +268,7 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
             soloQueueRankInfo["wins"], 
             soloQueueRankInfo["losses"], 
             )
-    except:
+    except Exception as e:
         return 500
     
     return 200
@@ -279,14 +278,23 @@ def queryRankedInfo(encryptedSummonerPUUID, RIOTAPIKEY):
 
 
 
+def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
+    riotIDPuuid = ""
 
-def queryRiotIDInfo(riotGameName, riotTagLine, RIOTAPIKEY):
     try:
-        riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
-        
-        sumNameData = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{riotIDData['puuid']}?api_key={RIOTAPIKEY}").json()
+        if region == "na1":
+            riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+        elif region == "euw1":
+            riotIDData = requests.get(f"https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+        elif region == "eun1":
+            riotIDData = requests.get(f"https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
     except:
-        return "No ranked data found..."
+        riotIDPuuid = "No ranked data found..."
+
+#    try:
+#        riotIDData = requests.get(f"https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+#    except:
+#        riotIDPuuid = "No ranked data found..."
     
     riotIDPuuid = riotIDData['puuid']
     return riotIDPuuid
@@ -320,14 +328,22 @@ def riotSplitID(fullRiotID):
 
 
 
-def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
+def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
     
     # Gets a list of the last 20(reqCount variable) matches associated with the specified puuid
     # start=10&count=20
-    try:
-        matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
-    except KeyError:
-        exit(1)
+
+    if region == "na1":
+        try:
+            matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
+        except:
+            pass
+    elif region == "euw1" or region == "eun1":
+        try:
+            matches = requests.get(f"https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
+        except:
+            pass
+
     
     # Gets the mapping information for items and summoners to map their IDs to their Names
     try:
@@ -376,12 +392,19 @@ def mtrack(riotID, puuid, APIKEY, reqCount, startPosition=0):
     matchData = []
 
     for i in uniqueGameIDs:
-        try:
-            tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
-            matchData.append(tempMatch)
-        except Exception as e:
-            print(e)
-            pass
+        if region == "na1":
+            try:
+                tempMatch = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
+                matchData.append(tempMatch)
+            except Exception as e:
+                pass
+        elif region == "euw1" or region == "eun1":
+            try:
+                tempMatch = requests.get(f"https://europe.api.riotgames.com/lol/match/v5/matches/{i}?api_key={APIKEY}").json()
+                matchData.append(tempMatch)
+            except Exception as e:
+                pass
+
         
     
     history = {}
