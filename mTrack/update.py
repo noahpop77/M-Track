@@ -295,8 +295,10 @@ def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
 #        riotIDData = requests.get(f"https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
 #    except:
 #        riotIDPuuid = "No ranked data found..."
-    
-    riotIDPuuid = riotIDData['puuid']
+    try:
+        riotIDPuuid = riotIDData['puuid']
+    except KeyError:
+        pass
     return riotIDPuuid
 
 
