@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT riotID) AS unique_count FROM mtrack.matchHistory;
