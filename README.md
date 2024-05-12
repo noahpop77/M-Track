@@ -112,3 +112,33 @@ This spawns from the projects web server to refine the process of performign all
   - whatever
 - Profile Stat Card
   - (Like the stats on the left )
+
+
+New fix for CORS problem experienced when using https://mtrack.lol vs https://www.mtrack.lol.
+The actual requests need to be changed. The line that contains the value for Access-Control-Allow-Origin needs to be *.
+
+Not working line:
+```javascript
+await fetch(url, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+        "Access-Control-Allow-Credentials": "true"
+    },
+    body: JSON.stringify(requestBody)
+})
+```
+
+Hypothesized working line:
+```javascript
+await fetch(url, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true"
+    },
+    body: JSON.stringify(requestBody)
+})
+```
