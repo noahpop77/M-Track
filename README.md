@@ -114,6 +114,10 @@ This spawns from the projects web server to refine the process of performign all
   - (Like the stats on the left )
 
 
+
+
+# TODO
+
 New fix for CORS problem experienced when using https://mtrack.lol vs https://www.mtrack.lol.
 The actual requests need to be changed. The line that contains the value for Access-Control-Allow-Origin needs to be *.
 
@@ -142,3 +146,12 @@ await fetch(url, {
     body: JSON.stringify(requestBody)
 })
 ```
+
+
+
+
+Built in utility that auto updates image assets for the website.
+
+
+ADD LP NUMBER NOT JUST RANK NAME
+
