@@ -280,10 +280,11 @@ def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
 
 def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
     riotIDPuuid = ""
-
+    print(f"{riotGameName}/{riotTagLine}/{region}/{RIOTAPIKEY}")
     try:
         if region == "na1":
             riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
+            print(f"{riotIDData.text}")
         elif region == "euw1":
             riotIDData = requests.get(f"https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
         elif region == "eun1":
@@ -299,6 +300,7 @@ def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
         riotIDPuuid = riotIDData['puuid']
     except KeyError:
         pass
+    print(riotIDPuuid)
     return riotIDPuuid
 
 

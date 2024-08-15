@@ -203,6 +203,7 @@ def fetchFromSummonerRankedInfoDB(puuid):
                 return None
 
             # Return the retrieved data
+            print(f"Rand info dict {rankedInfoDict}")
             return rankedInfoDict
 
     except mysql.connector.Error as e:

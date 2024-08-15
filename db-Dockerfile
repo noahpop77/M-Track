@@ -1,0 +1,14 @@
+# Dockerfile
+
+# Use the MySQL latest image as the base
+FROM mysql:latest
+
+# Set environment variables for MySQL
+ENV MYSQL_ROOT_PASSWORD=sawa
+ENV MYSQL_DATABASE=mtrack
+
+# Copy the SQL script to the Docker container
+COPY MySQL-Workbench-Queries/init.sql /docker-entrypoint-initdb.d/
+
+# Expose port 3306 to the host
+EXPOSE 3306
