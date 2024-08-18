@@ -21,7 +21,7 @@ async function summonerSearch(summonerNameParam) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "localhost/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -75,7 +75,7 @@ async function showMore() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "localhost/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -121,7 +121,7 @@ async function updateData() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "localhost/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -232,7 +232,7 @@ async function rankSearch(riotIDParam) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "localhost/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -304,7 +304,7 @@ async function rankSearchUpdate(riotIDParam) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "localhost/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
