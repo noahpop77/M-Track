@@ -8,7 +8,6 @@ async function summonerSearch(summonerNameParam) {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         summonerName: summonerName,
@@ -65,7 +64,6 @@ async function showMore() {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         searchedUser: searchedUser,
@@ -113,7 +111,6 @@ async function updateData() {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         regionSelect: regionSelect,
@@ -250,7 +247,6 @@ async function rankSearch(riotIDParam) {
     })
     .then(function(data) {
         const dataContainer = document.getElementById('player-container');
-        console.log(data);
         dataContainer.innerHTML = `
         <div class="center searchSection text-dark text-center fw-bold" style="border-top-left-radius: 15px; border-top-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
             <div class="nested-container" style="justify-content: center;">
@@ -298,7 +294,6 @@ async function rankSearchUpdate(riotIDParam) {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         riotID: riotID,
