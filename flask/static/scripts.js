@@ -1,5 +1,5 @@
 async function summonerSearch(summonerNameParam) {
-    var url = "https://www.mtrack.lol/summonerSearch";
+    var url = "/summonerSearch";
 
     var responseParagraph = document.getElementById('responseParagraph');
     // Use the provided summonerNameParam if available; otherwise, use the input value
@@ -8,7 +8,6 @@ async function summonerSearch(summonerNameParam) {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         summonerName: summonerName,
@@ -22,7 +21,7 @@ async function summonerSearch(summonerNameParam) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -52,7 +51,7 @@ async function summonerSearch(summonerNameParam) {
 
 
 async function showMore() {
-    var url = "https://www.mtrack.lol/showMore";
+    var url = "/showMore";
     var showMoreButtonTag = document.getElementById('showMoreButtonTag');
     showMoreButtonTag.innerText = "Loading more games...";
 
@@ -65,7 +64,6 @@ async function showMore() {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         searchedUser: searchedUser,
@@ -77,7 +75,7 @@ async function showMore() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -104,7 +102,7 @@ async function showMore() {
 
 
 async function updateData() {
-    var url = "https://www.mtrack.lol/getHistory";
+    var url = "/getHistory";
 
     var responseParagraph = document.getElementById('responseParagraph');
     responseParagraph.textContent = "Getting history...";
@@ -113,7 +111,6 @@ async function updateData() {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         regionSelect: regionSelect,
@@ -124,7 +121,7 @@ async function updateData() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -217,7 +214,7 @@ function itemToClass(itemName) {
 
 
 async function rankSearch(riotIDParam) {
-    var url = "https://www.mtrack.lol/getRank";
+    var url = "/getRank";
 
     // Use the provided summonerNameParam if available; otherwise, use the input value
     var riotID = riotIDParam || document.getElementById("nameInput").value;
@@ -235,7 +232,7 @@ async function rankSearch(riotIDParam) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)
@@ -289,7 +286,7 @@ async function rankSearch(riotIDParam) {
 
 
 async function rankSearchUpdate(riotIDParam) {
-    var url = "https://www.mtrack.lol/updateRank";
+    var url = "/updateRank";
 
     // Use the provided summonerNameParam if available; otherwise, use the input value
     var riotID = riotIDParam || document.getElementById("nameInput").value;
@@ -297,7 +294,6 @@ async function rankSearchUpdate(riotIDParam) {
     // Get the select element
     var selectElement = document.getElementById('region');
     var regionSelect = selectElement.value;
-    console.log(regionSelect);
 
     var requestBody = {
         riotID: riotID,
@@ -308,7 +304,7 @@ async function rankSearchUpdate(riotIDParam) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.mtrack.lol/",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true"
         },
         body: JSON.stringify(requestBody)

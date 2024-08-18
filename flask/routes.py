@@ -63,7 +63,7 @@ def showMore():
     
 
     gameIDs = showMoreDict['excludeGameIDs']
-
+    
 
     # This try except clause will take the riotID gamename and tagline
     # and get the summoner name and PUUID associated with it for use in
@@ -139,13 +139,11 @@ def summonerSearch():
     # and get the summoner name and PUUID associated with it for use in
     # future functions
     # The ordering of this block matters to save time execution on the 2 API requests
-
     riotIDPuuid = fetchFromRiotIDDB(riotID)
-
     if riotIDPuuid == None:
         riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
-    
+        
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
     gameData = fetchFromMatchHistoryDB(riotID, 20)
 
@@ -267,7 +265,6 @@ def getRank():
 
     riotGameName, riotTagLine = riotSplitID(riotID)
     riotID = f"{riotGameName}#{riotTagLine}"
-
     try:
         riotIDPuuid = fetchFromRiotIDDB(riotID)
     except TypeError:
@@ -366,9 +363,7 @@ def getRuneIcons(filename):
 # Run Server
 if __name__ == '__main__':
     try:
-        print("Starting Flask app 'routes.py'")
         print(f"Running app at - {config['SITE']['address']}:{config['SITE']['port']}")
-
         app.run(debug=True, host=config['SITE']['address'], port=config['SITE']['port'])
 
     except KeyboardInterrupt:

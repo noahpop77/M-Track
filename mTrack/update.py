@@ -280,7 +280,6 @@ def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
 
 def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
     riotIDPuuid = ""
-
     try:
         if region == "na1":
             riotIDData = requests.get(f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
