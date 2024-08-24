@@ -106,6 +106,18 @@
     background-position: -200px 0;
 }
 
+.innerScoreboardAurora {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
+    border-radius: 15%;
+    background-position: -300px -300px;
+}
+
 .innerScoreboardAshe {
     width: 25px;
     height: 25px;
@@ -1247,7 +1259,7 @@
     background-position: -175px -200px;
 }
 
-.innerScoreboardReksai {
+.innerScoreboardRekSai {
     width: 25px;
     height: 25px;
     padding: 12.3px;
