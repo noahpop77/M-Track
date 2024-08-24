@@ -67,8 +67,6 @@ To start the app go into the correct directory and run the routes.py file.
 sawa@sawa:~/mainShare/devenv/gitrepos/M-Track/flask$ sudo python3 routes.py
 ```
 
-For now I will be working out of the `http://10.0.0.150/matchHistory` site.
-
 This spawns from the projects web server to refine the process of performign all of the API and SQL calls in the back end and making the front end more digestable. Also revise the data schema in the backend.
 
 - Working out of my ubuntu server for now.
@@ -89,11 +87,7 @@ This spawns from the projects web server to refine the process of performign all
   - `https://www.op.gg/summoners/na/Scyrnn-NA1`
     - `Scyrnn#NA1`
 - Sprite Sheet maker
-
   - `https://www.codeandweb.com/free-sprite-sheet-packer`
-
-- For some reason this user has a riot ID name and tagline but doesnt have a summoner name. So watch out.
-  - https://www.op.gg/summoners/na/BARRRRRRRREL-GPGOD
 
 # Future Ideas
 

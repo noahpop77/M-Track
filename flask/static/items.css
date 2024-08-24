@@ -4185,3 +4185,99 @@
     display: block;
     background-position: -150px -450px;
 }
+
+.Overlord_s-Bloodmail {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -175px -450px;
+}
+
+.Blackfire-Torch {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -200px -450px;
+}
+
+.Fated-Ashes {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -225px -450px;
+}
+
+.Symbiotic-Boots {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -250px -450px;
+}
+
+.Synchronized-Boots {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -275px -450px;
+}
+
+.Yun-Tal-Wildarrows {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -300px -450px;
+}
+
+.Scout_s-Slingshot {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -325px -450px;
+}
+
+.Navori-Flickerblade {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    background-image: url(/getItemIcons/items.png);
+    background-size: calc(1216px / 2.56) calc(1216px / 2.56);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -350px -450px;
+}
