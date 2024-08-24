@@ -106,6 +106,18 @@
     background-position: -128px 0;
 }
 
+.AuroraScoreboard {
+    width: 16px;
+    height: 16px;
+    border-radius: 15%;
+    padding: 50%;
+    background-image: url(/getChampIcons/champs.png);
+    background-size: calc(2145px / 10.3125) calc(2145px / 10.3125);
+    background-repeat: no-repeat;
+    display: block;
+    background-position: -192px -192px;
+}
+
 .AsheScoreboard {
     width: 16px;
     height: 16px;
