@@ -110,7 +110,7 @@
     width: 55px;
     height: 55px;
     border-radius: 15%;
-    background-image: url(https://www.mtrack.lol/getChampIcons/champs.png);
+    background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
     background-size: calc(2145px / 3) calc(2145px / 3);
     display: block;
