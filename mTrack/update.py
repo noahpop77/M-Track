@@ -479,7 +479,6 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
     return 200
 
 def translateItemCodesToNames(itemIcons, itemId):
-    print(f"ItemID: {itemId}")
     try:
         return str(itemIcons[itemId])
     except:
