@@ -106,6 +106,18 @@
     background-position: -440px 0;
 }
 
+.Aurora {
+    width: 55px;
+    height: 55px;
+    border-radius: 15%;
+    background-image: url(https://www.mtrack.lol/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2145px / 3) calc(2145px / 3);
+    display: block;
+    padding: 27.3px;
+    background-position: -660px -660px;
+}
+
 .Ashe {
     width: 55px;
     height: 55px;
