@@ -300,8 +300,22 @@ def updateRank():
     return summonerRankDict
 
 
+# TEST API ENDPOINT ONLY USED IN CONJUNCTION WITH noahpop77/Papy
+@app.route('/addMatch', methods=['POST'])
+def addMatch():
+    ingres = request.data.decode("utf8")
+    matchData = json.loads(ingres)
 
+    for i in json.loads(matchData)['info']['participants']:
+        print(i['championName'])
+    
+    print(matchData)
 
+    injectMatchJsonIntoDatabase(json.loads(matchData))
+    return jsonify({
+        'statusCode': "200",
+        'body': "Request received and pritned"
+    })
 
 
 @app.route('/getItemIcons/<path:filename>', methods=['GET'])

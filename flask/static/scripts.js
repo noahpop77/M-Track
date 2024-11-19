@@ -611,7 +611,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <tr style="text-align: center;">
                         <th colspan="3">Your Team</th>
                             <th>KDA</th>
-                            <th>Damage</th>
+                            <th>Gold</th>
                             <th>CS</th>
                             <th>Items</th>
                         </tr>
@@ -636,7 +636,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <tr style="text-align: center;">
                             <th colspan="3">Enemy Team</th>
                             <th>KDA</th>
-                            <th>Damage</th>
+                            <th>Gold</th>
                             <th>CS</th>
                             <th>Items</th>
                         </tr>
@@ -825,7 +825,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <tr style="text-align: center;">
                             <th colspan="3">Your Team</th>
                             <th>KDA</th>
-                            <th>Damage</th>
+                            <th>Gold</th>
                             <th>CS</th>
                             <th>Items</th>
                         </tr>
@@ -849,7 +849,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
                         <tr style="text-align: center;">
                             <th colspan="3"><span class="result">Enemy Team</th>
                             <th>KDA</th>
-                            <th>Damage</th>
+                            <th>Gold</th>
                             <th>CS</th>
                             <th>Items</th>
                         </tr>

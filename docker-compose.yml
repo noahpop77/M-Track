@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8.0.40-debian
     environment:
       MYSQL_ROOT_PASSWORD: sawa
       MYSQL_DATABASE: mtrack
@@ -17,12 +17,15 @@ services:
     volumes:
       - .:/app
     working_dir: /app/flask/
+    
     command: >
       sh -c "
       pip install flask requests mysql-connector-python &&
       python --version &&
       python routes.py
       "
+    environment:
+      - PYTHONUNBUFFERED=1
     ports:
       - "80:80"
     depends_on:

@@ -49,5 +49,11 @@ engine=innodb
 DEFAULT charset=utf8mb4
 COLLATE=utf8mb4_0900_ai_ci;
 
-
+SELECT User, Host FROM mysql.user WHERE User = 'mysql';
+UPDATE mysql.user SET Host = '%' WHERE User = 'mysql' AND Host = 'localhost';
+FLUSH PRIVILEGES;
+CREATE USER 'mysql'@'%' IDENTIFIED BY 'sawa';
+FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'mysql'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 

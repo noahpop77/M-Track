@@ -336,7 +336,9 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
 
     if region == "na1":
         try:
+            
             matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
+            print(str(matches.json()).split(","))
         except:
             pass
     elif region == "euw1" or region == "eun1":
@@ -484,3 +486,88 @@ def translateItemCodesToNames(itemIcons, itemId):
     except:
         # Handle the error (e.g., return a default icon or log the issue)
         return "PlaceholderItem"
+
+def injectMatchJsonIntoDatabase(matchData):
+    history = {}
+    gameData = []
+
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    summonerPath = os.path.join(current_directory, 'summonerSpellMapping.json')
+    itemPath = os.path.join(current_directory, 'items.json')
+    runePath = os.path.join(current_directory, 'runes.json')
+    
+    # Opening mapping file for summoner spells
+    with open(summonerPath, 'r') as file:
+        summonerIcons = json.load(file)
+    # Loads item id mappings
+    with open(itemPath, 'r') as file:
+        itemIcons = json.load(file)
+    
+    # Loads rune id mappings
+    with open(runePath, 'r') as file:
+        runeIcons = json.load(file)
+
+        
+    queueType = "Not Ranked"
+    try:
+        if matchData['info']['queueId'] == 420:
+            queueType = "Ranked Solo/Duo"
+    except KeyError:
+        pass
+    
+    try:
+        date = convert_unix_to_date(matchData['info']['gameCreation'])
+    except:
+        pass
+
+    try:
+        history = {
+            'gamedata': {
+                'gameid': matchData['metadata']['matchId'], 
+                'gamever': matchData['info']['gameVersion'],
+                #'userSummoner': profileData['name'],
+                'riotID': f"{matchData['info']['participants'][0]['riotIdGameName']}#{matchData['info']['participants'][0]['riotIdTagline']}",
+                'gameDurationMinutes': getGameTime(int(matchData['info']['gameDuration'])),
+                'gameCreationTimestamp': matchData['info']['gameCreation'],
+                'gameEndTimestamp': matchData['info']['gameEndTimestamp'],
+                'queueType': queueType,
+                'gameDate': date,
+                'participants': matchData['metadata']['participants']                        
+            },
+            'matchdata' : []
+        }
+        for participant in matchData['info']['participants']:
+            newEntry = {
+                "riotID": f'{participant["riotIdGameName"]}#{participant["riotIdTagline"]}',
+                "playerTeamID": participant['teamId'],
+                "Champ": participant['championName'],
+                "kills": participant['kills'],
+                "deaths": participant['deaths'],
+                "assists": participant['assists'],
+                "champLevel": participant['champLevel'],
+                "goldEarned": participant['goldEarned'],
+                "summonerSpell1": summonerIcons[str(participant['summoner1Id'])],
+                "summonerSpell2": summonerIcons[str(participant['summoner2Id'])],
+                "visionScore": participant['visionScore'],
+                "totalCS": int(participant['totalMinionsKilled'] + participant['neutralMinionsKilled']),
+                "item0": translateItemCodesToNames(itemIcons, str(participant['item0'])),
+                "item1": translateItemCodesToNames(itemIcons, str(participant['item1'])),
+                "item2": translateItemCodesToNames(itemIcons, str(participant['item2'])),
+                "item3": translateItemCodesToNames(itemIcons, str(participant['item3'])),
+                "item4": translateItemCodesToNames(itemIcons, str(participant['item4'])),
+                "item5": translateItemCodesToNames(itemIcons, str(participant['item5'])),
+                "item6": translateItemCodesToNames(itemIcons, str(participant['item6'])),
+                "win": participant['win'],
+                "keystone": translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][0]['selections'][0]['perk'])),
+                "secondaryRune": translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][1]['style']))
+            }
+            
+            history['matchdata'].append(newEntry)
+    
+    except KeyError:
+        pass
+
+    if len(history['matchdata']) > 1:
+        gameData.append(history)
+
+    insertDatabaseMatchHistory(gameData)
