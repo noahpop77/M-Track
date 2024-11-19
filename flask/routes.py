@@ -300,24 +300,6 @@ def updateRank():
     return summonerRankDict
 
 
-# TEST API ENDPOINT ONLY USED IN CONJUNCTION WITH noahpop77/Papy
-@app.route('/addMatch', methods=['POST'])
-def addMatch():
-    ingres = request.data.decode("utf8")
-    matchData = json.loads(ingres)
-
-    for i in json.loads(matchData)['info']['participants']:
-        print(i['championName'])
-    
-    print(matchData)
-
-    injectMatchJsonIntoDatabase(json.loads(matchData))
-    return jsonify({
-        'statusCode': "200",
-        'body': "Request received and pritned"
-    })
-
-
 @app.route('/getItemIcons/<path:filename>', methods=['GET'])
 def getItemIcons(filename):
     # Specify the path to the folder containing PNGs
@@ -369,6 +351,40 @@ def getRuneIcons(filename):
     else:
         # If the file doesn't exist, return an error response
         return "Error: The images sprite is not in the correct location"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ==================================================================
+# STRICTLY FOR TESTING
+# TEST API ENDPOINT ONLY USED IN CONJUNCTION WITH noahpop77/Papy
+@app.route('/addMatch', methods=['POST'])
+def addMatch():
+    ingres = request.data.decode("utf8")
+    matchData = json.loads(ingres)
+
+    for i in json.loads(matchData)['info']['participants']:
+        print(i['championName'])
+    
+    print(matchData)
+
+    injectMatchJsonIntoDatabase(json.loads(matchData))
+    return jsonify({
+        'statusCode': "200",
+        'body': "Request received and pritned"
+    })
+# ==================================================================
+
 
 
 
