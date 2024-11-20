@@ -139,11 +139,3 @@ await fetch(url, {
 })
 ```
 
-
-
-
-Built in utility that auto updates image assets for the website.
-
-
-ADD LP NUMBER NOT JUST RANK NAME
-
