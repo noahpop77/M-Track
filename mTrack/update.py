@@ -338,7 +338,6 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
         try:
             
             matches = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=420&start={startPosition}&count={reqCount}&api_key={APIKEY}")
-            print(str(matches.json()).split(","))
         except:
             pass
     elif region == "euw1" or region == "eun1":

@@ -373,11 +373,6 @@ def addMatch():
     ingres = request.data.decode("utf8")
     matchData = json.loads(ingres)
 
-    for i in json.loads(matchData)['info']['participants']:
-        print(i['championName'])
-    
-    print(matchData)
-
     injectMatchJsonIntoDatabase(json.loads(matchData))
     return jsonify({
         'statusCode': "200",
