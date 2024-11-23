@@ -157,6 +157,7 @@ def summonerSearch():
         gameData = fetchFromMatchHistoryDB(riotID, 20)
 
     matchData = []
+    print(gameData)
     for i in gameData:
         matchData.append(json.loads(i['matchdata']))
     

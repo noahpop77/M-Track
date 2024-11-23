@@ -1,26 +1,26 @@
 version: '3.8'
 
 services:
-  mysql:
-    image: mysql:8.0.40-debian
+  postgres:
+    image: postgres:14
     environment:
-      MYSQL_ROOT_PASSWORD: sawa
-      MYSQL_DATABASE: mtrack
+      POSTGRES_USER: sawa
+      POSTGRES_PASSWORD: sawa
+      POSTGRES_DB: mtrack
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - mysql-data:/var/lib/mysql
-      - ./MySQL-Workbench-Queries/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres-init.sql:/docker-entrypoint-initdb.d/init.sql  # Optional: if you want to run an SQL script on startup
 
   flask-app:
     image: python:3.10
     volumes:
       - .:/app
     working_dir: /app/flask/
-    
     command: >
       sh -c "
-      pip install flask requests mysql-connector-python &&
+      pip install flask requests psycopg2 &&
       python --version &&
       python routes.py
       "
@@ -29,8 +29,8 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - mysql
+      - postgres
 
 volumes:
-  mysql-data:
+  postgres-data:
     driver: local
