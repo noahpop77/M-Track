@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 from configparser import ConfigParser
 from .fetch import *
+from urllib.parse import quote
 
 # Config file initiators for use in getting API key from config.ini
 file = "../config.ini"
@@ -51,10 +52,11 @@ def insertDatabaseRiotID(riotID, riotIDPuuid):
 
             try:
                 query = (
-                    "INSERT INTO riotIDData "
-                    "(riotID, puuid) "
-                    "VALUES "
-                    "(%s, %s)"
+                    'INSERT INTO "riotIDData" '
+                    '("riotID", "puuid") '
+                    'VALUES '
+                    '(%s, %s) '
+                    'ON CONFLICT ("riotID") DO NOTHING;'
                 )
                 data = (riotID, riotIDPuuid)
                 cursor.execute(query, data)
@@ -97,19 +99,19 @@ def insertDatabaseMatchHistory(matchHistoryGames):
                 for game in matchHistoryGames:
                     try:
                         participantList = json.dumps(game['gamedata']['participants'])
-                        matchDataList = json.dumps(game['matchdata'])
+                        matchDataList = json.dumps(game['matchData'])
                     except:
                         return None
                     query = (
-                        "INSERT INTO matchHistory "
-                        "(gameID, gameVer, riotID, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, queueType, gameDate, participants, matchdata) "
-                        "VALUES "
-                        "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                        'INSERT INTO "matchHistory" '
+                        '("gameID", "gameVer", "riotID", "gameDurationMinutes", "gameCreationTimestamp", "gameEndTimestamp", "queueType", "gameDate", "participants", "matchData") '
+                        'VALUES '
+                        '(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
                     )
 
                     data = (
-                        game['gamedata']['gameid'],
-                        game['gamedata']['gamever'],
+                        game['gamedata']['gameID'],
+                        game['gamedata']['gameVer'],
                         game['gamedata']['riotID'],
                         game['gamedata']['gameDurationMinutes'],
                         game['gamedata']['gameCreationTimestamp'],
@@ -160,11 +162,13 @@ def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints
 
             try:
                 query = (
-                    "INSERT INTO summonerRankedInfo "
-                    "(encryptedPUUID, summonerID, riotID, tier, rank, leaguePoints, queueType, wins, losses) "
-                    "VALUES "
-                    "(%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                    'INSERT INTO "summonerRankedInfo" '
+                    '("encryptedPUUID", "summonerID", "riotID", "tier", "rank", "leaguePoints", "queueType", "wins", "losses") '
+                    'VALUES '
+                    '(%s, %s, %s, %s, %s, %s, %s, %s, %s) '
+                    'ON CONFLICT ("encryptedPUUID") DO NOTHING;'
                 )
+
                 data = (
                     puuid,
                     summonerID,
@@ -198,22 +202,39 @@ def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints
             cursor.close()
             connection.close()
 
-# Use the riot account geeyokay#5964 to test
 def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
     try:
-        summonerID = requests.get(f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
-        rankedInfo = requests.get(f"https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()
+        # Get the summoner ID
+        summoner_response = requests.get(f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}")
+        summoner_response.raise_for_status()  # Raise exception for HTTP errors
+        summonerID = summoner_response.json()["id"]
+
+        # Get ranked info for the summoner using the encoded summonerID
+        ranked_info_response = requests.get(f"https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{quote(summonerID)}?api_key={RIOTAPIKEY}")
+        ranked_info_response.raise_for_status()  # Raise exception for HTTP errors
+        rankedInfo = ranked_info_response.json()
+
+        if not rankedInfo:  # Check if ranked info is empty
+            return "No ranked data found for the summoner."
+
+    except requests.exceptions.RequestException as e:
+        return f"Request failed: {e}"  # Specific error for network issues
+    except KeyError as e:
+        return f"Missing expected data in response: {e}"  # Handle missing data from the response
     except Exception as e:
-        return "No user/ranked data found..."
+        return f"An unexpected error occurred: {e}"
 
     # Check to only pull ranked information that is for Ranked Solo/Duo
-    soloQueueRankInfo = ""
+    soloQueueRankInfo = None
     for i in rankedInfo:
-        if i["queueType"] == "RANKED_SOLO_5x5":
+        if i.get("queueType") == "RANKED_SOLO_5x5":
             soloQueueRankInfo = i
-        else:
-            continue
+            break  # Exit the loop once the data is found
+    
+    if not soloQueueRankInfo:
+        return "No Ranked Solo/Duo data found for this summoner."
 
+    # Now insert into the database
     try:
         insertDatabaseRankedInfo(
             encryptedSummonerPUUID,
@@ -227,9 +248,9 @@ def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
             soloQueueRankInfo["losses"],
         )
     except Exception as e:
-        return 500
+        return f"Error inserting data into database: {e}"
 
-    return 200
+    return "Ranked information inserted successfully."
 
 # Query riotID information from Riot API
 def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
@@ -248,7 +269,7 @@ def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
         riotIDPuuid = riotIDData['puuid']
     except KeyError:
         pass
-
+    
     return riotIDPuuid
 
 
@@ -386,8 +407,8 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
         try:
             history = {
                 'gamedata': {
-                    'gameid': i['metadata']['matchId'], 
-                    'gamever': i['info']['gameVersion'],
+                    'gameID': i['metadata']['matchId'], 
+                    'gameVer': i['info']['gameVersion'],
                     #'userSummoner': profileData['name'],
                     'riotID': riotID,
                     'gameDurationMinutes': getGameTime(i['info']['gameDuration']),
@@ -397,7 +418,7 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
                     'gameDate': date,
                     'participants': i['metadata']['participants']                        
                 },
-                'matchdata' : []
+                'matchData' : []
             }
             for participant in i['info']['participants']:
                 newEntry = {
@@ -425,12 +446,12 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
                     "secondaryRune": translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][1]['style']))
                 }
                 
-                history['matchdata'].append(newEntry)
+                history['matchData'].append(newEntry)
         
         except KeyError:
             pass
 
-        if len(history['matchdata']) > 1:
+        if len(history['matchData']) > 1:
             gameData.append(history)
 
     insertDatabaseMatchHistory(gameData)
@@ -480,8 +501,8 @@ def injectMatchJsonIntoDatabase(matchData):
     try:
         history = {
             'gamedata': {
-                'gameid': matchData['metadata']['matchId'], 
-                'gamever': matchData['info']['gameVersion'],
+                'gameID': matchData['metadata']['matchId'], 
+                'gameVer': matchData['info']['gameVersion'],
                 #'userSummoner': profileData['name'],
                 'riotID': f"{matchData['info']['participants'][0]['riotIdGameName']}#{matchData['info']['participants'][0]['riotIdTagline']}",
                 'gameDurationMinutes': getGameTime(int(matchData['info']['gameDuration'])),
@@ -491,7 +512,7 @@ def injectMatchJsonIntoDatabase(matchData):
                 'gameDate': date,
                 'participants': matchData['metadata']['participants']                        
             },
-            'matchdata' : []
+            'matchData' : []
         }
         for participant in matchData['info']['participants']:
             newEntry = {
@@ -519,12 +540,12 @@ def injectMatchJsonIntoDatabase(matchData):
                 "secondaryRune": translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][1]['style']))
             }
             
-            history['matchdata'].append(newEntry)
+            history['matchData'].append(newEntry)
     
     except KeyError:
         pass
 
-    if len(history['matchdata']) > 1:
+    if len(history['matchData']) > 1:
         gameData.append(history)
 
     insertDatabaseMatchHistory(gameData)

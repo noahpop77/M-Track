@@ -88,7 +88,7 @@ def showMore():
 
     matchData = []
     for i in gameData:
-        matchData.append(json.loads(i['matchdata']))
+        matchData.append(i['matchData'])
     
     # Player card data
     playerStats = []
@@ -157,9 +157,10 @@ def summonerSearch():
         gameData = fetchFromMatchHistoryDB(riotID, 20)
 
     matchData = []
-    print(gameData)
+    
+    
     for i in gameData:
-        matchData.append(json.loads(i['matchdata']))
+        matchData.append(i['matchData'])
     
     # Player card data
     playerStats = []
@@ -227,7 +228,7 @@ def getHistory():
 
     matchData = []
     for i in gameData:
-        matchData.append(json.loads(i['matchdata']))
+        matchData.append(i['matchData'])
 
     playerStats = []
     # Loops through match data, gets player card data and 
@@ -266,19 +267,23 @@ def getRank():
 
     riotGameName, riotTagLine = riotSplitID(riotID)
     riotID = f"{riotGameName}#{riotTagLine}"
+
     try:
         riotIDPuuid = fetchFromRiotIDDB(riotID)
+        
     except TypeError:
         riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
     
     summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
-    if len(summonerRankDict) < 1:
-        queryRankedInfo(riotIDPuuid, regionSelect, riotID, RIOTAPIKEY)
-        summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
+    try:
+        if len(summonerRankDict) > 1:
+            queryRankedInfo(riotIDPuuid, regionSelect, riotID, RIOTAPIKEY)
+            summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
+    except TypeError:
+        return jsonify({"error": "No user found, sorry bud"}), 200
+    
     return summonerRankDict
-
-
 
 
 
@@ -295,9 +300,12 @@ def updateRank():
     riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
     insertDatabaseRiotID(riotID, riotIDPuuid)
     riotIDPuuid = fetchFromRiotIDDB(riotID)
-    
-    summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
 
+    summonerRankDict = fetchFromSummonerRankedInfoDB(riotIDPuuid)
+    
+    if summonerRankDict == None:
+        return jsonify({"error": "No user found, sorry bud"}), 200
+    
     return summonerRankDict
 
 
