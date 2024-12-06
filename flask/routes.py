@@ -387,6 +387,18 @@ def addMatch():
         'statusCode': "200",
         'body': "Request received and pritned"
     })
+
+
+@app.route('/printJson', methods=['POST'])
+def print_json():
+    ingres = request.data.decode("utf8")
+    #jsonBody = json.loads(ingres)
+    print(json.loads(ingres))
+    return jsonify({
+        'statusCode': "200",
+        'body': "Request received and pritned"
+    })
+
 # ==================================================================
 
 
