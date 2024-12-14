@@ -544,7 +544,7 @@ def injectMatchJsonIntoDatabase(matchData):
     
     except KeyError:
         pass
-
+    
     if len(history['matchData']) > 1:
         gameData.append(history)
 
