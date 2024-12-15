@@ -1,9 +1,10 @@
-import mysql.connector
+import psycopg2
+from psycopg2 import sql
 from configparser import ConfigParser
 import os
+import json
 
 # Config file initiators for use in getting API key from config.ini
-# in the sanity check for the /addSummoner API endpoint
 file = "../config.ini"
 config = ConfigParser()
 config.read(file)
@@ -14,202 +15,177 @@ password = config['DATABASE']['password']
 database = config['DATABASE']['database']
 
 
-# Rather than always running an extra 2 Riot API requests if we pre store some of the previously searched riotIDs we can save execution time.
+# Rather than always running an extra 2 Riot API requests if we pre-store some of the previously searched riotIDs we can save execution time.
 def fetchGameIDsFromDB(riotID):
+    connection = None  # Initialize connection as None
     try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
+        # Establish a connection to the PostgreSQL server
+        connection = psycopg2.connect(
             host=host,
             user=user,
             password=password,
-            database=database
+            dbname=database
         )
 
-        if connection.is_connected():
-            #print(f"Query made to MySQL Server: {host} | Database: {database}")
+        # Create a cursor object to interact with the database
+        cursor = connection.cursor()
 
-            # Create a cursor object to interact with the database
-            cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
+        # Execute the SQL query to retrieve the last 20 rows from matchHistory
+        query = sql.SQL(
+            'SELECT "gameID" FROM "matchHistory" WHERE "riotID" = %s'
+        )
 
-            # Execute the SQL query to retrieve the last 20 rows from matchHistory
-            
-            query = (
-                "SELECT "
-                "gameID "
-                "FROM matchHistory "
-                f"WHERE riotID = '{riotID}'"
+        cursor.execute(query, (riotID,))
 
-            )
+        # Fetch the results as a list of dictionaries
+        querylistOfDict = cursor.fetchall()
 
-            # Runs query
-            cursor.execute(query)
+        # Prepare the gameID list
+        gameIDList = [i[0] for i in querylistOfDict]  # Extract the gameID from the tuple
 
-            # Fetch the results as a list of dictionaries
-            querylistOfDict = cursor.fetchall()
-            #queryListOfValues = [row[0] for row in cursor.fetchall()]
-            gameIDList = []
-            for i in querylistOfDict:
-                gameIDList.append(i['gameID'])
+        # Return the retrieved data
+        return gameIDList
 
-            # Return the retrieved data
-            return gameIDList
-
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
 
     finally:
-        # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
+        if connection:
             cursor.close()
             connection.close()
-
 
 
 def fetchFromRiotIDDB(riotID):
+    connection = None  # Initialize connection as None
     try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
+        # Establish a connection to the PostgreSQL server
+        connection = psycopg2.connect(
             host=host,
             user=user,
             password=password,
-            database=database
+            dbname=database
         )
-        
-        if connection.is_connected():
-            #print(f"Query made to MySQL Server: {host} | Database: {database}")
 
-            # Create a cursor object to interact with the database
-            cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
+        # Create a cursor object to interact with the database
+        cursor = connection.cursor()
 
-            # Execute the SQL query to retrieve the last 20 rows from matchHistory
-            query = (
-                "SELECT "
-                "puuid "
-                "FROM riotIDData "
-                f"WHERE riotID = '{riotID}'"
-            )
+        # Execute the SQL query to retrieve the puuid
+        query = sql.SQL(
+            'SELECT "puuid" FROM "riotIDData" WHERE "riotID" = %s'
+        )
 
-            # Runs query
-            cursor.execute(query)
+        cursor.execute(query, (riotID,))
 
-            # Fetch the results as a list of dictionaries
-            riotIDDictionary = cursor.fetchone()
+        # Fetch the result
+        riotIDDictionary = cursor.fetchone()
 
-            # Check if the result is None, indicating no rows were found
-            if riotIDDictionary is None:
-                return None
-            
-            # Return the retrieved data
-            return riotIDDictionary['puuid']
+        # Check if the result is None
+        if riotIDDictionary is None:
+            return None
 
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+        # Return the puuid value
+        return riotIDDictionary[0]
+
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
 
     finally:
-        # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
+        if connection:
+            cursor.close()
+            connection.close()
+
+
+import psycopg2
+from psycopg2 import sql
+
+def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset=0):
+    connection = None  # Initialize connection as None
+    try:
+        # Establish a connection to the PostgreSQL server
+        connection = psycopg2.connect(
+            host=host,
+            user=user,
+            password=password,
+            dbname=database
+        )
+
+        # Create a cursor object to interact with the database
+        cursor = connection.cursor()
+
+        # Execute the SQL query to retrieve match history records
+        query = sql.SQL(
+            'SELECT "gameID", "gameVer", "gameDurationMinutes", "gameCreationTimestamp", "gameEndTimestamp", "gameDate", '
+            '"participants", "matchData" FROM "matchHistory" WHERE "riotID" = %s ORDER BY "gameID" DESC LIMIT %s OFFSET %s'
+        )
+
+        cursor.execute(query, (riotID, numberOfRecords, recordOffset))
+
+        # Fetch the results
+        querylistOfTuples = cursor.fetchall()
+
+        # Convert the result tuples to dictionaries
+        querylistOfDict = []
+        columns = [desc[0] for desc in cursor.description]  # Get column names
+
+        for row in querylistOfTuples:
+            row_dict = dict(zip(columns, row))  # Zip column names with values
+            querylistOfDict.append(row_dict)
+
+        # Return the retrieved data as a list of dictionaries
+        return querylistOfDict
+
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
+
+    finally:
+        if connection:
             cursor.close()
             connection.close()
 
 
 
-
-
-
-
-
-def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset = 0):
-
-    try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database
-        )
-
-        if connection.is_connected():
-            # Create a cursor object to interact with the database
-            cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
-
-            # Execute the SQL query to retrieve the last 20 rows from matchHistory
-            
-            query = (
-                "SELECT "
-                "gameID, gameVer, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, gameDate, "
-                "JSON_UNQUOTE(participants) as participants, "
-                "JSON_UNQUOTE(matchdata) as matchdata "
-                "FROM matchHistory "
-                f"WHERE riotID = '{riotID}' "
-                f"ORDER BY gameID DESC LIMIT {recordOffset}, {numberOfRecords}"
-            )
-
-            # Runs query
-            cursor.execute(query)
-
-            # Fetch the results as a list of dictionaries
-            querylistOfDict = cursor.fetchall()
-            # Return the retrieved data
-            return querylistOfDict
-
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
-
-    finally:
-        # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
-            cursor.close()
-            connection.close()
-    
-
-
-
-
-
+import psycopg2
+from psycopg2 import sql
 
 def fetchFromSummonerRankedInfoDB(puuid):
+    connection = None  # Initialize connection as None
     try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
+        # Establish a connection to the PostgreSQL server
+        connection = psycopg2.connect(
             host=host,
             user=user,
             password=password,
-            database=database
+            dbname=database
         )
 
-        if connection.is_connected():
-            #print(f"Query made to MySQL Server: {host} | Database: {database}")
+        # Create a cursor object to interact with the database
+        cursor = connection.cursor()
 
-            # Create a cursor object to interact with the database
-            cursor = connection.cursor(dictionary=True)  # Set dictionary=True to fetch rows as dictionaries
+        # Execute the SQL query to retrieve summoner ranked info
+        query = sql.SQL(
+            'SELECT * FROM "summonerRankedInfo" WHERE "encryptedPUUID" = %s'
+        )
 
-            # Execute the SQL query to retrieve the last 20 rows from matchHistory
-            query = (
-                "SELECT "
-                "* "
-                "FROM summonerRankedInfo "
-                f"WHERE encryptedPUUID = '{puuid}'"
-            )
+        cursor.execute(query, (puuid,))
 
-            # Runs query
-            cursor.execute(query)
+        # Fetch the results
+        rankedInfoTuples = cursor.fetchall()
+        # Check if the result is empty
+        if not rankedInfoTuples:
+            return None  # Or return an empty list, depending on your preference
 
-            # Fetch the results as a list of dictionaries
-            rankedInfoDict = cursor.fetchall()
+        # Convert the result tuples to dictionaries
+        columns = [desc[0] for desc in cursor.description]  # Get column names
+        rankedInfoDict = [dict(zip(columns, row)) for row in rankedInfoTuples]
 
-            # Check if the result is None, indicating no rows were found
-            if rankedInfoDict is None:
-                return None
+        # Return the retrieved data as a list of dictionaries
+        return rankedInfoDict
 
-            # Return the retrieved data
-            return rankedInfoDict
-
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
 
     finally:
-        # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
+        if connection:
             cursor.close()
             connection.close()
+

@@ -1,150 +1,117 @@
 import requests
-import mysql.connector
+import psycopg2
 import json
 import os
 from datetime import datetime
 from configparser import ConfigParser
 from .fetch import *
+from urllib.parse import quote
 
 # Config file initiators for use in getting API key from config.ini
-# in the sanity check for the /addSummoner API endpoint
 file = "../config.ini"
 config = ConfigParser()
 config.read(file)
-
 
 host = config['DATABASE']['host']
 user = config['DATABASE']['user']
 password = config['DATABASE']['password']
 database = config['DATABASE']['database']
 
-
 # Takes in a total amount of seconds of game timer and converts it to minute and second format
 # Ex: formatted_time = 30:12
 def getGameTime(durationInSeconds):
-
     # Convert seconds to minutes and round using modulo
     minutes = durationInSeconds // 60
     rounded_minutes = minutes % 60
     rounded_seconds = durationInSeconds % 60
-
     # Format the output as "mm:ss"
     formatted_time = f"{rounded_minutes:02d}:{rounded_seconds:02d}"
     return formatted_time
 
-
-
 # Riot API gives linux epoc time in milliseconds so you have to divide their time by 1000 and then convert THAT time with the fromtimestamp function which takes seconds.
 def convert_unix_to_date(unix_timestamp):
-    
     dt = datetime.fromtimestamp(unix_timestamp/1000)
-
     # Format the datetime object to include only day, month, and year
     formatted_date = dt.strftime('%Y-%m-%d')
-
     return formatted_date
-
 
 # Uses riotID, summonerName and PUUID as required data fields for the db table of mtrack.riotIDData which contains riotID account information.
 def insertDatabaseRiotID(riotID, riotIDPuuid):
     try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
+        # Establish a connection to the PostgreSQL server
+        connection = psycopg2.connect(
             host=host,
             user=user,
             password=password,
             database=database
         )
 
-        if connection.is_connected():
-            #print(f"Connected to MySQL Server: {host} | Database: {database}")
-
+        if connection:
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
-            
+
             try:
                 query = (
-                    f"INSERT INTO riotIDData "
-                    "(riotID, puuid) "
-                    "VALUES "
-                    "(%s, %s)"
+                    'INSERT INTO "riotIDData" '
+                    '("riotID", "puuid") '
+                    'VALUES '
+                    '(%s, %s) '
+                    'ON CONFLICT ("riotID") DO NOTHING;'
                 )
-                data = (
-                    riotID,
-                    riotIDPuuid
-                )
-                
+                data = (riotID, riotIDPuuid)
                 cursor.execute(query, data)
 
             except IndexError:
                 pass
 
-            except mysql.connector.Error as e:
-                if e.errno == 1062:
+            except psycopg2.Error as e:
+                if e.pgcode == '23505':  # Unique violation error code in PostgreSQL
                     pass
                 else:
                     print(e)
 
             connection.commit()
 
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
+        if 'connection' in locals() and connection:
             cursor.close()
             connection.close()
 
-
-
-
-# TODO: THIS SHIT IS BROKEN AND I DONT KNOW WHY
-# Use the riot account geeyokay#5964 to test
-# MULTIPLE USERS CAN SEARCH UP THE SAME GAME ID AND IT BREAKS BECAUSE GAME ID IS UNIQUE
-            
-# Turning off the primary key flag on the gameID field in the database fixes this problem but I have not tested any other ramifications.
-
-# TODO: Some users have games with no riot id and riot tags associated with it. 
-# This means that you can only look up games up until they added riot IDs properly to the game.
-
-# This is most likely due to viewing games that were from before riot added the riot game id tag system as a mandatory. It tries looking up the in game stats in the matchdata field then breaks there. 
-
-
-# Takes in a list of dictionaries which is a list containing game data information per match. Also takes in a summoenr name associated as the "owner" of the games (the searcher).
-# Those games are then uploaded to the database as a new entry. 
+# Insert match history into PostgreSQL
 def insertDatabaseMatchHistory(matchHistoryGames):
-
     try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
+        # Establish a connection to the PostgreSQL server
+        connection = psycopg2.connect(
             host=host,
             user=user,
             password=password,
             database=database
         )
 
-        if connection.is_connected():
+        if connection:
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
             try:
                 for game in matchHistoryGames:
-                    
                     try:
                         participantList = json.dumps(game['gamedata']['participants'])
-                        matchDataList = json.dumps(game['matchdata'])
+                        matchDataList = json.dumps(game['matchData'])
                     except:
                         return None
                     query = (
-                        f"INSERT INTO matchHistory "
-                        "(gameID, gameVer, riotID, gameDurationMinutes, gameCreationTimestamp, gameEndTimestamp, queueType, gameDate, participants, matchdata) "
-                        "VALUES "
-                        "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                        'INSERT INTO "matchHistory" '
+                        '("gameID", "gameVer", "riotID", "gameDurationMinutes", "gameCreationTimestamp", "gameEndTimestamp", "queueType", "gameDate", "participants", "matchData") '
+                        'VALUES '
+                        '(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
                     )
 
                     data = (
-                        game['gamedata']['gameid'],
-                        game['gamedata']['gamever'],
+                        game['gamedata']['gameID'],
+                        game['gamedata']['gameVer'],
                         game['gamedata']['riotID'],
                         game['gamedata']['gameDurationMinutes'],
                         game['gamedata']['gameCreationTimestamp'],
@@ -154,14 +121,13 @@ def insertDatabaseMatchHistory(matchHistoryGames):
                         participantList,
                         matchDataList
                     )
-                    
                     cursor.execute(query, data)
 
             except IndexError:
                 pass
 
-            except mysql.connector.Error as e:
-                if e.errno == 1062:
+            except psycopg2.Error as e:
+                if e.pgcode == '23505':  # Unique violation error code in PostgreSQL
                     print(e)
                     pass
                 else:
@@ -170,114 +136,123 @@ def insertDatabaseMatchHistory(matchHistoryGames):
             # Commit the changes
             connection.commit()
 
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
+        if 'connection' in locals() and connection:
             cursor.close()
             connection.close()
 
-
-
+# Insert ranked info into PostgreSQL
 def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints, queueType, wins, losses):
     try:
-        # Establish a connection to the MySQL server
-        connection = mysql.connector.connect(
+        # Establish a connection to the PostgreSQL server
+        connection = psycopg2.connect(
             host=host,
             user=user,
             password=password,
             database=database
         )
 
-        if connection.is_connected():
+        if connection:
             # Create a cursor object to interact with the database
             cursor = connection.cursor()
-            
+
             try:
                 query = (
-                    f"INSERT INTO summonerRankedInfo "
-                    "(encryptedPUUID, summonerID, riotID, tier, `rank`, leaguePoints, queueType, wins, losses) "
-                    "VALUES "
-                    "(%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                    'INSERT INTO "summonerRankedInfo" '
+                    '("encryptedPUUID", "summonerID", "riotID", "tier", "rank", "leaguePoints", "queueType", "wins", "losses") '
+                    'VALUES '
+                    '(%s, %s, %s, %s, %s, %s, %s, %s, %s) '
+                    'ON CONFLICT ("encryptedPUUID") DO NOTHING;'
                 )
+
                 data = (
-                    puuid, 
-                    summonerID, 
-                    riotID, 
-                    tier, 
-                    rank, 
-                    leaguePoints, 
-                    queueType, 
-                    wins, 
+                    puuid,
+                    summonerID,
+                    riotID,
+                    tier,
+                    rank,
+                    leaguePoints,
+                    queueType,
+                    wins,
                     losses
                 )
-                
                 cursor.execute(query, data)
 
             except IndexError:
                 pass
 
-            except mysql.connector.Error as e:
-                if e.errno == 1062:
+            except psycopg2.Error as e:
+                if e.pgcode == '23505':  # Unique violation error code in PostgreSQL
                     pass
                 else:
                     print(e)
 
             connection.commit()
 
-    except mysql.connector.Error as e:
-        print(f"Error connecting to MySQL Server: {e}")
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
 
     finally:
         # Close the cursor and connection when done
-        if 'connection' in locals() and connection.is_connected():
+        if 'connection' in locals() and connection:
             cursor.close()
             connection.close()
 
-
-
-
-
-
 def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
     try:
-        summonerID = requests.get(f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}").json()["id"]
+        # Get the summoner ID
+        summoner_response = requests.get(f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}")
+        summoner_response.raise_for_status()  # Raise exception for HTTP errors
+        summonerID = summoner_response.json()["id"]
 
-        rankedInfo = requests.get(f"https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerID}?api_key={RIOTAPIKEY}").json()
+        # Get ranked info for the summoner using the encoded summonerID
+        ranked_info_response = requests.get(f"https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{quote(summonerID)}?api_key={RIOTAPIKEY}")
+        ranked_info_response.raise_for_status()  # Raise exception for HTTP errors
+        rankedInfo = ranked_info_response.json()
+
+        if not rankedInfo:  # Check if ranked info is empty
+            return "No ranked data found for the summoner."
+
+    except requests.exceptions.RequestException as e:
+        return f"Request failed: {e}"  # Specific error for network issues
+    except KeyError as e:
+        return f"Missing expected data in response: {e}"  # Handle missing data from the response
     except Exception as e:
-        return "No user/ranked data found..."
-    
+        return f"An unexpected error occurred: {e}"
+
     # Check to only pull ranked information that is for Ranked Solo/Duo
-    soloQueueRankInfo = ""
+    soloQueueRankInfo = None
     for i in rankedInfo:
-        if i["queueType"] == "RANKED_SOLO_5x5":
+        if i.get("queueType") == "RANKED_SOLO_5x5":
             soloQueueRankInfo = i
-        else:
-            continue
+            break  # Exit the loop once the data is found
+    
+    if not soloQueueRankInfo:
+        return "No Ranked Solo/Duo data found for this summoner."
+
+    # Now insert into the database
     try:
         insertDatabaseRankedInfo(
-            encryptedSummonerPUUID, 
-            soloQueueRankInfo["summonerId"], 
-            riotID, 
-            soloQueueRankInfo["tier"], 
-            soloQueueRankInfo["rank"], 
-            soloQueueRankInfo["leaguePoints"], 
-            soloQueueRankInfo["queueType"], 
-            soloQueueRankInfo["wins"], 
-            soloQueueRankInfo["losses"], 
-            )
+            encryptedSummonerPUUID,
+            soloQueueRankInfo["summonerId"],
+            riotID,
+            soloQueueRankInfo["tier"],
+            soloQueueRankInfo["rank"],
+            soloQueueRankInfo["leaguePoints"],
+            soloQueueRankInfo["queueType"],
+            soloQueueRankInfo["wins"],
+            soloQueueRankInfo["losses"],
+        )
     except Exception as e:
-        return 500
-    
-    return 200
+        return f"Error inserting data into database: {e}"
 
+    return "Ranked information inserted successfully."
 
-
-
-
-
+# Query riotID information from Riot API
 def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
     riotIDPuuid = ""
     try:
@@ -290,28 +265,32 @@ def queryRiotIDInfo(riotGameName, riotTagLine, region, RIOTAPIKEY):
     except:
         riotIDPuuid = "No ranked data found..."
 
-#    try:
-#        riotIDData = requests.get(f"https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotGameName}/{riotTagLine}?api_key={RIOTAPIKEY}").json()
-#    except:
-#        riotIDPuuid = "No ranked data found..."
     try:
         riotIDPuuid = riotIDData['puuid']
     except KeyError:
         pass
+    
     return riotIDPuuid
 
 
 
 # It doesnt just do a unique id check both ways but it checks to see what elements from list 2 are NOT in list 1. This way it only checks to see what game IDs are not in the database and not what ids in the database are in the past 20 game IDs searched.
+# It doesnt just do a unique id check both ways but it checks to see what elements from list 2 are NOT in list 1.
 def findUniqueIDs(list1, list2):
+    if list1 is None:
+        list1 = []  # Ensure list1 is an empty list if None
+    
     # Convert the lists to sets for efficient comparison
     set1 = set(list1)
     set2 = set(list2)
+    
     # Find the elements in list2 that are not in list1
     uniqueIDs = set2 - set1
+    
     # Convert the result back to a list
     uniqueIDsList = list(uniqueIDs)
     return uniqueIDsList
+
 
 # Splits a full riotID into its components of a gameName and a tag
 # Useful tool
@@ -428,8 +407,8 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
         try:
             history = {
                 'gamedata': {
-                    'gameid': i['metadata']['matchId'], 
-                    'gamever': i['info']['gameVersion'],
+                    'gameID': i['metadata']['matchId'], 
+                    'gameVer': i['info']['gameVersion'],
                     #'userSummoner': profileData['name'],
                     'riotID': riotID,
                     'gameDurationMinutes': getGameTime(i['info']['gameDuration']),
@@ -439,7 +418,7 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
                     'gameDate': date,
                     'participants': i['metadata']['participants']                        
                 },
-                'matchdata' : []
+                'matchData' : []
             }
             for participant in i['info']['participants']:
                 newEntry = {
@@ -467,12 +446,12 @@ def mtrack(riotID, puuid, region, APIKEY, reqCount, startPosition=0):
                     "secondaryRune": translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][1]['style']))
                 }
                 
-                history['matchdata'].append(newEntry)
+                history['matchData'].append(newEntry)
         
         except KeyError:
             pass
 
-        if len(history['matchdata']) > 1:
+        if len(history['matchData']) > 1:
             gameData.append(history)
 
     insertDatabaseMatchHistory(gameData)
@@ -522,8 +501,8 @@ def injectMatchJsonIntoDatabase(matchData):
     try:
         history = {
             'gamedata': {
-                'gameid': matchData['metadata']['matchId'], 
-                'gamever': matchData['info']['gameVersion'],
+                'gameID': matchData['metadata']['matchId'], 
+                'gameVer': matchData['info']['gameVersion'],
                 #'userSummoner': profileData['name'],
                 'riotID': f"{matchData['info']['participants'][0]['riotIdGameName']}#{matchData['info']['participants'][0]['riotIdTagline']}",
                 'gameDurationMinutes': getGameTime(int(matchData['info']['gameDuration'])),
@@ -533,7 +512,7 @@ def injectMatchJsonIntoDatabase(matchData):
                 'gameDate': date,
                 'participants': matchData['metadata']['participants']                        
             },
-            'matchdata' : []
+            'matchData' : []
         }
         for participant in matchData['info']['participants']:
             newEntry = {
@@ -561,12 +540,12 @@ def injectMatchJsonIntoDatabase(matchData):
                 "secondaryRune": translateItemCodesToNames(runeIcons, str(participant['perks']['styles'][1]['style']))
             }
             
-            history['matchdata'].append(newEntry)
+            history['matchData'].append(newEntry)
     
     except KeyError:
         pass
-
-    if len(history['matchdata']) > 1:
+    
+    if len(history['matchData']) > 1:
         gameData.append(history)
 
     insertDatabaseMatchHistory(gameData)

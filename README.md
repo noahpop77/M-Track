@@ -110,6 +110,15 @@ This spawns from the projects web server to refine the process of performign all
 
 # TODO
 
+Few things need to be done to the PostgreSQL deployment:
+- There is complete case sensitivity in how it determines what to save
+- "Mingle Dingle#MID" and "mingle Dingle#MID" are two separate entries
+  - In both `matchHistory` and other tables
+- IT WORKS but we want this to be resolved cause we dont want users creating more entries than they need.
+
+
+---
+
 New fix for CORS problem experienced when using https://mtrack.lol vs https://www.mtrack.lol.
 The actual requests need to be changed. The line that contains the value for Access-Control-Allow-Origin needs to be *.
 

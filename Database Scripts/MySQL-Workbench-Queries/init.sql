@@ -1,12 +1,5 @@
--- Create database
-CREATE DATABASE mtrack;
-
--- Connect to the database
-\c mtrack;
-
 -- Create matchHistory table
-CREATE TABLE "matchHistory"
-(
+CREATE TABLE "matchHistory" (
     "gameID"                VARCHAR(16) NOT NULL,
     "gameVer"               VARCHAR(16) NOT NULL,
     "riotID"                VARCHAR(45) NOT NULL,
@@ -17,20 +10,18 @@ CREATE TABLE "matchHistory"
     "gameDate"              VARCHAR(45) NOT NULL,
     "participants"          JSON NOT NULL,
     "matchData"             JSON NOT NULL,
-    CONSTRAINT "unique_pair_index" UNIQUE ("gameID", "riotID")
+    CONSTRAINT unique_pair_index UNIQUE ("gameID", "riotID")
 );
 
 -- Create riotIDData table
-CREATE TABLE "riotIDData"
-(
+CREATE TABLE "riotIDData" (
     "riotID" VARCHAR(25) NOT NULL,
     "puuid"  VARCHAR(100) NOT NULL,
     PRIMARY KEY ("riotID")
 );
 
 -- Create summonerRankedInfo table
-CREATE TABLE "summonerRankedInfo"
-(
+CREATE TABLE "summonerRankedInfo" (
     "encryptedPUUID" VARCHAR(100) NOT NULL,
     "summonerID"     VARCHAR(100) NOT NULL,
     "riotID"         VARCHAR(45) NOT NULL,
@@ -43,6 +34,6 @@ CREATE TABLE "summonerRankedInfo"
     PRIMARY KEY ("encryptedPUUID")
 );
 
--- Grant privileges to a user
-CREATE USER "mysql" WITH PASSWORD 'sawa';
-GRANT ALL PRIVILEGES ON DATABASE mtrack TO "mysql";
+-- Create user and grant privileges
+CREATE USER sawa WITH PASSWORD 'sawa';
+GRANT ALL PRIVILEGES ON DATABASE mtrack TO sawa;
