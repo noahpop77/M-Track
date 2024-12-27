@@ -176,7 +176,7 @@ def summonerSearch():
     
     for i in gameData:
         matchData.append(i['matchData'])
-    
+    queryRankedInfo(riotIDPuuid, regionSelect, riotID, RIOTAPIKEY)
     # Player card data
     playerStats = []
     # Loops through match data, gets player card data and 
