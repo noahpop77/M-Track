@@ -35,5 +35,10 @@ CREATE TABLE "summonerRankedInfo" (
 );
 
 -- Create user and grant privileges
-CREATE USER sawa WITH PASSWORD 'sawa';
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'sawa') THEN
+        CREATE USER sawa WITH PASSWORD 'sawa';
+    END IF;
+END $$;
 GRANT ALL PRIVILEGES ON DATABASE mtrack TO sawa;

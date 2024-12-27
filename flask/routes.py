@@ -30,7 +30,22 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 errorlog = logging.getLogger('werkzeug')
 errorlog.setLevel(logging.ERROR)
 
-logging.basicConfig(level=logging.INFO, filename="../Logs/routes.log", encoding='utf-8')
+# Ensure the directory exists
+logDirectory = "../Logs"
+logFile = "routes.log"
+logPath = os.path.join(logDirectory, logFile)
+
+# Check if the directory exists, if not, create it
+if not os.path.exists(logDirectory):
+    os.makedirs(logDirectory)
+
+# Check if the file exists, if not, create it
+if not os.path.exists(logPath):
+    open(logPath, 'w').close()
+
+# Set up logging
+logging.basicConfig(level=logging.INFO, filename=logPath, encoding='utf-8')
+
 
 
 
