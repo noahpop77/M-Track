@@ -1,10 +1,12 @@
+> Note: This project is still experimental so not work on all systems.
+> Riot Games also adds and removes items semi regularly so if an image asset is missing it is due to a new item being added or an existing item being removed and will have the default placeholder image until addressed.
+
 # M-Track
 
 M-Track is a web application designed to track and display detailed statistics for League of Legends players. It provides valuable insights into match history, player performance, and more.
 
 ## Table of Contents
 
-- [THIS PROJECT IS STILL UNDER HEAVY DEVELOPMENT](#this-project-is-still-under-heavy-development)
 - [M-Track](#m-track)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
