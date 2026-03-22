@@ -1,4 +1,4 @@
-> Note: This project is still experimental so not work on all systems.
+> Note: This project is still experimental so there is no gaurentee it will work on all systems.
 > Riot Games also adds and removes items semi regularly so if an image asset is missing it is due to a new item being added or an existing item being removed and will have the default placeholder image until addressed.
 
 # M-Track
