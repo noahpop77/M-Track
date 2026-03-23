@@ -1,3 +1,5 @@
+# TODO: RIOT HAS CHANGED THE STRUCTURE OF THEIR API ENDPOINTS SO I NEED TO MAKE THIS REFLECT THE CHANGES ON THEIR END
+
 > Note: This project is still experimental so there is no gaurentee it will work on all systems.
 > Riot Games also adds and removes items semi regularly so if an image asset is missing it is due to a new item being added or an existing item being removed and will have the default placeholder image until addressed.
 

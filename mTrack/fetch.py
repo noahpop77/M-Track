@@ -95,9 +95,6 @@ def fetchFromRiotIDDB(riotID):
             connection.close()
 
 
-import psycopg2
-from psycopg2 import sql
-
 def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset=0):
     connection = None  # Initialize connection as None
     try:
@@ -143,9 +140,6 @@ def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset=0):
             connection.close()
 
 
-
-import psycopg2
-from psycopg2 import sql
 
 def fetchFromSummonerRankedInfoDB(puuid):
     connection = None  # Initialize connection as None
