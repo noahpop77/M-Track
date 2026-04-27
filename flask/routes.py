@@ -158,7 +158,8 @@ def summonerSearch():
     if riotIDPuuid == None:
         riotIDPuuid = queryRiotIDInfo(riotGameName, riotTagLine, regionSelect, RIOTAPIKEY)
         insertDatabaseRiotID(riotID, riotIDPuuid)
-        
+    
+    #print(riotIDPuuid)
     # Gets gamedata from the DB associated with the summonerName to look for pre-existing data
     gameData = fetchFromMatchHistoryDB(riotID, 20)
 
@@ -176,7 +177,7 @@ def summonerSearch():
     
     for i in gameData:
         matchData.append(i['matchData'])
-    queryRankedInfo(riotIDPuuid, regionSelect, riotID, RIOTAPIKEY)
+    
     # Player card data
     playerStats = []
     # Loops through match data, gets player card data and 

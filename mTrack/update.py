@@ -204,13 +204,8 @@ def insertDatabaseRankedInfo(puuid, summonerID, riotID, tier, rank, leaguePoints
 
 def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
     try:
-        # Get the summoner ID
-        summoner_response = requests.get(f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}")
-        summoner_response.raise_for_status()  # Raise exception for HTTP errors
-        summonerID = summoner_response.json()["id"]
 
-        # Get ranked info for the summoner using the encoded summonerID
-        ranked_info_response = requests.get(f"https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{quote(summonerID)}?api_key={RIOTAPIKEY}")
+        ranked_info_response = requests.get(f"https://{region}.api.riotgames.com/lol/league/v4/entries/by-puuid/{encryptedSummonerPUUID}?api_key={RIOTAPIKEY}")
         ranked_info_response.raise_for_status()  # Raise exception for HTTP errors
         rankedInfo = ranked_info_response.json()
 
@@ -238,7 +233,7 @@ def queryRankedInfo(encryptedSummonerPUUID, region, riotID, RIOTAPIKEY):
     try:
         insertDatabaseRankedInfo(
             encryptedSummonerPUUID,
-            soloQueueRankInfo["summonerId"],
+            soloQueueRankInfo["leagueId"],
             riotID,
             soloQueueRankInfo["tier"],
             soloQueueRankInfo["rank"],

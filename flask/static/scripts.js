@@ -40,6 +40,9 @@ async function summonerSearch(summonerNameParam) {
         /////////////////////////////////////////////////
         const riotID = document.getElementById('nameInput').value;
         rankSearch(riotID);
+        // TODO: This update makes it so that it forces the ui to update the currently shown rank
+        // but there could be a more efficient way of doing it
+        updateData()
         printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
     })
     .catch(function(error) {
