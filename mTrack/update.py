@@ -37,6 +37,10 @@ def convert_unix_to_date(unix_timestamp):
 
 # Uses riotID, summonerName and PUUID as required data fields for the db table of mtrack.riotIDData which contains riotID account information.
 def insertDatabaseRiotID(riotID, riotIDPuuid):
+    
+    connection = None
+    cursor = None
+
     try:
         # Establish a connection to the PostgreSQL server
         connection = psycopg2.connect(
@@ -76,9 +80,9 @@ def insertDatabaseRiotID(riotID, riotIDPuuid):
         print(f"Error connecting to PostgreSQL Server: {e}")
 
     finally:
-        # Close the cursor and connection when done
-        if 'connection' in locals() and connection:
+        if cursor is not None:
             cursor.close()
+        if connection is not None:
             connection.close()
 
 # Insert match history into PostgreSQL

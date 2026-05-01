@@ -286,8 +286,6 @@ async function rankSearch(riotIDParam) {
     });
 }
 
-
-
 async function rankSearchUpdate(riotIDParam) {
     var url = "/updateRank";
 
