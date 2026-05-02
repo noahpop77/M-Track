@@ -3,10 +3,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: 0 0;
 }
 
@@ -15,10 +15,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -25px 0;
 }
 
@@ -27,10 +27,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -50px 0;
 }
 
@@ -39,10 +39,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -75px 0;
 }
 
@@ -51,11 +51,23 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -100px 0;
+}
+
+.innerScoreboardAmbessa {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
+    border-radius: 15%;
+    border-radius: 15%;    
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px 0;
 }
 
 .innerScoreboardAmumu {
@@ -63,11 +75,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px 0;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px 0;
 }
 
 .innerScoreboardAnivia {
@@ -75,11 +87,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px 0;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px 0;
 }
 
 .innerScoreboardAnnie {
@@ -87,11 +99,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px 0;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px 0;
 }
 
 .innerScoreboardAphelios {
@@ -99,23 +111,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px 0;
-}
-
-.innerScoreboardAurora {
-    width: 25px;
-    height: 25px;
-    padding: 12.3px;
-    border-radius: 15%;
-    background-image: url(/getChampIcons/champs.png);
-    background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px 0;
 }
 
 .innerScoreboardAshe {
@@ -123,11 +123,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px 0;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px 0;
 }
 
 .innerScoreboardAurelionSol {
@@ -135,11 +135,23 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px 0;
+}
+
+.innerScoreboardAurora {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
     border-radius: 15%;
-    background-position: -250px 0;
+    border-radius: 15%;    
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px 0;
 }
 
 .innerScoreboardAzir {
@@ -147,11 +159,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px 0;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -25px;
 }
 
 .innerScoreboardBard {
@@ -159,11 +171,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -25px;
 }
 
 .innerScoreboardBelveth {
@@ -171,11 +183,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -25px;
 }
 
 .innerScoreboardBlitzcrank {
@@ -183,11 +195,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -25px;
 }
 
 .innerScoreboardBrand {
@@ -195,11 +207,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -25px;
 }
 
 .innerScoreboardBraum {
@@ -207,11 +219,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -25px;
 }
 
 .innerScoreboardBriar {
@@ -219,11 +231,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -25px;
 }
 
 .innerScoreboardCaitlyn {
@@ -231,11 +243,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -25px;
 }
 
 .innerScoreboardCamille {
@@ -243,11 +255,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -25px;
 }
 
 .innerScoreboardCassiopeia {
@@ -255,11 +267,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -25px;
 }
 
 .innerScoreboardChogath {
@@ -267,11 +279,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -25px;
 }
 
 .innerScoreboardCorki {
@@ -279,11 +291,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -25px;
 }
 
 .innerScoreboardDarius {
@@ -291,11 +303,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -25px;
 }
 
 .innerScoreboardDiana {
@@ -303,10 +315,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: 0 -50px;
 }
 
@@ -315,10 +327,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -25px -50px;
 }
 
@@ -327,10 +339,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -50px -50px;
 }
 
@@ -339,10 +351,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -75px -50px;
 }
 
@@ -351,10 +363,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -100px -50px;
 }
 
@@ -363,10 +375,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -125px -50px;
 }
 
@@ -375,10 +387,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -150px -50px;
 }
 
@@ -387,10 +399,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -175px -50px;
 }
 
@@ -399,10 +411,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -200px -50px;
 }
 
@@ -411,10 +423,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -225px -50px;
 }
 
@@ -423,10 +435,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -250px -50px;
 }
 
@@ -435,10 +447,10 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
     background-position: -275px -50px;
 }
 
@@ -447,11 +459,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -50px;
 }
 
 .innerScoreboardGnar {
@@ -459,11 +471,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -75px;
 }
 
 .innerScoreboardGragas {
@@ -471,11 +483,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -75px;
 }
 
 .innerScoreboardGraves {
@@ -483,11 +495,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -75px;
 }
 
 .innerScoreboardGwen {
@@ -495,11 +507,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -75px;
 }
 
 .innerScoreboardHecarim {
@@ -507,11 +519,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -75px;
 }
 
 .innerScoreboardHeimerdinger {
@@ -519,11 +531,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -75px;
 }
 
 .innerScoreboardHwei {
@@ -531,11 +543,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -75px;
 }
 
 .innerScoreboardIllaoi {
@@ -543,11 +555,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -75px;
 }
 
 .innerScoreboardIrelia {
@@ -555,11 +567,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -75px;
 }
 
 .innerScoreboardIvern {
@@ -567,11 +579,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -75px;
 }
 
 .innerScoreboardJanna {
@@ -579,11 +591,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -75px;
 }
 
 .innerScoreboardJarvanIV {
@@ -591,11 +603,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -75px;
 }
 
 .innerScoreboardJax {
@@ -603,11 +615,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -75px;
 }
 
 .innerScoreboardJayce {
@@ -615,11 +627,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -100px;
 }
 
 .innerScoreboardJhin {
@@ -627,11 +639,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -100px;
 }
 
 .innerScoreboardJinx {
@@ -639,11 +651,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -100px;
 }
 
 .innerScoreboardKSante {
@@ -651,11 +663,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -100px;
 }
 
 .innerScoreboardKaisa {
@@ -663,11 +675,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -100px;
 }
 
 .innerScoreboardKalista {
@@ -675,11 +687,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -100px;
 }
 
 .innerScoreboardKarma {
@@ -687,11 +699,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -100px;
 }
 
 .innerScoreboardKarthus {
@@ -699,11 +711,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -100px;
 }
 
 .innerScoreboardKassadin {
@@ -711,11 +723,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -100px;
 }
 
 .innerScoreboardKatarina {
@@ -723,11 +735,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -100px;
 }
 
 .innerScoreboardKayle {
@@ -735,12 +747,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
-    border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -100px;
 }
 
 .innerScoreboardKayn {
@@ -748,11 +759,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -100px;
 }
 
 .innerScoreboardKennen {
@@ -760,11 +771,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -100px;
 }
 
 .innerScoreboardKhazix {
@@ -772,11 +783,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -125px;
 }
 
 .innerScoreboardKindred {
@@ -784,11 +795,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -125px;
 }
 
 .innerScoreboardKled {
@@ -796,11 +807,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -125px;
 }
 
 .innerScoreboardKogMaw {
@@ -808,11 +819,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -125px;
 }
 
 .innerScoreboardLeblanc {
@@ -820,11 +831,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -125px;
 }
 
 .innerScoreboardLeeSin {
@@ -832,11 +843,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -125px;
 }
 
 .innerScoreboardLeona {
@@ -844,11 +855,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -125px;
 }
 
 .innerScoreboardLillia {
@@ -856,11 +867,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -125px;
 }
 
 .innerScoreboardLissandra {
@@ -868,11 +879,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -125px;
 }
 
 .innerScoreboardLucian {
@@ -880,11 +891,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -125px;
 }
 
 .innerScoreboardLulu {
@@ -892,11 +903,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -125px;
 }
 
 .innerScoreboardLux {
@@ -904,11 +915,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -125px;
 }
 
 .innerScoreboardMalphite {
@@ -916,11 +927,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -125px;
 }
 
 .innerScoreboardMalzahar {
@@ -928,11 +939,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -150px;
 }
 
 .innerScoreboardMaokai {
@@ -940,11 +951,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -150px;
 }
 
 .innerScoreboardMasterYi {
@@ -952,11 +963,23 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -150px;
+}
+
+.innerScoreboardMel {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
     border-radius: 15%;
-    background-position: -150px -150px;
+    border-radius: 15%;    
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -150px;
 }
 
 .innerScoreboardMilio {
@@ -964,11 +987,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -150px;
 }
 
 .innerScoreboardMissFortune {
@@ -976,11 +999,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -150px;
 }
 
 .innerScoreboardMonkeyKing {
@@ -988,11 +1011,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -150px;
 }
 
 .innerScoreboardMordekaiser {
@@ -1000,11 +1023,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -150px;
 }
 
 .innerScoreboardMorgana {
@@ -1012,11 +1035,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -150px;
 }
 
 .innerScoreboardNaafiri {
@@ -1024,11 +1047,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -150px;
 }
 
 .innerScoreboardNami {
@@ -1036,11 +1059,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -150px;
 }
 
 .innerScoreboardNasus {
@@ -1048,11 +1071,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -150px;
 }
 
 .innerScoreboardNautilus {
@@ -1060,11 +1083,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -150px;
 }
 
 .innerScoreboardNeeko {
@@ -1072,11 +1095,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -175px;
 }
 
 .innerScoreboardNidalee {
@@ -1084,11 +1107,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -175px;
 }
 
 .innerScoreboardNilah {
@@ -1096,11 +1119,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -175px;
 }
 
 .innerScoreboardNocturne {
@@ -1108,11 +1131,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -175px;
 }
 
 .innerScoreboardNunu {
@@ -1120,11 +1143,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -175px;
 }
 
 .innerScoreboardOlaf {
@@ -1132,11 +1155,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -175px;
 }
 
 .innerScoreboardOrianna {
@@ -1144,11 +1167,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -175px;
 }
 
 .innerScoreboardOrnn {
@@ -1156,11 +1179,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -175px;
 }
 
 .innerScoreboardPantheon {
@@ -1168,11 +1191,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -175px;
 }
 
 .innerScoreboardPlaceholder {
@@ -1180,11 +1203,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -175px;
 }
 
 .innerScoreboardPoppy {
@@ -1192,11 +1215,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -175px;
 }
 
 .innerScoreboardPyke {
@@ -1204,11 +1227,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -175px;
 }
 
 .innerScoreboardQiyana {
@@ -1216,11 +1239,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -175px;
 }
 
 .innerScoreboardQuinn {
@@ -1228,11 +1251,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -200px;
 }
 
 .innerScoreboardRakan {
@@ -1240,11 +1263,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -200px;
 }
 
 .innerScoreboardRammus {
@@ -1252,11 +1275,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -200px;
 }
 
 .innerScoreboardRekSai {
@@ -1264,11 +1287,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -200px;
 }
 
 .innerScoreboardRell {
@@ -1276,11 +1299,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -200px;
 }
 
 .innerScoreboardRenata {
@@ -1288,11 +1311,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -200px;
 }
 
 .innerScoreboardRenekton {
@@ -1300,11 +1323,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -200px;
 }
 
 .innerScoreboardRengar {
@@ -1312,11 +1335,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -200px;
 }
 
 .innerScoreboardRiven {
@@ -1324,11 +1347,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -200px;
 }
 
 .innerScoreboardRumble {
@@ -1336,11 +1359,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -200px;
 }
 
 .innerScoreboardRyze {
@@ -1348,11 +1371,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -200px;
 }
 
 .innerScoreboardSamira {
@@ -1360,11 +1383,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -200px;
 }
 
 .innerScoreboardSejuani {
@@ -1372,11 +1395,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -200px;
 }
 
 .innerScoreboardSenna {
@@ -1384,11 +1407,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -225px;
 }
 
 .innerScoreboardSeraphine {
@@ -1396,11 +1419,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -225px;
 }
 
 .innerScoreboardSett {
@@ -1408,11 +1431,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -225px;
 }
 
 .innerScoreboardShaco {
@@ -1420,11 +1443,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -225px;
 }
 
 .innerScoreboardShen {
@@ -1432,11 +1455,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -225px;
 }
 
 .innerScoreboardShyvana {
@@ -1444,11 +1467,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -225px;
 }
 
 .innerScoreboardSinged {
@@ -1456,11 +1479,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -225px;
 }
 
 .innerScoreboardSion {
@@ -1468,11 +1491,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -225px;
 }
 
 .innerScoreboardSivir {
@@ -1480,11 +1503,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -225px;
 }
 
 .innerScoreboardSkarner {
@@ -1492,11 +1515,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -225px;
 }
 
 .innerScoreboardSmolder {
@@ -1504,11 +1527,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -225px;
 }
 
 .innerScoreboardSona {
@@ -1516,11 +1539,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -225px;
 }
 
 .innerScoreboardSoraka {
@@ -1528,11 +1551,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -225px;
 }
 
 .innerScoreboardSwain {
@@ -1540,11 +1563,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -250px;
 }
 
 .innerScoreboardSylas {
@@ -1552,11 +1575,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -250px;
 }
 
 .innerScoreboardSyndra {
@@ -1564,11 +1587,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -250px;
 }
 
 .innerScoreboardTahmKench {
@@ -1576,11 +1599,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -250px;
 }
 
 .innerScoreboardTaliyah {
@@ -1588,11 +1611,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -250px;
 }
 
 .innerScoreboardTalon {
@@ -1600,11 +1623,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -250px;
 }
 
 .innerScoreboardTaric {
@@ -1612,11 +1635,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -250px;
 }
 
 .innerScoreboardTeemo {
@@ -1624,11 +1647,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -250px;
 }
 
 .innerScoreboardThresh {
@@ -1636,11 +1659,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -75px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -250px;
 }
 
 .innerScoreboardTristana {
@@ -1648,11 +1671,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -100px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -250px;
 }
 
 .innerScoreboardTrundle {
@@ -1660,11 +1683,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -250px;
 }
 
 .innerScoreboardTryndamere {
@@ -1672,11 +1695,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -250px;
 }
 
 .innerScoreboardTwistedFate {
@@ -1684,11 +1707,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -250px;
 }
 
 .innerScoreboardTwitch {
@@ -1696,11 +1719,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -275px;
 }
 
 .innerScoreboardUdyr {
@@ -1708,11 +1731,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -275px;
 }
 
 .innerScoreboardUrgot {
@@ -1720,11 +1743,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -275px;
 }
 
 .innerScoreboardVarus {
@@ -1732,11 +1755,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -275px;
 }
 
 .innerScoreboardVayne {
@@ -1744,11 +1767,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px 0;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -275px;
 }
 
 .innerScoreboardVeigar {
@@ -1756,11 +1779,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -25px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -275px;
 }
 
 .innerScoreboardVelkoz {
@@ -1768,11 +1791,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -50px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -275px;
 }
 
 .innerScoreboardVex {
@@ -1780,11 +1803,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -75px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -275px;
 }
 
 .innerScoreboardVi {
@@ -1792,11 +1815,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -100px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -275px;
 }
 
 .innerScoreboardViego {
@@ -1804,11 +1827,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -125px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -275px;
 }
 
 .innerScoreboardViktor {
@@ -1816,11 +1839,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -150px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -275px;
 }
 
 .innerScoreboardVladimir {
@@ -1828,11 +1851,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -175px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -275px;
 }
 
 .innerScoreboardVolibear {
@@ -1840,11 +1863,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -200px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -275px;
 }
 
 .innerScoreboardWarwick {
@@ -1852,11 +1875,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -225px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: 0 -300px;
 }
 
 .innerScoreboardXayah {
@@ -1864,11 +1887,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -250px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -25px -300px;
 }
 
 .innerScoreboardXerath {
@@ -1876,11 +1899,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -300px -275px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -50px -300px;
 }
 
 .innerScoreboardXinZhao {
@@ -1888,11 +1911,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: 0 -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -75px -300px;
 }
 
 .innerScoreboardYasuo {
@@ -1900,11 +1923,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -25px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -100px -300px;
 }
 
 .innerScoreboardYone {
@@ -1912,11 +1935,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -50px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -125px -300px;
 }
 
 .innerScoreboardYorick {
@@ -1924,11 +1947,23 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -150px -300px;
+}
+
+.innerScoreboardYunara {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
     border-radius: 15%;
-    background-position: -75px -300px;
+    border-radius: 15%;    
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -175px -300px;
 }
 
 .innerScoreboardYuumi {
@@ -1936,11 +1971,23 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -200px -300px;
+}
+
+.innerScoreboardZaahen {
+    width: 25px;
+    height: 25px;
+    padding: 12.3px;
     border-radius: 15%;
-    background-position: -100px -300px;
+    border-radius: 15%;    
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -225px -300px;
 }
 
 .innerScoreboardZac {
@@ -1948,11 +1995,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -125px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -250px -300px;
 }
 
 .innerScoreboardZed {
@@ -1960,11 +2007,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -150px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -275px -300px;
 }
 
 .innerScoreboardZeri {
@@ -1972,11 +2019,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -175px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -300px -300px;
 }
 
 .innerScoreboardZiggs {
@@ -1984,11 +2031,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -200px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -325px 0;
 }
 
 .innerScoreboardZilean {
@@ -1996,11 +2043,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -225px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -325px -25px;
 }
 
 .innerScoreboardZoe {
@@ -2008,11 +2055,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -250px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -325px -50px;
 }
 
 .innerScoreboardZyra {
@@ -2020,9 +2067,11 @@
     height: 25px;
     padding: 12.3px;
     border-radius: 15%;
+    border-radius: 15%;    
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 6.6) calc(2145px / 6.6);
-    border-radius: 15%;
-    background-position: -275px -300px;
+    background-size: calc(2240px / 6.4) calc(2080px / 6.4);
+    background-position: -325px -75px;
 }
+
+

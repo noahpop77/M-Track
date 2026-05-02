@@ -6,6 +6,7 @@ from datetime import datetime
 from configparser import ConfigParser
 from .fetch import *
 from urllib.parse import quote
+import sys
 
 # Config file initiators for use in getting API key from config.ini
 file = "../config.ini"
@@ -513,6 +514,7 @@ def injectMatchJsonIntoDatabase(matchData):
             },
             'matchData' : []
         }
+        
         for participant in matchData['info']['participants']:
             newEntry = {
                 "riotID": f'{participant["riotIdGameName"]}#{participant["riotIdTagline"]}',

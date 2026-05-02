@@ -685,6 +685,7 @@ async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) 
             csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
             csPerMin = csPerMinFloat.toFixed(1);
 
+
             container.innerHTML += `
             <div style="background-color: #59343b; border-radius: 15px;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
                 <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">

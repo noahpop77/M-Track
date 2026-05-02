@@ -23,7 +23,7 @@ services:
       sh -c "
       pip install flask requests psycopg2 &&
       python --version &&
-      python routes.py
+      python -u routes.py
       "
     environment:
       - PYTHONUNBUFFERED=1

@@ -4,7 +4,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: 0 0;
@@ -16,7 +16,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -55px 0;
@@ -28,7 +28,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -110px 0;
@@ -40,7 +40,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -165px 0;
@@ -52,10 +52,22 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -220px 0;
+}
+
+.Ambessa {
+    width: 55px;
+    height: 55px;
+    border-radius: 15%;
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
+    display: block;
+    padding: 27.3px;
+    background-position: -275px 0;
 }
 
 .Amumu {
@@ -64,10 +76,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px 0;
+    background-position: -330px 0;
 }
 
 .Anivia {
@@ -76,10 +88,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px 0;
+    background-position: -385px 0;
 }
 
 .Annie {
@@ -88,10 +100,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px 0;
+    background-position: -440px 0;
 }
 
 .Aphelios {
@@ -100,22 +112,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px 0;
-}
-
-.Aurora {
-    width: 55px;
-    height: 55px;
-    border-radius: 15%;
-    background-image: url(/getChampIcons/champs.png);
-    background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
-    display: block;
-    padding: 27.3px;
-    background-position: -660px -660px;
+    background-position: -495px 0;
 }
 
 .Ashe {
@@ -124,10 +124,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px 0;
+    background-position: -550px 0;
 }
 
 .AurelionSol {
@@ -136,10 +136,22 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px 0;
+    background-position: -605px 0;
+}
+
+.Aurora {
+    width: 55px;
+    height: 55px;
+    border-radius: 15%;
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
+    display: block;
+    padding: 27.3px;
+    background-position: -660px 0;
 }
 
 .Azir {
@@ -148,10 +160,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px 0;
+    background-position: 0 -55px;
 }
 
 .Bard {
@@ -160,10 +172,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -55px;
+    background-position: -55px -55px;
 }
 
 .Belveth {
@@ -172,10 +184,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -55px;
+    background-position: -110px -55px;
 }
 
 .Blitzcrank {
@@ -184,10 +196,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -55px;
+    background-position: -165px -55px;
 }
 
 .Brand {
@@ -196,10 +208,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -55px;
+    background-position: -220px -55px;
 }
 
 .Braum {
@@ -208,10 +220,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -55px;
+    background-position: -275px -55px;
 }
 
 .Briar {
@@ -220,10 +232,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -55px;
+    background-position: -330px -55px;
 }
 
 .Caitlyn {
@@ -232,10 +244,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -55px;
+    background-position: -385px -55px;
 }
 
 .Camille {
@@ -244,10 +256,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -55px;
+    background-position: -440px -55px;
 }
 
 .Cassiopeia {
@@ -256,10 +268,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -55px;
+    background-position: -495px -55px;
 }
 
 .Chogath {
@@ -268,10 +280,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -55px;
+    background-position: -550px -55px;
 }
 
 .Corki {
@@ -280,10 +292,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -55px;
+    background-position: -605px -55px;
 }
 
 .Darius {
@@ -292,10 +304,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -55px;
+    background-position: -660px -55px;
 }
 
 .Diana {
@@ -304,7 +316,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: 0 -110px;
@@ -316,7 +328,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -55px -110px;
@@ -328,7 +340,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -110px -110px;
@@ -340,7 +352,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -165px -110px;
@@ -352,7 +364,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -220px -110px;
@@ -364,7 +376,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -275px -110px;
@@ -376,7 +388,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -330px -110px;
@@ -388,7 +400,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -385px -110px;
@@ -400,7 +412,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -440px -110px;
@@ -412,7 +424,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -495px -110px;
@@ -424,7 +436,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -550px -110px;
@@ -436,7 +448,7 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
     background-position: -605px -110px;
@@ -448,10 +460,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -165px;
+    background-position: -660px -110px;
 }
 
 .Gnar {
@@ -460,10 +472,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -165px;
+    background-position: 0 -165px;
 }
 
 .Gragas {
@@ -472,10 +484,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -165px;
+    background-position: -55px -165px;
 }
 
 .Graves {
@@ -484,10 +496,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -165px;
+    background-position: -110px -165px;
 }
 
 .Gwen {
@@ -496,10 +508,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -165px;
+    background-position: -165px -165px;
 }
 
 .Hecarim {
@@ -508,10 +520,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -165px;
+    background-position: -220px -165px;
 }
 
 .Heimerdinger {
@@ -520,10 +532,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -165px;
+    background-position: -275px -165px;
 }
 
 .Hwei {
@@ -532,10 +544,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -165px;
+    background-position: -330px -165px;
 }
 
 .Illaoi {
@@ -544,10 +556,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -165px;
+    background-position: -385px -165px;
 }
 
 .Irelia {
@@ -556,10 +568,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -165px;
+    background-position: -440px -165px;
 }
 
 .Ivern {
@@ -568,10 +580,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -165px;
+    background-position: -495px -165px;
 }
 
 .Janna {
@@ -580,10 +592,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -165px;
+    background-position: -550px -165px;
 }
 
 .JarvanIV {
@@ -592,10 +604,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -220px;
+    background-position: -605px -165px;
 }
 
 .Jax {
@@ -604,10 +616,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -220px;
+    background-position: -660px -165px;
 }
 
 .Jayce {
@@ -616,10 +628,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -220px;
+    background-position: 0 -220px;
 }
 
 .Jhin {
@@ -628,10 +640,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -220px;
+    background-position: -55px -220px;
 }
 
 .Jinx {
@@ -640,10 +652,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -220px;
+    background-position: -110px -220px;
 }
 
 .KSante {
@@ -652,10 +664,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -220px;
+    background-position: -165px -220px;
 }
 
 .Kaisa {
@@ -664,10 +676,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -220px;
+    background-position: -220px -220px;
 }
 
 .Kalista {
@@ -676,10 +688,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -220px;
+    background-position: -275px -220px;
 }
 
 .Karma {
@@ -688,10 +700,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -220px;
+    background-position: -330px -220px;
 }
 
 .Karthus {
@@ -700,10 +712,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -220px;
+    background-position: -385px -220px;
 }
 
 .Kassadin {
@@ -712,10 +724,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -220px;
+    background-position: -440px -220px;
 }
 
 .Katarina {
@@ -724,23 +736,22 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -220px;
+    background-position: -495px -220px;
 }
 
 .Kayle {
     width: 55px;
     height: 55px;
     border-radius: 15%;
-    border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -275px;
+    background-position: -550px -220px;
 }
 
 .Kayn {
@@ -749,10 +760,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -275px;
+    background-position: -605px -220px;
 }
 
 .Kennen {
@@ -761,10 +772,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -275px;
+    background-position: -660px -220px;
 }
 
 .Khazix {
@@ -773,10 +784,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -275px;
+    background-position: 0 -275px;
 }
 
 .Kindred {
@@ -785,10 +796,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -275px;
+    background-position: -55px -275px;
 }
 
 .Kled {
@@ -797,10 +808,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -275px;
+    background-position: -110px -275px;
 }
 
 .KogMaw {
@@ -809,10 +820,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -275px;
+    background-position: -165px -275px;
 }
 
 .Leblanc {
@@ -821,10 +832,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -275px;
+    background-position: -220px -275px;
 }
 
 .LeeSin {
@@ -833,10 +844,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -275px;
+    background-position: -275px -275px;
 }
 
 .Leona {
@@ -845,10 +856,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -275px;
+    background-position: -330px -275px;
 }
 
 .Lillia {
@@ -857,10 +868,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -275px;
+    background-position: -385px -275px;
 }
 
 .Lissandra {
@@ -869,10 +880,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -275px;
+    background-position: -440px -275px;
 }
 
 .Lucian {
@@ -881,10 +892,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -330px;
+    background-position: -495px -275px;
 }
 
 .Lulu {
@@ -893,10 +904,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -330px;
+    background-position: -550px -275px;
 }
 
 .Lux {
@@ -905,10 +916,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -330px;
+    background-position: -605px -275px;
 }
 
 .Malphite {
@@ -917,10 +928,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -330px;
+    background-position: -660px -275px;
 }
 
 .Malzahar {
@@ -929,10 +940,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -330px;
+    background-position: 0 -330px;
 }
 
 .Maokai {
@@ -941,10 +952,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -330px;
+    background-position: -55px -330px;
 }
 
 .MasterYi {
@@ -953,10 +964,22 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -330px;
+    background-position: -110px -330px;
+}
+
+.Mel {
+    width: 55px;
+    height: 55px;
+    border-radius: 15%;
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
+    display: block;
+    padding: 27.3px;
+    background-position: -165px -330px;
 }
 
 .Milio {
@@ -965,10 +988,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -330px;
+    background-position: -220px -330px;
 }
 
 .MissFortune {
@@ -977,10 +1000,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -330px;
+    background-position: -275px -330px;
 }
 
 .MonkeyKing {
@@ -989,10 +1012,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -330px;
+    background-position: -330px -330px;
 }
 
 .Mordekaiser {
@@ -1001,10 +1024,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -330px;
+    background-position: -385px -330px;
 }
 
 .Morgana {
@@ -1013,10 +1036,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -330px;
+    background-position: -440px -330px;
 }
 
 .Naafiri {
@@ -1025,10 +1048,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -385px;
+    background-position: -495px -330px;
 }
 
 .Nami {
@@ -1037,10 +1060,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -385px;
+    background-position: -550px -330px;
 }
 
 .Nasus {
@@ -1049,10 +1072,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -385px;
+    background-position: -605px -330px;
 }
 
 .Nautilus {
@@ -1061,10 +1084,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -385px;
+    background-position: -660px -330px;
 }
 
 .Neeko {
@@ -1073,10 +1096,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -385px;
+    background-position: 0 -385px;
 }
 
 .Nidalee {
@@ -1085,10 +1108,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -385px;
+    background-position: -55px -385px;
 }
 
 .Nilah {
@@ -1097,10 +1120,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -385px;
+    background-position: -110px -385px;
 }
 
 .Nocturne {
@@ -1109,10 +1132,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -385px;
+    background-position: -165px -385px;
 }
 
 .Nunu {
@@ -1121,10 +1144,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -385px;
+    background-position: -220px -385px;
 }
 
 .Olaf {
@@ -1133,10 +1156,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -385px;
+    background-position: -275px -385px;
 }
 
 .Orianna {
@@ -1145,10 +1168,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -385px;
+    background-position: -330px -385px;
 }
 
 .Ornn {
@@ -1157,10 +1180,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -385px;
+    background-position: -385px -385px;
 }
 
 .Pantheon {
@@ -1169,10 +1192,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -440px;
+    background-position: -440px -385px;
 }
 
 .Placeholder {
@@ -1181,10 +1204,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -440px;
+    background-position: -495px -385px;
 }
 
 .Poppy {
@@ -1193,10 +1216,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -440px;
+    background-position: -550px -385px;
 }
 
 .Pyke {
@@ -1205,10 +1228,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -440px;
+    background-position: -605px -385px;
 }
 
 .Qiyana {
@@ -1217,10 +1240,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -440px;
+    background-position: -660px -385px;
 }
 
 .Quinn {
@@ -1229,10 +1252,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -440px;
+    background-position: 0 -440px;
 }
 
 .Rakan {
@@ -1241,10 +1264,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -440px;
+    background-position: -55px -440px;
 }
 
 .Rammus {
@@ -1253,10 +1276,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -440px;
+    background-position: -110px -440px;
 }
 
 .RekSai {
@@ -1265,10 +1288,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -440px;
+    background-position: -165px -440px;
 }
 
 .Rell {
@@ -1277,10 +1300,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -440px;
+    background-position: -220px -440px;
 }
 
 .Renata {
@@ -1289,10 +1312,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -440px;
+    background-position: -275px -440px;
 }
 
 .Renekton {
@@ -1301,10 +1324,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -440px;
+    background-position: -330px -440px;
 }
 
 .Rengar {
@@ -1313,10 +1336,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -495px;
+    background-position: -385px -440px;
 }
 
 .Riven {
@@ -1325,10 +1348,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -495px;
+    background-position: -440px -440px;
 }
 
 .Rumble {
@@ -1337,10 +1360,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -495px;
+    background-position: -495px -440px;
 }
 
 .Ryze {
@@ -1349,10 +1372,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -495px;
+    background-position: -550px -440px;
 }
 
 .Samira {
@@ -1361,10 +1384,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -495px;
+    background-position: -605px -440px;
 }
 
 .Sejuani {
@@ -1373,10 +1396,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -495px;
+    background-position: -660px -440px;
 }
 
 .Senna {
@@ -1385,10 +1408,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -495px;
+    background-position: 0 -495px;
 }
 
 .Seraphine {
@@ -1397,10 +1420,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -495px;
+    background-position: -55px -495px;
 }
 
 .Sett {
@@ -1409,10 +1432,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -495px;
+    background-position: -110px -495px;
 }
 
 .Shaco {
@@ -1421,10 +1444,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -495px;
+    background-position: -165px -495px;
 }
 
 .Shen {
@@ -1433,10 +1456,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -495px;
+    background-position: -220px -495px;
 }
 
 .Shyvana {
@@ -1445,10 +1468,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -495px;
+    background-position: -275px -495px;
 }
 
 .Singed {
@@ -1457,10 +1480,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -550px;
+    background-position: -330px -495px;
 }
 
 .Sion {
@@ -1469,10 +1492,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -550px;
+    background-position: -385px -495px;
 }
 
 .Sivir {
@@ -1481,10 +1504,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -550px;
+    background-position: -440px -495px;
 }
 
 .Skarner {
@@ -1493,10 +1516,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -550px;
+    background-position: -495px -495px;
 }
 
 .Smolder {
@@ -1505,10 +1528,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -550px;
+    background-position: -550px -495px;
 }
 
 .Sona {
@@ -1517,10 +1540,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -550px;
+    background-position: -605px -495px;
 }
 
 .Soraka {
@@ -1529,10 +1552,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -550px;
+    background-position: -660px -495px;
 }
 
 .Swain {
@@ -1541,10 +1564,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -550px;
+    background-position: 0 -550px;
 }
 
 .Sylas {
@@ -1553,10 +1576,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -550px;
+    background-position: -55px -550px;
 }
 
 .Syndra {
@@ -1565,10 +1588,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -550px;
+    background-position: -110px -550px;
 }
 
 .TahmKench {
@@ -1577,10 +1600,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -550px;
+    background-position: -165px -550px;
 }
 
 .Taliyah {
@@ -1589,10 +1612,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -550px;
+    background-position: -220px -550px;
 }
 
 .Talon {
@@ -1601,10 +1624,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -605px;
+    background-position: -275px -550px;
 }
 
 .Taric {
@@ -1613,10 +1636,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -605px;
+    background-position: -330px -550px;
 }
 
 .Teemo {
@@ -1625,10 +1648,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -605px;
+    background-position: -385px -550px;
 }
 
 .Thresh {
@@ -1637,10 +1660,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -605px;
+    background-position: -440px -550px;
 }
 
 .Tristana {
@@ -1649,10 +1672,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -605px;
+    background-position: -495px -550px;
 }
 
 .Trundle {
@@ -1661,10 +1684,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -605px;
+    background-position: -550px -550px;
 }
 
 .Tryndamere {
@@ -1673,10 +1696,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -605px;
+    background-position: -605px -550px;
 }
 
 .TwistedFate {
@@ -1685,10 +1708,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -605px;
+    background-position: -660px -550px;
 }
 
 .Twitch {
@@ -1697,10 +1720,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -605px;
+    background-position: 0 -605px;
 }
 
 .Udyr {
@@ -1709,10 +1732,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -605px;
+    background-position: -55px -605px;
 }
 
 .Urgot {
@@ -1721,10 +1744,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -605px;
+    background-position: -110px -605px;
 }
 
 .Varus {
@@ -1733,10 +1756,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -605px;
+    background-position: -165px -605px;
 }
 
 .Vayne {
@@ -1745,10 +1768,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px 0;
+    background-position: -220px -605px;
 }
 
 .Veigar {
@@ -1757,10 +1780,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -55px;
+    background-position: -275px -605px;
 }
 
 .Velkoz {
@@ -1769,10 +1792,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -110px;
+    background-position: -330px -605px;
 }
 
 .Vex {
@@ -1781,10 +1804,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -165px;
+    background-position: -385px -605px;
 }
 
 .Vi {
@@ -1793,10 +1816,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -220px;
+    background-position: -440px -605px;
 }
 
 .Viego {
@@ -1805,10 +1828,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -275px;
+    background-position: -495px -605px;
 }
 
 .Viktor {
@@ -1817,10 +1840,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -330px;
+    background-position: -550px -605px;
 }
 
 .Vladimir {
@@ -1829,10 +1852,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -385px;
+    background-position: -605px -605px;
 }
 
 .Volibear {
@@ -1841,10 +1864,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -440px;
+    background-position: -660px -605px;
 }
 
 .Warwick {
@@ -1853,10 +1876,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -495px;
+    background-position: 0 -660px;
 }
 
 .Xayah {
@@ -1865,10 +1888,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -550px;
+    background-position: -55px -660px;
 }
 
 .Xerath {
@@ -1877,10 +1900,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -660px -605px;
+    background-position: -110px -660px;
 }
 
 .XinZhao {
@@ -1889,10 +1912,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: 0 -660px;
+    background-position: -165px -660px;
 }
 
 .Yasuo {
@@ -1901,10 +1924,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -55px -660px;
+    background-position: -220px -660px;
 }
 
 .Yone {
@@ -1913,10 +1936,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -110px -660px;
+    background-position: -275px -660px;
 }
 
 .Yorick {
@@ -1925,10 +1948,22 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -165px -660px;
+    background-position: -330px -660px;
+}
+
+.Yunara {
+    width: 55px;
+    height: 55px;
+    border-radius: 15%;
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
+    display: block;
+    padding: 27.3px;
+    background-position: -385px -660px;
 }
 
 .Yuumi {
@@ -1937,10 +1972,22 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -220px -660px;
+    background-position: -440px -660px;
+}
+
+.Zaahen {
+    width: 55px;
+    height: 55px;
+    border-radius: 15%;
+    background-image: url(/getChampIcons/champs.png);
+    background-repeat: no-repeat;
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
+    display: block;
+    padding: 27.3px;
+    background-position: -495px -660px;
 }
 
 .Zac {
@@ -1949,10 +1996,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -275px -660px;
+    background-position: -550px -660px;
 }
 
 .Zed {
@@ -1961,10 +2008,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -330px -660px;
+    background-position: -605px -660px;
 }
 
 .Zeri {
@@ -1973,10 +2020,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -385px -660px;
+    background-position: -660px -660px;
 }
 
 .Ziggs {
@@ -1985,10 +2032,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -440px -660px;
+    background-position: -715px 0;
 }
 
 .Zilean {
@@ -1997,10 +2044,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -495px -660px;
+    background-position: -715px -55px;
 }
 
 .Zoe {
@@ -2009,10 +2056,10 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -550px -660px;
+    background-position: -715px -110px;
 }
 
 .Zyra {
@@ -2021,8 +2068,9 @@
     border-radius: 15%;
     background-image: url(/getChampIcons/champs.png);
     background-repeat: no-repeat;
-    background-size: calc(2145px / 3) calc(2145px / 3);
+    background-size: calc(2240px * 0.34375) calc(2080px * 0.34375);
     display: block;
     padding: 27.3px;
-    background-position: -605px -660px;
+    background-position: -715px -165px;
 }
+
