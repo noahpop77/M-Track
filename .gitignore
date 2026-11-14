@@ -1,2 +1,11 @@
 config.ini
 Logs/routes.log
+
+# OS / editor noise
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

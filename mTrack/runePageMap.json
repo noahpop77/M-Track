@@ -1,0 +1,375 @@
+{
+  "runes": {
+    "8005": {
+      "icon": "perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png",
+      "name": "Press the Attack",
+      "tree": "Precision"
+    },
+    "8008": {
+      "icon": "perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png",
+      "name": "Lethal Tempo",
+      "tree": "Precision"
+    },
+    "8009": {
+      "icon": "perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png",
+      "name": "Presence of Mind",
+      "tree": "Precision"
+    },
+    "8010": {
+      "icon": "perk-images/Styles/Precision/Conqueror/Conqueror.png",
+      "name": "Conqueror",
+      "tree": "Precision"
+    },
+    "8014": {
+      "icon": "perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png",
+      "name": "Coup de Grace",
+      "tree": "Precision"
+    },
+    "8017": {
+      "icon": "perk-images/Styles/Precision/CutDown/CutDown.png",
+      "name": "Cut Down",
+      "tree": "Precision"
+    },
+    "8021": {
+      "icon": "perk-images/Styles/Precision/FleetFootwork/FleetFootwork.png",
+      "name": "Fleet Footwork",
+      "tree": "Precision"
+    },
+    "8105": {
+      "icon": "perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png",
+      "name": "Relentless Hunter",
+      "tree": "Domination"
+    },
+    "8106": {
+      "icon": "perk-images/Styles/Domination/UltimateHunter/UltimateHunter.png",
+      "name": "Ultimate Hunter",
+      "tree": "Domination"
+    },
+    "8112": {
+      "icon": "perk-images/Styles/Domination/Electrocute/Electrocute.png",
+      "name": "Electrocute",
+      "tree": "Domination"
+    },
+    "8126": {
+      "icon": "perk-images/Styles/Domination/CheapShot/CheapShot.png",
+      "name": "Cheap Shot",
+      "tree": "Domination"
+    },
+    "8128": {
+      "icon": "perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png",
+      "name": "Dark Harvest",
+      "tree": "Domination"
+    },
+    "8135": {
+      "icon": "perk-images/Styles/Domination/TreasureHunter/TreasureHunter.png",
+      "name": "Treasure Hunter",
+      "tree": "Domination"
+    },
+    "8137": {
+      "icon": "perk-images/Styles/Domination/SixthSense/SixthSense.png",
+      "name": "Sixth Sense",
+      "tree": "Domination"
+    },
+    "8139": {
+      "icon": "perk-images/Styles/Domination/TasteOfBlood/GreenTerror_TasteOfBlood.png",
+      "name": "Taste of Blood",
+      "tree": "Domination"
+    },
+    "8140": {
+      "icon": "perk-images/Styles/Domination/GrislyMementos/GrislyMementos.png",
+      "name": "Grisly Mementos",
+      "tree": "Domination"
+    },
+    "8141": {
+      "icon": "perk-images/Styles/Domination/DeepWard/DeepWard.png",
+      "name": "Deep Ward",
+      "tree": "Domination"
+    },
+    "8143": {
+      "icon": "perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png",
+      "name": "Sudden Impact",
+      "tree": "Domination"
+    },
+    "8210": {
+      "icon": "perk-images/Styles/Sorcery/Transcendence/Transcendence.png",
+      "name": "Transcendence",
+      "tree": "Sorcery"
+    },
+    "8214": {
+      "icon": "perk-images/Styles/Sorcery/SummonAery/SummonAery.png",
+      "name": "Summon Aery",
+      "tree": "Sorcery"
+    },
+    "8224": {
+      "icon": "perk-images/Styles/Sorcery/NullifyingOrb/Axiom_Arcanist.png",
+      "name": "Axiom Arcanist",
+      "tree": "Sorcery"
+    },
+    "8226": {
+      "icon": "perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png",
+      "name": "Manaflow Band",
+      "tree": "Sorcery"
+    },
+    "8229": {
+      "icon": "perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png",
+      "name": "Arcane Comet",
+      "tree": "Sorcery"
+    },
+    "8230": {
+      "icon": "perk-images/Styles/Sorcery/PhaseRush/StormraidersSurgeRuneIcon2.png",
+      "name": "Stormraider's Surge",
+      "tree": "Sorcery"
+    },
+    "8232": {
+      "icon": "perk-images/Styles/Sorcery/Waterwalking/Waterwalking.png",
+      "name": "Waterwalking",
+      "tree": "Sorcery"
+    },
+    "8233": {
+      "icon": "perk-images/Styles/Sorcery/AbsoluteFocus/AbsoluteFocus.png",
+      "name": "Absolute Focus",
+      "tree": "Sorcery"
+    },
+    "8234": {
+      "icon": "perk-images/Styles/Sorcery/Celerity/CelerityTemp.png",
+      "name": "Celerity",
+      "tree": "Sorcery"
+    },
+    "8236": {
+      "icon": "perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png",
+      "name": "Gathering Storm",
+      "tree": "Sorcery"
+    },
+    "8237": {
+      "icon": "perk-images/Styles/Sorcery/Scorch/Scorch.png",
+      "name": "Scorch",
+      "tree": "Sorcery"
+    },
+    "8242": {
+      "icon": "perk-images/Styles/Sorcery/Unflinching/Unflinching.png",
+      "name": "Unflinching",
+      "tree": "Resolve"
+    },
+    "8275": {
+      "icon": "perk-images/Styles/Sorcery/NimbusCloak/6361.png",
+      "name": "Nimbus Cloak",
+      "tree": "Sorcery"
+    },
+    "8299": {
+      "icon": "perk-images/Styles/Sorcery/LastStand/LastStand.png",
+      "name": "Last Stand",
+      "tree": "Precision"
+    },
+    "8304": {
+      "icon": "perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png",
+      "name": "Magical Footwear",
+      "tree": "Inspiration"
+    },
+    "8306": {
+      "icon": "perk-images/Styles/Inspiration/HextechFlashtraption/HextechFlashtraption.png",
+      "name": "Hextech Flashtraption",
+      "tree": "Inspiration"
+    },
+    "8313": {
+      "icon": "perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png",
+      "name": "Triple Tonic",
+      "tree": "Inspiration"
+    },
+    "8316": {
+      "icon": "perk-images/Styles/Inspiration/JackOfAllTrades/JackofAllTrades2.png",
+      "name": "Jack Of All Trades",
+      "tree": "Inspiration"
+    },
+    "8321": {
+      "icon": "perk-images/Styles/Inspiration/CashBack/CashBack2.png",
+      "name": "Cash Back",
+      "tree": "Inspiration"
+    },
+    "8345": {
+      "icon": "perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png",
+      "name": "Biscuit Delivery",
+      "tree": "Inspiration"
+    },
+    "8347": {
+      "icon": "perk-images/Styles/Inspiration/CosmicInsight/CosmicInsight.png",
+      "name": "Cosmic Insight",
+      "tree": "Inspiration"
+    },
+    "8351": {
+      "icon": "perk-images/Styles/Inspiration/GlacialAugment/GlacialAugment.png",
+      "name": "Glacial Augment",
+      "tree": "Inspiration"
+    },
+    "8352": {
+      "icon": "perk-images/Styles/Inspiration/TimeWarpTonic/TimeWarpTonic.png",
+      "name": "Time Warp Tonic",
+      "tree": "Inspiration"
+    },
+    "8360": {
+      "icon": "perk-images/Styles/Inspiration/UnsealedSpellbook/UnsealedSpellbook.png",
+      "name": "Unsealed Spellbook",
+      "tree": "Inspiration"
+    },
+    "8369": {
+      "icon": "perk-images/Styles/Inspiration/FirstStrike/FirstStrike.png",
+      "name": "First Strike",
+      "tree": "Inspiration"
+    },
+    "8401": {
+      "icon": "perk-images/Styles/Resolve/MirrorShell/MirrorShell.png",
+      "name": "Shield Bash",
+      "tree": "Resolve"
+    },
+    "8410": {
+      "icon": "perk-images/Styles/Resolve/ApproachVelocity/ApproachVelocity.png",
+      "name": "Approach Velocity",
+      "tree": "Inspiration"
+    },
+    "8429": {
+      "icon": "perk-images/Styles/Resolve/Conditioning/Conditioning.png",
+      "name": "Conditioning",
+      "tree": "Resolve"
+    },
+    "8437": {
+      "icon": "perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png",
+      "name": "Grasp of the Undying",
+      "tree": "Resolve"
+    },
+    "8439": {
+      "icon": "perk-images/Styles/Resolve/VeteranAftershock/VeteranAftershock.png",
+      "name": "Aftershock",
+      "tree": "Resolve"
+    },
+    "8444": {
+      "icon": "perk-images/Styles/Resolve/SecondWind/SecondWind.png",
+      "name": "Second Wind",
+      "tree": "Resolve"
+    },
+    "8446": {
+      "icon": "perk-images/Styles/Resolve/Demolish/Demolish.png",
+      "name": "Demolish",
+      "tree": "Resolve"
+    },
+    "8451": {
+      "icon": "perk-images/Styles/Resolve/Overgrowth/Overgrowth.png",
+      "name": "Overgrowth",
+      "tree": "Resolve"
+    },
+    "8453": {
+      "icon": "perk-images/Styles/Resolve/Revitalize/Revitalize.png",
+      "name": "Revitalize",
+      "tree": "Resolve"
+    },
+    "8463": {
+      "icon": "perk-images/Styles/Resolve/FontOfLife/FontOfLife.png",
+      "name": "Font of Life",
+      "tree": "Resolve"
+    },
+    "8465": {
+      "icon": "perk-images/Styles/Resolve/Guardian/Guardian.png",
+      "name": "Guardian",
+      "tree": "Resolve"
+    },
+    "8473": {
+      "icon": "perk-images/Styles/Resolve/BonePlating/BonePlating.png",
+      "name": "Bone Plating",
+      "tree": "Resolve"
+    },
+    "8992": {
+      "icon": "perk-images/Styles/Sorcery/DeathfireTouch/DEATHFIRE_TOUCH_KEYSTONE.png",
+      "name": "Deathfire Touch",
+      "tree": "Sorcery"
+    },
+    "9101": {
+      "icon": "perk-images/Styles/Precision/AbsorbLife/AbsorbLife.png",
+      "name": "Absorb Life",
+      "tree": "Precision"
+    },
+    "9103": {
+      "icon": "perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png",
+      "name": "Legend: Bloodline",
+      "tree": "Precision"
+    },
+    "9104": {
+      "icon": "perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png",
+      "name": "Legend: Alacrity",
+      "tree": "Precision"
+    },
+    "9105": {
+      "icon": "perk-images/Styles/Precision/LegendHaste/LegendHaste.png",
+      "name": "Legend: Haste",
+      "tree": "Precision"
+    },
+    "9111": {
+      "icon": "perk-images/Styles/Precision/Triumph.png",
+      "name": "Triumph",
+      "tree": "Precision"
+    },
+    "9923": {
+      "icon": "perk-images/Styles/Domination/HailOfBlades/HailOfBlades.png",
+      "name": "Hail of Blades",
+      "tree": "Domination"
+    }
+  },
+  "shards": {
+    "5001": {
+      "icon": "perk-images/StatMods/StatModsHealthPlusIcon.png",
+      "name": "Health Scaling"
+    },
+    "5002": {
+      "icon": "perk-images/StatMods/StatModsArmorIcon.png",
+      "name": "Armor"
+    },
+    "5003": {
+      "icon": "perk-images/StatMods/StatModsMagicResIcon.png",
+      "name": "Magic Resist"
+    },
+    "5005": {
+      "icon": "perk-images/StatMods/StatModsAttackSpeedIcon.png",
+      "name": "Attack Speed"
+    },
+    "5007": {
+      "icon": "perk-images/StatMods/StatModsCDRScalingIcon.png",
+      "name": "Ability Haste"
+    },
+    "5008": {
+      "icon": "perk-images/StatMods/StatModsAdaptiveForceIcon.png",
+      "name": "Adaptive Force"
+    },
+    "5010": {
+      "icon": "perk-images/StatMods/StatModsMovementSpeedIcon.png",
+      "name": "Move Speed"
+    },
+    "5011": {
+      "icon": "perk-images/StatMods/StatModsHealthScalingIcon.png",
+      "name": "Health"
+    },
+    "5013": {
+      "icon": "perk-images/StatMods/StatModsTenacityIcon.png",
+      "name": "Tenacity and Slow Resist"
+    }
+  },
+  "trees": {
+    "8000": {
+      "icon": "perk-images/Styles/7201_Precision.png",
+      "name": "Precision"
+    },
+    "8100": {
+      "icon": "perk-images/Styles/7200_Domination.png",
+      "name": "Domination"
+    },
+    "8200": {
+      "icon": "perk-images/Styles/7202_Sorcery.png",
+      "name": "Sorcery"
+    },
+    "8300": {
+      "icon": "perk-images/Styles/7203_Whimsy.png",
+      "name": "Inspiration"
+    },
+    "8400": {
+      "icon": "perk-images/Styles/7204_Resolve.png",
+      "name": "Resolve"
+    }
+  },
+  "version": "16.22.1"
+}

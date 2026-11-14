@@ -48,6 +48,7 @@ def fetchGameIDsFromDB(riotID):
 
     except psycopg2.Error as e:
         print(f"Error connecting to PostgreSQL Server: {e}")
+        return []
 
     finally:
         if connection:
@@ -133,6 +134,7 @@ def fetchFromMatchHistoryDB(riotID, numberOfRecords, recordOffset=0):
 
     except psycopg2.Error as e:
         print(f"Error connecting to PostgreSQL Server: {e}")
+        return []
 
     finally:
         if connection:
@@ -177,9 +179,46 @@ def fetchFromSummonerRankedInfoDB(puuid):
 
     except psycopg2.Error as e:
         print(f"Error connecting to PostgreSQL Server: {e}")
+        return None
 
     finally:
         if connection:
             cursor.close()
+            connection.close()
+
+
+def fetchRanksByPuuids(puuids):
+    """Bulk cached-rank lookup so a match card needs at most one DB query."""
+    if not puuids:
+        return {}
+
+    connection = None
+    cursor = None
+    try:
+        connection = psycopg2.connect(
+            host=host,
+            user=user,
+            password=password,
+            dbname=database
+        )
+        cursor = connection.cursor()
+        query = sql.SQL(
+            'SELECT "encryptedPUUID", "summonerID", "riotID", "tier", "rank", '
+            '"leaguePoints", "queueType", "wins", "losses" FROM "summonerRankedInfo" '
+            'WHERE "encryptedPUUID" = ANY(%s)'
+        )
+        cursor.execute(query, (list(puuids),))
+        rows = cursor.fetchall()
+        columns = [desc[0] for desc in cursor.description]
+        return {row[0]: dict(zip(columns, row)) for row in rows}
+
+    except psycopg2.Error as e:
+        print(f"Error connecting to PostgreSQL Server: {e}")
+        return {}
+
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if connection is not None:
             connection.close()
 

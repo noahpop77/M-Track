@@ -1,0 +1,755 @@
+/* ------------------------------------------------------------------
+   Sprite map for champion, item, summoner spell and rune icons.
+   Generated from the legacy per-size stylesheets (champs.css,
+   scoreboardChamps.css, innerScoreboardChamps.css, items.css,
+   summoners.css, keystones.css, runeCategories.css).
+
+   Each icon class only stores its grid coordinate (--x / --y).
+   Size is controlled with --s so one coordinate map serves every
+   icon size in the UI.
+   ------------------------------------------------------------------ */
+
+.sprite {
+  display: block;
+  flex: 0 0 auto;
+  width: var(--s, 24px);
+  height: var(--s, 24px);
+  border-radius: 6px;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.champ { --s: 52px; }
+.champ-sm { --s: 30px; }
+.champ-xs { --s: 16px; }
+.item { --s: 26px; }
+.spell { --s: 22px; }
+.rune { --s: 24px; }
+.runecat { --s: 22px; }
+
+.champ {
+  --x: -99;
+  --y: -99;
+  background-image: url("/getChampIcons/champs.png");
+  background-size: calc(14 * var(--s)) calc(13 * var(--s));
+  background-position: calc(var(--x) * var(--s) * -1) calc(var(--y) * var(--s) * -1);
+}
+
+.Aatrox { --x: 0; --y: 0; }
+.Ahri { --x: 1; --y: 0; }
+.Akali { --x: 2; --y: 0; }
+.Akshan { --x: 3; --y: 0; }
+.Alistar { --x: 4; --y: 0; }
+.Ambessa { --x: 5; --y: 0; }
+.Amumu { --x: 6; --y: 0; }
+.Anivia { --x: 7; --y: 0; }
+.Annie { --x: 8; --y: 0; }
+.Aphelios { --x: 9; --y: 0; }
+.Ashe { --x: 10; --y: 0; }
+.AurelionSol { --x: 11; --y: 0; }
+.Aurora { --x: 12; --y: 0; }
+.Azir { --x: 0; --y: 1; }
+.Bard { --x: 1; --y: 1; }
+.Belveth { --x: 2; --y: 1; }
+.Blitzcrank { --x: 3; --y: 1; }
+.Brand { --x: 4; --y: 1; }
+.Braum { --x: 5; --y: 1; }
+.Briar { --x: 6; --y: 1; }
+.Caitlyn { --x: 7; --y: 1; }
+.Camille { --x: 8; --y: 1; }
+.Cassiopeia { --x: 9; --y: 1; }
+.Chogath { --x: 10; --y: 1; }
+.Corki { --x: 11; --y: 1; }
+.Darius { --x: 12; --y: 1; }
+.Diana { --x: 0; --y: 2; }
+.DrMundo { --x: 1; --y: 2; }
+.Draven { --x: 2; --y: 2; }
+.Ekko { --x: 3; --y: 2; }
+.Elise { --x: 4; --y: 2; }
+.Evelynn { --x: 5; --y: 2; }
+.Ezreal { --x: 6; --y: 2; }
+.Fiddlesticks { --x: 7; --y: 2; }
+.Fiora { --x: 8; --y: 2; }
+.Fizz { --x: 9; --y: 2; }
+.Galio { --x: 10; --y: 2; }
+.Gangplank { --x: 11; --y: 2; }
+.Garen { --x: 12; --y: 2; }
+.Gnar { --x: 0; --y: 3; }
+.Gragas { --x: 1; --y: 3; }
+.Graves { --x: 2; --y: 3; }
+.Gwen { --x: 3; --y: 3; }
+.Hecarim { --x: 4; --y: 3; }
+.Heimerdinger { --x: 5; --y: 3; }
+.Hwei { --x: 6; --y: 3; }
+.Illaoi { --x: 7; --y: 3; }
+.Irelia { --x: 8; --y: 3; }
+.Ivern { --x: 9; --y: 3; }
+.Janna { --x: 10; --y: 3; }
+.JarvanIV { --x: 11; --y: 3; }
+.Jax { --x: 12; --y: 3; }
+.Jayce { --x: 0; --y: 4; }
+.Jhin { --x: 1; --y: 4; }
+.Jinx { --x: 2; --y: 4; }
+.KSante { --x: 3; --y: 4; }
+.Kaisa { --x: 4; --y: 4; }
+.Kalista { --x: 5; --y: 4; }
+.Karma { --x: 6; --y: 4; }
+.Karthus { --x: 7; --y: 4; }
+.Kassadin { --x: 8; --y: 4; }
+.Katarina { --x: 9; --y: 4; }
+.Kayle { --x: 10; --y: 4; }
+.Kayn { --x: 11; --y: 4; }
+.Kennen { --x: 12; --y: 4; }
+.Khazix { --x: 0; --y: 5; }
+.Kindred { --x: 1; --y: 5; }
+.Kled { --x: 2; --y: 5; }
+.KogMaw { --x: 3; --y: 5; }
+.Leblanc { --x: 4; --y: 5; }
+.LeeSin { --x: 5; --y: 5; }
+.Leona { --x: 6; --y: 5; }
+.Lillia { --x: 7; --y: 5; }
+.Lissandra { --x: 8; --y: 5; }
+.Lucian { --x: 9; --y: 5; }
+.Lulu { --x: 10; --y: 5; }
+.Lux { --x: 11; --y: 5; }
+.Malphite { --x: 12; --y: 5; }
+.Malzahar { --x: 0; --y: 6; }
+.Maokai { --x: 1; --y: 6; }
+.MasterYi { --x: 2; --y: 6; }
+.Mel { --x: 3; --y: 6; }
+.Milio { --x: 4; --y: 6; }
+.MissFortune { --x: 5; --y: 6; }
+.MonkeyKing { --x: 6; --y: 6; }
+.Mordekaiser { --x: 7; --y: 6; }
+.Morgana { --x: 8; --y: 6; }
+.Naafiri { --x: 9; --y: 6; }
+.Nami { --x: 10; --y: 6; }
+.Nasus { --x: 11; --y: 6; }
+.Nautilus { --x: 12; --y: 6; }
+.Neeko { --x: 0; --y: 7; }
+.Nidalee { --x: 1; --y: 7; }
+.Nilah { --x: 2; --y: 7; }
+.Nocturne { --x: 3; --y: 7; }
+.Nunu { --x: 4; --y: 7; }
+.Olaf { --x: 5; --y: 7; }
+.Orianna { --x: 6; --y: 7; }
+.Ornn { --x: 7; --y: 7; }
+.Pantheon { --x: 8; --y: 7; }
+.Placeholder { --x: 9; --y: 7; }
+.Poppy { --x: 10; --y: 7; }
+.Pyke { --x: 11; --y: 7; }
+.Qiyana { --x: 12; --y: 7; }
+.Quinn { --x: 0; --y: 8; }
+.Rakan { --x: 1; --y: 8; }
+.Rammus { --x: 2; --y: 8; }
+.RekSai { --x: 3; --y: 8; }
+.Rell { --x: 4; --y: 8; }
+.Renata { --x: 5; --y: 8; }
+.Renekton { --x: 6; --y: 8; }
+.Rengar { --x: 7; --y: 8; }
+.Riven { --x: 8; --y: 8; }
+.Rumble { --x: 9; --y: 8; }
+.Ryze { --x: 10; --y: 8; }
+.Samira { --x: 11; --y: 8; }
+.Sejuani { --x: 12; --y: 8; }
+.Senna { --x: 0; --y: 9; }
+.Seraphine { --x: 1; --y: 9; }
+.Sett { --x: 2; --y: 9; }
+.Shaco { --x: 3; --y: 9; }
+.Shen { --x: 4; --y: 9; }
+.Shyvana { --x: 5; --y: 9; }
+.Singed { --x: 6; --y: 9; }
+.Sion { --x: 7; --y: 9; }
+.Sivir { --x: 8; --y: 9; }
+.Skarner { --x: 9; --y: 9; }
+.Smolder { --x: 10; --y: 9; }
+.Sona { --x: 11; --y: 9; }
+.Soraka { --x: 12; --y: 9; }
+.Swain { --x: 0; --y: 10; }
+.Sylas { --x: 1; --y: 10; }
+.Syndra { --x: 2; --y: 10; }
+.TahmKench { --x: 3; --y: 10; }
+.Taliyah { --x: 4; --y: 10; }
+.Talon { --x: 5; --y: 10; }
+.Taric { --x: 6; --y: 10; }
+.Teemo { --x: 7; --y: 10; }
+.Thresh { --x: 8; --y: 10; }
+.Tristana { --x: 9; --y: 10; }
+.Trundle { --x: 10; --y: 10; }
+.Tryndamere { --x: 11; --y: 10; }
+.TwistedFate { --x: 12; --y: 10; }
+.Twitch { --x: 0; --y: 11; }
+.Udyr { --x: 1; --y: 11; }
+.Urgot { --x: 2; --y: 11; }
+.Varus { --x: 3; --y: 11; }
+.Vayne { --x: 4; --y: 11; }
+.Veigar { --x: 5; --y: 11; }
+.Velkoz { --x: 6; --y: 11; }
+.Vex { --x: 7; --y: 11; }
+.Vi { --x: 8; --y: 11; }
+.Viego { --x: 9; --y: 11; }
+.Viktor { --x: 10; --y: 11; }
+.Vladimir { --x: 11; --y: 11; }
+.Volibear { --x: 12; --y: 11; }
+.Warwick { --x: 0; --y: 12; }
+.Xayah { --x: 1; --y: 12; }
+.Xerath { --x: 2; --y: 12; }
+.XinZhao { --x: 3; --y: 12; }
+.Yasuo { --x: 4; --y: 12; }
+.Yone { --x: 5; --y: 12; }
+.Yorick { --x: 6; --y: 12; }
+.Yunara { --x: 7; --y: 12; }
+.Yuumi { --x: 8; --y: 12; }
+.Zaahen { --x: 9; --y: 12; }
+.Zac { --x: 10; --y: 12; }
+.Zed { --x: 11; --y: 12; }
+.Zeri { --x: 12; --y: 12; }
+.Ziggs { --x: 13; --y: 0; }
+.Zilean { --x: 13; --y: 1; }
+.Zoe { --x: 13; --y: 2; }
+.Zyra { --x: 13; --y: 3; }
+
+.item {
+  --x: -99;
+  --y: -99;
+  background-image: url("/getItemIcons/items.png");
+  background-size: calc(22 * var(--s)) calc(22 * var(--s));
+  background-position: calc(var(--x) * var(--s) * -1) calc(var(--y) * var(--s) * -1);
+}
+
+.Abyssal-Mask { --x: 1; --y: 0; }
+.Actualizer { --x: 2; --y: 0; }
+.Adaptive-Helm { --x: 3; --y: 0; }
+.Aegis-of-the-Legion { --x: 4; --y: 0; }
+.Aether-Wisp { --x: 5; --y: 0; }
+.Amplifying-Tome { --x: 6; --y: 0; }
+.Anathema_s-Chains { --x: 7; --y: 0; }
+.Ani-Mines { --x: 8; --y: 0; }
+.Anima-Echo { --x: 9; --y: 0; }
+.Animapocalypse { --x: 10; --y: 0; }
+.Anti-Shark-Sea-Mine { --x: 11; --y: 0; }
+.Anti-tower-Socks { --x: 12; --y: 0; }
+.Anvil-Voucher { --x: 13; --y: 0; }
+.Arcane-Sweeper { --x: 14; --y: 0; }
+.Archangel_s-Staff { --x: 15; --y: 0; }
+.Ardent-Censer { --x: 16; --y: 0; }
+.Armored-Advance { --x: 17; --y: 0; }
+.Atma_s-Reckoning { --x: 18; --y: 0; }
+.Augment-Level { --x: 19; --y: 0; }
+.Axiom-Arc { --x: 20; --y: 0; }
+.B-F-Sword { --x: 0; --y: 1; }
+.Bami_s-Cinder { --x: 1; --y: 1; }
+.Bandle-Juice-of-Haste { --x: 2; --y: 1; }
+.Bandle-Juice-of-Power { --x: 3; --y: 1; }
+.Bandle-Juice-of-Vitality { --x: 4; --y: 1; }
+.Bandleglass-Mirror { --x: 5; --y: 1; }
+.Bandlepipes { --x: 6; --y: 1; }
+.Banshee_s-Veil { --x: 7; --y: 1; }
+.Bastionbreaker { --x: 8; --y: 1; }
+.Battle-Bunny-Crossbow { --x: 9; --y: 1; }
+.Battle-Cat-Barrage { --x: 10; --y: 1; }
+.Bearfoot-Chem-Dispenser { --x: 11; --y: 1; }
+.Berserker_s-Greaves { --x: 12; --y: 1; }
+.Black-Cleaver { --x: 13; --y: 1; }
+.Black-Hole-Gauntlet { --x: 14; --y: 1; }
+.Black-Mist-Scythe { --x: 15; --y: 1; }
+.Blackfire-Torch { --x: 16; --y: 1; }
+.Blade-o-rang { --x: 17; --y: 1; }
+.Blade-of-The-Ruined-King { --x: 18; --y: 1; }
+.Blasting-Wand { --x: 19; --y: 1; }
+.Blighting-Jewel { --x: 20; --y: 1; }
+.Bloodletter_s-Curse { --x: 0; --y: 2; }
+.Bloodsong { --x: 1; --y: 2; }
+.Bloodthirster { --x: 2; --y: 2; }
+.Boots { --x: 3; --y: 2; }
+.Boots-of-Swiftness { --x: 4; --y: 2; }
+.Bot-Lane-Quest { --x: 5; --y: 2; }
+.Bot-Lane-Quest-Reward { --x: 6; --y: 2; }
+.Bounty-of-Worlds { --x: 7; --y: 2; }
+.Bramble-Vest { --x: 8; --y: 2; }
+.Bravery-Voucher { --x: 9; --y: 2; }
+.Bulwark-of-the-Mountain { --x: 10; --y: 2; }
+.Bunny-Hop { --x: 11; --y: 2; }
+.Bunny-Mega-Blast { --x: 12; --y: 2; }
+.Bunny-Prime-Ballista { --x: 13; --y: 2; }
+.Cappa-Juice { --x: 14; --y: 2; }
+.Carrot-Crash { --x: 15; --y: 2; }
+.Catalyst-of-Aeons { --x: 16; --y: 2; }
+.Caulfield_s-Warhammer { --x: 17; --y: 2; }
+.Celestial-Opposition { --x: 18; --y: 2; }
+.Chain-Vest { --x: 19; --y: 2; }
+.Chainlaced-Crushers { --x: 20; --y: 2; }
+.Chalice-of-Blessing { --x: 0; --y: 3; }
+.Chempunk-Chainsword { --x: 1; --y: 3; }
+.Chemtech-Putrifier { --x: 2; --y: 3; }
+.Cloak-of-Agility { --x: 3; --y: 3; }
+.Cloak-of-Starry-Night { --x: 4; --y: 3; }
+.Cloth-Armor { --x: 5; --y: 3; }
+.Control-Ward { --x: 6; --y: 3; }
+.Corrupting-Potion { --x: 7; --y: 3; }
+.Cosmic-Drive { --x: 8; --y: 3; }
+.Crimson-Lucidity { --x: 9; --y: 3; }
+.Crown-of-the-Shattered-Queen { --x: 10; --y: 3; }
+.Cruelty { --x: 11; --y: 3; }
+.Cryptbloom { --x: 12; --y: 3; }
+.Crystalline-Bracer { --x: 13; --y: 3; }
+.Cull { --x: 14; --y: 3; }
+.Cyclonic-Slicers { --x: 15; --y: 3; }
+.Dagger { --x: 16; --y: 3; }
+.Dark-Seal { --x: 17; --y: 3; }
+.Darksteel-Talons { --x: 18; --y: 3; }
+.Dawncore { --x: 19; --y: 3; }
+.Dead-Man_s-Plate { --x: 20; --y: 3; }
+.Death_s-Dance { --x: 0; --y: 4; }
+.Deathblade { --x: 1; --y: 4; }
+.Deathfire-Grasp { --x: 2; --y: 4; }
+.Decapitator { --x: 3; --y: 4; }
+.Deep-Freeze { --x: 4; --y: 4; }
+.Demon-King_s-Crown { --x: 5; --y: 4; }
+.Demonic-Embrace { --x: 6; --y: 4; }
+.Deprecated-item { --x: 7; --y: 4; }
+.Detonation-Orb { --x: 8; --y: 4; }
+.Diadem-of-Songs { --x: 9; --y: 4; }
+.Diamond-Tipped-Spear { --x: 10; --y: 4; }
+.Disabled-Recall { --x: 11; --y: 4; }
+.Divine-Sunderer { --x: 12; --y: 4; }
+.Doran_s-Blade { --x: 13; --y: 4; }
+.Doran_s-Bow { --x: 14; --y: 4; }
+.Doran_s-Helm { --x: 15; --y: 4; }
+.Doran_s-Ring { --x: 16; --y: 4; }
+.Doran_s-Shield { --x: 17; --y: 4; }
+.Double-Bun-Bun-Barrage { --x: 18; --y: 4; }
+.Dragonheart { --x: 19; --y: 4; }
+.Dream-Maker { --x: 20; --y: 4; }
+.Dusk-and-Dawn { --x: 0; --y: 5; }
+.Duskblade-of-Draktharr { --x: 1; --y: 5; }
+.Echoes-of-Helia { --x: 2; --y: 5; }
+.Echoing-Batblades { --x: 3; --y: 5; }
+.Eclipse { --x: 4; --y: 5; }
+.Edge-of-Night { --x: 5; --y: 5; }
+.Eleisa_s-Miracle { --x: 6; --y: 5; }
+.Elixir-of-Avarice { --x: 7; --y: 5; }
+.Elixir-of-Force { --x: 8; --y: 5; }
+.Elixir-of-Iron { --x: 9; --y: 5; }
+.Elixir-of-Skill { --x: 10; --y: 5; }
+.Elixir-of-Sorcery { --x: 11; --y: 5; }
+.Elixir-of-Wrath { --x: 12; --y: 5; }
+.Emberknife { --x: 13; --y: 5; }
+.Empyrean-Promise { --x: 14; --y: 5; }
+.Endless-Hunger { --x: 15; --y: 5; }
+.Enhanced-Lucky-Dice { --x: 16; --y: 5; }
+.Enhanced-Recall { --x: 17; --y: 5; }
+.Enveloping-Light { --x: 18; --y: 5; }
+.Essence-Reaver { --x: 19; --y: 5; }
+.Evenshroud { --x: 20; --y: 5; }
+.Everfrost { --x: 0; --y: 6; }
+.Evolved-Embershot { --x: 1; --y: 6; }
+.Executioner_s-Calling { --x: 2; --y: 6; }
+.Experimental-Hexplate { --x: 3; --y: 6; }
+.Explosive-Embrace { --x: 4; --y: 6; }
+.Eye-of-the-Herald { --x: 5; --y: 6; }
+.FC-Limited-Express { --x: 6; --y: 6; }
+.Faerie-Charm { --x: 7; --y: 6; }
+.Farsight-Alteration { --x: 8; --y: 6; }
+.Fated-Ashes { --x: 9; --y: 6; }
+.Fiendhunter-Bolts { --x: 10; --y: 6; }
+.Fiendish-Codex { --x: 11; --y: 6; }
+.Fimbulwinter { --x: 12; --y: 6; }
+.Final-City-Transit { --x: 13; --y: 6; }
+.Flesheater { --x: 14; --y: 6; }
+.Forbidden-Idol { --x: 15; --y: 6; }
+.Force-Of-Entropy { --x: 16; --y: 6; }
+.Force-of-Nature { --x: 17; --y: 6; }
+.Forever-Forward { --x: 18; --y: 6; }
+.Fortification { --x: 19; --y: 6; }
+.Frostfang { --x: 20; --y: 6; }
+.Frozen-Heart { --x: 0; --y: 7; }
+.Frozen-Mallet { --x: 1; --y: 7; }
+.Fulmination { --x: 2; --y: 7; }
+.Galeforce { --x: 3; --y: 7; }
+.Gangplank-Placeholder { --x: 4; --y: 7; }
+.Gargoyle-Stoneplate { --x: 5; --y: 7; }
+.Gatling-Bunny-Guns { --x: 6; --y: 7; }
+.Ghostcrawlers { --x: 7; --y: 7; }
+.Giant_s-Belt { --x: 8; --y: 7; }
+.Glacial-Buckler { --x: 9; --y: 7; }
+.Glowing-Mote { --x: 10; --y: 7; }
+.Gluttonous-Greaves { --x: 11; --y: 7; }
+.Gold-Stat-Anvil-Voucher { --x: 12; --y: 7; }
+.Golden-Spatula { --x: 13; --y: 7; }
+.Goredrinker { --x: 14; --y: 7; }
+.Grizzly-Smash { --x: 15; --y: 7; }
+.Guardian-Angel { --x: 16; --y: 7; }
+.Guardian_s-Amulet { --x: 17; --y: 7; }
+.Guardian_s-Blade { --x: 18; --y: 7; }
+.Guardian_s-Dirk { --x: 19; --y: 7; }
+.Guardian_s-Hammer { --x: 20; --y: 7; }
+.Guardian_s-Horn { --x: 0; --y: 8; }
+.Guardian_s-Orb { --x: 1; --y: 8; }
+.Guardian_s-Shroud { --x: 2; --y: 8; }
+.Guiding-Hex { --x: 3; --y: 8; }
+.Guinsoo_s-Rageblade { --x: 4; --y: 8; }
+.Gunmetal-Greaves { --x: 5; --y: 8; }
+.Gusto { --x: 6; --y: 8; }
+.Gustwalker-Hatchling { --x: 7; --y: 8; }
+.Hailblade { --x: 8; --y: 8; }
+.Hamstringer { --x: 9; --y: 8; }
+.Harrowing-Crescent { --x: 10; --y: 8; }
+.Haunting-Guise { --x: 11; --y: 8; }
+.Health-Potion { --x: 12; --y: 8; }
+.Healthbar-Cleanup_-Reset-Color { --x: 13; --y: 8; }
+.Healthbar-Splash_-Blue { --x: 14; --y: 8; }
+.Healthbar-Splash_-Green { --x: 15; --y: 8; }
+.Healthbar-Splash_-Orange { --x: 16; --y: 8; }
+.Healthbar-Splash_-Pink { --x: 17; --y: 8; }
+.Healthbar-Splash_-Rainbow { --x: 18; --y: 8; }
+.Hearthbound-Axe { --x: 19; --y: 8; }
+.Heartsteel { --x: 20; --y: 8; }
+.Hellfire-Hatchet { --x: 0; --y: 9; }
+.Hemomancer_s-Helm { --x: 1; --y: 9; }
+.Hexbolt-Companion { --x: 2; --y: 9; }
+.Hexdrinker { --x: 3; --y: 9; }
+.Hexoptics-C44 { --x: 4; --y: 9; }
+.Hextech-Alternator { --x: 5; --y: 9; }
+.Hextech-Gunblade { --x: 6; --y: 9; }
+.Hextech-Rocketbelt { --x: 7; --y: 9; }
+.Hollow-Radiance { --x: 8; --y: 9; }
+.Hopped-Up-Hex { --x: 9; --y: 9; }
+.Horizon-Focus { --x: 10; --y: 9; }
+.Hubris { --x: 11; --y: 9; }
+.Hullbreaker { --x: 12; --y: 9; }
+.Iceblast-Armor { --x: 13; --y: 9; }
+.Iceborn-Gauntlet { --x: 14; --y: 9; }
+.Immortal-Path { --x: 15; --y: 9; }
+.Immortal-Shieldbow { --x: 16; --y: 9; }
+.Imperial-Mandate { --x: 17; --y: 9; }
+.Infinity-Edge { --x: 18; --y: 9; }
+.Innervating-Locket { --x: 19; --y: 9; }
+.Ionian-Boots-of-Lucidity { --x: 20; --y: 9; }
+.Ironspike-Whip { --x: 0; --y: 10; }
+.Jak_Sho_-The-Protean { --x: 1; --y: 10; }
+.Jarvan-I_s { --x: 2; --y: 10; }
+.Jinx_s-Tri-Namite { --x: 3; --y: 10; }
+.Juice-of-Haste { --x: 4; --y: 10; }
+.Juice-of-Power { --x: 5; --y: 10; }
+.Juice-of-Vitality { --x: 6; --y: 10; }
+.Jungle-Quest { --x: 7; --y: 10; }
+.Jungle-Quest-Reward { --x: 8; --y: 10; }
+.Kaenic-Rookern { --x: 9; --y: 10; }
+.Kalista_s-Black-Spear { --x: 10; --y: 10; }
+.Kindlegem { --x: 11; --y: 10; }
+.Kinkou-Jitte { --x: 12; --y: 10; }
+.Kircheis-Shard { --x: 13; --y: 10; }
+.Knight_s-Vow { --x: 14; --y: 10; }
+.Kraken-Slayer { --x: 15; --y: 10; }
+.Last-Whisper { --x: 16; --y: 10; }
+.Leeching-Leer { --x: 17; --y: 10; }
+.Legendary-Assassin-Item { --x: 18; --y: 10; }
+.Legendary-Fighter-Item { --x: 19; --y: 10; }
+.Legendary-Mage-Item { --x: 20; --y: 10; }
+.Legendary-Marksman-Item { --x: 0; --y: 11; }
+.Legendary-Support-Item { --x: 1; --y: 11; }
+.Legendary-Tank-Item { --x: 2; --y: 11; }
+.Liandry_s-Anguish { --x: 3; --y: 11; }
+.Liandry_s-Torment { --x: 4; --y: 11; }
+.Lich-Bane { --x: 5; --y: 11; }
+.Lifeline { --x: 6; --y: 11; }
+.Lifewell-Pendant { --x: 7; --y: 11; }
+.Light-of-the-Lion { --x: 8; --y: 11; }
+.Lightning-Braid { --x: 9; --y: 11; }
+.Lightning-Rod { --x: 10; --y: 11; }
+.Lioness_s-Lament { --x: 11; --y: 11; }
+.Locked-Weapon-Slot { --x: 12; --y: 11; }
+.Locket-of-the-Iron-Solari { --x: 13; --y: 11; }
+.Long-Sword { --x: 14; --y: 11; }
+.Lord-Dominik_s-Regards { --x: 15; --y: 11; }
+.Lost-Chapter { --x: 16; --y: 11; }
+.Lover_s-Ricochet { --x: 17; --y: 11; }
+.Lucent-Singularity { --x: 18; --y: 11; }
+.Lucky-Dice { --x: 19; --y: 11; }
+.Luden_s-Echo { --x: 20; --y: 11; }
+.Malignance { --x: 0; --y: 12; }
+.Manamune { --x: 1; --y: 12; }
+.Maw-of-Malmortius { --x: 2; --y: 12; }
+.Mejai_s-Soulstealer { --x: 3; --y: 12; }
+.Meow-Meow { --x: 4; --y: 12; }
+.Mercurial-Scimitar { --x: 5; --y: 12; }
+.Mercury_s-Treads { --x: 6; --y: 12; }
+.Mid-Lane-Quest { --x: 7; --y: 12; }
+.Mid-Lane-Quest-Reward { --x: 8; --y: 12; }
+.Mikael_s-Blessing { --x: 9; --y: 12; }
+.Minion-Dematerializer { --x: 10; --y: 12; }
+.Mirage-Blade { --x: 11; --y: 12; }
+.Mobility-Boots { --x: 12; --y: 12; }
+.Moonflair-Spellblade { --x: 13; --y: 12; }
+.Moonstone-Renewer { --x: 14; --y: 12; }
+.Morellonomicon { --x: 15; --y: 12; }
+.Mortal-Reminder { --x: 16; --y: 12; }
+.Mosstomper-Seedling { --x: 17; --y: 12; }
+.Multitool { --x: 18; --y: 12; }
+.Muramana { --x: 19; --y: 12; }
+.Nashor_s-Tooth { --x: 20; --y: 12; }
+.Navori-Flickerblade { --x: 0; --y: 13; }
+.Navori-Flickerblades { --x: 1; --y: 13; }
+.Needlessly-Large-Rod { --x: 2; --y: 13; }
+.Negatron-Cloak { --x: 3; --y: 13; }
+.Neverending-Mobstomper { --x: 4; --y: 13; }
+.Night-Harvester { --x: 5; --y: 13; }
+.Noonquiver { --x: 6; --y: 13; }
+.Null-Magic-Mantle { --x: 7; --y: 13; }
+.Oblivion-Orb { --x: 8; --y: 13; }
+.Obsidian-Cleaver { --x: 9; --y: 13; }
+.Obsidian-Edge { --x: 10; --y: 13; }
+.Opportunity { --x: 11; --y: 13; }
+.Oracle-Lens { --x: 12; --y: 13; }
+.Overcharged { --x: 13; --y: 13; }
+.OvererchargedHA { --x: 14; --y: 13; }
+.Overgrowth { --x: 15; --y: 13; }
+.Overlord_s-Bloodmail { --x: 16; --y: 13; }
+.OwO-Blaster { --x: 17; --y: 13; }
+.Party-Favor { --x: 18; --y: 13; }
+.Pauldrons-of-Whiterock { --x: 19; --y: 13; }
+.Paw-Print-Poisoner { --x: 20; --y: 13; }
+.Penetrating-Bullets { --x: 0; --y: 14; }
+.Perplexity { --x: 1; --y: 14; }
+.Phage { --x: 2; --y: 14; }
+.Phantom-Dancer { --x: 3; --y: 14; }
+.Phreakish-Gusto { --x: 4; --y: 14; }
+.Pickaxe { --x: 5; --y: 14; }
+.Pillory-Swipe { --x: 6; --y: 14; }
+.Plated-Steelcaps { --x: 7; --y: 14; }
+.Poro-Snax { --x: 8; --y: 14; }
+.Prismatic-Item { --x: 9; --y: 14; }
+.Prismatic-Stat-Voucher { --x: 10; --y: 14; }
+.Profane-Hydra { --x: 11; --y: 14; }
+.Protoplasm-Harness { --x: 12; --y: 14; }
+.Prowler_s-Claw { --x: 13; --y: 14; }
+.Prumbis_s-Electrocarver { --x: 14; --y: 14; }
+.Puppeteer { --x: 15; --y: 14; }
+.Pyromancer_s-Cloak { --x: 16; --y: 14; }
+.Quad-o-rang { --x: 17; --y: 14; }
+.Quest_-Bot { --x: 18; --y: 14; }
+.Quest_-Jungle { --x: 19; --y: 14; }
+.Quest_-Mid { --x: 20; --y: 14; }
+.Quest_-Support { --x: 0; --y: 15; }
+.Quest_-Top { --x: 1; --y: 15; }
+.Quicksilver-Sash { --x: 2; --y: 15; }
+.Rabadon_s-Deathcap { --x: 3; --y: 15; }
+.Radiant-Field { --x: 4; --y: 15; }
+.Radiant-Virtue { --x: 5; --y: 15; }
+.Rageknife { --x: 6; --y: 15; }
+.Randuin_s-Omen { --x: 7; --y: 15; }
+.Rapid-Firecannon { --x: 8; --y: 15; }
+.Rapid-Rabbit-Raindown { --x: 9; --y: 15; }
+.Ravenous-Hydra { --x: 10; --y: 15; }
+.Reality-Fracture { --x: 11; --y: 15; }
+.Reaper_s-Toll { --x: 12; --y: 15; }
+.Recall { --x: 13; --y: 15; }
+.Rectrix { --x: 14; --y: 15; }
+.Recurve-Bow { --x: 15; --y: 15; }
+.Redemption { --x: 16; --y: 15; }
+.Refillable-Potion { --x: 17; --y: 15; }
+.Regicide { --x: 18; --y: 15; }
+.Reinforced-Armor { --x: 19; --y: 15; }
+.Rejuvenation-Bead { --x: 20; --y: 15; }
+.Relic-Shield { --x: 0; --y: 16; }
+.Reverberation { --x: 1; --y: 16; }
+.Riftmaker { --x: 2; --y: 16; }
+.Rite-Of-Ruin { --x: 3; --y: 16; }
+.Rite-of-Ruin { --x: 3; --y: 16; }
+.TIBBERS { --x: 10; --y: 19; }
+.TIBBERS-_BEEG-Edition_ { --x: 11; --y: 19; }
+
+.Rod-of-Ages { --x: 4; --y: 16; }
+.Ruby-Crystal { --x: 5; --y: 16; }
+.Runaan_s-Hurricane { --x: 6; --y: 16; }
+.Runecarver { --x: 7; --y: 16; }
+.Runeglaive { --x: 8; --y: 16; }
+.Runesteel-Spaulders { --x: 9; --y: 16; }
+.Runic-Compass { --x: 10; --y: 16; }
+.Rylai_s-Crystal-Scepter { --x: 11; --y: 16; }
+.Sanguine-Blade { --x: 12; --y: 16; }
+.Sanguine-Gift { --x: 13; --y: 16; }
+.Sapphire-Crystal { --x: 14; --y: 16; }
+.Savage-Slice { --x: 15; --y: 16; }
+.Scorchclaw-Pup { --x: 16; --y: 16; }
+.Scout_s-Slingshot { --x: 17; --y: 16; }
+.Scouting-Ahead { --x: 18; --y: 16; }
+.Searing-Shortbow { --x: 19; --y: 16; }
+.Seeker_s-Armguard { --x: 20; --y: 16; }
+.Seraph_s-Embrace { --x: 0; --y: 17; }
+.Serpent_s-Fang { --x: 1; --y: 17; }
+.Serrated-Dirk { --x: 2; --y: 17; }
+.Serylda_s-Grudge { --x: 3; --y: 17; }
+.Shadowflame { --x: 4; --y: 17; }
+.Shard-of-True-Ice { --x: 5; --y: 17; }
+.Shardblade { --x: 6; --y: 17; }
+.Shattered-Armguard { --x: 7; --y: 17; }
+.Sheen { --x: 8; --y: 17; }
+.Shield-Slam { --x: 9; --y: 17; }
+.Shield-of-Molten-Stone { --x: 10; --y: 17; }
+.Shield-of-the-Rakkor { --x: 11; --y: 17; }
+.Shurelya_s-Battlesong { --x: 12; --y: 17; }
+.Silvermere-Dawn { --x: 13; --y: 17; }
+.Sin-Eater { --x: 14; --y: 17; }
+.Slightly-Magical-Footwear { --x: 15; --y: 17; }
+.Small-Party-Favor { --x: 16; --y: 17; }
+.Solstice-Sleigh { --x: 17; --y: 17; }
+.Sorcerer_s-Shoes { --x: 18; --y: 17; }
+.Sound-Wave { --x: 19; --y: 17; }
+.Spear-of-Shojin { --x: 20; --y: 17; }
+.Spectral-Cutlass { --x: 0; --y: 18; }
+.Spectral-Sickle { --x: 1; --y: 18; }
+.Spectre_s-Cowl { --x: 2; --y: 18; }
+.Spellslinger_s-Shoes { --x: 3; --y: 18; }
+.Spellthief_s-Edge { --x: 4; --y: 18; }
+.Spirit-Visage { --x: 5; --y: 18; }
+.Staff-of-Flowing-Water { --x: 6; --y: 18; }
+.Stat-Bonus { --x: 7; --y: 18; }
+.Statikk-Shiv { --x: 8; --y: 18; }
+.Statikk-Sword { --x: 9; --y: 18; }
+.Stealth-Ward { --x: 10; --y: 18; }
+.Steel-Shoulderguards { --x: 11; --y: 18; }
+.Steel-Sigil { --x: 12; --y: 18; }
+.Steel-Tempest { --x: 13; --y: 18; }
+.Sterak_s-Gage { --x: 14; --y: 18; }
+.Stirring-Wardstone { --x: 15; --y: 18; }
+.Stormrazor { --x: 16; --y: 18; }
+.Stormsurge { --x: 17; --y: 18; }
+.Stridebreaker { --x: 18; --y: 18; }
+.Structure-Bounty { --x: 19; --y: 18; }
+.Sundered-Sky { --x: 20; --y: 18; }
+.Sunfire-Aegis { --x: 0; --y: 19; }
+.Super-Mech-Armor { --x: 1; --y: 19; }
+.Super-Mech-Power-Field { --x: 2; --y: 19; }
+.Support-Quest { --x: 3; --y: 19; }
+.Support-Quest-Reward { --x: 4; --y: 19; }
+.Swiftmarch { --x: 5; --y: 19; }
+.Sword-of-Blossoming-Dawn { --x: 6; --y: 19; }
+.Sword-of-the-Divine { --x: 7; --y: 19; }
+.Symbiotic-Soles { --x: 8; --y: 19; }
+.Synchronized-Souls { --x: 9; --y: 19; }
+.T-I-B-B-E-R-S { --x: 10; --y: 19; }
+.T-I-B-B-E-R-S-_B-E-E-G-Edition_ { --x: 11; --y: 19; }
+.Talisman-Of-Ascension { --x: 12; --y: 19; }
+.Targon_s-Buckler { --x: 13; --y: 19; }
+.Tear-of-the-Goddess { --x: 14; --y: 19; }
+.Tempest_s-Gauntlet { --x: 15; --y: 19; }
+.Tentacle-Slam { --x: 16; --y: 19; }
+.Terminus { --x: 17; --y: 19; }
+.The-Annihilator { --x: 18; --y: 19; }
+.The-Brutalizer { --x: 19; --y: 19; }
+.The-Collector { --x: 20; --y: 19; }
+.The-Golden-Spatula { --x: 0; --y: 20; }
+.Thornmail { --x: 1; --y: 20; }
+.Tiamat { --x: 2; --y: 20; }
+.Titanic-Hydra { --x: 3; --y: 20; }
+.Top-Lane-Quest { --x: 4; --y: 20; }
+.Top-Lane-Quest-Reward { --x: 5; --y: 20; }
+.Total-Biscuit-of-Everlasting-Will { --x: 6; --y: 20; }
+.Tower-Power-Up { --x: 7; --y: 20; }
+.Trailblazer { --x: 8; --y: 20; }
+.Trinity-Force { --x: 9; --y: 20; }
+.Tunneler { --x: 10; --y: 20; }
+.Turbo-Chemtank { --x: 11; --y: 20; }
+.Turret-Plating { --x: 12; --y: 20; }
+.Twilight_s-Edge { --x: 13; --y: 20; }
+.Twin-Mask { --x: 14; --y: 20; }
+.Umbral-Glaive { --x: 15; --y: 20; }
+.Unceasing-Cyclone { --x: 16; --y: 20; }
+.Unending-Despair { --x: 17; --y: 20; }
+.Unleashed-Teleport-_Top-Lane-Quest-Reward_ { --x: 18; --y: 20; }
+.UwU-Blaster { --x: 19; --y: 20; }
+.Vampiric-Scepter { --x: 20; --y: 20; }
+.Vanguard { --x: 21; --y: 0; }
+.Vayne_s-Chromablades { --x: 21; --y: 1; }
+.Veigar_s-Talisman-of-Ascension { --x: 21; --y: 2; }
+.Verdant-Barrier { --x: 21; --y: 3; }
+.Vigilant-Wardstone { --x: 21; --y: 4; }
+.Void-Immolation { --x: 21; --y: 5; }
+.Void-Staff { --x: 21; --y: 6; }
+.Voltaic-Cyclosword { --x: 21; --y: 7; }
+.Vortex-Glove { --x: 21; --y: 8; }
+.Wandering-Storms { --x: 21; --y: 9; }
+.Warden_s-Eye { --x: 21; --y: 10; }
+.Warden_s-Mail { --x: 21; --y: 11; }
+.Warmog_s-Armor { --x: 21; --y: 12; }
+.Watchful-Wardstone { --x: 21; --y: 13; }
+.Whispering-Circlet { --x: 21; --y: 14; }
+.Winged-Dagger { --x: 21; --y: 15; }
+.Winged-Moonplate { --x: 21; --y: 16; }
+.Winter_s-Approach { --x: 21; --y: 17; }
+.Wit_s-End { --x: 21; --y: 18; }
+.Wooglet_s-Witchcap { --x: 21; --y: 19; }
+.Wordless-Promise { --x: 21; --y: 20; }
+.World-Atlas { --x: 0; --y: 21; }
+.Youmuu_s-Ghostblade { --x: 1; --y: 21; }
+.Your-Cut { --x: 2; --y: 21; }
+.Yun-Tal-Wildarrows { --x: 3; --y: 21; }
+.YuumiBot { --x: 4; --y: 21; }
+.YuumiBot_Final_FINAL { --x: 5; --y: 21; }
+.Zaz_Zak_s-Realmspike { --x: 6; --y: 21; }
+.Zeal { --x: 7; --y: 21; }
+.Zeke_s-Convergence { --x: 8; --y: 21; }
+.Zephyr { --x: 9; --y: 21; }
+.Zhonya_s-Hourglass { --x: 10; --y: 21; }
+
+.spell {
+  --x: -99;
+  --y: -99;
+  background-image: url("/getSummonerIcons/summoners.png");
+  background-size: calc(4 * var(--s)) calc(3 * var(--s));
+  background-position: calc(var(--x) * var(--s) * -1) calc(var(--y) * var(--s) * -1);
+}
+
+.Barrier { --x: 0; --y: 0; }
+.Cleanse { --x: 1; --y: 0; }
+.Exhaust { --x: 2; --y: 0; }
+.Flash { --x: 0; --y: 1; }
+.Ghost { --x: 1; --y: 1; }
+.Heal { --x: 2; --y: 1; }
+.Ignite { --x: 0; --y: 2; }
+.Placeholder { --x: 1; --y: 2; }
+.Smite { --x: 2; --y: 2; }
+.Teleport { --x: 3; --y: 0; }
+
+.rune {
+  --x: -99;
+  --y: -99;
+  background-image: url("/getRuneIcons/Keystones.png");
+  background-size: calc(5 * var(--s)) calc(4 * var(--s));
+  background-position: calc(var(--x) * var(--s) * -1) calc(var(--y) * var(--s) * -1);
+}
+
+.Aftershock { --x: 0; --y: 0; }
+.Arcane-Comet { --x: 1; --y: 0; }
+.Conqueror { --x: 2; --y: 0; }
+.Dark-Harvest { --x: 3; --y: 0; }
+.Electrocute { --x: 0; --y: 1; }
+.First-Strike { --x: 1; --y: 1; }
+.Fleet-Footwork { --x: 2; --y: 1; }
+.Glacial-Augment { --x: 3; --y: 1; }
+.Grasp-of-the-Undying { --x: 0; --y: 2; }
+.Guardian { --x: 1; --y: 2; }
+.Hail-of-Blades { --x: 2; --y: 2; }
+.Lethal-Tempo { --x: 3; --y: 2; }
+.Phase-Rush { --x: 0; --y: 3; }
+.Predator { --x: 1; --y: 3; }
+.Press-the-Attack { --x: 2; --y: 3; }
+.Summon-Aery { --x: 3; --y: 3; }
+.Unsealed-Spellbook { --x: 4; --y: 0; }
+
+.runecat {
+  --x: -99;
+  --y: -99;
+  background-image: url("/getRuneIcons/RuneCategories.png");
+  background-size: calc(3 * var(--s)) calc(2 * var(--s));
+  background-position: calc(var(--x) * var(--s) * -1) calc(var(--y) * var(--s) * -1);
+}
+
+.Domination { --x: 0; --y: 0; }
+.Inspiration { --x: 1; --y: 0; }
+.Precision { --x: 0; --y: 1; }
+.Resolve { --x: 1; --y: 1; }
+.Sorcery { --x: 2; --y: 0; }
+

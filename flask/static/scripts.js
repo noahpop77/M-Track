@@ -1,1055 +1,1348 @@
-async function summonerSearch(summonerNameParam) {
-    var url = "/summonerSearch";
+(function () {
+  "use strict";
 
-    var responseParagraph = document.getElementById('responseParagraph');
-    // Use the provided summonerNameParam if available; otherwise, use the input value
-    var summonerName = summonerNameParam || document.getElementById("nameInput").value;
+  /* ----------------------------------------------------------- elements */
 
-    // Get the select element
-    var selectElement = document.getElementById('region');
-    var regionSelect = selectElement.value;
+  const searchForm = document.getElementById("searchForm");
+  const nameInput = document.getElementById("nameInput");
+  const regionSelect = document.getElementById("region");
+  const searchButton = document.getElementById("searchButton");
 
-    var requestBody = {
-        summonerName: summonerName,
-        regionSelect: regionSelect
-    };
-    
+  const statusEl = document.getElementById("status");
+  const playerContainer = document.getElementById("player-container");
+  const profileContainer = document.getElementById("profile-container");
+  const dataContainer = document.getElementById("data-container");
+  const showMoreDiv = document.getElementById("showMoreButtonDiv");
 
-    responseParagraph.textContent = "Searching for Summoner...";
+  const state = {
+    searchToken: 0,
+    cards: [],
+    rankCache: {},
+    riotID: "",
+    busy: false,
+  };
 
-    await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": "true"
-        },
-        body: JSON.stringify(requestBody)
-    })
-    .then(function(response) {
-        // Check if the response was successful
-        if (response.ok) {
-            return response.json(); // Convert response to text
-        } else {
-            throw new Error('Error: ' + response.status); // Throw an error
-        }
-    })
-    .then(function(data) {
-        const dataContainer = document.getElementById('data-container');
-        dataContainer.innerHTML = '';
-        /////////////////////////////////////////////////
-        const riotID = document.getElementById('nameInput').value;
-        rankSearch(riotID);
-        // TODO: This update makes it so that it forces the ui to update the currently shown rank
-        // but there could be a more efficient way of doing it
-        updateData()
-        printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
-    })
-    .catch(function(error) {
-        responseParagraph.textContent = "Summoner not found..."
-        console.log(error)
-        // Display error message
+  const RANK_ICONS = new Set([
+    "iron",
+    "bronze",
+    "silver",
+    "gold",
+    "platinum",
+    "emerald",
+    "diamond",
+    "master",
+    "grandmaster",
+    "challenger",
+  ]);
+
+  const APEX_TIERS = new Set(["MASTER", "GRANDMASTER", "CHALLENGER"]);
+  const TIER_ORDER = [
+    "IRON",
+    "BRONZE",
+    "SILVER",
+    "GOLD",
+    "PLATINUM",
+    "EMERALD",
+    "DIAMOND",
+    "MASTER",
+    "GRANDMASTER",
+    "CHALLENGER",
+  ];
+  const TIER_SCORE = {
+    IRON: 0,
+    BRONZE: 4,
+    SILVER: 8,
+    GOLD: 12,
+    PLATINUM: 16,
+    EMERALD: 20,
+    DIAMOND: 24,
+    MASTER: 28,
+    GRANDMASTER: 32,
+    CHALLENGER: 36,
+  };
+  const DIVISION_LABEL = ["IV", "III", "II", "I"];
+  const ITEM_SLOTS = ["item0", "item1", "item2", "item3", "item4", "item5", "item6"];
+  const CHAMP_CLASS_RE = /^[A-Za-z_][A-Za-z0-9_-]*$/;
+
+  /* ------------------------------------------------------------ helpers */
+
+  function escapeHtml(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (char) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      }[char];
     });
-}
+  }
 
+  function setStatus(message, tone) {
+    statusEl.textContent = message || "";
+    statusEl.classList.toggle("is-error", tone === "error");
+    statusEl.classList.toggle("is-ok", tone === "ok");
+  }
 
-async function showMore() {
-    var url = "/showMore";
-    var showMoreButtonTag = document.getElementById('showMoreButtonTag');
-    showMoreButtonTag.innerText = "Loading more games...";
+  function setBusy(isBusy) {
+    state.busy = isBusy;
+    searchButton.disabled = isBusy;
+    searchButton.setAttribute("aria-busy", String(isBusy));
+    searchButton.textContent = isBusy ? "Searching…" : "Track";
+  }
 
+  function showEmpty(message) {
+    dataContainer.innerHTML =
+      '<div class="empty-state"><p>' + escapeHtml(message) + "</p></div>";
+  }
 
-    const matchCardTags = document.querySelectorAll('[id="matchCard"]');
-    const excludeGameIDs = Array.from(matchCardTags).map(tag => tag.getAttribute('data-gameID'));
+  function showSkeletons() {
+    dataContainer.innerHTML = new Array(4).fill('<div class="skeleton-card"></div>').join("");
+  }
 
-    const searchedUser = document.getElementById('nameInput').value;
+  function clearResults() {
+    dataContainer.innerHTML = "";
+    showMoreDiv.innerHTML = "";
+    profileContainer.hidden = true;
+    profileContainer.innerHTML = "";
+    playerContainer.hidden = true;
+    playerContainer.innerHTML = "";
+  }
 
-    // Get the select element
-    var selectElement = document.getElementById('region');
-    var regionSelect = selectElement.value;
+  async function postJSON(url, body) {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
 
-    var requestBody = {
-        searchedUser: searchedUser,
+    const text = await response.text();
+    let data = null;
+    if (text) {
+      try {
+        data = JSON.parse(text);
+      } catch (error) {
+        data = null;
+      }
+    }
+
+    if (!response.ok) {
+      throw new Error((data && data.error) || "Request failed (" + response.status + ").");
+    }
+    if (data && data.error) {
+      throw new Error(data.error);
+    }
+    return data;
+  }
+
+  function formatDate(value) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(value || ""));
+    if (!match) {
+      return value || "";
+    }
+    const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    const options =
+      date.getFullYear() === new Date().getFullYear()
+        ? { month: "short", day: "numeric" }
+        : { month: "short", day: "numeric", year: "numeric" };
+    return date.toLocaleDateString(undefined, options);
+  }
+
+  function durationToMinutes(value) {
+    const parts = String(value || "0:00").split(":");
+    const minutes = Number(parts[0]) || 0;
+    const seconds = Number(parts[1]) || 0;
+    return minutes + seconds / 60;
+  }
+
+  function kdaRatio(kills, deaths, assists) {
+    const k = Number(kills) || 0;
+    const d = Number(deaths) || 0;
+    const a = Number(assists) || 0;
+    if (d === 0) {
+      return k + a > 0 ? "∞" : "0.00";
+    }
+    return ((k + a) / d).toFixed(2);
+  }
+
+  function killParticipation(player, participants) {
+    const teamId = player.playerTeamID;
+    const teamKills = participants.reduce(function (total, member) {
+      if (teamId != null && member.playerTeamID !== teamId) {
+        return total;
+      }
+      return total + (Number(member.kills) || 0);
+    }, 0);
+
+    if (!teamKills) {
+      return 0;
+    }
+    const involved = (Number(player.kills) || 0) + (Number(player.assists) || 0);
+    return Math.round((involved / teamKills) * 100);
+  }
+
+  function formatNumber(value) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number.toLocaleString("en-US") : "—";
+  }
+
+  /* --------------------------------------------------------------- ranks */
+
+  function tierLabel(tier) {
+    const value = String(tier || "");
+    return value ? value.charAt(0) + value.slice(1).toLowerCase() : "";
+  }
+
+  function formatRank(rank) {
+    if (!rank) {
+      return "—";
+    }
+
+    const tier = String(rank.tier || "").toUpperCase();
+    if (!tier || tier === "UNRANKED") {
+      return "Unranked";
+    }
+
+    const label = tierLabel(tier);
+    const lp = Math.max(0, Number(rank.leaguePoints) || 0);
+
+    if (APEX_TIERS.has(tier)) {
+      return label + " · " + lp + " LP";
+    }
+
+    const division = String(rank.rank || "").toUpperCase();
+    return label + (division ? " " + division : "") + " · " + lp + " LP";
+  }
+
+  function rankScore(rank) {
+    if (!rank) {
+      return null;
+    }
+
+    const tier = String(rank.tier || "").toUpperCase();
+    const base = TIER_SCORE[tier];
+    if (base == null || tier === "UNRANKED") {
+      return null;
+    }
+
+    const lp = Math.max(0, Number(rank.leaguePoints) || 0);
+
+    if (APEX_TIERS.has(tier)) {
+      return base + Math.min(lp, 9000) / 100;
+    }
+
+    const division = DIVISION_LABEL.indexOf(String(rank.rank || "").toUpperCase());
+    return base + (division < 0 ? 0 : division) + Math.min(lp, 100) / 100;
+  }
+
+  function formatAverageScore(average) {
+    const tierIndex = Math.max(0, Math.min(TIER_ORDER.length - 1, Math.floor(average / 4)));
+    const tier = TIER_ORDER[tierIndex];
+    const label = tierLabel(tier);
+
+    if (tierIndex >= 7) {
+      return label + " · " + Math.max(0, Math.round((average - TIER_SCORE[tier]) * 100)) + " LP";
+    }
+
+    const within = Math.max(0, Math.min(3.999, average - tierIndex * 4));
+    const divisionIndex = Math.min(3, Math.floor(within));
+    return label + " " + DIVISION_LABEL[divisionIndex];
+  }
+
+  function rankFor(member) {
+    if (member && member.puuid && Object.prototype.hasOwnProperty.call(state.rankCache, member.puuid)) {
+      return state.rankCache[member.puuid];
+    }
+    return (member && member.rank) || null;
+  }
+
+  function lobbyRanksKnown(record) {
+    const participants = (record && record.participants) || [];
+    if (!participants.length) {
+      return false;
+    }
+    return participants.every(function (participant) {
+      return Boolean(rankFor(participant));
+    });
+  }
+
+  function averageRankLabel(record) {
+    // Show the average straight away when every rank is already available
+    // (cached from an earlier visit or attached from the database). Only ask
+    // the user to expand when some ranks still need to be fetched.
+    if (!record) {
+      return "Lobby avg: click";
+    }
+
+    const known = record.ranksLoaded || lobbyRanksKnown(record);
+    if (!known) {
+      return record.expanded ? "Loading avg…" : "Lobby avg: click";
+    }
+
+    const participants = record.participants || [];
+    const scores = [];
+    let unranked = 0;
+
+    participants.forEach(function (participant) {
+      const rank = rankFor(participant);
+      const score = rankScore(rank);
+      if (score == null) {
+        if (rank) {
+          unranked += 1;
+        }
+        return;
+      }
+      scores.push(score);
+    });
+
+    if (!scores.length) {
+      return unranked ? "Unranked lobby" : "Avg —";
+    }
+
+    const average = scores.reduce(function (total, score) {
+      return total + score;
+    }, 0) / scores.length;
+
+    return "Avg " + formatAverageScore(average);
+  }
+
+  function rememberRank(puuid, rank) {
+    if (puuid && rank) {
+      state.rankCache[puuid] = rank;
+    }
+  }
+
+  function applyRankLabels() {
+    dataContainer.querySelectorAll("[data-rank-puuid]").forEach(function (element) {
+      const puuid = element.getAttribute("data-rank-puuid");
+      const rank = puuid ? state.rankCache[puuid] || null : null;
+      const tier = rank ? String(rank.tier || "").toUpperCase() : "";
+      element.textContent = formatRank(rank);
+      element.classList.toggle("is-unranked", tier === "UNRANKED");
+      element.classList.toggle("is-unknown", !rank);
+    });
+  }
+
+  function refreshAverages() {
+    state.cards.forEach(function (record, index) {
+      const element = dataContainer.querySelector('[data-avg-index="' + index + '"]');
+      if (element) {
+        element.textContent = averageRankLabel(record);
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------ sprites */
+
+  // Sprite classes are generated from display names, so apply the same
+  // sanitisation the stylesheet uses ("B. F. Sword" -> "B-F-Sword",
+  // "Jak'Sho, The Protean" -> "Jak_Sho_-The-Protean").
+  function spriteClass(name) {
+    return String(name == null ? "" : name)
+      .replace(/\./g, "")
+      .replace(/[':,()]/g, "_")
+      .replace(/\s+/g, "-");
+  }
+
+  function sprite(kind, name, extraClass) {
+    const raw = name == null ? "" : String(name);
+    const className = spriteClass(raw);
+    const valid = CHAMP_CLASS_RE.test(className);
+    const classes = ["sprite", kind];
+
+    if (extraClass) {
+      classes.push(extraClass);
+    }
+
+    if (!valid || /^(PlaceholderItem|Placeholder|Not Found)$/i.test(raw)) {
+      return '<span class="' + classes.join(" ") + ' sprite-empty" aria-hidden="true"></span>';
+    }
+
+    classes.push(className);
+    const label = escapeHtml(raw);
+    return (
+      '<span class="' +
+      classes.join(" ") +
+      '" role="img" aria-label="' +
+      label +
+      '" title="' +
+      label +
+      '"></span>'
+    );
+  }
+
+  function itemSprites(player) {
+    return ITEM_SLOTS.map(function (slot) {
+      return sprite("item", player[slot]);
+    }).join("");
+  }
+
+  function cardItems(player) {
+    return (
+      '<span class="item-grid">' +
+      ITEM_SLOTS.slice(0, 6)
+        .map(function (slot) {
+          return sprite("item", player[slot]);
+        })
+        .join("") +
+      "</span>" +
+      '<span class="item-trinket">' +
+      sprite("item", player.item6) +
+      "</span>"
+    );
+  }
+
+  /* ------------------------------------------------------------ rune page */
+
+  function runeIconUrl(icon) {
+    if (!icon) {
+      return "";
+    }
+    return (
+      "/getRuneIcons/" +
+      String(icon)
+        .split("/")
+        .map(function (part) {
+          return encodeURIComponent(part);
+        })
+        .join("/")
+    );
+  }
+
+  function runeItem(rune, isKeystone) {
+    if (!rune) {
+      return "";
+    }
+
+    const name = escapeHtml(rune.name || "");
+    const icon = rune.icon
+      ? '<img src="' +
+        escapeHtml(runeIconUrl(rune.icon)) +
+        '" alt="" width="24" height="24" loading="lazy" />'
+      : '<span class="rune-fallback" aria-hidden="true">?</span>';
+
+    return (
+      '<span class="rune-item' +
+      (isKeystone ? " is-keystone" : "") +
+      '" title="' +
+      name +
+      '">' +
+      icon +
+      '<span class="rune-name">' +
+      name +
+      "</span>" +
+      "</span>"
+    );
+  }
+
+  function runeStyleBlock(label, style, isPrimary) {
+    if (!style) {
+      return "";
+    }
+
+    const treeIcon = style.icon
+      ? '<img class="rune-tree-icon" src="' +
+        escapeHtml(runeIconUrl(style.icon)) +
+        '" alt="" width="20" height="20" loading="lazy" />'
+      : "";
+
+    const runes = (style.runes || [])
+      .map(function (rune, index) {
+        return runeItem(rune, isPrimary && index === 0);
+      })
+      .join("");
+
+    return (
+      '<div class="rune-branch">' +
+      '<div class="rune-branch-head">' +
+      treeIcon +
+      "<span>" +
+      escapeHtml(label) +
+      "</span>" +
+      (style.name ? "<strong>" + escapeHtml(style.name) + "</strong>" : "") +
+      "</div>" +
+      '<div class="rune-list">' +
+      runes +
+      "</div>" +
+      "</div>"
+    );
+  }
+
+  function runePageHtml(page) {
+    if (!page || !page.primary) {
+      return (
+        '<div class="rune-page is-empty">' +
+        "<p>Full rune page is not stored for this older match.</p>" +
+        '<p class="muted">Reopen the match to fetch the missing data from Riot.</p>' +
+        "</div>"
+      );
+    }
+
+    const shards = (page.shards || [])
+      .map(function (shard) {
+        return runeItem(shard, false);
+      })
+      .join("");
+
+    return (
+      '<div class="rune-page">' +
+      runeStyleBlock("Primary", page.primary, true) +
+      runeStyleBlock("Secondary", page.secondary, false) +
+      (shards
+        ? '<div class="rune-branch rune-shards">' +
+          '<div class="rune-branch-head"><span>Stat shards</span></div>' +
+          '<div class="rune-list">' +
+          shards +
+          "</div>" +
+          "</div>"
+        : "") +
+      "</div>"
+    );
+  }
+
+  function runeIconImage(icon, className, size) {
+    if (!icon) {
+      return "";
+    }
+    return (
+      '<img class="' +
+      className +
+      '" src="' +
+      escapeHtml(runeIconUrl(icon)) +
+      '" alt="" width="' +
+      size +
+      '" height="' +
+      size +
+      '" loading="lazy" />'
+    );
+  }
+
+  // Legacy keystones such as Deathfire Touch are missing from the bundled
+  // sprite sheets, so prefer the real icon stored with the rune page.
+  function keystoneMarkup(member, className, size) {
+    const primary = member && member.runePage && member.runePage.primary;
+    const rune = primary && primary.runes && primary.runes[0];
+    if (rune && rune.icon) {
+      return runeIconImage(rune.icon, className, size);
+    }
+    return sprite("rune", member && member.keystone);
+  }
+
+  function secondaryTreeMarkup(member, className, size) {
+    const secondary = member && member.runePage && member.runePage.secondary;
+    if (secondary && secondary.icon) {
+      return runeIconImage(secondary.icon, className, size);
+    }
+    return sprite("runecat", member && member.secondaryRune);
+  }
+
+  function runeToggle(member) {
+    if (!member.runePage) {
+      return '<span class="rune-missing" title="Rune page unavailable">—</span>';
+    }
+
+    return (
+      '<button class="rune-toggle" type="button" aria-expanded="false" aria-label="Show full rune page for ' +
+      escapeHtml(member.riotID) +
+      '">' +
+      keystoneMarkup(member, "rune-toggle-icon", 20) +
+      secondaryTreeMarkup(member, "rune-toggle-tree", 16) +
+      '<span class="rune-caret" aria-hidden="true"></span>' +
+      "</button>"
+    );
+  }
+
+  /* --------------------------------------------------------- rank card */
+
+  function renderRank(payload) {
+    const data = Array.isArray(payload) ? payload[0] : payload;
+    if (!data) {
+      renderUnranked("No Ranked Solo/Duo data for this player.");
+      return;
+    }
+
+    const tier = String(data.tier || "").toUpperCase();
+    const division = String(data.rank || "").toUpperCase();
+    const lp = Math.max(0, Math.min(100, Number(data.leaguePoints) || 0));
+    const wins = Number(data.wins) || 0;
+    const losses = Number(data.losses) || 0;
+    const total = wins + losses;
+    const winRate = total ? Math.round((wins / total) * 100) : 0;
+
+    const tierName = tier
+      ? tier.charAt(0) + tier.slice(1).toLowerCase()
+      : "Unranked";
+    const showDivision = tier && division && !APEX_TIERS.has(tier);
+
+    let emblem;
+    if (RANK_ICONS.has(tier.toLowerCase())) {
+      emblem =
+        '<img class="rank-emblem" src="/static/img/rankIcons/' +
+        tier.toLowerCase() +
+        '.webp" alt="" width="68" height="68" />';
+    } else {
+      emblem =
+        '<span class="rank-emblem rank-emblem--fallback" aria-hidden="true">' +
+        escapeHtml(tierName.charAt(0) || "?") +
+        "</span>";
+    }
+
+    playerContainer.innerHTML =
+      '<div class="rank-card">' +
+      emblem +
+      '<div class="rank-body">' +
+      '<p class="eyebrow">Ranked Solo/Duo</p>' +
+      '<p class="rank-tier">' +
+      escapeHtml(tierName) +
+      (showDivision ? ' <span class="division">' + escapeHtml(division) + "</span>" : "") +
+      "</p>" +
+      '<div class="lp-meter" role="img" aria-label="' +
+      lp +
+      ' league points"><span style="width:' +
+      lp +
+      '%"></span></div>' +
+      '<p class="rank-meta">' +
+      "<span><strong>" +
+      lp +
+      "</strong> LP</span>" +
+      "<span><strong>" +
+      wins +
+      "</strong>W <strong>" +
+      losses +
+      "</strong>L</span>" +
+      '<span class="win-rate">' +
+      winRate +
+      "% WR</span>" +
+      "</p>" +
+      "</div>" +
+      "</div>";
+    playerContainer.hidden = false;
+  }
+
+  function renderUnranked(message) {
+    playerContainer.innerHTML =
+      '<div class="rank-card">' +
+      '<span class="rank-emblem rank-emblem--fallback" aria-hidden="true">?</span>' +
+      '<div class="rank-body">' +
+      '<p class="eyebrow">Ranked Solo/Duo</p>' +
+      '<p class="rank-tier">Unranked</p>' +
+      '<p class="rank-meta">' +
+      escapeHtml(message || "No Ranked Solo/Duo data for this player.") +
+      "</p>" +
+      "</div>" +
+      "</div>";
+    playerContainer.hidden = false;
+  }
+
+  async function rankSearch(riotID, token) {
+    try {
+      const data = await postJSON("/getRank", {
+        riotID: riotID,
+        regionSelect: regionSelect.value,
+      });
+      if (token != null && token !== state.searchToken) {
+        return;
+      }
+      renderRank(data);
+    } catch (error) {
+      if (token != null && token !== state.searchToken) {
+        return;
+      }
+      renderUnranked(error.message);
+    }
+  }
+
+  /* ------------------------------------------------------------ profile */
+
+  function renderProfile(riotID, count) {
+    profileContainer.innerHTML =
+      '<div class="profile">' +
+      "<div>" +
+      '<p class="eyebrow">Match history</p>' +
+      "<h1>" +
+      escapeHtml(riotID) +
+      "</h1>" +
+      "</div>" +
+      '<div class="profile-actions">' +
+      '<span class="game-count">' +
+      count +
+      (count === 1 ? " game" : " games") +
+      "</span>" +
+      '<button class="btn btn-ghost" type="button" data-action="update">Refresh</button>' +
+      "</div>" +
+      "</div>";
+    profileContainer.hidden = false;
+  }
+
+  /* -------------------------------------------------------- match cards */
+
+  function teamRoster(team, player, label, isEnemy) {
+    if (!team.length) {
+      return "";
+    }
+
+    const champs = team
+      .slice(0, 5)
+      .map(function (member) {
+        const isYou =
+          member.riotID &&
+          player.riotID &&
+          member.riotID.toLowerCase() === player.riotID.toLowerCase();
+        return sprite(
+          "champ",
+          member.Champ,
+          "team-champ" + (isYou ? " is-you" : "")
+        );
+      })
+      .join("");
+
+    return (
+      '<span class="team-row' +
+      (isEnemy ? " is-enemy" : "") +
+      '" title="' +
+      label +
+      '">' +
+      champs +
+      "</span>"
+    );
+  }
+
+  function teamRosters(player, participants) {
+    if (!participants || !participants.length) {
+      return "";
+    }
+
+    const teamId = player.playerTeamID;
+    const own = participants.filter(function (member) {
+      return teamId != null
+        ? member.playerTeamID === teamId
+        : Boolean(member.win) === Boolean(player.win);
+    });
+    const ownIds = new Set(own);
+    const enemy = participants.filter(function (member) {
+      return !ownIds.has(member);
+    });
+
+    return (
+      '<span class="team-rosters" aria-label="Team champions">' +
+      teamRoster(own, player, "Your team", false) +
+      teamRoster(enemy, player, "Enemy team", true) +
+      "</span>"
+    );
+  }
+
+  function buildMatchCard(game, player, participants, index) {
+    const win = Boolean(player.win);
+    const kills = Number(player.kills) || 0;
+    const deaths = Number(player.deaths) || 0;
+    const assists = Number(player.assists) || 0;
+    const ratio = kdaRatio(kills, deaths, assists);
+    const minutes = durationToMinutes(game.gameDurationMinutes);
+    const csPerMin = minutes > 0 ? ((Number(player.totalCS) || 0) / minutes).toFixed(1) : "0.0";
+    const totalGold = Number(player.goldEarned) || 0;
+    const goldPerMin = minutes > 0 ? Math.round(totalGold / minutes) : 0;
+    const participation = killParticipation(player, participants);
+    const gameID = game.gameID || "";
+
+    return (
+      '<details class="match-card ' +
+      (win ? "is-win" : "is-loss") +
+      '" data-index="' +
+      index +
+      '" data-game-id="' +
+      escapeHtml(gameID) +
+      '">' +
+      '<summary class="match-summary">' +
+      '<span class="result-rail" aria-hidden="true"></span>' +
+      '<span class="match-outcome">' +
+      '<span class="outcome-label">' +
+      (win ? "Victory" : "Defeat") +
+      "</span>" +
+      '<span class="outcome-sub">' +
+      escapeHtml(game.gameDurationMinutes || "") +
+      "</span>" +
+      '<span class="outcome-sub">' +
+      escapeHtml(formatDate(game.gameDate)) +
+      "</span>" +
+      '<span class="outcome-sub lobby-avg" data-avg-index="' +
+      index +
+      '" title="Expand this match to see the full scoreboard and rank details.">' +
+      escapeHtml(averageRankLabel(state.cards[index])) +
+      "</span>" +
+      "</span>" +
+      '<span class="champion">' +
+      '<span class="champ-wrap">' +
+      sprite("champ", player.Champ) +
+      '<span class="level-badge">' +
+      escapeHtml(player.champLevel) +
+      "</span>" +
+      "</span>" +
+      '<span class="spells">' +
+      sprite("spell", player.summonerSpell1) +
+      sprite("spell", player.summonerSpell2) +
+      "</span>" +
+      "</span>" +
+      '<span class="runes">' +
+      keystoneMarkup(player, "rune-summary-icon", 26) +
+      secondaryTreeMarkup(player, "rune-summary-tree", 20) +
+      "</span>" +
+      '<span class="items">' +
+      cardItems(player) +
+      "</span>" +
+      teamRosters(player, participants) +
+      '<span class="kda-block">' +
+      '<span class="kda">' +
+      kills +
+      ' / <span class="deaths">' +
+      deaths +
+      "</span> / " +
+      assists +
+      "</span>" +
+      '<span class="kda-ratio">' +
+      ratio +
+      " KDA</span>" +
+      "</span>" +
+      '<span class="stats">' +
+      '<span class="stat"><b>' +
+      participation +
+      "%</b><small>KP</small></span>" +
+      '<span class="stat"><b>' +
+      csPerMin +
+      "</b><small>CS/min</small></span>" +
+      '<span class="stat"><b>' +
+      formatNumber(totalGold) +
+      "</b><small>Gold</small></span>" +
+      '<span class="stat"><b>' +
+      formatNumber(goldPerMin) +
+      "</b><small>Gold/min</small></span>" +
+      "</span>" +
+      '<span class="chevron" aria-hidden="true"></span>' +
+      "</summary>" +
+      '<div class="match-details" data-loaded="false"></div>' +
+      "</details>"
+    );
+  }
+
+  function buildScoreTable(team, profileName) {
+    const rows = team
+      .map(function (member) {
+        const isYou =
+          member.riotID &&
+          profileName &&
+          member.riotID.toLowerCase() === profileName.toLowerCase();
+        const level = escapeHtml(member.champLevel);
+        const name = escapeHtml(member.riotID);
+        const puuid = member.puuid || "";
+        const rank = rankFor(member);
+        const rankTier = rank ? String(rank.tier || "").toUpperCase() : "";
+        const rankClass = !rank ? " is-unknown" : rankTier === "UNRANKED" ? " is-unranked" : "";
+        const rankAttribute = puuid
+          ? ' data-rank-puuid="' + escapeHtml(puuid) + '"'
+          : "";
+
+        return (
+          '<tr class="' +
+          (isYou ? "is-you" : "") +
+          '">' +
+          "<td>" +
+          '<span class="score-champ">' +
+          '<span class="champ-wrap">' +
+          sprite("champ", member.Champ, "champ-sm") +
+          '<span class="level-badge">' +
+          level +
+          "</span>" +
+          "</span>" +
+          '<span class="spells">' +
+          sprite("spell", member.summonerSpell1) +
+          sprite("spell", member.summonerSpell2) +
+          "</span>" +
+          "</span>" +
+          "</td>" +
+          '<td class="player-cell">' +
+          '<button class="player-link" type="button" data-riot-id="' +
+          name +
+          '" title="View ' +
+          name +
+          '">' +
+          name +
+          "</button>" +
+          '<span class="player-rank' +
+          rankClass +
+          '"' +
+          rankAttribute +
+          ">" +
+          escapeHtml(formatRank(rank)) +
+          "</span>" +
+          "</td>" +
+          "<td>" +
+          (Number(member.kills) || 0) +
+          " / " +
+          (Number(member.deaths) || 0) +
+          " / " +
+          (Number(member.assists) || 0) +
+          "</td>" +
+          "<td>" +
+          formatNumber(member.goldEarned) +
+          "</td>" +
+          "<td>" +
+          (Number(member.totalCS) || 0) +
+          "</td>" +
+          '<td class="rune-cell">' +
+          runeToggle(member) +
+          "</td>" +
+          '<td><span class="item-cell">' +
+          itemSprites(member) +
+          "</span></td>" +
+          "</tr>" +
+          '<tr class="rune-page-row" hidden><td colspan="7">' +
+          runePageHtml(member.runePage) +
+          "</td></tr>"
+        );
+      })
+      .join("");
+
+    return (
+      '<div class="table-scroll">' +
+      '<table class="score-table">' +
+      "<thead><tr>" +
+      '<th scope="col">Champion</th>' +
+      '<th scope="col">Player</th>' +
+      '<th scope="col">KDA</th>' +
+      '<th scope="col">Gold</th>' +
+      '<th scope="col">CS</th>' +
+      '<th scope="col">Runes</th>' +
+      '<th scope="col">Items</th>' +
+      "</tr></thead>" +
+      "<tbody>" +
+      rows +
+      "</tbody>" +
+      "</table>" +
+      "</div>"
+    );
+  }
+
+  function buildDetails(record) {
+    const player = record.player;
+    const participants = record.participants || [];
+    const teamId = player.playerTeamID;
+
+    const own = participants.filter(function (member) {
+      return teamId != null
+        ? member.playerTeamID === teamId
+        : Boolean(member.win) === Boolean(player.win);
+    });
+    const ownIds = new Set(own);
+    const enemy = participants.filter(function (member) {
+      return !ownIds.has(member);
+    });
+
+    return (
+      '<div class="team-block">' +
+      '<h3 class="team-heading">Your Team</h3>' +
+      buildScoreTable(own, player.riotID) +
+      "</div>" +
+      '<div class="team-block enemy">' +
+      '<h3 class="team-heading">Enemy Team</h3>' +
+      buildScoreTable(enemy, player.riotID) +
+      "</div>" +
+      '<p class="rank-note" data-rank-note hidden></p>'
+    );
+  }
+
+  function renderMatches(data, append) {
+    const games = Array.isArray(data.gameData) ? data.gameData : [];
+    const players = Array.isArray(data.playerStats) ? data.playerStats : [];
+    const matchData = Array.isArray(data.matchData) ? data.matchData : [];
+
+    const html = [];
+
+    games.forEach(function (game, index) {
+      const player = players[index];
+      const participants = matchData[index];
+
+      // A Riot ID change can leave a stored match without a player-stat row.
+      // Skip that card rather than rendering an empty one.
+      if (!player || !Array.isArray(participants)) {
+        return;
+      }
+
+      participants.forEach(function (participant) {
+        if (participant && participant.puuid && participant.rank) {
+          rememberRank(participant.puuid, participant.rank);
+        }
+      });
+
+      const cardIndex = state.cards.length;
+      state.cards.push({
+        game: game,
+        player: player,
+        participants: participants,
+        expanded: false,
+        ranksLoaded: false,
+      });
+      html.push(buildMatchCard(game, player, participants, cardIndex));
+    });
+
+    if (append) {
+      dataContainer.insertAdjacentHTML("beforeend", html.join(""));
+    } else {
+      dataContainer.innerHTML = html.join("");
+    }
+
+    renderProfile(state.riotID, state.cards.length);
+    refreshAverages();
+    return html.length;
+  }
+
+  function renderShowMore() {
+    showMoreDiv.innerHTML =
+      '<button id="showMoreButtonTag" class="btn btn-ghost" type="button">Show more</button>';
+  }
+
+  /* ------------------------------------------------ lazy ranks / rune pages */
+
+  async function loadLobbyRanks(record, details) {
+    if (!record || record.ranksLoading || record.ranksLoaded) {
+      return;
+    }
+
+    const needsRank = record.participants.some(function (participant) {
+      return participant && participant.puuid && !rankFor(participant);
+    });
+    if (!needsRank) {
+      record.ranksLoaded = true;
+      refreshAverages();
+      return;
+    }
+
+    record.ranksLoading = true;
+    const players = record.participants
+      .filter(function (participant) {
+        return participant && (participant.puuid || participant.riotID);
+      })
+      .map(function (participant) {
+        return {
+          riotID: participant.riotID || "",
+          puuid: participant.puuid || "",
+        };
+      });
+
+    try {
+      const data = await postJSON("/getLobbyRanks", {
+        players: players,
+        regionSelect: regionSelect.value,
+        fetchMissing: true,
+      });
+
+      const ranks = (data && data.ranks) || {};
+      Object.keys(ranks).forEach(function (puuid) {
+        const rank = ranks[puuid];
+        if (!rank) {
+          return;
+        }
+        state.rankCache[puuid] = rank;
+        state.cards.forEach(function (card) {
+          (card.participants || []).forEach(function (participant) {
+            if (participant && participant.puuid === puuid) {
+              participant.rank = rank;
+            }
+          });
+        });
+      });
+
+      applyRankLabels();
+
+      if (data && data.rateLimited && details) {
+        const note = details.querySelector("[data-rank-note]");
+        if (note) {
+          note.textContent = "Riot rate limit reached — some ranks could not be loaded.";
+          note.hidden = false;
+        }
+      }
+    } catch (error) {
+      // Ranks are progressive enhancement; the scoreboard still works without them.
+    } finally {
+      record.ranksLoading = false;
+      record.ranksLoaded = true;
+      refreshAverages();
+    }
+  }
+
+  async function loadMatchRunes(record, details) {
+    if (!record || record.runesLoading || record.runesLoaded) {
+      return;
+    }
+
+    const needsRunes = record.participants.some(function (participant) {
+      return participant && participant.puuid && !participant.runePage;
+    });
+    if (!needsRunes) {
+      record.runesLoaded = true;
+      return;
+    }
+
+    record.runesLoading = true;
+    try {
+      const data = await postJSON("/getMatchRunes", {
+        gameID: record.game.gameID,
+        regionSelect: regionSelect.value,
+      });
+      const pages = (data && data.runePages) || {};
+      let changed = false;
+
+      state.cards.forEach(function (card) {
+        (card.participants || []).forEach(function (participant) {
+          if (participant && participant.puuid && pages[participant.puuid]) {
+            participant.runePage = pages[participant.puuid];
+            changed = true;
+          }
+        });
+      });
+
+      if (changed && details && details.open) {
+        const body = details.querySelector(".match-details");
+        if (body) {
+          body.innerHTML = buildDetails(record);
+          body.dataset.loaded = "true";
+        }
+      }
+    } catch (error) {
+      // Older matches may fall outside Riot's retention window.
+    } finally {
+      record.runesLoading = false;
+      record.runesLoaded = true;
+    }
+  }
+
+  /* -------------------------------------------------------------- search */
+
+  async function summonerSearch() {
+    const name = nameInput.value.trim();
+
+    if (!name) {
+      setStatus("Enter a Riot ID to search.", "error");
+      nameInput.focus();
+      return;
+    }
+    if (name.indexOf("#") === -1) {
+      setStatus("Enter your Riot ID as Game Name#Tagline.", "error");
+      nameInput.focus();
+      return;
+    }
+
+    const token = ++state.searchToken;
+    state.riotID = name;
+    state.cards = [];
+
+    setStatus("Searching for summoner…");
+    setBusy(true);
+    clearResults();
+    showSkeletons();
+
+    try {
+      const data = await postJSON("/summonerSearch", {
+        summonerName: name,
+        regionSelect: regionSelect.value,
+      });
+
+      if (token !== state.searchToken) {
+        return;
+      }
+
+      state.riotID = data.riotID || name;
+
+      if (!Array.isArray(data.gameData) || data.gameData.length === 0) {
+        showEmpty("No recent Ranked Solo/Duo matches were returned for this player.");
+        setStatus("");
+        return;
+      }
+
+      renderMatches(data, false);
+      if (data.gameData.length >= 20) {
+        renderShowMore();
+      }
+      setStatus("");
+      rankSearch(state.riotID, token);
+    } catch (error) {
+      if (token !== state.searchToken) {
+        return;
+      }
+      showEmpty("Could not load match history. Check the Riot ID and region, then try again.");
+      setStatus(error.message || "Search failed.", "error");
+    } finally {
+      if (token === state.searchToken) {
+        setBusy(false);
+      }
+    }
+  }
+
+  async function showMore() {
+    const button = showMoreDiv.querySelector("button");
+    const name = state.riotID || nameInput.value.trim();
+
+    if (!button || button.disabled || !name) {
+      return;
+    }
+
+    const excludeGameIDs = Array.from(
+      dataContainer.querySelectorAll("[data-game-id]")
+    )
+      .map(function (element) {
+        return element.getAttribute("data-game-id");
+      })
+      .filter(Boolean);
+
+    button.disabled = true;
+    button.textContent = "Loading…";
+    setStatus("Loading more games…");
+
+    try {
+      const data = await postJSON("/showMore", {
+        searchedUser: name,
         excludeGameIDs: excludeGameIDs,
-        regionSelect: regionSelect
-    };
-    
-    await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": "true"
-        },
-        body: JSON.stringify(requestBody)
-    })
-    .then(function(response) {
-        // Check if the response was successful
-        if (response.ok) {
-            return response.json(); // Convert response to text
-        } else {
-            throw new Error('Error: ' + response.status); // Throw an error
-        }
-    })
-    .then(function(data) {
-        showMoreButtonTag.innerText = "SHOW MORE";
+        regionSelect: regionSelect.value,
+      });
 
-        printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
-    })
-    .catch(function(error) {
-        // responseParagraph.textContent = "Summoner not found..."
-        console.log(error)
-        // Display error message
-    });
-}
+      const rendered = renderMatches(data, true);
 
+      if (rendered === 0) {
+        showMoreDiv.innerHTML = '<span class="muted">No more games.</span>';
+      } else {
+        renderShowMore();
+      }
+      setStatus("");
+    } catch (error) {
+      setStatus(error.message || "Could not load more games.", "error");
+      button.disabled = false;
+      button.textContent = "Show more";
+    }
+  }
 
-async function updateData() {
-    var url = "/getHistory";
+  async function updateData() {
+    const name = state.riotID || nameInput.value.trim();
 
-    var responseParagraph = document.getElementById('responseParagraph');
-    responseParagraph.textContent = "Getting history...";
-    var riotID = document.getElementById("nameInput").value;
-
-    // Get the select element
-    var selectElement = document.getElementById('region');
-    var regionSelect = selectElement.value;
-
-    var requestBody = {
-        regionSelect: regionSelect,
-        riotID: riotID
-    };
-
-    await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": "true"
-        },
-        body: JSON.stringify(requestBody)
-    })
-    .then(function(response) {
-        // Check if the response was successful
-        if (response.ok) {
-            return response.json(); // Convert response to text
-        } else {
-            throw new Error('Error: ' + response.status); // Throw an error
-        }
-    })
-    .then(function(data) {
-        /////////////////////////////////////////////////
-        const dataContainer = document.getElementById('data-container');
-        dataContainer.innerHTML = '';
-        const riotID = document.getElementById('nameInput').value;
-        rankSearchUpdate(riotID);
-        //responseParagraph.textContent = "Updated, Please Refresh";
-        
-        printMatches(data.gameData, data.playerStats, data.matchData, data.riotID);
-    })
-    .catch(function(error) {
-        responseParagraph.textContent = error.message; // Display error message
-    });
-}
-
-
-// TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
-async function toggleAccordion(header) {
-    // Get the parent accordion item
-    var accordionItem = header.parentNode;
-    // Toggle the "active" class to show/hide the accordion body
-    accordionItem.classList.toggle("active");
-}
-
-
-
-function calculateKDA(kills, deaths, assists) {
-
-    if (deaths === 0) {
-        return 'Infinity';
+    if (!name || state.busy) {
+      return;
     }
 
-    const kda = (kills + assists) / deaths;
+    const token = ++state.searchToken;
+    state.cards = [];
 
-    return kda.toFixed(2);
-}
-
-function riotIDSplitter(inputString) {
-    // Splitting the string at the '#' symbol
-    const nameParts = inputString.split("#");
-  
-    // Extracting the parts
-    const gamename = nameParts[0];
-    const tag = nameParts[1] || null;
-  
-    // Returning the results
-    return {
-      gamename,
-      tag
-    };
-}
-
-function generateRandomNumber() {
-    const length = 10;
-    let randomNumber = '';
-
-    for (let i = 0; i < length; i++) {
-        randomNumber += Math.floor(Math.random() * 10);
+    setStatus("Refreshing match history…");
+    const refreshButton = profileContainer.querySelector('[data-action="update"]');
+    if (refreshButton) {
+      refreshButton.disabled = true;
+      refreshButton.textContent = "Refreshing…";
     }
 
-    return randomNumber;
-}
+    try {
+      const data = await postJSON("/getHistory", {
+        riotID: name,
+        regionSelect: regionSelect.value,
+      });
 
-function winrateCalculator(wins, losses) {
-    wins = parseInt(wins, 10);
-    losses = parseInt(losses, 10);
+      if (token !== state.searchToken) {
+        return;
+      }
 
-    var totalGamesPlayed = wins + losses;
-    var winrateFloat = wins / totalGamesPlayed * 100;
-    var winrate = Math.round(winrateFloat, 1)
-    return winrate;
-}
+      if (!Array.isArray(data.gameData) || data.gameData.length === 0) {
+        clearResults();
+        showEmpty("No recent Ranked Solo/Duo matches were returned for this player.");
+        setStatus("");
+        return;
+      }
 
-function itemToClass(itemName) {
-    const itemClassName = itemName.replace(/ /g, '-').replace(/'/g, '_');
-    return itemClassName;
-}
-
-
-async function rankSearch(riotIDParam) {
-    var url = "/getRank";
-
-    // Use the provided summonerNameParam if available; otherwise, use the input value
-    var riotID = riotIDParam || document.getElementById("nameInput").value;
-
-    // Get the select element
-    var selectElement = document.getElementById('region');
-    var regionSelect = selectElement.value;
-
-    var requestBody = {
-        riotID: riotID,
-        regionSelect: regionSelect
-    };
-
-    await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": "true"
-        },
-        body: JSON.stringify(requestBody)
-    })
-    .then(function(response) {
-        // Check if the response was successful
-        if (response.ok) {
-            return response.json(); // Convert response to text
-        } else {
-            throw new Error('Error: ' + response.status); // Throw an error
-        }
-    })
-    .then(function(data) {
-        const dataContainer = document.getElementById('player-container');
-        dataContainer.innerHTML = `
-        <div class="center searchSection text-dark text-center fw-bold" style="border-top-left-radius: 15px; border-top-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                ${data[0].queueType}
-            </div>
-        </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                 ${data[0].tier} ${data[0].rank}
-            </div>
-        </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                Wins: ${data[0].wins} / Losses: ${data[0].losses}
-            </div>
-        </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                Win Rate ${winrateCalculator(data[0].wins, data[0].losses)}%
-            </div>
-        </div>
-        `;
-    })
-    .catch(function(error) {
-        console.log(error)
-        const dataContainer = document.getElementById('player-container');
-        dataContainer.innerHTML = `
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                Not valid ranked data(Placements not done or wrong region)
-            </div>
-        </div>
-        `;
-    });
-}
-
-async function rankSearchUpdate(riotIDParam) {
-    var url = "/updateRank";
-
-    // Use the provided summonerNameParam if available; otherwise, use the input value
-    var riotID = riotIDParam || document.getElementById("nameInput").value;
-
-    // Get the select element
-    var selectElement = document.getElementById('region');
-    var regionSelect = selectElement.value;
-
-    var requestBody = {
-        riotID: riotID,
-        regionSelect: regionSelect
-    };
-
-    await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": "true"
-        },
-        body: JSON.stringify(requestBody)
-    })
-    .then(function(response) {
-        // Check if the response was successful
-        if (response.ok) {
-            return response.json(); // Convert response to text
-        } else {
-            throw new Error('Error: ' + response.status); // Throw an error
-        }
-    })
-    .then(function(data) {
-        const dataContainer = document.getElementById('player-container');
-        dataContainer.innerHTML = `
-        <div class="center searchSection text-dark text-center fw-bold" style="border-top-left-radius: 15px; border-top-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                ${data[0].queueType}
-            </div>
-        </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                 ${data[0].tier} ${data[0].rank}
-            </div>
-        </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                Wins: ${data[0].wins} / Losses: ${data[0].losses}
-            </div>
-        </div>
-        <div class="center searchSection text-dark text-center fw-bold" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                Win Rate ${winrateCalculator(data[0].wins, data[0].losses)}%
-            </div>
-        </div>
-        `;
-    })
-    .catch(function(error) {
-        console.log(error)
-        const dataContainer = document.getElementById('player-container');
-        dataContainer.innerHTML = `
-        <div class="center searchSection text-dark text-center fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%; width: 740px; display: flex; justify-content: center;">
-            <div class="nested-container" style="justify-content: center;">
-                Not valid ranked data(Placements not done or wrong region)
-            </div>
-        </div>
-        `;
-    });
-}
-
-
-
-// TODO: REWORK: Make it so that the assets in the accordion item are only loaded if the user clicks on the game card to view the information within it.
-async function printMatches(gameDataIn, playerStatsIn, matchData, summonerName) {
-    // Assuming gameData and playerStats are available as arrays of objects
-    const gameData = gameDataIn;
-    const playerStats = playerStatsIn;
-    
-    var responseParagraph = document.getElementById('responseParagraph');
-    responseParagraph.textContent = summonerName;
-    responseParagraph.innerHTML = `
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-2">
-                <button id="updateButton" class="btn btn-dark btn-sm rounded-3" style="font-weight:bold; font-size: 50%; font-family: VCR OSD Mono, sans-serif; outline: none; box-shadow: none; padding: 7px;" onclick="updateData()">Update</button>
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                <h3 id="searchedUser" class="fw-bold" style="font-family: VCR OSD Mono, sans-serif; font-size: 100%;">${summonerName}</h3>
-            </div>
-            <div class="col-2"></div>
-        </div>
-    </div>
-    `;
-
-
-
-    let container;
-    if (document.getElementById('matchHistoryFeed')) {
-        container = document.getElementById('matchHistoryFeed');
+      dataContainer.innerHTML = "";
+      showMoreDiv.innerHTML = "";
+      renderMatches(data, false);
+      if (data.gameData.length >= 20) {
+        renderShowMore();
+      }
+      setStatus("Updated.", "ok");
+      rankSearch(name, token);
+    } catch (error) {
+      if (token !== state.searchToken) {
+        return;
+      }
+      setStatus(error.message || "Refresh failed.", "error");
+      if (refreshButton) {
+        refreshButton.disabled = false;
+        refreshButton.textContent = "Refresh";
+      }
     }
-    else {
-        // Create a new div element with a custom ID
-        container = document.createElement('div');
-        container.id = `matchHistoryFeed`;
+  }
+
+  /* ------------------------------------------------------------- events */
+
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    summonerSearch();
+  });
+
+  dataContainer.addEventListener(
+    "toggle",
+    function (event) {
+      const details = event.target;
+      if (!details || !details.open) {
+        return;
+      }
+      const body = details.querySelector(".match-details");
+      const record = state.cards[Number(details.dataset.index)];
+      if (!body || !record) {
+        return;
+      }
+
+      if (body.dataset.loaded !== "true") {
+        body.innerHTML = buildDetails(record);
+        body.dataset.loaded = "true";
+      }
+
+      record.expanded = true;
+      refreshAverages();
+
+      loadMatchRunes(record, details);
+      loadLobbyRanks(record, details);
+    },
+    true
+  );
+
+  dataContainer.addEventListener("click", function (event) {
+    const playerLink = event.target.closest(".player-link");
+    if (playerLink) {
+      const riotID = playerLink.getAttribute("data-riot-id");
+      if (riotID) {
+        event.preventDefault();
+        event.stopPropagation();
+        nameInput.value = riotID;
+        summonerSearch();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
     }
 
-    
-    // Get the data-container element
-    const dataContainer = document.getElementById('data-container');
-    // Clear existing content in the data-container
-    dataContainer.innerHTML = '';
+    const toggle = event.target.closest(".rune-toggle");
+    if (toggle) {
+      event.preventDefault();
+      const row = toggle.closest("tr");
+      const pageRow = row && row.nextElementSibling;
+      if (!pageRow || !pageRow.classList.contains("rune-page-row")) {
+        return;
+      }
+      const opening = pageRow.hidden;
+      pageRow.hidden = !opening;
+      toggle.setAttribute("aria-expanded", String(opening));
+    }
+  });
 
+  showMoreDiv.addEventListener("click", function (event) {
+    if (event.target.closest("button")) {
+      showMore();
+    }
+  });
 
-    // Gets a value from the formControl div on the main page. This value is then iterated for as many times as the same page calls the printMatches function meaning how many times they hit the SHOW MORE button.
-    formControl = document.getElementById('formControl')
-    const dataKey = formControl.getAttribute('data-key');
-    cardCount = dataKey + 7
-    formControl.setAttribute('data-key', cardCount);
-
-    
-
-
-    // Loop through the arrays simultaneously using forEach
-    gameData.forEach((row1, index) => {
-        
-        const row2 = playerStats[index];
-        const row3 = matchData[index];
-
-        // Access the array and separate based on the 'win' field
-        const winners = row3.filter(obj => obj.win === true);
-        const losers = row3.filter(obj => obj.win === false);
-
-        const primaryTableID = `primaryTable_${index}_${cardCount}`;
-        const secondaryTableID = `secondaryTable_${index}_${cardCount}`;
-
-        // Error handling for when a user has changed their name
-        // If the match history detects that a user has changed their name the
-        // if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase())
-        // conditional wont work and will throw a row2 undefined TypeError.
-        // This block of code catches that and catches the undefined TypeError of possibly
-        // trying to remove the showmore button multiple times.
-        if (typeof row2 == 'undefined'){
-            try {
-                var removeShowMore = document.getElementById("showMoreButtonTag");
-                removeShowMore.remove();
-            } catch (error) {}
-            return;
-        }
-
-
-        if (row2.win == true && row2.riotID.toLowerCase() == summonerName.toLowerCase()) {
-            
-            // TODO: These items can be turned into sprites
-            
-            kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
-            
-            player1Name = row3[0].riotID;
-            player2Name = row3[1].riotID;
-            player3Name = row3[2].riotID; 
-            player4Name = row3[3].riotID; 
-            player5Name = row3[4].riotID; 
-            player6Name = row3[5].riotID; 
-            player7Name = row3[6].riotID; 
-            player8Name = row3[7].riotID; 
-            player9Name = row3[8].riotID; 
-            player10Name = row3[9].riotID;
-
-            //Gets the Kill participation
-            var killTotalTeam = 0;
-            row3.forEach(player => {
-                if (player.playerTeamID == row2.playerTeamID) {
-                    killTotalTeam = killTotalTeam + player.kills;
-                };
-            });
-            participation = Math.round((row2.kills / killTotalTeam) * 100);
-
-            if (isNaN(participation)){
-                participation = 0;
-            }
-
-            // Gets cs per minute
-            csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
-            csPerMin = csPerMinFloat.toFixed(1);
-
-            // Takes data and submits it to the header of the tag for usage if referenced
-            // <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" data-win="win" data-card-count="${cardCount}" data-winners="${JSON.stringify(winners)}" data-losers="${JSON.stringify(losers)}" onclick='toggleAccordion(this)'>
-            container.innerHTML += `
-            <div style="background-color: #28344e; border-radius: 15px;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
-                <div style="display: flex; background-color: #28344e; color: white;" class="accordion-header flex" onclick='toggleAccordion(this)'>
-                
-                    <div class="nested-container">
-                    <div style="border-radius: 15px; width: 35px; background-color: rgb(83, 131, 232);"></div>
-                        <div class="item-container rankedGameCard">
-                            <div class="innerCard">
-                                <p class="match-card-text" style="color: #336be3;"><b>Ranked Solo</b></p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">${row1.gameDate}</p>
-                            </div>
-                            <div class="winDivider"></div>
-                            <div class="innerCard">
-                                <p class="match-card-text"><b>Victory</b></p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">${row1.gameDurationMinutes}</p>
-                            </div>
-                        </div>
-
-                        <div class="item-container portraitCard">
-                            <div class="innerCard">
-                                
-                                <div class="image-container">
-                                    <img class="${row2.Champ}">
-                                    <div class="text-over-image">${row2.champLevel}</div>
-                                </div>
-                                <div style="flex-direction: row;">
-                                    <img class="${row2.summonerSpell1}">
-                                    <img class="${row2.summonerSpell2}">
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img class="${itemToClass(row2.keystone)}">
-                                <img class="${itemToClass(row2.secondaryRune)}">
-                            </div>
-                        </div>
-
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img class="${itemToClass(row2.item0)}">
-                                <img class="${itemToClass(row2.item1)}">
-                                <img class="${itemToClass(row2.item2)}">
-                            </div>
-                        </div>
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img class="${itemToClass(row2.item3)}">
-                                <img class="${itemToClass(row2.item4)}">
-                                <img class="${itemToClass(row2.item5)}">
-                            </div>
-                        </div>
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img style="margin-top: 25px; border-radius: 50%;" class="${itemToClass(row2.item6)}">
-                            </div>
-                        </div>
-                        
-
-                        <div class="item-container px-2">
-                            <div class="innerCard">
-                                <p class="kda">${row2.kills} / <span style="color: #e84057">${row2.deaths}</span> / ${row2.assists}</p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text" style="color: #7c7e97; font-weight:400;">${kda}:1 KDA</p>
-                            </div>
-                            <div class="winDivider"></div>
-                            <div class="innerCard">
-                                <p class="match-card-text" style="color: #336be3"><b>K/P: ${participation}%</b></p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">CS ${row2.totalCS} (${csPerMin})</p>
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="item-container teamCard">
-                            <div class="innerCard">
-                                <img class="${row3[0].Champ}Scoreboard">
-                                <img class="${row3[1].Champ}Scoreboard">
-                                <img class="${row3[2].Champ}Scoreboard">
-                                <img class="${row3[3].Champ}Scoreboard">
-                                <img class="${row3[4].Champ}Scoreboard">
-                            </div>
-                        </div>
-                        <div class="item-container teamName">
-                            <div class="innerCard">
-                                <div>${player1Name}</div>
-                                <div>${player2Name}</div>
-                                <div>${player3Name}</div>
-                                <div>${player4Name}</div>
-                                <div>${player5Name}</div>
-                            </div>
-                        </div>
-
-                        <div class="item-container teamCard ">
-                            <div class="innerCard">
-                                <img class="${row3[5].Champ}Scoreboard">
-                                <img class="${row3[6].Champ}Scoreboard">
-                                <img class="${row3[7].Champ}Scoreboard">
-                                <img class="${row3[8].Champ}Scoreboard">
-                                <img class="${row3[9].Champ}Scoreboard">
-                            </div>
-                        </div>
-                        <div class="item-container teamName">
-                            <div class="innerCard">
-                                <div>${player6Name}</div>
-                                <div>${player7Name}</div>
-                                <div>${player8Name}</div>
-                                <div>${player9Name}</div>
-                                <div>${player10Name}</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                
-                
-                
-                <table class="accordion-body" style="color: white;">
-                    <colgroup>
-                        <col width="20%">
-                        <col width="5%">
-                        <col width="25%">
-                        <col width="5%">
-                        <col width="10%">
-                        <col width="5%">
-                        <col width="30%">
-                    </colgroup>
-                    <thead>
-                        <tr style="text-align: center;">
-                        <th colspan="3">Your Team</th>
-                            <th>KDA</th>
-                            <th>Gold</th>
-                            <th>CS</th>
-                            <th>Items</th>
-                        </tr>
-                    </thead>
-                    
-
-                    <tbody id="${primaryTableID}">
-                    </tbody>
-                </table>
-
-                <table class="accordion-body" style="color: white;">
-                    <colgroup>
-                        <col width="20%">
-                        <col width="5%">
-                        <col width="25%">
-                        <col width="5%">
-                        <col width="10%">
-                        <col width="5%">
-                        <col width="30%">
-                    </colgroup>
-                    <thead>
-                        <tr style="text-align: center;">
-                            <th colspan="3">Enemy Team</th>
-                            <th>KDA</th>
-                            <th>Gold</th>
-                            <th>CS</th>
-                            <th>Items</th>
-                        </tr>
-                    </thead>
-                    <tbody id="${secondaryTableID}">
-                    </tbody>
-                </table>
-            </div>
-            `;
-          } 
-
-
-          else {
-
-            kda = calculateKDA(row2.kills, row2.deaths, row2.assists);
-
-
-
-            player1Name = row3[0].riotID;
-            player2Name = row3[1].riotID;
-            player3Name = row3[2].riotID; 
-            player4Name = row3[3].riotID; 
-            player5Name = row3[4].riotID; 
-            player6Name = row3[5].riotID; 
-            player7Name = row3[6].riotID; 
-            player8Name = row3[7].riotID; 
-            player9Name = row3[8].riotID; 
-            player10Name = row3[9].riotID;
-
-            //Gets the Kill participation
-            var killTotalTeam = 0;
-            row3.forEach(player => {
-                if (player.playerTeamID == row2.playerTeamID) {
-                    killTotalTeam = killTotalTeam + player.kills;
-                };
-            });
-            
-            participation = Math.round((row2.kills / killTotalTeam) * 100);
-
-            if (isNaN(participation)){
-                participation = 0;
-            }
-
-            // Gets cs per minute
-            csPerMinFloat = row2.totalCS / parseInt(row1.gameDurationMinutes.slice(0, -3));
-            csPerMin = csPerMinFloat.toFixed(1);
-
-
-            container.innerHTML += `
-            <div style="background-color: #59343b; border-radius: 15px;" class="accordion-item" data-gameID="${row1.gameID}" id="matchCard">
-                <div style="display: flex; background-color: #59343b; color: white;" class="accordion-header flex" onclick="toggleAccordion(this)">
-                
-                    <div class="nested-container">
-                        <div style="border-radius: 15px; width: 35px; background-color: rgb(232, 64, 87);"></div>
-                        <div class="item-container rankedGameCard">
-                            <div class="innerCard">
-                                <p class="match-card-text" style="color: #e8404b"><b>Ranked Solo</b></p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">${row1.gameDate}</p>
-                            </div>
-                            <div class="lossDivider"></div>
-                            <div class="innerCard">
-                                <p class="match-card-text"><b>Defeat</b></p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">${row1.gameDurationMinutes}</p>
-                            </div>
-                        </div>
-
-                        <div class="item-container portraitCard">
-                            <div class="innerCard">
-                                
-                                <div class="image-container">
-                                    <img class="${row2.Champ}">
-                                    <div class="text-over-image">${row2.champLevel}</div>
-                                </div>
-                                <div style="flex-direction: row;">
-                                    <img class="${row2.summonerSpell1}">
-                                    <img class="${row2.summonerSpell2}">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img class="${itemToClass(row2.keystone)}">
-                                <img class="${itemToClass(row2.secondaryRune)}">
-                            </div>
-                        </div>
-
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img class="${itemToClass(row2.item0)}">
-                                <img class="${itemToClass(row2.item1)}">
-                                <img class="${itemToClass(row2.item2)}">
-                            </div>
-                        </div>
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img class="${itemToClass(row2.item3)}">
-                                <img class="${itemToClass(row2.item4)}">
-                                <img class="${itemToClass(row2.item5)}">
-                            </div>
-                        </div>
-                        <div style="padding-top: 5px;">
-                            <div class="">
-                                <img style="margin-top: 25px; border-radius: 50%;" class="${itemToClass(row2.item6)}">
-                            </div>
-                        </div>
-                        
-
-                        <div class="item-container px-2">
-                            <div class="innerCard">
-                                <p class="kda">${row2.kills} / <span style="color: #e84057">${row2.deaths}</span> / ${row2.assists}</p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text" style="color: #7c7e97; font-weight:400;">${kda}:1 KDA</p>
-                            </div>
-                            <div class="lossDivider"></div>
-                            <div class="innerCard">
-                                <p class="match-card-text" style="color: #e83d42"><b>K/P: ${participation}%</b></p>
-                            </div>
-                            <div class="innerCard">
-                                <p class="match-card-text">CS ${row2.totalCS} (${csPerMin})</p>
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="item-container teamCard">
-                            <div class="innerCard">
-                                <img class="${row3[0].Champ}Scoreboard">
-                                <img class="${row3[1].Champ}Scoreboard">
-                                <img class="${row3[2].Champ}Scoreboard">
-                                <img class="${row3[3].Champ}Scoreboard">
-                                <img class="${row3[4].Champ}Scoreboard">
-                            </div>
-                        </div>
-                        <div class="item-container teamName">
-                            <div class="innerCard">
-                                <div>${player1Name}</div>
-                                <div>${player2Name}</div>
-                                <div>${player3Name}</div>
-                                <div>${player4Name}</div>
-                                <div>${player5Name}</div>
-                            </div>
-                        </div>
-
-                        <div class="item-container teamCard ">
-                            <div class="innerCard">
-                                <img class="${row3[5].Champ}Scoreboard">
-                                <img class="${row3[6].Champ}Scoreboard">
-                                <img class="${row3[7].Champ}Scoreboard">
-                                <img class="${row3[8].Champ}Scoreboard">
-                                <img class="${row3[9].Champ}Scoreboard">
-                            </div>
-                        </div>
-                        <div class="item-container teamName">
-                            <div class="innerCard">
-                                <div>${player6Name}</div>
-                                <div>${player7Name}</div>
-                                <div>${player8Name}</div>
-                                <div>${player9Name}</div>
-                                <div>${player10Name}</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                
-                
-                
-                <table class="accordion-body" style="color: white;">
-                    <colgroup>
-                        <col width="20%">
-                        <col width="5%">
-                        <col width="25%">
-                        <col width="5%">
-                        <col width="10%">
-                        <col width="5%">
-                        <col width="30%">
-                    </colgroup>
-                    <thead>
-                        <tr style="text-align: center;">
-                            <th colspan="3">Your Team</th>
-                            <th>KDA</th>
-                            <th>Gold</th>
-                            <th>CS</th>
-                            <th>Items</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="${primaryTableID}">
-                    </tbody>
-                </table>
-                
-                <table class="accordion-body" style="color: white;">
-                    <colgroup>
-                        <col width="20%">
-                        <col width="5%">
-                        <col width="25%">
-                        <col width="5%">
-                        <col width="10%">
-                        <col width="5%">
-                        <col width="30%">
-                    </colgroup>
-                    <thead>
-                        <tr style="text-align: center;">
-                            <th colspan="3"><span class="result">Enemy Team</th>
-                            <th>KDA</th>
-                            <th>Gold</th>
-                            <th>CS</th>
-                            <th>Items</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody id="${secondaryTableID}">
-                    </tbody>
-                </table>
-
-            </div>
-            `;
-          } 
-        
-
-
-
-        
-
-        // Append the container to the data-container
-        document.getElementById('data-container').appendChild(container);
-
-
-
-        const primaryTable = document.getElementById(primaryTableID);
-        const secondaryTable = document.getElementById(secondaryTableID);
-
-        itemIndex = 0;
-        if (row2.win === true) {
-            winners.forEach(match =>{
-                // Build the HTML content for each match object
-                const winHTML = `
-                    <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                        <td>
-                            <img class="innerScoreboard${match.Champ}">
-                            <img class="${match.summonerSpell1}">
-                            <img class="${match.summonerSpell2}">
-                        </td>
-                        <td>
-                            ${match.champLevel}
-                        </td>
-                        <td class="innerScoreboardName">
-                            ${match.riotID}
-                        </td>
-                        <td>
-                            ${match.kills}/${match.deaths}/${match.assists}
-                        </td>
-                        <td>
-                            ${match.goldEarned}
-                        </td>
-                        <td>
-                            ${match.totalCS}
-                        </td>
-                        <td style="display: flex;">
-                            <img class="${itemToClass(match.item0)}">
-                            <img class="${itemToClass(match.item1)}">
-                            <img class="${itemToClass(match.item2)}">
-                            <img class="${itemToClass(match.item3)}">
-                            <img class="${itemToClass(match.item4)}">
-                            <img class="${itemToClass(match.item5)}">
-                            <img class="${itemToClass(match.item6)}">
-                        </td>
-                    </tr>`;
-                itemIndex = itemIndex + 1;
-                // Append the HTML for the current match object to nested-container
-                primaryTable.innerHTML += winHTML;
-            });
-            
-            losers.forEach(match =>{
-
-                // Build the HTML content for each match object
-                const loseHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td>
-                        <img class="innerScoreboard${match.Champ}">
-                        <img class="${match.summonerSpell1}">
-                        <img class="${match.summonerSpell2}">
-                    </td>
-                    <td>
-                        ${match.champLevel}
-                    </td>
-                    <td class="innerScoreboardName">
-                        ${match.riotID}
-                    </td>
-                    <td>
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td>
-                        ${match.goldEarned}
-                    </td>
-                    <td>
-                        ${match.totalCS}
-                    </td>
-                    <td style="display: flex;">
-                        <img class="${itemToClass(match.item0)}">
-                        <img class="${itemToClass(match.item1)}">
-                        <img class="${itemToClass(match.item2)}">
-                        <img class="${itemToClass(match.item3)}">
-                        <img class="${itemToClass(match.item4)}">
-                        <img class="${itemToClass(match.item5)}">
-                        <img class="${itemToClass(match.item6)}">
-                    </td>
-                </tr>
-                
-                `;
-                itemIndex = itemIndex + 1;
-                // Append the HTML for the current match object to nested-container
-                secondaryTable.innerHTML += loseHTML;
-            });
-        }
-        else{
-            losers.forEach(match =>{
-
-                // Build the HTML content for each match object
-                const loseHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td>
-                        <img class="innerScoreboard${match.Champ}">
-                        <img class="${match.summonerSpell1}">
-                        <img class="${match.summonerSpell2}">
-                    </td>
-                    <td>
-                        ${match.champLevel}
-                    </td>
-                    <td class="innerScoreboardName">
-                        ${match.riotID}
-                    </td>
-                    <td>
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td>
-                        ${match.goldEarned}
-                    </td>
-                    <td>
-                        ${match.totalCS}
-                    </td>
-                    <td style="display: flex;">
-                        <img class="${itemToClass(match.item0)}">
-                        <img class="${itemToClass(match.item1)}">
-                        <img class="${itemToClass(match.item2)}">
-                        <img class="${itemToClass(match.item3)}">
-                        <img class="${itemToClass(match.item4)}">
-                        <img class="${itemToClass(match.item5)}">
-                        <img class="${itemToClass(match.item6)}">
-                    </td>
-                </tr>
-                `;
-                itemIndex = itemIndex + 1;
-                // Append the HTML for the current match object to nested-container
-                primaryTable.innerHTML += loseHTML;
-            });
-            winners.forEach(match =>{
-
-                // Build the HTML content for each match object
-                const winHTML = `
-                <tr result="WIN" class="overview-player overview-player--WIN css-1ya4cma e1i6zky90" style="text-align: center;">
-                    <td>
-                        <img class="innerScoreboard${match.Champ}">
-                        <img class="${match.summonerSpell1}">
-                        <img class="${match.summonerSpell2}">
-                    </td>
-                    <td>
-                        ${match.champLevel}
-                    </td>
-                    <td class="innerScoreboardName">
-                        ${match.riotID}
-                    </td>
-                    <td>
-                        ${match.kills}/${match.deaths}/${match.assists}
-                    </td>
-                    <td>
-                        ${match.goldEarned}
-                    </td>
-                    <td>
-                        ${match.totalCS}
-                    </td>
-                    <td style="display: flex;">
-                        <img class="${itemToClass(match.item0)}">
-                        <img class="${itemToClass(match.item1)}">
-                        <img class="${itemToClass(match.item2)}">
-                        <img class="${itemToClass(match.item3)}">
-                        <img class="${itemToClass(match.item4)}">
-                        <img class="${itemToClass(match.item5)}">
-                        <img class="${itemToClass(match.item6)}">
-                    </td>
-                </tr>
-                `;
-                itemIndex = itemIndex + 1;
-                // Append the HTML for the current match object to nested-container
-                secondaryTable.innerHTML += winHTML;
-            });
-        }
-        cardCount = cardCount + 1;
-    });
-    
-    
-    showMoreButtonDiv = document.getElementById('showMoreButtonDiv')
-    showMoreButtonDiv.innerHTML = `<button id="showMoreButtonTag" class="center searchSection text-dark text-center fw-bold" style="border-radius: 15px; font-family: VCR OSD Mono, sans-serif; font-size: 150%; width: 740px; display: flex; justify-content: center;" onclick="showMore()">SHOW MORE</button>`;
-
-    
-    
-}
+  profileContainer.addEventListener("click", function (event) {
+    if (event.target.closest('[data-action="update"]')) {
+      updateData();
+    }
+  });
+})();
