@@ -1,0 +1,340 @@
+@import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+* {box-sizing: border-box}
+
+body::before {
+  display: block;
+  content: '';
+  height: 60px;
+}
+body {
+  font-family: '__Roboto_2d0052','__Roboto_Fallback_2d0052',sans-serif,system-ui,sans-serif;
+  margin:0;
+  overflow: auto;
+  min-width: 785px;
+}
+
+@media (min-width: 50%) {
+  .summoner-input {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.searchContainer {
+  background: white;
+  padding: 4px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 40px;
+}
+.searchSection {
+  background-color: #57ffd7;
+  color: #57ffd7;
+}
+
+
+
+
+
+img {
+  vertical-align: middle;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.maxWidth{
+  width: 100%; 
+  max-width: 740px;
+}
+
+
+
+
+
+
+
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  /* width: 550px; */
+  /* width: 740px; */
+  width: 100%;
+  max-width: 740px;
+  min-height: 100px; /* if you set a static height it will not open the accordion item */
+  border:none;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #f1f1f1;
+  padding: 5px;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.accordion-body {
+  padding: 10px;
+  display: none;
+  text-wrap: nowrap;
+}
+
+.accordion-item.active .accordion-body {
+  display: block;
+}
+
+
+
+
+
+
+
+
+.winCard {
+  background-color: #28344e;
+}
+.loseCard {
+  background-color: #59343b;
+}
+.winDivider {
+  width: 80%;
+  height: 1px;
+  background-color:#2f436e;
+}
+.lossDivider {
+  width: 80%;
+  height: 1px;
+  background-color: #703c47;
+}
+
+
+
+
+
+
+
+
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 20px;
+  justify-content: center;
+}
+
+.nested-container {
+  width: 100%;
+  padding: 2px;
+  gap: 5px;
+  border: none;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.innerScoreboardName {
+  max-width: 150px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.item-container {
+  padding: 2px;
+  border: none;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.scoreboardCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  white-space: nowrap;
+  max-height: 20px;
+}
+
+.innerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  white-space: nowrap;
+  max-height: 20px;
+}
+.itemColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  max-height: 20px;
+}
+
+.rankedGameCard {
+  width: 12%;
+  min-width: 75px;
+}
+.portraitCard {
+  width: 11%;
+  max-width: 56px;
+}
+.itemCard {
+  /* width: 4.2%; */
+  width: 3%;
+  gap: 2px;
+  margin-left: 4px;
+}
+.kda {
+  font-size: 15px;
+  font-weight: bold;
+}
+.gameTeamWinLeft {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-color: #2f436e;
+  line-height: 100%;
+  padding-left: 1px;
+}
+.gameTeamWinRight {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: #2f436e;
+  line-height: 100%;
+  padding-left: 1px;
+}
+
+.gameTeamLose {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-color: #703c47;
+  line-height: 100%;
+}
+
+.match-card-text {
+  font-size: 12px;
+}
+
+.teamName {
+  font-size: 10.6px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scoreboardSummonerName {
+  max-width: 120px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.itemIcons {
+  height: 10%; 
+  width: 10%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+}
+.scoreboardChamp {
+  height: 10%; 
+  width: 10%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+}
+
+.summonerIcons {
+  height: 49%; 
+  width: 49%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+}
+.champIcon {
+  height: 106%;
+  width: 106%;
+  min-width: 54px;
+  min-width: 54px; 
+  border-radius: 15%;
+}
+.teamCard {
+  width: 20px;
+  gap: 2px;
+  border-radius: 15%;
+}
+.teamIcon {
+  border-radius: 20%;
+}
+
+
+
+
+
+
+/* IMAGES STUFF */
+/* Container to position the text */
+.image-container {
+  position: relative;
+}
+/* Image styling */
+.image-container img {
+  height: auto;
+  display: block; /* Remove default image spacing */
+}
+
+/* Text styling */
+.text-over-image {
+  margin-top: -1px;
+  width: 18.5px;
+  height: 23.5px;
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  background-color: #1c1f23;
+  border-radius: 8px;
+  font-weight: bolder;
+  padding: 2px;
+  z-index: +1;
+}
+
+
+
+.placeholderContainer {
+  height: 49%; 
+  width: 49%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+  background-color: transparent;
+  z-index: 1;
+}
+.placeholderImage {
+  height: 49%; 
+  width: 49%;
+  min-width: 25px;
+  min-width: 25px; 
+  border-radius: 15%;
+  background-color: transparent;
+}

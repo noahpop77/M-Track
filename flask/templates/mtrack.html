@@ -15,10 +15,10 @@
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
     <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet" />
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='sprites.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='sprites.css') }}?v={{ static_version }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ static_version }}" />
 
-    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}?v={{ static_version }}" defer></script>
   </head>
 
   <body>
@@ -29,11 +29,8 @@
         <a class="brand" href="/" aria-label="M-Track home">
           <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <circle cx="12" cy="12" r="10.4" />
-            <g transform="rotate(-45 12 12)">
-              <rect class="bat-body" x="9.4" y="3.8" width="5.2" height="8.6" rx="2.6" />
-              <path class="bat-handle" d="M12 20V13" />
-              <circle class="bat-clock" cx="12" cy="6.4" r="1.2" />
-            </g>
+            <path class="hourglass-cap" d="M8.7 7.1h6.6M8.7 16.9h6.6" />
+            <path class="hourglass-body" d="M9.4 7.1 12 12l2.6-4.9M9.4 16.9 12 12l2.6 4.9" />
           </svg>
           <span>M-TRACK</span>
         </a>
@@ -65,6 +62,10 @@
             Track
           </button>
         </form>
+
+        <a class="theme-toggle" href="/classic" title="Switch to the classic site">
+          No AI Version of M-Track
+        </a>
       </div>
     </header>
 

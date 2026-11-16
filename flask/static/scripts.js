@@ -334,11 +334,22 @@
 
   /* ------------------------------------------------------------ sprites */
 
+  // Riot's Match API returns "FiddleSticks" while the sprite sheets use
+  // "Fiddlesticks". Keep that one API naming quirk out of the markup.
+  const SPRITE_ALIASES = {
+    fiddlesticks: "Fiddlesticks",
+  };
+
   // Sprite classes are generated from display names, so apply the same
   // sanitisation the stylesheet uses ("B. F. Sword" -> "B-F-Sword",
   // "Jak'Sho, The Protean" -> "Jak_Sho_-The-Protean").
   function spriteClass(name) {
-    return String(name == null ? "" : name)
+    const raw = String(name == null ? "" : name);
+    const alias = SPRITE_ALIASES[raw.toLowerCase()];
+    if (alias) {
+      return alias;
+    }
+    return raw
       .replace(/\./g, "")
       .replace(/[':,()]/g, "_")
       .replace(/\s+/g, "-");
@@ -359,7 +370,7 @@
     }
 
     classes.push(className);
-    const label = escapeHtml(raw);
+    const label = escapeHtml(SPRITE_ALIASES[raw.toLowerCase()] || raw);
     return (
       '<span class="' +
       classes.join(" ") +

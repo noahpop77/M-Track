@@ -21,6 +21,26 @@ RIOTAPIKEY = os.environ.get("RIOT_API_KEY") or config.get('KEYS', 'riotapi', fal
 # init app
 app = Flask(__name__)
 
+STATIC_DIR = os.path.join(dirname(abspath(__file__)), 'static')
+
+# Bump the query string on CSS/JS links whenever one of those files changes so
+# browsers pick up the new version even though /static/ is cached for a day.
+def staticAssetVersion():
+    latest = 0
+    for root, _, filenames in os.walk(STATIC_DIR):
+        for filename in filenames:
+            if not filename.endswith(('.css', '.js')):
+                continue
+            try:
+                latest = max(latest, os.path.getmtime(os.path.join(root, filename)))
+            except OSError:
+                pass
+    return str(int(latest))
+
+@app.context_processor
+def injectStaticAssetVersion():
+    return {'static_version': staticAssetVersion()}
+
 ALLOWED_REGIONS = {"na1", "euw1", "eun1"}
 
 # Shared request validation so a malformed body returns 400 instead of a 500.
@@ -131,6 +151,9 @@ def enrichGameData(gameData):
 def addStaticCacheHeaders(response):
     if request.path.startswith('/static/'):
         response.headers['Cache-Control'] = 'public, max-age=86400'
+    elif response.mimetype == 'text/html':
+        # Always revalidate pages so they pick up the current asset versions.
+        response.headers['Cache-Control'] = 'no-cache'
     return response
 
 # Initializes logger for fask routes
@@ -164,6 +187,11 @@ logging.basicConfig(level=logging.INFO, filename=logPath, encoding='utf-8')
 @app.route('/', methods=['GET'])
 def homePage():
     return render_template('mtrack.html')
+
+
+@app.route('/classic', methods=['GET'])
+def classicPage():
+    return render_template('mtrack-classic.html')
 
 
 
